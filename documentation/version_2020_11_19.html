@@ -213,7 +213,7 @@
       <script src="../javascripts/all.js"></script>
   </head>
 
-  <body class="products products_applications_au" data-languages="[]">
+  <body class="documentation documentation_version_2020_11_19" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -230,7 +230,18 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#applications-australia" class="toc-h1 toc-link" data-title="Applications - Australia">Applications - Australia</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#versioning" class="toc-h1 toc-link" data-title="Versioning">Versioning</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#specifying-a-version" class="toc-h2 toc-link" data-title="Specifying a Version">Specifying a Version</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#product-subscription" class="toc-h1 toc-link" data-title="Product Subscription">Product Subscription</a>
           </li>
           <li>
             <a href="#authorisation" class="toc-h1 toc-link" data-title="Authorisation">Authorisation</a>
@@ -259,17 +270,227 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#app-form" class="toc-h1 toc-link" data-title="App Form">App Form</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-appform" class="toc-h2 toc-link" data-title="GET AppForm"><span class="get">GET</span> AppForm</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account-model-weightings" class="toc-h1 toc-link" data-title="Account Model Weightings">Account Model Weightings</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-account-model-weightings" class="toc-h2 toc-link" data-title="GET Account Model Weightings"><span class="get">GET</span> Account Model Weightings</a>
+                  </li>
+                  <li>
+                    <a href="#put-account-model-weightings" class="toc-h2 toc-link" data-title="PUT Account Model Weightings"><span class="put">PUT</span> Account Model Weightings</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sso-login" class="toc-h1 toc-link" data-title="SSO Login">SSO Login</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-sso-login" class="toc-h2 toc-link" data-title="POST SSO Login"><span class="post">POST</span> SSO Login</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-users" class="toc-h2 toc-link" data-title="GET Users"><span class="get">GET</span> Users</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#rate-limiting" class="toc-h1 toc-link" data-title="Rate Limiting">Rate Limiting</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#response-codes" class="toc-h2 toc-link" data-title="Response Codes">Response Codes</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='../openapifiles/applications.au.json'>OpenAPI File</a></li>
+            <li><a href='../openapifiles/openapi_2020_11_19.json'>OpenAPI File</a></li>
+            <li><a href='../previous_versions.html'>Previous Versions</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='applications-australia'>Applications - Australia</h1>
-<p>This product allows access to draft applications and PDS.</p>
-<h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
+        <h1 id='introduction'>Introduction</h1>
+<p>The Praemium Application Programming Interface (API) enables your organisation to access information about your clients&#39; portfolios from our system securely and on demand.</p>
+
+<p>This site provides you with full details of each of the endpoints in the API, including the URL, parameters, validation tips, and what to expect in our response.</p>
+
+<p>If you are interested in using our API please contact our product team at <a href="mailto:applyforapi@praemium.com">applyforapi@praemium.com</a>. They can answer any queries you may have and ensure all our compliance and contractual requirements are met.</p>
+
+<p>After the Product team has approved your use of our API, and you&#39;re ready to start developing, please contact our Client Services team at <a href="mailto:support@praemium.com.au">support@praemium.com.au</a> to obtain a token is issued that allows access to our test environment.</p>
+
+<p>Once your application is fully developed, you can request OAuth 2.0 client credentials for the Production environment.
+We have a number of different endpoints available. To check what you have access to please consult our support team at Praemium. Below is a summary of the endpoint availability based on our products, roles and regions:</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Standard</th>
+<th>SMA/Robo</th>
+<th>Enterprise</th>
+<th>Model Manager</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Portfolio Account</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Tax</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Trading Activity</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Income</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Expenses</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Reports and Files</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Account Creation</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Applicant Creation</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>PDS Get</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Linking Users</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Bulk</td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Create Applications via AP</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>User Management</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Models</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔</td>
+</tr>
+</tbody></table>
+
+<p>If there are any endpoints that you require and we have not listed, please contact for further information.</p>
+<h1 id='versioning'>Versioning</h1><h2 id='specifying-a-version'>Specifying a Version</h2>
+<p>The API is versioned so that we can continually release new features and improvements without affecting existing implementations.</p>
+
+<p>To specify the API version, simply add the HTTP header <strong>x-pps-api-version</strong> to each request as shown below:</p>
+
+<p><code>x-pps-api-version: v1</code></p>
+
+<p>Documentation related to previous versions can be found <a href='../previous_versions.html'>here</a>.</p>
+<h1 id='product-subscription'>Product Subscription</h1>
+<p>Product subscription key is required for accessing corresponding endpoints and should be added to your request as below:</p>
+
+<p><code>x-pps-subscription-key: d3e30ecd1ab345...</code></p>
+
+<p>Please log into our <a href="https://devtest.onpraemium.com/">developer portal</a> to subscribe to a product and generate corresponding product subscription key.</p>
+<h1 id='authorisation'>Authorisation</h1>
+<p>In order to access the Premium API, you will need to be granted a OAuth 2.0 client to authenticate and authorise your application.</p>
+
+<p>Applications that try to access the API without a valid access token will receive a 403 (Forbidden) response.</p>
+
+<p>To make calls to the API, get access token via our token endpoint and add access token as the Authorization header value in each HTTP request.</p>
+
+<p><code>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</code></p>
+
+<aside class="warning">
+DO treat the OAuth 2.0 client as sensitive information and keep it secure.<br>
+
+DO contact us immediately if you believe your OAuth 2.0 client has been compromised. We will revoke it and re-issue a new one.<br>
+
+DO NOT expose this OAuth 2.0 client to your clients, but keep this OAuth 2.0 client private within your secured self-hosted application only.<br>
+
+DO NOT deploy software with this OAuth 2.0 client outside of a trusted environment or pass it to a browser client-side script.
+</aside>
+<h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
 
@@ -2867,7 +3088,383 @@
 </tbody></table>
 
 <p><br/></p>
+<h1 id='app-form'>App Form</h1><h3 id='get-appform'><span class="get">GET</span> AppForm</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
 
+<p><strong>Query Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="m">400000</span>
+</code></pre></div><h5 id='query-parameters'>Query Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td></td>
+<td>Adviser = 0, Investor = 1 (UK only)</td>
+</tr>
+<tr>
+<td>FormType</td>
+<td></td>
+<td>Digital = 0, Paper = 1 (UK only)</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='account-model-weightings'>Account Model Weightings</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Query Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="m">400000</span>
+</code></pre></div><h5 id='query-parameters-2'>Query Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId</td>
+<td>integer</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ModelCode</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Percent</td>
+<td>double</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Body Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">    
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='body-parameters-3'>Body Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>RebalanceType</td>
+<td>enum</td>
+<td></td>
+</tr>
+<tr>
+<td>AccountModelWeightings<span class="required">required</span></td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td>AccountModelWeightings.ModelCode</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>AccountModelWeightings.Percent</td>
+<td>double</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='sso-login'>SSO Login</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Body Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Platform"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='body-parameters-4'>Body Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Application<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>UserId<span class="required">required</span></td>
+<td>integer</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"ssoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.onpraemium.com/useraccount/sso?token=XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXX"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SsoUrl</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='users'>Users</h1><h3 id='get-users'><span class="get">GET</span> Users</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/user/{username}</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Path Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">UserName</span><span class="pi">:</span> <span class="s">john_smith</span>
+</code></pre></div><h5 id='path-parameters-2'>Path Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>UserName<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>UserId</td>
+<td>integer</td>
+<td>User ID</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='rate-limiting'>Rate Limiting</h1>
+<p>The Praemium API limits requests made to each Praemium service.</p>
+
+<p>The default is 1000 requests per minute, if you hit the limit the API will return HTTP code 429 (Too many requests). If you genuinely need to make more requests, please speak to our support team.</p>
+
+<aside class="warning">
+We reserve the right to disable your access to the API if this rate limit is abused.
+</aside>
+<h2 id='response-codes'>Response Codes</h2>
+<p>The Praemium API communicates errors through standard HTTP status codes paired. Generally the following pattern will apply:</p>
+
+<blockquote>
+<p><strong>400 - Bad Request</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unexpected character encountered while parsing value: d. Path 'AccountId', line 2, position 23."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
       </div>
       <div class="dark-box">
       </div>

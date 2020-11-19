@@ -784,11 +784,18 @@
             "type": "boolean"
           },
           {
-            "name": "Applicants.CorporateDetails.Contact.PoliticallyExposedPerson",
+            "name": "Applicants.CorporateDetails.Contact.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
             "description": "",
             "type": "boolean"
+          },
+          {
+            "name": "Applicants.CorporateDetails.Contact.PepDetails",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.Signatories",
@@ -999,11 +1006,18 @@
             "type": "boolean"
           },
           {
-            "name": "Applicants.CorporateDetails.Signatories.PoliticallyExposedPerson",
+            "name": "Applicants.CorporateDetails.Signatories.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
             "description": "",
             "type": "boolean"
+          },
+          {
+            "name": "Applicants.CorporateDetails.Signatories.PepDetails",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.CompanyRegistrationNumber",
@@ -1436,7 +1450,7 @@
             "name": "Applicants.IndividualDetails.PhoneOther",
             "in": "body",
             "required": false,
-            "description": "Other phone of individual individual",
+            "description": "Other phone of the individual",
             "type": "string"
           },
           {
@@ -1485,11 +1499,18 @@
             "type": "boolean"
           },
           {
-            "name": "Applicants.IndividualDetails.PoliticallyExposedPerson",
+            "name": "Applicants.IndividualDetails.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Whether applicant is politically exposed.",
             "type": "boolean"
+          },
+          {
+            "name": "Applicants.IndividualDetails.PepDetails",
+            "in": "body",
+            "required": false,
+            "description": "If applicant is politically exposed, details must be supplied.",
+            "type": "string"
           },
           {
             "name": "Applicants.TrustDetails",
@@ -1831,11 +1852,18 @@
             "type": "boolean"
           },
           {
-            "name": "Applicants.TrustDetails.Signatories.PoliticallyExposedPerson",
+            "name": "Applicants.TrustDetails.Signatories.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
             "description": "",
             "type": "boolean"
+          },
+          {
+            "name": "Applicants.TrustDetails.Signatories.PepDetails",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees",
@@ -2167,11 +2195,18 @@
             "type": "boolean"
           },
           {
-            "name": "Applicants.TrustDetails.CorporateTrustees.Contact.PoliticallyExposedPerson",
+            "name": "Applicants.TrustDetails.CorporateTrustees.Contact.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
             "description": "",
             "type": "boolean"
+          },
+          {
+            "name": "Applicants.TrustDetails.CorporateTrustees.Contact.PepDetails",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories",
@@ -2382,11 +2417,18 @@
             "type": "boolean"
           },
           {
-            "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.PoliticallyExposedPerson",
+            "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
             "description": "",
             "type": "boolean"
+          },
+          {
+            "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.PepDetails",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.CompanyRegistrationNumber",
@@ -3704,6 +3746,15 @@
           "description": "",
           "type": "string"
         },
+        "TransferMethod": {
+          "description": "",
+          "$ref": "#/definitions/TransferMethodType"
+        },
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
         "CloseOnRollover": {
           "description": "",
           "type": "boolean"
@@ -4383,7 +4434,7 @@
           },
           "type": "array"
         },
-        "TaxtOptions": {
+        "TaxOptions": {
           "description": "",
           "items": {
             "$ref": "#/definitions/PdsTaxOption"
@@ -4586,9 +4637,13 @@
           "description": "",
           "type": "boolean"
         },
-        "PoliticallyExposedPerson": {
+        "IsPoliticallyExposedPerson": {
           "description": "",
           "type": "boolean"
+        },
+        "PepDetails": {
+          "description": "",
+          "type": "string"
         }
       },
       "required": [],
@@ -4664,9 +4719,13 @@
           "description": "",
           "type": "boolean"
         },
-        "PoliticallyExposedPerson": {
+        "IsPoliticallyExposedPerson": {
           "description": "",
           "type": "boolean"
+        },
+        "PepDetails": {
+          "description": "",
+          "type": "string"
         }
       },
       "required": [],
@@ -4871,7 +4930,7 @@
           "type": "string"
         },
         "PhoneOther": {
-          "description": "Other phone of individual individual",
+          "description": "Other phone of the individual",
           "type": "string"
         },
         "NationalIdentifier": {
@@ -4882,9 +4941,13 @@
           "description": "",
           "type": "boolean"
         },
-        "PoliticallyExposedPerson": {
-          "description": "",
+        "IsPoliticallyExposedPerson": {
+          "description": "Whether applicant is politically exposed.",
           "type": "boolean"
+        },
+        "PepDetails": {
+          "description": "If applicant is politically exposed, details must be supplied.",
+          "type": "string"
         }
       },
       "required": [],
@@ -5467,7 +5530,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.11.17",
+    "version": "2020.11.19",
     "title": "Public API"
   }
 }
