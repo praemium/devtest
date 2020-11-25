@@ -169,8 +169,7 @@
             "name": "accountId",
             "in": "path",
             "required": true,
-            "format": "int32",
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "Authorization",
@@ -203,45 +202,38 @@
         "operationId": "GetUKAppForm",
         "parameters": [
           {
+            "name": "Authorization",
+            "required": false,
+            "description": "OAuth 2.0 access token."
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "required": false,
+            "description": "Product subscription key."
+          },
+          {
+            "name": "x-pps-api-version",
+            "required": false,
+            "description": "API version of the endpoint."
+          },
+          {
             "name": "AccountId",
-            "in": "path",
+            "in": "query",
             "required": true,
             "description": "",
-            "format": "int32",
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "Recipient",
             "in": "query",
-            "required": true,
+            "required": false,
             "description": "Adviser = 0, Investor = 1"
           },
           {
             "name": "FormType",
             "in": "query",
-            "required": true,
+            "required": false,
             "description": "Digital = 0, Paper = 1"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
           }
         ]
       }
@@ -267,32 +259,19 @@
         ],
         "parameters": [
           {
-            "name": "AccountId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
             "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
+            "required": false,
+            "description": "OAuth 2.0 access token."
           },
           {
             "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
+            "required": false,
+            "description": "Product subscription key."
           },
           {
             "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
+            "required": false,
+            "description": "API version of the endpoint."
           }
         ]
       },
@@ -315,8 +294,7 @@
             "in": "body",
             "required": true,
             "description": "",
-            "format": "int32",
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "AccountModelWeightings",
@@ -917,7 +895,7 @@
             "schema": {
               "$ref": "#/definitions/CorporateCapacity"
             },
-            "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2",
+            "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -1580,7 +1558,7 @@
             "type": "string"
           },
           {
-            "name": "Applicants.TrustDetails.NatureOftrust",
+            "name": "Applicants.TrustDetails.NatureOfTrust",
             "in": "body",
             "required": false,
             "schema": {
@@ -1712,7 +1690,7 @@
             "schema": {
               "$ref": "#/definitions/CorporateCapacity"
             },
-            "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2",
+            "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2205,7 +2183,7 @@
             "schema": {
               "$ref": "#/definitions/CorporateCapacity"
             },
-            "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2",
+            "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2771,7 +2749,7 @@
             "schema": {
               "$ref": "#/definitions/Frequency"
             },
-            "description": "",
+            "description": "Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2824,7 +2802,7 @@
             "schema": {
               "$ref": "#/definitions/Frequency"
             },
-            "description": "",
+            "description": "Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -3009,7 +2987,7 @@
             "schema": {
               "$ref": "#/definitions/PaymentMethods"
             },
-            "description": "",
+            "description": "ElectronicTransfer = 2, Cheque = 3.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -4098,8 +4076,7 @@
         "AccountId": {
           "description": "",
           "minLength": 0,
-          "format": "int32",
-          "type": "integer"
+          "type": "string"
         },
         "AccountModelWeightings": {
           "description": "",
@@ -4122,8 +4099,7 @@
         "AccountId": {
           "description": "",
           "minLength": 0,
-          "format": "int32",
-          "type": "integer"
+          "type": "string"
         },
         "AccountModelWeightings": {
           "description": "",
@@ -4139,16 +4115,6 @@
         "AccountModelWeightings"
       ],
       "type": "object"
-    },
-    "MarketType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3
-      ]
     },
     "PdsModelAU": {
       "properties": {
@@ -4171,43 +4137,6 @@
           "description": "",
           "minLength": 0,
           "type": "string"
-        },
-        "SuperSmaLimit": {
-          "description": "",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "MarketType": {
-          "description": "",
-          "minLength": 0,
-          "$ref": "#/definitions/MarketType"
-        },
-        "ModelType": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
-        "SingleAssetModelType": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
-        "IsNotAvailableForSubscription": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
-        },
-        "MinInitialInvestment": {
-          "description": "",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "HardCapInitialInvestment": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
         }
       },
       "type": "object"
@@ -4296,12 +4225,12 @@
     "PdsFeeIndexationSettings": {
       "properties": {
         "Type": {
-          "description": "",
+          "description": "None = 0, Both = 0, Cpi = 1, Custom = 2.",
           "minLength": 0,
           "$ref": "#/definitions/FeeIndexationType"
         },
         "TypeAllowed": {
-          "description": "",
+          "description": "None = 0, Both = 0, Cpi = 1, Custom = 2.",
           "minLength": 0,
           "$ref": "#/definitions/FeeIndexationType"
         },
@@ -4329,12 +4258,12 @@
           "type": "string"
         },
         "Type": {
-          "description": "Type of fee or cost.",
+          "description": "FeeTable = 0, Contribution = 1, Establishment = 2, Termination = 3, Withdrawal = 4, Ongoing = 5.",
           "minLength": 0,
           "$ref": "#/definitions/FeeType"
         },
         "Class": {
-          "description": "Class of fee",
+          "description": "Adviser = 1, NonAdviser = 2.",
           "minLength": 0,
           "$ref": "#/definitions/FeeClass"
         },
@@ -4374,7 +4303,7 @@
           "type": "number"
         },
         "DefaultType": {
-          "description": "",
+          "description": "Dollar = 1, Percent = 2.",
           "minLength": 0,
           "$ref": "#/definitions/FeeValueType"
         },
@@ -4449,26 +4378,11 @@
           "minLength": 0,
           "type": "string"
         },
-        "Revision": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
         "MaxNoOfBankAccounts": {
           "description": "",
           "minLength": 0,
           "format": "int32",
           "type": "integer"
-        },
-        "DisableCustomisations": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
-        },
-        "PdsUrl": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
         },
         "IsSuperSma": {
           "description": "",
@@ -4503,22 +4417,6 @@
             "$ref": "#/definitions/PdsTaxOption"
           },
           "type": "array"
-        },
-        "DividendPayoutOption": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
-        },
-        "MinInvestment": {
-          "description": "",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "LinkedTermDepositBanks": {
-          "description": "",
-          "minLength": 0,
-          "type": "object"
         }
       },
       "type": "object"
@@ -4592,17 +4490,6 @@
           "minLength": 0,
           "type": "string"
         },
-        "ManagerFee": {
-          "description": "Model Manager fee",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "BrandedModelCode": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
         "FeeOverride": {
           "description": "",
           "minLength": 0,
@@ -4627,43 +4514,6 @@
           "description": "Model code.",
           "minLength": 0,
           "type": "string"
-        },
-        "SuperSmaLimit": {
-          "description": "Holding limits set by the Trustee.",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "MarketType": {
-          "description": "",
-          "minLength": 0,
-          "$ref": "#/definitions/MarketType"
-        },
-        "ModelType": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
-        "SingleAssetModelType": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
-        "IsNotAvailableForSubscription": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
-        },
-        "MinInitialInvestment": {
-          "description": "Minimum amount required for initial investment into the model.",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "HardCapInitialInvestment": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
         }
       },
       "required": [],
@@ -4806,26 +4656,11 @@
           "minLength": 0,
           "type": "string"
         },
-        "Revision": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
-        },
         "MaxNoOfBankAccounts": {
           "description": "",
           "minLength": 0,
           "format": "int32",
           "type": "integer"
-        },
-        "DisableCustomisations": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
-        },
-        "PdsUrl": {
-          "description": "",
-          "minLength": 0,
-          "type": "string"
         },
         "IsSuperSma": {
           "description": "",
@@ -4860,22 +4695,6 @@
             "$ref": "#/definitions/PdsTaxOption"
           },
           "type": "array"
-        },
-        "DividendPayoutOption": {
-          "description": "",
-          "minLength": 0,
-          "type": "boolean"
-        },
-        "MinInvestment": {
-          "description": "",
-          "minLength": 0,
-          "format": "double",
-          "type": "number"
-        },
-        "LinkedTermDepositBanks": {
-          "description": "",
-          "minLength": 0,
-          "type": "object"
         }
       },
       "required": [],
@@ -4985,7 +4804,6 @@
       "type": "object"
     },
     "CorporateCapacity": {
-      "required": [],
       "format": "int32",
       "type": "integer",
       "enum": [
@@ -5448,7 +5266,7 @@
           "type": "number"
         },
         "Method": {
-          "description": "",
+          "description": "ElectronicTransfer = 2, Cheque = 3.",
           "minLength": 0,
           "$ref": "#/definitions/PaymentMethods"
         }
@@ -5726,7 +5544,7 @@
     "DraftSignatoryUK": {
       "properties": {
         "Capacity": {
-          "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2",
+          "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.",
           "minLength": 0,
           "$ref": "#/definitions/CorporateCapacity"
         },
@@ -6069,7 +5887,7 @@
           "minLength": 0,
           "type": "string"
         },
-        "NatureOftrust": {
+        "NatureOfTrust": {
           "description": "Nature of the trust.",
           "minLength": 0,
           "$ref": "#/definitions/TrustNature"
@@ -6252,7 +6070,6 @@
       "type": "object"
     },
     "Frequency": {
-      "required": [],
       "format": "int32",
       "type": "integer",
       "enum": [
@@ -6276,7 +6093,7 @@
           "$ref": "#/definitions/PaymentMethods"
         },
         "Frequency": {
-          "description": "",
+          "description": "Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.",
           "minLength": 0,
           "$ref": "#/definitions/Frequency"
         }
@@ -6491,7 +6308,7 @@
           "type": "string"
         },
         "Status": {
-          "description": "Draft / Submitted.",
+          "description": "Draft = 0, AwaitingSignature = 1, AwaitingApproval = 2, AwaitingFund = 3, Funded = 4, Trading = 5, ClosureRequested = 6, Closed = 7, Deleted = 8.",
           "minLength": 0,
           "$ref": "#/definitions/AccountLifeCycle"
         }
@@ -6585,7 +6402,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.11.24",
+    "version": "2020.11.25",
     "title": "Public API"
   }
 }
