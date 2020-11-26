@@ -213,7 +213,7 @@
       <script src="../javascripts/all.js"></script>
   </head>
 
-  <body class="products products_ma_uk" data-languages="[]">
+  <body class="documentation documentation_version_2020_11_26" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -230,7 +230,18 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#managed-accounts-united-kingdom" class="toc-h1 toc-link" data-title="Managed Accounts - United Kingdom">Managed Accounts - United Kingdom</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#versioning" class="toc-h1 toc-link" data-title="Versioning">Versioning</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#specifying-a-version" class="toc-h2 toc-link" data-title="Specifying a Version">Specifying a Version</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#product-subscription" class="toc-h1 toc-link" data-title="Product Subscription">Product Subscription</a>
           </li>
           <li>
             <a href="#authorisation" class="toc-h1 toc-link" data-title="Authorisation">Authorisation</a>
@@ -259,18 +270,227 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#app-form" class="toc-h1 toc-link" data-title="App Form">App Form</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-app-form" class="toc-h2 toc-link" data-title="GET App Form"><span class="get">GET</span> App Form</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account-model-weightings" class="toc-h1 toc-link" data-title="Account Model Weightings">Account Model Weightings</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-account-model-weightings" class="toc-h2 toc-link" data-title="GET Account Model Weightings"><span class="get">GET</span> Account Model Weightings</a>
+                  </li>
+                  <li>
+                    <a href="#put-account-model-weightings" class="toc-h2 toc-link" data-title="PUT Account Model Weightings"><span class="put">PUT</span> Account Model Weightings</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sso-login" class="toc-h1 toc-link" data-title="SSO Login">SSO Login</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-sso-login" class="toc-h2 toc-link" data-title="POST SSO Login"><span class="post">POST</span> SSO Login</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user" class="toc-h2 toc-link" data-title="GET User"><span class="get">GET</span> User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#rate-limiting" class="toc-h1 toc-link" data-title="Rate Limiting">Rate Limiting</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#response-codes" class="toc-h2 toc-link" data-title="Response Codes">Response Codes</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='../openapifiles/ma.uk.json'>OpenAPI File</a></li>
-            <li><a href='https://devtest.onpraemium.com/'>Back to developer portal</a></li>
+            <li><a href='../openapifiles/openapi_2020_11_26.json'>OpenAPI File</a></li>
+            <li><a href='../previous_versions.html'>Previous Versions</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='managed-accounts-united-kingdom'>Managed Accounts - United Kingdom</h1>
-<p>This product allows access to draft applications and PDS.</p>
-<h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
+        <h1 id='introduction'>Introduction</h1>
+<p>The Praemium Application Programming Interface (API) enables your organisation to access information about your clients&#39; portfolios from our system securely and on demand.</p>
+
+<p>This site provides you with full details of each of the endpoints in the API, including the URL, parameters, validation tips, and what to expect in our response.</p>
+
+<p>If you are interested in using our API please contact our product team at <a href="mailto:applyforapi@praemium.com">applyforapi@praemium.com</a>. They can answer any queries you may have and ensure all our compliance and contractual requirements are met.</p>
+
+<p>After the Product team has approved your use of our API, and you&#39;re ready to start developing, please contact our Client Services team at <a href="mailto:support@praemium.com.au">support@praemium.com.au</a> to obtain a token is issued that allows access to our test environment.</p>
+
+<p>Once your application is fully developed, you can request OAuth 2.0 client credentials for the Production environment.
+We have a number of different endpoints available. To check what you have access to please consult our support team at Praemium. Below is a summary of the endpoint availability based on our products, roles and regions:</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Standard</th>
+<th>SMA/Robo</th>
+<th>Enterprise</th>
+<th>Model Manager</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Portfolio Account</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Tax</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Trading Activity</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Income</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Expenses</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Reports and Files</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Account Creation</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Applicant Creation</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>PDS Get</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Linking Users</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Bulk</td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Create Applications via AP</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>User Management</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>Models</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔</td>
+</tr>
+</tbody></table>
+
+<p>If there are any endpoints that you require and we have not listed, please contact for further information.</p>
+<h1 id='versioning'>Versioning</h1><h2 id='specifying-a-version'>Specifying a Version</h2>
+<p>The API is versioned so that we can continually release new features and improvements without affecting existing implementations.</p>
+
+<p>To specify the API version, simply add the HTTP header <strong>x-pps-api-version</strong> to each request as shown below:</p>
+
+<p><code>x-pps-api-version: v1</code></p>
+
+<p>Documentation related to previous versions can be found <a href='../previous_versions.html'>here</a>.</p>
+<h1 id='product-subscription'>Product Subscription</h1>
+<p>Product subscription key is required for accessing corresponding endpoints and should be added to your request as below:</p>
+
+<p><code>x-pps-subscription-key: d3e30ecd1ab345...</code></p>
+
+<p>Please log into our <a href="https://devtest.onpraemium.com/">developer portal</a> to subscribe to a product and generate corresponding product subscription key.</p>
+<h1 id='authorisation'>Authorisation</h1>
+<p>In order to access the Premium API, you will need to be granted a OAuth 2.0 client to authenticate and authorise your application.</p>
+
+<p>Applications that try to access the API without a valid access token will receive a 403 (Forbidden) response.</p>
+
+<p>To make calls to the API, get access token via our token endpoint and add access token as the Authorization header value in each HTTP request.</p>
+
+<p><code>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</code></p>
+
+<aside class="warning">
+DO treat the OAuth 2.0 client as sensitive information and keep it secure.<br>
+
+DO contact us immediately if you believe your OAuth 2.0 client has been compromised. We will revoke it and re-issue a new one.<br>
+
+DO NOT expose this OAuth 2.0 client to your clients, but keep this OAuth 2.0 client private within your secured self-hosted application only.<br>
+
+DO NOT deploy software with this OAuth 2.0 client outside of a trusted environment or pass it to a browser client-side script.
+</aside>
+<h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
 
@@ -394,12 +614,314 @@
 <blockquote>
 <p><strong>Response Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w"> </span><span class="err">(AU</span><span class="w"> </span><span class="err">response)</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Praemium Managed Accounts"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MaxNoOfBankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsSuperSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australia"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Models"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2710"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CKI HOLDINGS ORD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Style"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1038.HKG"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2387"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALPHINITY CONCENTRATED AUSTRALIAN SHARE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Australian Shares"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOW0026AU"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"Fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Establishment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Establishment Fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DollarOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">90909.0909</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">100000.0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contribution"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contribution Fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PercentOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percent"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU32"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeeTable"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NonAdviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMA Administration Fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Tiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ValueAppliedFrom"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.336364</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercentWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.37</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ValueAppliedFrom"</span><span class="p">:</span><span class="w"> </span><span class="mf">250001.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.272727</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercentWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ValueAppliedFrom"</span><span class="p">:</span><span class="w"> </span><span class="mf">500001.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.181818</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercentWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ValueAppliedFrom"</span><span class="p">:</span><span class="w"> </span><span class="mf">1000001.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">1E-10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FeePercentWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.336364</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.37</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IndexationSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"TypeAllowed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ValueMax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU31"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeeTable"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NonAdviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"International Admin Fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.136363</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IndexationSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"TypeAllowed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ValueMax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU57"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeeTable"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adviser Fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DollarOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99999.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">109998.9</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"PercentOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IndexationSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"TypeAllowed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None, Cpi, Custom"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ValueMax"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU534"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeeTable"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dealer group fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DollarOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99999.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">109998.9</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"PercentOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IndexationSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"TypeAllowed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None, Cpi, Custom"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ValueMax"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU535"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FeeTable"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adviser"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Research fee"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DollarOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99999.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">109998.9</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"PercentOverwriteSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MinAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MinAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"MaxAmountWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"DefaultValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultValueWithTax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DefaultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Percent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IndexationSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Both"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"TypeAllowed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None, Cpi, Custom"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ValueMax"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"BankAccountUsages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMAFEE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fee offset"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IsMandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HelpText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If no bank account is selected, fees will be deducted from your cash holding."</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INCOME"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Income payment"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IsMandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HelpText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If no bank account is selected, income or dividends received will form part of your cash holding."</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RCP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular contribution plan"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IsMandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HelpText"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASHCON"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cash contributions"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IsMandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HelpText"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMAWDWL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cash withdrawals"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IsMandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HelpText"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Usage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGWDWL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular withdrawal"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IsMandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HelpText"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"TaxOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTFN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resident with TFN"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RABN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resident with ABN"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALPH"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alphabetic Tax No quoted"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NTFN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resident without TFN or ABN"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Financial Services"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AGED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aged Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CARE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carer's Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non-Profit Organisation Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RHAB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rehabilitaton Allowance Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SERV"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Service/Veteran's Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sole Parent's Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPEC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Special Benefit Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WIDW"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Widow's Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WIFE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wife's Pension Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXMT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resident with Exemption"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TERR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Norfolk Island residents"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NRWT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non-resident of Australia"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w"> </span><span class="err">(UK</span><span class="w"> </span><span class="err">response)</span><span class="w">
 </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK87"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Westminster - US GBP"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"MaxNoOfBankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"DisableCustomisations"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"IsSuperSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1000000112"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ServiceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIL  DPS GBP"</span><span class="p">,</span><span class="w">
@@ -576,7 +1098,9 @@
           </span><span class="s2">"WavertonUSCauPortGBP"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"WavertonUSGroPortGBP"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"WavertonUSISA"</span><span class="w">
-        </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"DisableAdviserFeesUk"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisableAdviserFeesInternational"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -584,6 +1108,7 @@
     </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK453"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Westminster UK"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"MaxNoOfBankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"DisableCustomisations"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"IsSuperSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1000000050"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ServiceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DPS Service"</span><span class="p">,</span><span class="w">
@@ -805,84 +1330,19 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>ServiceId</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>ServiceName</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Region</td>
-<td>enum</td>
-<td></td>
-</tr>
-<tr>
-<td>CurrencyCode</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
 <td>Models</td>
 <td>array</td>
 <td></td>
 </tr>
 <tr>
-<td>Models.ManagerName</td>
-<td>string</td>
-<td>Model Manager name.</td>
-</tr>
-<tr>
-<td>Models.FeeOverride</td>
-<td>object</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.Name</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.Id</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.Value</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.IsTiered</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.Tiers</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.Tiers.From</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.FeeOverride.Tiers.Percentage</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
 <td>Models.Id</td>
 <td>string</td>
-<td>ModelId as returned by the Models endpoint.</td>
+<td></td>
 </tr>
 <tr>
 <td>Models.Name</td>
 <td>string</td>
-<td>Model name.</td>
+<td></td>
 </tr>
 <tr>
 <td>Models.Style</td>
@@ -892,67 +1352,17 @@
 <tr>
 <td>Models.Code</td>
 <td>string</td>
-<td>Model code.</td>
-</tr>
-<tr>
-<td>AvailableAccountTypes</td>
-<td>enum</td>
-<td>The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond</td>
-</tr>
-<tr>
-<td>Products</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.Id</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.IsSingleBankAccount</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.ProductProviderName</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.ProductName</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.TaxWrapperId</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.AvailableModelCodes</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.DisableAdviserFeesUk</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
-<td>Products.DisableAdviserFeesInternational</td>
-<td>boolean</td>
 <td></td>
 </tr>
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>The ID of the PDS</td>
+<td></td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td>The name of the PDS</td>
+<td></td>
 </tr>
 <tr>
 <td>MaxNoOfBankAccounts</td>
@@ -1107,7 +1517,7 @@
 <tr>
 <td>BankAccountUsages</td>
 <td>array</td>
-<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
+<td></td>
 </tr>
 <tr>
 <td>BankAccountUsages.Usage</td>
@@ -1151,37 +1561,6 @@
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>OAuth 2.0 access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
 <p><strong>Request Parameter - Body Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
@@ -1206,6 +1585,12 @@
             </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j.smith@example.com"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"Capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Director"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Identifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TFN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1235,6 +1620,18 @@
           </span><span class="nl">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIC"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="w">
         </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Identifications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TFN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NIN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MissingReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MissingReasonText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
         </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"PepDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senior politician"</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -1245,7 +1642,7 @@
       </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"RegisteredName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ShortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
       </span><span class="nl">"PdsId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU5"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"Fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -1298,14 +1695,49 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>AdviserId<span class="required">required</span></td>
+<td>integer</td>
+<td>The adviser ID to create the application under.</td>
+</tr>
+<tr>
+<td>OwnerAdviserId</td>
+<td>integer</td>
+<td>The owner adviser ID to create the application under.</td>
+</tr>
+<tr>
 <td>Applicants<span class="required">required</span></td>
 <td>array</td>
 <td>Objects containing the applicant data. There must be at least one applicant for the request to succeed. The array of objects may contain a mix of Individual and Corporate applicants.</td>
 </tr>
 <tr>
+<td>Applicants.OwnerAdviserId</td>
+<td>integer</td>
+<td>The individual Owner Adviser ID.</td>
+</tr>
+<tr>
+<td>Applicants.ApplicantType</td>
+<td>enum</td>
+<td>Individual = 0, Corporate = 1, Trust (UK only) = 2.</td>
+</tr>
+<tr>
 <td>Applicants.CorporateDetails</td>
 <td>object</td>
 <td>Used for Corporate applicants.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Name</td>
+<td>string</td>
+<td>Name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.TradingName</td>
+<td>string</td>
+<td>Trading name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Identifications</td>
+<td></td>
+<td>Array of TFN / TIN / ABN / NIN</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.BusinessAddress</td>
@@ -1398,34 +1830,19 @@
 <td>Whether address is registered.</td>
 </tr>
 <tr>
+<td>Applicants.CorporateDetails.ContactIsSignatory</td>
+<td></td>
+<td>Whether the contact is a signatory on the account.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.ContactIsDirectorOrSignificantShareholder</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
 <td>Applicants.CorporateDetails.Contact</td>
 <td>object</td>
 <td>Primary contact</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Contact.NationalIdentifier</td>
-<td>object</td>
-<td>National identifier.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Contact.NationalIdentifier.CountryOfNationality</td>
-<td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierType</td>
-<td>enum</td>
-<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierCode</td>
-<td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Contact.ReceiveCommunicationByPost</td>
-<td>boolean</td>
-<td></td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Title</td>
@@ -1461,6 +1878,31 @@
 <td>Applicants.CorporateDetails.Contact.PhoneOther</td>
 <td>string</td>
 <td>Secondary contact number of Contact</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier</td>
+<td>object</td>
+<td>National identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>The applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>The applicant&#39;s national identifier type.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>The applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td></td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.IsPoliticallyExposedPerson</td>
@@ -1538,31 +1980,6 @@
 <td>Whether address is registered.</td>
 </tr>
 <tr>
-<td>Applicants.CorporateDetails.Signatories.NationalIdentifier</td>
-<td>object</td>
-<td>The signatory&#39;s national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
-<td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierType</td>
-<td>enum</td>
-<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierCode</td>
-<td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Signatories.ReceiveCommunicationByPost</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
 <td>Applicants.CorporateDetails.Signatories.Title</td>
 <td>string</td>
 <td>Title of signatory.</td>
@@ -1596,6 +2013,31 @@
 <td>Applicants.CorporateDetails.Signatories.PhoneOther</td>
 <td>string</td>
 <td>Secondary contact number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier</td>
+<td>object</td>
+<td>The signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>The applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>The applicant&#39;s national identifier type.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>The applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td></td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.IsPoliticallyExposedPerson</td>
@@ -1648,24 +2090,39 @@
 <td></td>
 </tr>
 <tr>
-<td>Applicants.CorporateDetails.ContactIsDirectorOrSignificantShareholder</td>
-<td>boolean</td>
-<td>Whether the contact is a signatory on the account.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.Name</td>
-<td>string</td>
-<td>Name of the corporate applicant.</td>
-</tr>
-<tr>
-<td>Applicants.CorporateDetails.TradingName</td>
-<td>string</td>
-<td>Trading name of the corporate applicant.</td>
-</tr>
-<tr>
 <td>Applicants.IndividualDetails</td>
 <td>object</td>
 <td>Used for Individual applicants.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Identifications</td>
+<td>array</td>
+<td>Tfn = 0, Abn = 1, Tin = 2, Nin = 3.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Identifications.Type</td>
+<td>enum</td>
+<td>Identification type of applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Identifications.Value</td>
+<td>string</td>
+<td>Identification value of applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Identifications.MissingReason</td>
+<td>enum</td>
+<td>CountryDoesntIssue = 1, DontNeedOne = 2, Other = 99.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Identifications.MissingReasonText</td>
+<td>string</td>
+<td>Reason identification of applicant is missing.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidenceCountryCode</td>
+<td>string</td>
+<td>Tax residence country code.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.CitizenshipCountryCode</td>
@@ -1828,29 +2285,9 @@
 <td></td>
 </tr>
 <tr>
-<td>Applicants.IndividualDetails.NationalIdentifier</td>
-<td>object</td>
-<td>The individual&#39;s national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.IndividualDetails.NationalIdentifier.CountryOfNationality</td>
+<td>Applicants.IndividualDetails.TaxFileNumber</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.IndividualDetails.NationalIdentifier.IdentifierType</td>
-<td>enum</td>
-<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
-</tr>
-<tr>
-<td>Applicants.IndividualDetails.NationalIdentifier.IdentifierCode</td>
-<td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
-</tr>
-<tr>
-<td>Applicants.IndividualDetails.ReceiveCommunicationByPost</td>
-<td>boolean</td>
-<td></td>
+<td>Tax File Number of the individual</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Title</td>
@@ -1886,6 +2323,31 @@
 <td>Applicants.IndividualDetails.PhoneOther</td>
 <td>string</td>
 <td>Other phone of the individual</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier</td>
+<td>object</td>
+<td>The individual&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>The applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>The applicant&#39;s national identifier type.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>The applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td></td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.IsPoliticallyExposedPerson</td>
@@ -2038,31 +2500,6 @@
 <td>Whether address is registered.</td>
 </tr>
 <tr>
-<td>Applicants.TrustDetails.Signatories.NationalIdentifier</td>
-<td>object</td>
-<td>The signatory&#39;s national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
-<td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierType</td>
-<td>enum</td>
-<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierCode</td>
-<td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.Signatories.ReceiveCommunicationByPost</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
 <td>Applicants.TrustDetails.Signatories.Title</td>
 <td>string</td>
 <td>Title of signatory.</td>
@@ -2098,6 +2535,31 @@
 <td>Secondary contact number of signatory.</td>
 </tr>
 <tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier</td>
+<td>object</td>
+<td>The signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>The applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>The applicant&#39;s national identifier type.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>The applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
 <td>Applicants.TrustDetails.Signatories.IsPoliticallyExposedPerson</td>
 <td>boolean</td>
 <td></td>
@@ -2111,6 +2573,21 @@
 <td>Applicants.TrustDetails.CorporateTrustees</td>
 <td>array</td>
 <td></td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Name</td>
+<td>string</td>
+<td>Name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.TradingName</td>
+<td>string</td>
+<td>Trading name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Identifications</td>
+<td></td>
+<td>Array of TFN / TIN / ABN / NIN</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress</td>
@@ -2203,34 +2680,19 @@
 <td>Whether address is registered.</td>
 </tr>
 <tr>
+<td>Applicants.TrustDetails.CorporateTrustees.ContactIsSignatory</td>
+<td></td>
+<td>Whether the contact is a signatory on the account.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.ContactIsDirectorOrSignificantShareholder</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact</td>
 <td>object</td>
 <td>Primary contact</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier</td>
-<td>object</td>
-<td>National identifier.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.CountryOfNationality</td>
-<td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierType</td>
-<td>enum</td>
-<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierCode</td>
-<td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Contact.ReceiveCommunicationByPost</td>
-<td>boolean</td>
-<td></td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.Title</td>
@@ -2266,6 +2728,31 @@
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.PhoneOther</td>
 <td>string</td>
 <td>Secondary contact number of Contact</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier</td>
+<td>object</td>
+<td>National identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>The applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>The applicant&#39;s national identifier type.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>The applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Contact.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td></td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.IsPoliticallyExposedPerson</td>
@@ -2343,31 +2830,6 @@
 <td>Whether address is registered.</td>
 </tr>
 <tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier</td>
-<td>object</td>
-<td>The signatory&#39;s national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.CountryOfNationality</td>
-<td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierType</td>
-<td>enum</td>
-<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierCode</td>
-<td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Signatories.ReceiveCommunicationByPost</td>
-<td>boolean</td>
-<td></td>
-</tr>
-<tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.Title</td>
 <td>string</td>
 <td>Title of signatory.</td>
@@ -2401,6 +2863,31 @@
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.PhoneOther</td>
 <td>string</td>
 <td>Secondary contact number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier</td>
+<td>object</td>
+<td>The signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>The applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>The applicant&#39;s national identifier type.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>The applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Signatories.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td></td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.IsPoliticallyExposedPerson</td>
@@ -2453,44 +2940,39 @@
 <td></td>
 </tr>
 <tr>
-<td>Applicants.TrustDetails.CorporateTrustees.ContactIsDirectorOrSignificantShareholder</td>
-<td>boolean</td>
-<td>Whether the contact is a signatory on the account.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.Name</td>
-<td>string</td>
-<td>Name of the corporate applicant.</td>
-</tr>
-<tr>
-<td>Applicants.TrustDetails.CorporateTrustees.TradingName</td>
-<td>string</td>
-<td>Trading name of the corporate applicant.</td>
-</tr>
-<tr>
-<td>Applicants.OwnerAdviserId</td>
-<td>integer</td>
-<td>The individual Owner Adviser ID.</td>
-</tr>
-<tr>
-<td>Applicants.ApplicantType<span class="required">required</span></td>
-<td>enum</td>
-<td>Individual = 0, Corporate = 1, Trust = 2.</td>
-</tr>
-<tr>
 <td>Accounts</td>
 <td>array</td>
 <td>Array of accounts to be opened with the application. Must be linked to an included applicant.</td>
 </tr>
 <tr>
+<td>Accounts.Name</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegisteredName</td>
+<td>string</td>
+<td>Account registered name.</td>
+</tr>
+<tr>
+<td>Accounts.ShortName</td>
+<td>string</td>
+<td>Account short name.</td>
+</tr>
+<tr>
+<td>Accounts.AccountType<span class="required">required</span></td>
+<td></td>
+<td>AU account types: Company = 13, Individual = 14 <br /> UK account types: Isa = 0, Gia = 1, OffshoreBond = 2, Qrops = 3, Rats = 4, Sipp = 5, PraemiumRetirementAccount = 6, Pera = 7, PersonalPension = 8, GroupSipp = 9, Ssas = 10, Jisa = 11, OnshoreBond = 12.</td>
+</tr>
+<tr>
+<td>Accounts.PdsId</td>
+<td>string</td>
+<td>PDS ID of account.</td>
+</tr>
+<tr>
 <td>Accounts.Fees</td>
 <td>array</td>
 <td>Account fees.</td>
-</tr>
-<tr>
-<td>Accounts.Fees.Type</td>
-<td>string</td>
-<td></td>
 </tr>
 <tr>
 <td>Accounts.Fees.Id</td>
@@ -2508,29 +2990,29 @@
 <td></td>
 </tr>
 <tr>
+<td>Accounts.Fees.Type</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.Models</td>
+<td>array</td>
+<td>Account models.</td>
+</tr>
+<tr>
+<td>Accounts.Models.Code</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.Models.Proportion</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
 <td>Accounts.BankAccounts</td>
 <td>array</td>
-<td>Bank accounts</td>
-</tr>
-<tr>
-<td>Accounts.BankAccounts.Bic</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.BankAccounts.Iban</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.BankAccounts.Type</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.BankAccounts.RoutingNumber</td>
-<td>string</td>
-<td></td>
+<td>Bank accounts.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.BankName</td>
@@ -2556,6 +3038,66 @@
 <td>Accounts.BankAccounts.Usages</td>
 <td>array</td>
 <td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.Bic</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.Iban</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.Type</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.RoutingNumber</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.Exclusions</td>
+<td>array</td>
+<td>Account exclusions.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security.Code</td>
+<td>string</td>
+<td>The security code of the security.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security.Exchange</td>
+<td>string</td>
+<td>The exchange code of the security.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment</td>
+<td>object</td>
+<td>Initial investment of account.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Cash</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Shares</td>
+<td>double</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1, ElectronicTransfer = 2, Cheque = 3.</td>
 </tr>
 <tr>
 <td>Accounts.TrustOrFundDetails</td>
@@ -2614,43 +3156,18 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td>object</td>
+<td></td>
 <td>Regular cash contributions to the SMA.</td>
 </tr>
 <tr>
-<td>Accounts.RegularContribution.Amount</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.RegularContribution.Method</td>
-<td>enum</td>
-<td>ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.</td>
-</tr>
-<tr>
-<td>Accounts.RegularContribution.Frequency</td>
-<td>enum</td>
-<td>Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.</td>
-</tr>
-<tr>
 <td>Accounts.RegularWithdrawal</td>
-<td>object</td>
+<td></td>
 <td>Regular cash withdrawals from the SMA.</td>
 </tr>
 <tr>
-<td>Accounts.RegularWithdrawal.Amount</td>
-<td>double</td>
+<td>Accounts.OwnerAdviserId</td>
+<td>integer</td>
 <td></td>
-</tr>
-<tr>
-<td>Accounts.RegularWithdrawal.Method</td>
-<td>enum</td>
-<td>ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.</td>
-</tr>
-<tr>
-<td>Accounts.RegularWithdrawal.Frequency</td>
-<td>enum</td>
-<td>Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.</td>
 </tr>
 <tr>
 <td>Accounts.Region</td>
@@ -2661,101 +3178,6 @@
 <td>Accounts.CurrencyCode</td>
 <td>string</td>
 <td></td>
-</tr>
-<tr>
-<td>Accounts.Name</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.RegisteredName</td>
-<td>string</td>
-<td>Account registered name.</td>
-</tr>
-<tr>
-<td>Accounts.ShortName</td>
-<td>string</td>
-<td>Account short name.</td>
-</tr>
-<tr>
-<td>Accounts.AccountType<span class="required">required</span></td>
-<td>enum</td>
-<td>Isa = 0, Gia = 1, OffshoreBond = 2, Qrops = 3, Rats = 4, Sipp = 5, PraemiumRetirementAccount = 6, Pera = 7, PersonalPension = 8, GroupSipp = 9, Ssas = 10, Jisa = 11, OnshoreBond = 12.</td>
-</tr>
-<tr>
-<td>Accounts.PdsId</td>
-<td>string</td>
-<td>PDS ID of account.</td>
-</tr>
-<tr>
-<td>Accounts.Models</td>
-<td>array</td>
-<td>Account models.</td>
-</tr>
-<tr>
-<td>Accounts.Models.Code</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.Models.Proportion</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.Exclusions</td>
-<td>array</td>
-<td>Account exclusions.</td>
-</tr>
-<tr>
-<td>Accounts.Exclusions.Security</td>
-<td>object</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.Exclusions.Security.Code</td>
-<td>string</td>
-<td>The security code of the security.</td>
-</tr>
-<tr>
-<td>Accounts.Exclusions.Security.Exchange</td>
-<td>string</td>
-<td>The exchange code of the security.</td>
-</tr>
-<tr>
-<td>Accounts.InitialInvestment</td>
-<td>object</td>
-<td>Initial investment of account.</td>
-</tr>
-<tr>
-<td>Accounts.InitialInvestment.Cash</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.InitialInvestment.Shares</td>
-<td>double</td>
-<td></td>
-</tr>
-<tr>
-<td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
-<td>enum</td>
-<td>ElectronicTransfer = 2, Cheque = 3.</td>
-</tr>
-<tr>
-<td>Accounts.OwnerAdviserId</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>AdviserId<span class="required">required</span></td>
-<td>integer</td>
-<td>The adviser ID to create the application under.</td>
-</tr>
-<tr>
-<td>OwnerAdviserId</td>
-<td>integer</td>
-<td>The owner adviser ID to create the application under.</td>
 </tr>
 </tbody></table>
 
@@ -2791,7 +3213,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2885,7 +3307,354 @@
 </tbody></table>
 
 <p><br/></p>
+<h1 id='app-form'>App Form</h1><h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
 
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
+<span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
+</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td></td>
+<td>Adviser = 0, Investor = 1 (UK only)</td>
+</tr>
+<tr>
+<td>FormType</td>
+<td></td>
+<td>Digital = 0, Paper = 1 (UK only)</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='account-model-weightings'>Account Model Weightings</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ModelCode</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>Percent</td>
+<td>double</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">    
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-3'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>RebalanceType<span class="required">required</span></td>
+<td>integer</td>
+<td>Floating = 0, Fixed = 1.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings<span class="required">required</span></td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td>AccountModelWeightings.ModelCode</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>AccountModelWeightings.Percent</td>
+<td>double</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='sso-login'>SSO Login</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Platform"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-4'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Application<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>UserId<span class="required">required</span></td>
+<td>integer</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"SsoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.onpraemium.com/useraccount/sso?token=XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXX"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SsoUrl</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='users'>Users</h1><h3 id='get-user'><span class="get">GET</span> User</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/user/{username}</p>
+
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameters - Path Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">UserName</span><span class="pi">:</span> <span class="s">john_smith</span>
+</code></pre></div><h5 id='request-parameters-path-2'>Request Parameters - Path</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>UserName<span class="required">required</span></td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>UserId</td>
+<td>integer</td>
+<td>User ID</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='rate-limiting'>Rate Limiting</h1>
+<p>The Praemium API limits requests made to each Praemium service.</p>
+
+<p>The default is 1000 requests per minute, if you hit the limit the API will return HTTP code 429 (Too many requests). If you genuinely need to make more requests, please speak to our support team.</p>
+
+<aside class="warning">
+We reserve the right to disable your access to the API if this rate limit is abused.
+</aside>
+<h2 id='response-codes'>Response Codes</h2>
+<p>The Praemium API communicates errors through standard HTTP status codes paired. Generally the following pattern will apply:</p>
+
+<blockquote>
+<p><strong>400 - Bad Request</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unexpected character encountered while parsing value: d. Path 'AccountId', line 2, position 23."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
       </div>
       <div class="dark-box">
       </div>

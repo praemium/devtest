@@ -787,7 +787,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -1013,7 +1013,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -1451,7 +1451,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -1808,7 +1808,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2075,7 +2075,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2301,7 +2301,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2731,7 +2731,7 @@
             "schema": {
               "$ref": "#/definitions/PaymentMethods"
             },
-            "description": "",
+            "description": "ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2784,7 +2784,7 @@
             "schema": {
               "$ref": "#/definitions/PaymentMethods"
             },
-            "description": "",
+            "description": "ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -5466,7 +5466,7 @@
           "type": "string"
         },
         "IdentifierType": {
-          "description": "The applicant's national identifier type.",
+          "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
           "minLength": 0,
           "$ref": "#/definitions/DraftIdentifierType"
         },
@@ -6088,7 +6088,7 @@
           "type": "number"
         },
         "Method": {
-          "description": "",
+          "description": "ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.",
           "minLength": 0,
           "$ref": "#/definitions/PaymentMethods"
         },
@@ -6402,7 +6402,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.11.25",
+    "version": "2020.11.26",
     "title": "Public API"
   }
 }
