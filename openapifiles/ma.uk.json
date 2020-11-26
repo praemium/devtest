@@ -866,14 +866,14 @@
             "name": "Applicants.CorporateDetails.Contact.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Whether applicant is politically exposed.",
             "type": "boolean"
           },
           {
             "name": "Applicants.CorporateDetails.Contact.PepDetails",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If applicant is politically exposed, details must be supplied.",
             "type": "string"
           },
           {
@@ -920,7 +920,7 @@
             "name": "Applicants.CorporateDetails.Signatories.CountryOfBirth",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Country of Birth of signatory.",
             "type": "string"
           },
           {
@@ -930,7 +930,7 @@
             "schema": {
               "$ref": "#/definitions/DraftAddressUK"
             },
-            "description": "",
+            "description": "Address of signatory.",
             "type": "object"
           },
           {
@@ -1035,7 +1035,7 @@
             "name": "Applicants.CorporateDetails.Signatories.ReceiveCommunicationByPost",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If you would like to opt out of electronic communications.",
             "type": "boolean"
           },
           {
@@ -1092,14 +1092,14 @@
             "name": "Applicants.CorporateDetails.Signatories.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Whether applicant is politically exposed.",
             "type": "boolean"
           },
           {
             "name": "Applicants.CorporateDetails.Signatories.PepDetails",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If applicant is politically exposed, details must be supplied.",
             "type": "string"
           },
           {
@@ -1120,7 +1120,7 @@
             "name": "Applicants.CorporateDetails.Lei",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "LEI of the Company.",
             "type": "string"
           },
           {
@@ -1142,7 +1142,7 @@
             "name": "Applicants.CorporateDetails.NatureOfActivities",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The nature of activities that the Company performs.",
             "type": "string"
           },
           {
@@ -1201,7 +1201,7 @@
             "name": "Applicants.IndividualDetails.BirthCountryCode",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Country of Birth of applicant.",
             "type": "string"
           },
           {
@@ -1380,7 +1380,7 @@
             "name": "Applicants.IndividualDetails.TaxResidences.From",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "From date that applicant held tax residence in that country.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -1388,7 +1388,7 @@
             "name": "Applicants.IndividualDetails.TaxResidences.To",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "To date that applicant held tax residence in that country.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -1715,7 +1715,7 @@
             "name": "Applicants.TrustDetails.Signatories.CountryOfBirth",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Country of Birth of signatory.",
             "type": "string"
           },
           {
@@ -1725,7 +1725,7 @@
             "schema": {
               "$ref": "#/definitions/DraftAddressUK"
             },
-            "description": "",
+            "description": "Address of signatory.",
             "type": "object"
           },
           {
@@ -1830,7 +1830,7 @@
             "name": "Applicants.TrustDetails.Signatories.ReceiveCommunicationByPost",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If you would like to opt out of electronic communications.",
             "type": "boolean"
           },
           {
@@ -1887,14 +1887,14 @@
             "name": "Applicants.TrustDetails.Signatories.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Whether applicant is politically exposed.",
             "type": "boolean"
           },
           {
             "name": "Applicants.TrustDetails.Signatories.PepDetails",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If applicant is politically exposed, details must be supplied.",
             "type": "string"
           },
           {
@@ -2154,14 +2154,14 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Whether applicant is politically exposed.",
             "type": "boolean"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.PepDetails",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If applicant is politically exposed, details must be supplied.",
             "type": "string"
           },
           {
@@ -2208,7 +2208,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.CountryOfBirth",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Country of Birth of signatory.",
             "type": "string"
           },
           {
@@ -2218,7 +2218,7 @@
             "schema": {
               "$ref": "#/definitions/DraftAddressUK"
             },
-            "description": "",
+            "description": "Address of signatory.",
             "type": "object"
           },
           {
@@ -2323,7 +2323,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.ReceiveCommunicationByPost",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If you would like to opt out of electronic communications.",
             "type": "boolean"
           },
           {
@@ -2380,14 +2380,14 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.IsPoliticallyExposedPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Whether applicant is politically exposed.",
             "type": "boolean"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.PepDetails",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If applicant is politically exposed, details must be supplied.",
             "type": "string"
           },
           {
@@ -2408,7 +2408,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Lei",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "LEI of the Company.",
             "type": "string"
           },
           {
@@ -2430,7 +2430,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.NatureOfActivities",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The nature of activities that the Company performs.",
             "type": "string"
           },
           {
@@ -2561,14 +2561,14 @@
             "name": "Accounts.BankAccounts.Bic",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The Bank Identifier Code (BIC) of your banking institution.",
             "type": "string"
           },
           {
             "name": "Accounts.BankAccounts.Iban",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The International Bank Account Number (IBAN) of your banking institution.",
             "type": "string"
           },
           {
@@ -2582,7 +2582,7 @@
             "name": "Accounts.BankAccounts.RoutingNumber",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The routing number of your banking institution.",
             "type": "string"
           },
           {
@@ -2639,7 +2639,7 @@
             "name": "Accounts.TrustOrFundDetails.Name",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The name of the Trust or Fund.",
             "type": "string"
           },
           {
@@ -2682,28 +2682,28 @@
             "name": "Accounts.ProductProviderName",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Product provider name.",
             "type": "string"
           },
           {
             "name": "Accounts.ProductProviderReference",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Product provider reference.",
             "type": "string"
           },
           {
             "name": "Accounts.ProductName",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Product name.",
             "type": "string"
           },
           {
             "name": "Accounts.ProductId",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Product Id.",
             "type": "string"
           },
           {
@@ -2720,7 +2720,7 @@
             "name": "Accounts.RegularContribution.Amount",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The amount of the regular contribution.",
             "format": "double",
             "type": "double"
           },
@@ -2773,7 +2773,7 @@
             "name": "Accounts.RegularWithdrawal.Amount",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "The amount of the regular contribution.",
             "format": "double",
             "type": "double"
           },
@@ -2839,7 +2839,7 @@
             "name": "Accounts.Name",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Account name.",
             "type": "string"
           },
           {
@@ -2937,7 +2937,7 @@
             "schema": {
               "$ref": "#/definitions/DraftSecurity"
             },
-            "description": "",
+            "description": "The security code of the exclusion.",
             "type": "object"
           },
           {
@@ -5231,7 +5231,7 @@
     "DraftExclusion": {
       "properties": {
         "Security": {
-          "description": "",
+          "description": "The security code of the exclusion.",
           "minLength": 0,
           "$ref": "#/definitions/DraftSecurity"
         }
@@ -5528,12 +5528,12 @@
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
-          "description": "",
+          "description": "Whether applicant is politically exposed.",
           "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
-          "description": "",
+          "description": "If applicant is politically exposed, details must be supplied.",
           "minLength": 0,
           "type": "string"
         }
@@ -5554,12 +5554,12 @@
           "type": "string"
         },
         "CountryOfBirth": {
-          "description": "",
+          "description": "Country of Birth of signatory.",
           "minLength": 0,
           "type": "string"
         },
         "Address": {
-          "description": "",
+          "description": "Address of signatory.",
           "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
@@ -5569,7 +5569,7 @@
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
-          "description": "",
+          "description": "If you would like to opt out of electronic communications.",
           "minLength": 0,
           "type": "boolean"
         },
@@ -5610,12 +5610,12 @@
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
-          "description": "",
+          "description": "Whether applicant is politically exposed.",
           "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
-          "description": "",
+          "description": "If applicant is politically exposed, details must be supplied.",
           "minLength": 0,
           "type": "string"
         }
@@ -5659,7 +5659,7 @@
           "type": "string"
         },
         "Lei": {
-          "description": "",
+          "description": "LEI of the Company.",
           "minLength": 0,
           "type": "string"
         },
@@ -5675,7 +5675,7 @@
           "type": "string"
         },
         "NatureOfActivities": {
-          "description": "",
+          "description": "The nature of activities that the Company performs.",
           "minLength": 0,
           "type": "string"
         },
@@ -5716,13 +5716,13 @@
           "type": "string"
         },
         "From": {
-          "description": "",
+          "description": "From date that applicant held tax residence in that country.",
           "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "To": {
-          "description": "",
+          "description": "To date that applicant held tax residence in that country.",
           "minLength": 0,
           "format": "date-time",
           "type": "string"
@@ -5749,7 +5749,7 @@
           "type": "string"
         },
         "BirthCountryCode": {
-          "description": "",
+          "description": "Country of Birth of applicant.",
           "minLength": 0,
           "type": "string"
         },
@@ -5997,12 +5997,12 @@
     "DraftAccountBankAccountUK": {
       "properties": {
         "Bic": {
-          "description": "",
+          "description": "The Bank Identifier Code (BIC) of your banking institution.",
           "minLength": 0,
           "type": "string"
         },
         "Iban": {
-          "description": "",
+          "description": "The International Bank Account Number (IBAN) of your banking institution.",
           "minLength": 0,
           "type": "string"
         },
@@ -6012,7 +6012,7 @@
           "type": "string"
         },
         "RoutingNumber": {
-          "description": "",
+          "description": "The routing number of your banking institution.",
           "minLength": 0,
           "type": "string"
         },
@@ -6051,7 +6051,7 @@
     "TrustOrFundDetails": {
       "properties": {
         "Name": {
-          "description": "",
+          "description": "The name of the Trust or Fund.",
           "minLength": 0,
           "type": "string"
         },
@@ -6082,7 +6082,7 @@
     "ApplicationRegularTransaction": {
       "properties": {
         "Amount": {
-          "description": "",
+          "description": "The amount of the regular contribution.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -6151,22 +6151,22 @@
           "type": "boolean"
         },
         "ProductProviderName": {
-          "description": "",
+          "description": "Product provider name.",
           "minLength": 0,
           "type": "string"
         },
         "ProductProviderReference": {
-          "description": "",
+          "description": "Product provider reference.",
           "minLength": 0,
           "type": "string"
         },
         "ProductName": {
-          "description": "",
+          "description": "Product name.",
           "minLength": 0,
           "type": "string"
         },
         "ProductId": {
-          "description": "",
+          "description": "Product Id.",
           "minLength": 0,
           "type": "string"
         },
@@ -6191,7 +6191,7 @@
           "type": "string"
         },
         "Name": {
-          "description": "",
+          "description": "Account name.",
           "minLength": 0,
           "type": "string"
         },
