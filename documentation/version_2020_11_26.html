@@ -337,8 +337,8 @@ We have a number of different endpoints available. To check what you have access
 <table><thead>
 <tr>
 <th></th>
-<th>Standard</th>
-<th>SMA/Robo</th>
+<th>VMA</th>
+<th>Managed Accounts</th>
 <th>Enterprise</th>
 <th>Model Manager</th>
 </tr>
@@ -1837,7 +1837,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.ContactIsDirectorOrSignificantShareholder</td>
 <td>boolean</td>
-<td></td>
+<td>Whether the contact is a director or significant shareholder on the account.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact</td>
@@ -1902,17 +1902,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.Contact.ReceiveCommunicationByPost</td>
 <td>boolean</td>
-<td></td>
+<td>If you would like to opt out of electronic communications.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.IsPoliticallyExposedPerson</td>
 <td>boolean</td>
-<td></td>
+<td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.PepDetails</td>
 <td>string</td>
-<td></td>
+<td>If applicant is politically exposed, details must be supplied.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories</td>
@@ -1932,12 +1932,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td></td>
+<td>Country of Birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.Address</td>
 <td>object</td>
-<td></td>
+<td>Address of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.Address.Addressee</td>
@@ -2037,47 +2037,47 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.Signatories.ReceiveCommunicationByPost</td>
 <td>boolean</td>
-<td></td>
+<td>If you would like to opt out of electronic communications.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.IsPoliticallyExposedPerson</td>
 <td>boolean</td>
-<td></td>
+<td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.PepDetails</td>
 <td>string</td>
-<td></td>
+<td>If applicant is politically exposed, details must be supplied.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.CompanyRegistrationNumber</td>
 <td>string</td>
-<td>Register number of the company</td>
+<td>Register number of the company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.TaxId</td>
 <td>string</td>
-<td>Tax Identity of the company</td>
+<td>Tax Identity of the company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Lei</td>
 <td>string</td>
-<td></td>
+<td>LEI of the Company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.CountryOfIncorporation</td>
 <td>string</td>
-<td>Country of Incorporation of the Company</td>
+<td>Country of Incorporation of the Company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.DateOfIncorporation</td>
 <td>date-time</td>
-<td>Date of Incorporation of the Company</td>
+<td>Date of Incorporation of the Company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.NatureOfActivities</td>
 <td>string</td>
-<td></td>
+<td>The nature of activities that the Company performs.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.NameOfRegulator</td>
@@ -2252,12 +2252,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.From</td>
 <td>date-time</td>
-<td></td>
+<td>From date that applicant held tax residence in that country.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.To</td>
 <td>date-time</td>
-<td></td>
+<td>To date that applicant held tax residence in that country.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.Identification</td>
@@ -2347,7 +2347,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.IndividualDetails.ReceiveCommunicationByPost</td>
 <td>boolean</td>
-<td></td>
+<td>If you would like to opt out of electronic communications.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.IsPoliticallyExposedPerson</td>
@@ -2452,12 +2452,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td></td>
+<td>Country of Birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.Address</td>
 <td>object</td>
-<td></td>
+<td>Address of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.Address.Addressee</td>
@@ -2557,17 +2557,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.Signatories.ReceiveCommunicationByPost</td>
 <td>boolean</td>
-<td></td>
+<td>If you would like to opt out of electronic communications.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.IsPoliticallyExposedPerson</td>
 <td>boolean</td>
-<td></td>
+<td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.PepDetails</td>
 <td>string</td>
-<td></td>
+<td>If applicant is politically exposed, details must be supplied.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees</td>
@@ -2687,7 +2687,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.ContactIsDirectorOrSignificantShareholder</td>
 <td>boolean</td>
-<td></td>
+<td>Whether the contact is a director or significant shareholder on the account.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact</td>
@@ -2752,17 +2752,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.ReceiveCommunicationByPost</td>
 <td>boolean</td>
-<td></td>
+<td>If you would like to opt out of electronic communications.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.IsPoliticallyExposedPerson</td>
 <td>boolean</td>
-<td></td>
+<td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.PepDetails</td>
 <td>string</td>
-<td></td>
+<td>If applicant is politically exposed, details must be supplied.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories</td>
@@ -2782,12 +2782,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td></td>
+<td>Country of Birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.Address</td>
 <td>object</td>
-<td></td>
+<td>Address of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.Address.Addressee</td>
@@ -2887,47 +2887,47 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.ReceiveCommunicationByPost</td>
 <td>boolean</td>
-<td></td>
+<td>If you would like to opt out of electronic communications.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.IsPoliticallyExposedPerson</td>
 <td>boolean</td>
-<td></td>
+<td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.PepDetails</td>
 <td>string</td>
-<td></td>
+<td>If applicant is politically exposed, details must be supplied.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.CompanyRegistrationNumber</td>
 <td>string</td>
-<td>Register number of the company</td>
+<td>Register number of the company.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.TaxId</td>
 <td>string</td>
-<td>Tax Identity of the company</td>
+<td>Tax Identity of the company.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Lei</td>
 <td>string</td>
-<td></td>
+<td>LEI of the Company.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.CountryOfIncorporation</td>
 <td>string</td>
-<td>Country of Incorporation of the Company</td>
+<td>Country of Incorporation of the Company.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.DateOfIncorporation</td>
 <td>date-time</td>
-<td>Date of Incorporation of the Company</td>
+<td>Date of Incorporation of the Company.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.NatureOfActivities</td>
 <td>string</td>
-<td></td>
+<td>The nature of activities that the Company performs.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.NameOfRegulator</td>
@@ -3042,12 +3042,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.BankAccounts.Bic</td>
 <td>string</td>
-<td></td>
+<td>The Bank Identifier Code (BIC) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Iban</td>
 <td>string</td>
-<td></td>
+<td>The International Bank Account Number (IBAN) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Type</td>
@@ -3057,7 +3057,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.BankAccounts.RoutingNumber</td>
 <td>string</td>
-<td></td>
+<td>The Brouting number of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.Exclusions</td>
@@ -3067,7 +3067,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.Exclusions.Security</td>
 <td>object</td>
-<td></td>
+<td>The security code of the exclusion.</td>
 </tr>
 <tr>
 <td>Accounts.Exclusions.Security.Code</td>
