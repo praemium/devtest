@@ -1564,7 +1564,7 @@
             "schema": {
               "$ref": "#/definitions/TrustNature"
             },
-            "description": "Nature of the trust.",
+            "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, InterestInPossession = 3, Discretionary = 4, Accumulation = 5, SettlorInterested = 6, Grantor = 7, SinglePersonalPension = 8, MultipleMemberPersonalPension = 9, SingleMemberSsas = 10, MultipleMemberSsas = 11, Loan = 12.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -5888,7 +5888,7 @@
           "type": "string"
         },
         "NatureOfTrust": {
-          "description": "Nature of the trust.",
+          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, InterestInPossession = 3, Discretionary = 4, Accumulation = 5, SettlorInterested = 6, Grantor = 7, SinglePersonalPension = 8, MultipleMemberPersonalPension = 9, SingleMemberSsas = 10, MultipleMemberSsas = 11, Loan = 12.",
           "minLength": 0,
           "$ref": "#/definitions/TrustNature"
         },
