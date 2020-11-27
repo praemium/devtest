@@ -1149,14 +1149,14 @@
             "name": "Applicants.CorporateDetails.NameOfRegulator",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Name of regulator.",
             "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.RegulatorReferenceNumber",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Regulator reference number.",
             "type": "string"
           },
           {
@@ -1403,28 +1403,28 @@
             "name": "Applicants.IndividualDetails.TaxResidences.NoDocument",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If the appplicant does not hold a identification document.",
             "type": "boolean"
           },
           {
             "name": "Applicants.IndividualDetails.UsPerson",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Select if applicant is from the US.",
             "type": "boolean"
           },
           {
             "name": "Applicants.IndividualDetails.SourceOfWealth",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Provide the applicant's source of wealth.",
             "type": "string"
           },
           {
             "name": "Applicants.IndividualDetails.Profession",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Provide the applicant's profession.",
             "type": "string"
           },
           {
@@ -1473,7 +1473,7 @@
             "name": "Applicants.IndividualDetails.ReceiveCommunicationByPost",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If you would like to opt out of electronic communications.",
             "type": "boolean"
           },
           {
@@ -1487,21 +1487,21 @@
             "name": "Applicants.IndividualDetails.FirstName",
             "in": "body",
             "required": false,
-            "description": "First name of individual",
+            "description": "First name of individual.",
             "type": "string"
           },
           {
             "name": "Applicants.IndividualDetails.LastName",
             "in": "body",
             "required": false,
-            "description": "Last name of individual",
+            "description": "Last name of individual.",
             "type": "string"
           },
           {
             "name": "Applicants.IndividualDetails.DateOfBirth",
             "in": "body",
             "required": false,
-            "description": "Date of birth of the individual",
+            "description": "Date of birth of the individual.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -1509,21 +1509,21 @@
             "name": "Applicants.IndividualDetails.Email",
             "in": "body",
             "required": false,
-            "description": "E-mail address of the individual",
+            "description": "E-mail address of the individual.",
             "type": "string"
           },
           {
             "name": "Applicants.IndividualDetails.Phone",
             "in": "body",
             "required": false,
-            "description": "Primary contact number of the individual",
+            "description": "Primary contact number of the individual.",
             "type": "string"
           },
           {
             "name": "Applicants.IndividualDetails.PhoneOther",
             "in": "body",
             "required": false,
-            "description": "Other phone of the individual",
+            "description": "Other phone of the individual.",
             "type": "string"
           },
           {
@@ -1547,7 +1547,7 @@
             "schema": {
               "$ref": "#/definitions/DraftTrustApplicantUK"
             },
-            "description": "",
+            "description": "Used for Trust applicants.",
             "type": "object"
           },
           {
@@ -1564,7 +1564,7 @@
             "schema": {
               "$ref": "#/definitions/TrustNature"
             },
-            "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, InterestInPossession = 3, Discretionary = 4, Accumulation = 5, SettlorInterested = 6, Grantor = 7, SinglePersonalPension = 8, MultipleMemberPersonalPension = 9, SingleMemberSsas = 10, MultipleMemberSsas = 11, Loan = 12.",
+            "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in posession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -1587,14 +1587,14 @@
             "name": "Applicants.TrustDetails.Lei",
             "in": "body",
             "required": false,
-            "description": "LEI of Trust",
+            "description": "LEI of Trust.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.DateOfEstablishment",
             "in": "body",
             "required": false,
-            "description": "Date Trust was established",
+            "description": "Date Trust was established.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -1602,7 +1602,7 @@
             "name": "Applicants.TrustDetails.TaxDomicile",
             "in": "body",
             "required": false,
-            "description": "Tax domicile of Trust",
+            "description": "Tax domicile of Trust.",
             "type": "string"
           },
           {
@@ -1612,7 +1612,7 @@
             "schema": {
               "$ref": "#/definitions/DraftAddressUK"
             },
-            "description": "Address of Trust",
+            "description": "Address of Trust.",
             "type": "object"
           },
           {
@@ -1680,7 +1680,7 @@
                 "$ref": "#/definitions/DraftSignatoryUK"
               }
             },
-            "description": "",
+            "description": "Signatories of the trust.",
             "type": "array"
           },
           {
@@ -1906,7 +1906,7 @@
                 "$ref": "#/definitions/DraftCorporateApplicantUK"
               }
             },
-            "description": "",
+            "description": "Corporate trustees of the trust.",
             "type": "array"
           },
           {
@@ -2437,14 +2437,14 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.NameOfRegulator",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Name of regulator.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.RegulatorReferenceNumber",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Regulator reference number.",
             "type": "string"
           },
           {
@@ -2589,7 +2589,7 @@
             "name": "Accounts.BankAccounts.BankName",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Bank account name.",
             "type": "string"
           },
           {
@@ -5680,12 +5680,12 @@
           "type": "string"
         },
         "NameOfRegulator": {
-          "description": "",
+          "description": "Name of regulator.",
           "minLength": 0,
           "type": "string"
         },
         "RegulatorReferenceNumber": {
-          "description": "",
+          "description": "Regulator reference number.",
           "minLength": 0,
           "type": "string"
         },
@@ -5733,7 +5733,7 @@
           "type": "string"
         },
         "NoDocument": {
-          "description": "",
+          "description": "If the appplicant does not hold a identification document.",
           "minLength": 0,
           "type": "boolean"
         }
@@ -5787,17 +5787,17 @@
           "type": "array"
         },
         "UsPerson": {
-          "description": "",
+          "description": "Select if applicant is from the US.",
           "minLength": 0,
           "type": "boolean"
         },
         "SourceOfWealth": {
-          "description": "",
+          "description": "Provide the applicant's source of wealth.",
           "minLength": 0,
           "type": "string"
         },
         "Profession": {
-          "description": "",
+          "description": "Provide the applicant's profession.",
           "minLength": 0,
           "type": "string"
         },
@@ -5807,7 +5807,7 @@
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
-          "description": "",
+          "description": "If you would like to opt out of electronic communications.",
           "minLength": 0,
           "type": "boolean"
         },
@@ -5817,33 +5817,33 @@
           "type": "string"
         },
         "FirstName": {
-          "description": "First name of individual",
+          "description": "First name of individual.",
           "minLength": 0,
           "type": "string"
         },
         "LastName": {
-          "description": "Last name of individual",
+          "description": "Last name of individual.",
           "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
-          "description": "Date of birth of the individual",
+          "description": "Date of birth of the individual.",
           "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
-          "description": "E-mail address of the individual",
+          "description": "E-mail address of the individual.",
           "minLength": 0,
           "type": "string"
         },
         "Phone": {
-          "description": "Primary contact number of the individual",
+          "description": "Primary contact number of the individual.",
           "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
-          "description": "Other phone of the individual",
+          "description": "Other phone of the individual.",
           "minLength": 0,
           "type": "string"
         },
@@ -5888,33 +5888,33 @@
           "type": "string"
         },
         "NatureOfTrust": {
-          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, InterestInPossession = 3, Discretionary = 4, Accumulation = 5, SettlorInterested = 6, Grantor = 7, SinglePersonalPension = 8, MultipleMemberPersonalPension = 9, SingleMemberSsas = 10, MultipleMemberSsas = 11, Loan = 12.",
+          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in posession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
           "minLength": 0,
           "$ref": "#/definitions/TrustNature"
         },
         "Lei": {
-          "description": "LEI of Trust",
+          "description": "LEI of Trust.",
           "minLength": 0,
           "type": "string"
         },
         "DateOfEstablishment": {
-          "description": "Date Trust was established",
+          "description": "Date Trust was established.",
           "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "TaxDomicile": {
-          "description": "Tax domicile of Trust",
+          "description": "Tax domicile of Trust.",
           "minLength": 0,
           "type": "string"
         },
         "Address": {
-          "description": "Address of Trust",
+          "description": "Address of Trust.",
           "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "Signatories": {
-          "description": "",
+          "description": "Signatories of the trust.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftSignatoryUK"
@@ -5922,7 +5922,7 @@
           "type": "array"
         },
         "CorporateTrustees": {
-          "description": "",
+          "description": "Corporate trustees of the trust.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftCorporateApplicantUK"
@@ -5946,7 +5946,7 @@
           "$ref": "#/definitions/DraftIndividualApplicantUK"
         },
         "TrustDetails": {
-          "description": "",
+          "description": "Used for Trust applicants.",
           "minLength": 0,
           "$ref": "#/definitions/DraftTrustApplicantUK"
         },
@@ -6017,7 +6017,7 @@
           "type": "string"
         },
         "BankName": {
-          "description": "",
+          "description": "Bank account name.",
           "minLength": 0,
           "type": "string"
         },
@@ -6402,7 +6402,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.11.26",
+    "version": "2020.11.27",
     "title": "Public API"
   }
 }
