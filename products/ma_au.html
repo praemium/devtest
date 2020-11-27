@@ -1067,7 +1067,7 @@
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"BankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"AccountBsb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12012"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Bsb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12012"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"AccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6555555567"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank1"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"Usages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1609,14 +1609,14 @@
 <td>Bank accounts</td>
 </tr>
 <tr>
-<td>Accounts.BankAccounts.BankName</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
 <td>Accounts.BankAccounts.Bsb</td>
 <td>string</td>
 <td>Bank account BSB.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.Usages</td>
+<td>array</td>
+<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.AccountNumber</td>
@@ -1627,11 +1627,6 @@
 <td>Accounts.BankAccounts.AccountName</td>
 <td>string</td>
 <td>Bank account name.</td>
-</tr>
-<tr>
-<td>Accounts.BankAccounts.Usages</td>
-<td>array</td>
-<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
 </tr>
 <tr>
 <td>Accounts.Name</td>
