@@ -4222,7 +4222,7 @@
     "PdsFee": {
       "properties": {
         "Id": {
-          "description": "Id of fee",
+          "description": "Id of fee.",
           "minLength": 0,
           "type": "string"
         },
@@ -4402,7 +4402,7 @@
     "FeeTier": {
       "properties": {
         "From": {
-          "description": "",
+          "description": "Date from when the fee tier is applicable.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4616,12 +4616,12 @@
           "type": "array"
         },
         "Id": {
-          "description": "The ID of the PDS",
+          "description": "The ID of the PDS.",
           "minLength": 0,
           "type": "string"
         },
         "Name": {
-          "description": "The name of the PDS",
+          "description": "The name of the PDS.",
           "minLength": 0,
           "type": "string"
         },
@@ -4637,7 +4637,7 @@
           "type": "boolean"
         },
         "Status": {
-          "description": "PDS Status",
+          "description": "PDS Status.",
           "minLength": 0,
           "type": "string"
         },
