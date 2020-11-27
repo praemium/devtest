@@ -809,7 +809,7 @@
             "name": "Applicants.CorporateDetails.Contact.ReceiveCommunicationByPost",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If you would like to opt out of electronic communications.",
             "type": "boolean"
           },
           {
@@ -2097,7 +2097,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.ReceiveCommunicationByPost",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "If you would like to opt out of electronic communications.",
             "type": "boolean"
           },
           {
@@ -2606,7 +2606,7 @@
             "schema": {
               "$ref": "#/definitions/TrustOrFundDetails"
             },
-            "description": "",
+            "description": "Trust or Fund details.",
             "type": "object"
           },
           {
@@ -2942,7 +2942,7 @@
             "name": "Accounts.InitialInvestment.Cash",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Select if the inital investment will include cash.",
             "format": "double",
             "type": "double"
           },
@@ -2950,7 +2950,7 @@
             "name": "Accounts.InitialInvestment.Shares",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Select if the inital investment will include shares.",
             "format": "double",
             "type": "double"
           },
@@ -2976,7 +2976,7 @@
             "name": "Accounts.OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Owner Adviser Id.",
             "format": "int32",
             "type": "integer"
           },
@@ -5218,13 +5218,13 @@
     "DraftInitialInvestment": {
       "properties": {
         "Cash": {
-          "description": "",
+          "description": "Select if the inital investment will include cash.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Shares": {
-          "description": "",
+          "description": "Select if the inital investment will include shares.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -5356,7 +5356,7 @@
     "ApplicationUploadResult": {
       "properties": {
         "ApplicationId": {
-          "description": "",
+          "description": "Application Id.",
           "minLength": 0,
           "format": "uuid",
           "type": "string"
@@ -5451,7 +5451,7 @@
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
-          "description": "",
+          "description": "If you would like to opt out of electronic communications.",
           "minLength": 0,
           "type": "boolean"
         },
@@ -6076,7 +6076,7 @@
           "type": "array"
         },
         "TrustOrFundDetails": {
-          "description": "",
+          "description": "Trust or Fund details.",
           "minLength": 0,
           "$ref": "#/definitions/TrustOrFundDetails"
         },
@@ -6183,7 +6183,7 @@
           "$ref": "#/definitions/DraftInitialInvestment"
         },
         "OwnerAdviserId": {
-          "description": "",
+          "description": "Owner Adviser Id.",
           "minLength": 0,
           "format": "int32",
           "type": "integer"
