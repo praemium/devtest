@@ -4121,19 +4121,19 @@
     "PdsFeeTier": {
       "properties": {
         "ValueAppliedFrom": {
-          "description": "",
+          "description": "Date the value is applied from",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "FeePercent": {
-          "description": "",
+          "description": "Fee percent.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "FeePercentWithTax": {
-          "description": "",
+          "description": "Fee percent with tax.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4145,25 +4145,25 @@
     "PdsFeeOverwriteSettings": {
       "properties": {
         "MinAmount": {
-          "description": "",
+          "description": "Fee overwrite minimum amount.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "MaxAmount": {
-          "description": "",
+          "description": "Fee overwrite maximum amount.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "MinAmountWithTax": {
-          "description": "",
+          "description": "Fee overwrite minimum amount with tax.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "MaxAmountWithTax": {
-          "description": "",
+          "description": "Fee overwrite maximum amount with tax.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4204,13 +4204,13 @@
           "$ref": "#/definitions/FeeIndexationType"
         },
         "Value": {
-          "description": "",
+          "description": "Fee indexation value.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "ValueMax": {
-          "description": "",
+          "description": "Fee indexation maximum value.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4242,7 +4242,7 @@
           "type": "string"
         },
         "Tiers": {
-          "description": "Tiers of fee",
+          "description": "Tiers of fee.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsFeeTier"
@@ -4250,23 +4250,23 @@
           "type": "array"
         },
         "DollarOverwriteSettings": {
-          "description": "",
+          "description": "Dollar overwrite settings.",
           "minLength": 0,
           "$ref": "#/definitions/PdsFeeOverwriteSettings"
         },
         "PercentOverwriteSettings": {
-          "description": "",
+          "description": "Percent overwrite settings.",
           "minLength": 0,
           "$ref": "#/definitions/PdsFeeOverwriteSettings"
         },
         "DefaultValue": {
-          "description": "",
+          "description": "Default value of overwrite.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "DefaultValueWithTax": {
-          "description": "",
+          "description": "Default value of overwrite with tax.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4277,7 +4277,7 @@
           "$ref": "#/definitions/FeeValueType"
         },
         "IndexationSettings": {
-          "description": "",
+          "description": "Indexation settings.",
           "minLength": 0,
           "$ref": "#/definitions/PdsFeeIndexationSettings"
         }
@@ -4288,22 +4288,22 @@
     "BankAccountUsage": {
       "properties": {
         "Usage": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "description": "This allows you to define a regular cash addition or withdrawal from the account.",
           "minLength": 0,
           "type": "string"
         },
         "Description": {
-          "description": "",
+          "description": "This will advise the bank account usage.",
           "minLength": 0,
           "type": "string"
         },
         "IsMandatory": {
-          "description": "",
+          "description": "if the bank account is mandatory, true or false.",
           "minLength": 0,
           "type": "boolean"
         },
         "HelpText": {
-          "description": "",
+          "description": "Help text with regards to the bank account.",
           "minLength": 0,
           "type": "string"
         }
@@ -4314,12 +4314,12 @@
     "PdsTaxOption": {
       "properties": {
         "Code": {
-          "description": "",
+          "description": "Tax Option code.",
           "minLength": 0,
           "type": "string"
         },
         "Description": {
-          "description": "",
+          "description": "Tax option description.",
           "minLength": 0,
           "type": "string"
         }
@@ -4408,7 +4408,7 @@
           "type": "number"
         },
         "Percentage": {
-          "description": "",
+          "description": "Fee percentage.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4420,28 +4420,28 @@
     "FeeOverride": {
       "properties": {
         "Name": {
-          "description": "",
+          "description": "Name of the fee override.",
           "minLength": 0,
           "type": "string"
         },
         "Id": {
-          "description": "",
+          "description": "Fee override Id.",
           "minLength": 0,
           "type": "string"
         },
         "Value": {
-          "description": "",
+          "description": "Fee override value.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "IsTiered": {
-          "description": "",
+          "description": "If the fee override is tiered.",
           "minLength": 0,
           "type": "boolean"
         },
         "Tiers": {
-          "description": "",
+          "description": "The fee override tier if applicable.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/FeeTier"
@@ -4460,7 +4460,7 @@
           "type": "string"
         },
         "FeeOverride": {
-          "description": "",
+          "description": "Fee override.",
           "minLength": 0,
           "$ref": "#/definitions/FeeOverride"
         },
@@ -4475,7 +4475,7 @@
           "type": "string"
         },
         "Style": {
-          "description": "",
+          "description": "Model Style",
           "minLength": 0,
           "type": "string"
         },
@@ -4522,33 +4522,33 @@
     "Product": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Product Id.",
           "minLength": 0,
           "type": "string"
         },
         "IsSingleBankAccount": {
-          "description": "",
+          "description": "Is a single bank account, true or false.",
           "minLength": 0,
           "type": "boolean"
         },
         "ProductProviderName": {
-          "description": "",
+          "description": "Product provider name.",
           "minLength": 0,
           "type": "string"
         },
         "ProductName": {
-          "description": "",
+          "description": "Product name.",
           "minLength": 0,
           "type": "string"
         },
         "TaxWrapperId": {
-          "description": "",
+          "description": "Tax wrapper Id.",
           "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "AvailableModelCodes": {
-          "description": "",
+          "description": "List of available model codes.",
           "minLength": 0,
           "items": {
             "type": "string"
@@ -4556,12 +4556,12 @@
           "type": "array"
         },
         "DisableAdviserFeesUk": {
-          "description": "",
+          "description": "Disable adviser fees UK.",
           "minLength": 0,
           "type": "boolean"
         },
         "DisableAdviserFeesInternational": {
-          "description": "",
+          "description": "Disable adviser fees International.",
           "minLength": 0,
           "type": "boolean"
         }
@@ -4572,27 +4572,27 @@
     "PdsDetailUK": {
       "properties": {
         "ServiceId": {
-          "description": "",
+          "description": "Service Id.",
           "minLength": 0,
           "type": "string"
         },
         "ServiceName": {
-          "description": "",
+          "description": "Service Name.",
           "minLength": 0,
           "type": "string"
         },
         "Region": {
-          "description": "",
+          "description": "Region for the PDS.",
           "minLength": 0,
           "$ref": "#/definitions/ApplicantRegion"
         },
         "CurrencyCode": {
-          "description": "",
+          "description": "Currency code for the PDS.",
           "minLength": 0,
           "type": "string"
         },
         "Models": {
-          "description": "",
+          "description": "Models for the PDS.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsModelUK"
@@ -4608,7 +4608,7 @@
           "type": "array"
         },
         "Products": {
-          "description": "",
+          "description": "Products for the PDS.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/Product"
@@ -4626,23 +4626,23 @@
           "type": "string"
         },
         "MaxNoOfBankAccounts": {
-          "description": "",
+          "description": "Maximum number of bank accounts.",
           "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "IsSuperSma": {
-          "description": "",
+          "description": "If the PDS is a superSMA.",
           "minLength": 0,
           "type": "boolean"
         },
         "Status": {
-          "description": "",
+          "description": "PDS Status",
           "minLength": 0,
           "type": "string"
         },
         "Fees": {
-          "description": "",
+          "description": "Fees for the PDS.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsFee"
@@ -4650,7 +4650,7 @@
           "type": "array"
         },
         "BankAccountUsages": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "description": "This allows you to define a regular cash addition or withdrawal from the account.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/BankAccountUsage"
@@ -4658,7 +4658,7 @@
           "type": "array"
         },
         "TaxOptions": {
-          "description": "",
+          "description": "Tax options for the PDS.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsTaxOption"

@@ -807,27 +807,27 @@
 <tr>
 <td>ServiceId</td>
 <td>string</td>
-<td></td>
+<td>Service Id.</td>
 </tr>
 <tr>
 <td>ServiceName</td>
 <td>string</td>
-<td></td>
+<td>Service Name.</td>
 </tr>
 <tr>
 <td>Region</td>
 <td>enum</td>
-<td></td>
+<td>Region for the PDS.</td>
 </tr>
 <tr>
 <td>CurrencyCode</td>
 <td>string</td>
-<td></td>
+<td>Currency code for the PDS.</td>
 </tr>
 <tr>
 <td>Models</td>
 <td>array</td>
-<td></td>
+<td>Models for the PDS.</td>
 </tr>
 <tr>
 <td>Models.ManagerName</td>
@@ -837,32 +837,32 @@
 <tr>
 <td>Models.FeeOverride</td>
 <td>object</td>
-<td></td>
+<td>Fee override.</td>
 </tr>
 <tr>
 <td>Models.FeeOverride.Name</td>
 <td>string</td>
-<td></td>
+<td>Name of the fee override.</td>
 </tr>
 <tr>
 <td>Models.FeeOverride.Id</td>
 <td>string</td>
-<td></td>
+<td>Fee override Id.</td>
 </tr>
 <tr>
 <td>Models.FeeOverride.Value</td>
 <td>double</td>
-<td></td>
+<td>Fee override value.</td>
 </tr>
 <tr>
 <td>Models.FeeOverride.IsTiered</td>
 <td>boolean</td>
-<td></td>
+<td>If the fee override is tiered.</td>
 </tr>
 <tr>
 <td>Models.FeeOverride.Tiers</td>
 <td>array</td>
-<td></td>
+<td>The fee override tier if applicable.</td>
 </tr>
 <tr>
 <td>Models.FeeOverride.Tiers.From</td>
@@ -872,7 +872,7 @@
 <tr>
 <td>Models.FeeOverride.Tiers.Percentage</td>
 <td>double</td>
-<td></td>
+<td>Fee percentage.</td>
 </tr>
 <tr>
 <td>Models.Id</td>
@@ -887,7 +887,7 @@
 <tr>
 <td>Models.Style</td>
 <td>string</td>
-<td></td>
+<td>Model Style</td>
 </tr>
 <tr>
 <td>Models.Code</td>
@@ -902,47 +902,47 @@
 <tr>
 <td>Products</td>
 <td>array</td>
-<td></td>
+<td>Products for the PDS.</td>
 </tr>
 <tr>
 <td>Products.Id</td>
 <td>string</td>
-<td></td>
+<td>Product Id.</td>
 </tr>
 <tr>
 <td>Products.IsSingleBankAccount</td>
 <td>boolean</td>
-<td></td>
+<td>Is a single bank account, true or false.</td>
 </tr>
 <tr>
 <td>Products.ProductProviderName</td>
 <td>string</td>
-<td></td>
+<td>Product provider name.</td>
 </tr>
 <tr>
 <td>Products.ProductName</td>
 <td>string</td>
-<td></td>
+<td>Product name.</td>
 </tr>
 <tr>
 <td>Products.TaxWrapperId</td>
 <td>integer</td>
-<td></td>
+<td>Tax wrapper Id.</td>
 </tr>
 <tr>
 <td>Products.AvailableModelCodes</td>
 <td>array</td>
-<td></td>
+<td>List of available model codes.</td>
 </tr>
 <tr>
 <td>Products.DisableAdviserFeesUk</td>
 <td>boolean</td>
-<td></td>
+<td>Disable adviser fees UK.</td>
 </tr>
 <tr>
 <td>Products.DisableAdviserFeesInternational</td>
 <td>boolean</td>
-<td></td>
+<td>Disable adviser fees International.</td>
 </tr>
 <tr>
 <td>Id</td>
@@ -957,22 +957,22 @@
 <tr>
 <td>MaxNoOfBankAccounts</td>
 <td>integer</td>
-<td></td>
+<td>Maximum number of bank accounts.</td>
 </tr>
 <tr>
 <td>IsSuperSma</td>
 <td>boolean</td>
-<td></td>
+<td>If the PDS is a superSMA.</td>
 </tr>
 <tr>
 <td>Status</td>
 <td>string</td>
-<td></td>
+<td>PDS Status</td>
 </tr>
 <tr>
 <td>Fees</td>
 <td>array</td>
-<td></td>
+<td>Fees for the PDS.</td>
 </tr>
 <tr>
 <td>Fees.Id</td>
@@ -997,82 +997,82 @@
 <tr>
 <td>Fees.Tiers</td>
 <td>array</td>
-<td>Tiers of fee</td>
+<td>Tiers of fee.</td>
 </tr>
 <tr>
 <td>Fees.Tiers.ValueAppliedFrom</td>
 <td>double</td>
-<td></td>
+<td>Date the value is applied from</td>
 </tr>
 <tr>
 <td>Fees.Tiers.FeePercent</td>
 <td>double</td>
-<td></td>
+<td>Fee percent.</td>
 </tr>
 <tr>
 <td>Fees.Tiers.FeePercentWithTax</td>
 <td>double</td>
-<td></td>
+<td>Fee percent with tax.</td>
 </tr>
 <tr>
 <td>Fees.DollarOverwriteSettings</td>
 <td>object</td>
-<td></td>
+<td>Dollar overwrite settings.</td>
 </tr>
 <tr>
 <td>Fees.DollarOverwriteSettings.MinAmount</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite minimum amount.</td>
 </tr>
 <tr>
 <td>Fees.DollarOverwriteSettings.MaxAmount</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite maximum amount.</td>
 </tr>
 <tr>
 <td>Fees.DollarOverwriteSettings.MinAmountWithTax</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite minimum amount with tax.</td>
 </tr>
 <tr>
 <td>Fees.DollarOverwriteSettings.MaxAmountWithTax</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite maximum amount with tax.</td>
 </tr>
 <tr>
 <td>Fees.PercentOverwriteSettings</td>
 <td>object</td>
-<td></td>
+<td>Percent overwrite settings.</td>
 </tr>
 <tr>
 <td>Fees.PercentOverwriteSettings.MinAmount</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite minimum amount.</td>
 </tr>
 <tr>
 <td>Fees.PercentOverwriteSettings.MaxAmount</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite maximum amount.</td>
 </tr>
 <tr>
 <td>Fees.PercentOverwriteSettings.MinAmountWithTax</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite minimum amount with tax.</td>
 </tr>
 <tr>
 <td>Fees.PercentOverwriteSettings.MaxAmountWithTax</td>
 <td>double</td>
-<td></td>
+<td>Fee overwrite maximum amount with tax.</td>
 </tr>
 <tr>
 <td>Fees.DefaultValue</td>
 <td>double</td>
-<td></td>
+<td>Default value of overwrite.</td>
 </tr>
 <tr>
 <td>Fees.DefaultValueWithTax</td>
 <td>double</td>
-<td></td>
+<td>Default value of overwrite with tax.</td>
 </tr>
 <tr>
 <td>Fees.DefaultType</td>
@@ -1082,7 +1082,7 @@
 <tr>
 <td>Fees.IndexationSettings</td>
 <td>object</td>
-<td></td>
+<td>Indexation settings.</td>
 </tr>
 <tr>
 <td>Fees.IndexationSettings.Type</td>
@@ -1097,52 +1097,52 @@
 <tr>
 <td>Fees.IndexationSettings.Value</td>
 <td>double</td>
-<td></td>
+<td>Fee indexation value.</td>
 </tr>
 <tr>
 <td>Fees.IndexationSettings.ValueMax</td>
 <td>double</td>
-<td></td>
+<td>Fee indexation maximum value.</td>
 </tr>
 <tr>
 <td>BankAccountUsages</td>
 <td>array</td>
-<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
+<td>This allows you to define a regular cash addition or withdrawal from the account.</td>
 </tr>
 <tr>
 <td>BankAccountUsages.Usage</td>
 <td>string</td>
-<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
+<td>This allows you to define a regular cash addition or withdrawal from the account.</td>
 </tr>
 <tr>
 <td>BankAccountUsages.Description</td>
 <td>string</td>
-<td></td>
+<td>This will advise the bank account usage.</td>
 </tr>
 <tr>
 <td>BankAccountUsages.IsMandatory</td>
 <td>boolean</td>
-<td></td>
+<td>if the bank account is mandatory, true or false.</td>
 </tr>
 <tr>
 <td>BankAccountUsages.HelpText</td>
 <td>string</td>
-<td></td>
+<td>Help text with regards to the bank account.</td>
 </tr>
 <tr>
 <td>TaxOptions</td>
 <td>array</td>
-<td></td>
+<td>Tax options for the PDS.</td>
 </tr>
 <tr>
 <td>TaxOptions.Code</td>
 <td>string</td>
-<td></td>
+<td>Tax Option code.</td>
 </tr>
 <tr>
 <td>TaxOptions.Description</td>
 <td>string</td>
-<td></td>
+<td>Tax option description.</td>
 </tr>
 </tbody></table>
 
