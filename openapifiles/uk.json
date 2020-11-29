@@ -760,7 +760,7 @@
             "schema": {
               "$ref": "#/definitions/DraftContactUK"
             },
-            "description": "Primary contact",
+            "description": "Primary contact.",
             "type": "object"
           },
           {
@@ -816,7 +816,7 @@
             "name": "Applicants.CorporateDetails.Contact.Title",
             "in": "body",
             "required": false,
-            "description": "Title of Contact",
+            "description": "Title of Contact.",
             "type": "string"
           },
           {
@@ -830,14 +830,14 @@
             "name": "Applicants.CorporateDetails.Contact.LastName",
             "in": "body",
             "required": false,
-            "description": "Last name of Contact",
+            "description": "Last name of Contact.",
             "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.Contact.DateOfBirth",
             "in": "body",
             "required": false,
-            "description": "Date of birth of Contact",
+            "description": "Date of birth of Contact.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -845,21 +845,21 @@
             "name": "Applicants.CorporateDetails.Contact.Email",
             "in": "body",
             "required": false,
-            "description": "Email of Contact",
+            "description": "Email of Contact.",
             "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.Contact.Phone",
             "in": "body",
             "required": false,
-            "description": "Phone Number of Contact",
+            "description": "Phone Number of Contact.",
             "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.Contact.PhoneOther",
             "in": "body",
             "required": false,
-            "description": "Secondary contact number of Contact",
+            "description": "Secondary contact number of Contact.",
             "type": "string"
           },
           {
@@ -1106,14 +1106,14 @@
             "name": "Applicants.CorporateDetails.CompanyRegistrationNumber",
             "in": "body",
             "required": false,
-            "description": "Register number of the company",
+            "description": "Register number of the company.",
             "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.TaxId",
             "in": "body",
             "required": false,
-            "description": "Tax Identity of the company",
+            "description": "Tax Identity of the company.",
             "type": "string"
           },
           {
@@ -1127,14 +1127,14 @@
             "name": "Applicants.CorporateDetails.CountryOfIncorporation",
             "in": "body",
             "required": false,
-            "description": "Country of Incorporation of the Company",
+            "description": "Country of Incorporation of the Company.",
             "type": "string"
           },
           {
             "name": "Applicants.CorporateDetails.DateOfIncorporation",
             "in": "body",
             "required": false,
-            "description": "Date of Incorporation of the Company",
+            "description": "Date of Incorporation of the Company.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -2048,7 +2048,7 @@
             "schema": {
               "$ref": "#/definitions/DraftContactUK"
             },
-            "description": "Primary contact",
+            "description": "Primary contact.",
             "type": "object"
           },
           {
@@ -2104,7 +2104,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.Title",
             "in": "body",
             "required": false,
-            "description": "Title of Contact",
+            "description": "Title of Contact.",
             "type": "string"
           },
           {
@@ -2118,14 +2118,14 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.LastName",
             "in": "body",
             "required": false,
-            "description": "Last name of Contact",
+            "description": "Last name of Contact.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.DateOfBirth",
             "in": "body",
             "required": false,
-            "description": "Date of birth of Contact",
+            "description": "Date of birth of Contact.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -2133,21 +2133,21 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.Email",
             "in": "body",
             "required": false,
-            "description": "Email of Contact",
+            "description": "Email of Contact.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.Phone",
             "in": "body",
             "required": false,
-            "description": "Phone Number of Contact",
+            "description": "Phone Number of Contact.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.PhoneOther",
             "in": "body",
             "required": false,
-            "description": "Secondary contact number of Contact",
+            "description": "Secondary contact number of Contact.",
             "type": "string"
           },
           {
@@ -2394,14 +2394,14 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.CompanyRegistrationNumber",
             "in": "body",
             "required": false,
-            "description": "Register number of the company",
+            "description": "Register number of the company.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.TaxId",
             "in": "body",
             "required": false,
-            "description": "Tax Identity of the company",
+            "description": "Tax Identity of the company.",
             "type": "string"
           },
           {
@@ -2415,14 +2415,14 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.CountryOfIncorporation",
             "in": "body",
             "required": false,
-            "description": "Country of Incorporation of the Company",
+            "description": "Country of Incorporation of the Company.",
             "type": "string"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.DateOfIncorporation",
             "in": "body",
             "required": false,
-            "description": "Date of Incorporation of the Company",
+            "description": "Date of Incorporation of the Company.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -2520,21 +2520,21 @@
             "name": "Accounts.Fees.Type",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee type.",
             "type": "string"
           },
           {
             "name": "Accounts.Fees.Id",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee Id.",
             "type": "string"
           },
           {
             "name": "Accounts.Fees.Rate",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee rate.",
             "format": "double",
             "type": "double"
           },
@@ -2542,7 +2542,7 @@
             "name": "Accounts.Fees.Unit",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee unit, dollars or percentage.",
             "type": "string"
           },
           {
@@ -2554,7 +2554,7 @@
                 "$ref": "#/definitions/DraftAccountBankAccountUK"
               }
             },
-            "description": "Bank accounts",
+            "description": "Bank accounts.",
             "type": "array"
           },
           {
@@ -2641,7 +2641,7 @@
             "name": "Accounts.OngoingFeeAmount",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Ongoing fee amount.",
             "format": "double",
             "type": "double"
           },
@@ -2649,7 +2649,7 @@
             "name": "Accounts.ReinvestIncome",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Reinvest income.",
             "type": "boolean"
           },
           {
@@ -2687,7 +2687,7 @@
             "schema": {
               "$ref": "#/definitions/ApplicationRegularTransaction"
             },
-            "description": "Regular cash contributions to the SMA.",
+            "description": "Regular cash contributions to the account.",
             "type": "object"
           },
           {
@@ -2740,7 +2740,7 @@
             "schema": {
               "$ref": "#/definitions/ApplicationRegularTransaction"
             },
-            "description": "Regular cash withdrawals from the SMA.",
+            "description": "Regular cash withdrawals from the account.",
             "type": "object"
           },
           {
@@ -2793,7 +2793,7 @@
             "schema": {
               "$ref": "#/definitions/Region"
             },
-            "description": "",
+            "description": "Region.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2881,14 +2881,14 @@
             "name": "Accounts.Models.Code",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "Accounts.Models.Proportion",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Proportion of model.",
             "format": "double",
             "type": "double"
           },
@@ -5162,12 +5162,12 @@
     "DraftModel": {
       "properties": {
         "Code": {
-          "description": "",
+          "description": "Model code.",
           "minLength": 0,
           "type": "string"
         },
         "Proportion": {
-          "description": "",
+          "description": "Proportion of model.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -5456,7 +5456,7 @@
           "type": "boolean"
         },
         "Title": {
-          "description": "Title of Contact",
+          "description": "Title of Contact.",
           "minLength": 0,
           "type": "string"
         },
@@ -5466,28 +5466,28 @@
           "type": "string"
         },
         "LastName": {
-          "description": "Last name of Contact",
+          "description": "Last name of Contact.",
           "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
-          "description": "Date of birth of Contact",
+          "description": "Date of birth of Contact.",
           "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
-          "description": "Email of Contact",
+          "description": "Email of Contact.",
           "minLength": 0,
           "type": "string"
         },
         "Phone": {
-          "description": "Phone Number of Contact",
+          "description": "Phone Number of Contact.",
           "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
-          "description": "Secondary contact number of Contact",
+          "description": "Secondary contact number of Contact.",
           "minLength": 0,
           "type": "string"
         },
@@ -5600,7 +5600,7 @@
           "$ref": "#/definitions/DraftAddressUK"
         },
         "Contact": {
-          "description": "Primary contact",
+          "description": "Primary contact.",
           "minLength": 0,
           "$ref": "#/definitions/DraftContactUK"
         },
@@ -5613,12 +5613,12 @@
           "type": "array"
         },
         "CompanyRegistrationNumber": {
-          "description": "Register number of the company",
+          "description": "Register number of the company.",
           "minLength": 0,
           "type": "string"
         },
         "TaxId": {
-          "description": "Tax Identity of the company",
+          "description": "Tax Identity of the company.",
           "minLength": 0,
           "type": "string"
         },
@@ -5628,12 +5628,12 @@
           "type": "string"
         },
         "CountryOfIncorporation": {
-          "description": "Country of Incorporation of the Company",
+          "description": "Country of Incorporation of the Company.",
           "minLength": 0,
           "type": "string"
         },
         "DateOfIncorporation": {
-          "description": "Date of Incorporation of the Company",
+          "description": "Date of Incorporation of the Company.",
           "minLength": 0,
           "format": "date-time",
           "type": "string"
@@ -5934,23 +5934,23 @@
     "DraftFeeUK": {
       "properties": {
         "Type": {
-          "description": "",
+          "description": "Fee type.",
           "minLength": 0,
           "type": "string"
         },
         "Id": {
-          "description": "",
+          "description": "Fee Id.",
           "minLength": 0,
           "type": "string"
         },
         "Rate": {
-          "description": "",
+          "description": "Fee rate.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Unit": {
-          "description": "",
+          "description": "Fee unit, dollars or percentage.",
           "minLength": 0,
           "type": "string"
         }
@@ -6068,7 +6068,7 @@
           "type": "array"
         },
         "BankAccounts": {
-          "description": "Bank accounts",
+          "description": "Bank accounts.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftAccountBankAccountUK"
@@ -6086,13 +6086,13 @@
           "type": "string"
         },
         "OngoingFeeAmount": {
-          "description": "",
+          "description": "Ongoing fee amount.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "ReinvestIncome": {
-          "description": "",
+          "description": "Reinvest income.",
           "minLength": 0,
           "type": "boolean"
         },
@@ -6117,17 +6117,17 @@
           "type": "string"
         },
         "RegularContribution": {
-          "description": "Regular cash contributions to the SMA.",
+          "description": "Regular cash contributions to the account.",
           "minLength": 0,
           "$ref": "#/definitions/ApplicationRegularTransaction"
         },
         "RegularWithdrawal": {
-          "description": "Regular cash withdrawals from the SMA.",
+          "description": "Regular cash withdrawals from the account.",
           "minLength": 0,
           "$ref": "#/definitions/ApplicationRegularTransaction"
         },
         "Region": {
-          "description": "",
+          "description": "Region.",
           "minLength": 0,
           "$ref": "#/definitions/Region"
         },
@@ -6348,7 +6348,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.11.27",
+    "version": "2020.11.29",
     "title": "Public API"
   }
 }
