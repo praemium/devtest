@@ -4121,7 +4121,7 @@
     "PdsFeeTier": {
       "properties": {
         "ValueAppliedFrom": {
-          "description": "Date the value is applied from",
+          "description": "Date the value is applied from.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -4298,7 +4298,7 @@
           "type": "string"
         },
         "IsMandatory": {
-          "description": "if the bank account is mandatory, true or false.",
+          "description": "If the bank account is mandatory, true or false.",
           "minLength": 0,
           "type": "boolean"
         },
@@ -4600,7 +4600,7 @@
           "type": "array"
         },
         "AvailableAccountTypes": {
-          "description": "The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond",
+          "description": "The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
           "minLength": 0,
           "items": {
             "$ref": "#/definitions/AccountType"
@@ -6348,7 +6348,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.11.29",
+    "version": "2020.11.30",
     "title": "Public API"
   }
 }
