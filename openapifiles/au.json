@@ -2323,7 +2323,7 @@
             "name": "Applicants.CorporateDetails.Signatories.CountryOfBirth",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Country of Birth of signatory.",
             "type": "string"
           },
           {
@@ -2333,7 +2333,7 @@
             "schema": {
               "$ref": "#/definitions/DraftAddressAU"
             },
-            "description": "",
+            "description": "Address of signatory.",
             "type": "object"
           },
           {
@@ -2874,14 +2874,14 @@
             "name": "Accounts.Fees.Id",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee Id.",
             "type": "string"
           },
           {
             "name": "Accounts.Fees.Rate",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee rate.",
             "format": "double",
             "type": "double"
           },
@@ -2889,7 +2889,7 @@
             "name": "Accounts.Fees.Unit",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Fee unit, dollars or percentage.",
             "type": "string"
           },
           {
@@ -2941,7 +2941,7 @@
             "name": "Accounts.Name",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Account name.",
             "type": "string"
           },
           {
@@ -3009,14 +3009,14 @@
             "name": "Accounts.Models.Code",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "Accounts.Models.Proportion",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Proportion of model.",
             "format": "double",
             "type": "double"
           },
@@ -3039,7 +3039,7 @@
             "schema": {
               "$ref": "#/definitions/DraftSecurity"
             },
-            "description": "",
+            "description": "The security code of the exclusion.",
             "type": "object"
           },
           {
@@ -3070,7 +3070,7 @@
             "name": "Accounts.InitialInvestment.Cash",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Select if the inital investment will include cash.",
             "format": "double",
             "type": "double"
           },
@@ -3078,7 +3078,7 @@
             "name": "Accounts.InitialInvestment.Shares",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Select if the inital investment will include shares.",
             "format": "double",
             "type": "double"
           },
@@ -3104,7 +3104,7 @@
             "name": "Accounts.OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Owner Adviser Id.",
             "format": "int32",
             "type": "integer"
           },
@@ -4990,12 +4990,12 @@
           "type": "string"
         },
         "CountryOfBirth": {
-          "description": "",
+          "description": "Country of Birth of signatory.",
           "minLength": 0,
           "type": "string"
         },
         "Address": {
-          "description": "",
+          "description": "Address of signatory.",
           "minLength": 0,
           "$ref": "#/definitions/DraftAddressAU"
         },
@@ -5288,18 +5288,18 @@
     "DraftFeeAU": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Fee Id.",
           "minLength": 0,
           "type": "string"
         },
         "Rate": {
-          "description": "",
+          "description": "Fee rate.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Unit": {
-          "description": "",
+          "description": "Fee unit, dollars or percentage.",
           "minLength": 0,
           "type": "string"
         }
@@ -5360,12 +5360,12 @@
     "DraftModel": {
       "properties": {
         "Code": {
-          "description": "",
+          "description": "Model code.",
           "minLength": 0,
           "type": "string"
         },
         "Proportion": {
-          "description": "",
+          "description": "Proportion of model.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -5393,7 +5393,7 @@
     "DraftExclusion": {
       "properties": {
         "Security": {
-          "description": "",
+          "description": "The security code of the exclusion.",
           "minLength": 0,
           "$ref": "#/definitions/DraftSecurity"
         }
@@ -5416,13 +5416,13 @@
     "DraftInitialInvestment": {
       "properties": {
         "Cash": {
-          "description": "",
+          "description": "Select if the inital investment will include cash.",
           "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Shares": {
-          "description": "",
+          "description": "Select if the inital investment will include shares.",
           "minLength": 0,
           "format": "double",
           "type": "number"
@@ -5457,7 +5457,7 @@
           "type": "array"
         },
         "Name": {
-          "description": "",
+          "description": "Account name.",
           "minLength": 0,
           "type": "string"
         },
@@ -5503,7 +5503,7 @@
           "$ref": "#/definitions/DraftInitialInvestment"
         },
         "OwnerAdviserId": {
-          "description": "",
+          "description": "Owner Adviser Id.",
           "minLength": 0,
           "format": "int32",
           "type": "integer"
@@ -5554,7 +5554,7 @@
     "ApplicationUploadResult": {
       "properties": {
         "ApplicationId": {
-          "description": "",
+          "description": "Application Id.",
           "minLength": 0,
           "format": "uuid",
           "type": "string"
