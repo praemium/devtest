@@ -1865,50 +1865,6 @@
         ]
       }
     },
-    "/GlobalPublicApi/UK/{serviceId}/accountmodelweightings": {
-      "put": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "ReplaceUKAccountModelWeightings",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PutAccountModelWeightingRequestUK"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/pds": {
       "get": {
         "responses": {
@@ -1948,47 +1904,6 @@
             "in": "header",
             "required": true,
             "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/GlobalPublicApi/UK/{serviceId}/pds": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "PDS UK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PdsDetailUK"
-              }
-            }
-          }
-        },
-        "operationId": "GetUKPDS",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
             "type": "string"
           }
         ]
@@ -2616,7 +2531,7 @@
             "name": "Applicants.IndividualDetails.BirthCountryCode",
             "in": "body",
             "required": false,
-            "description": "",
+            "description": "Birth country code.",
             "type": "string"
           },
           {
@@ -3148,58 +3063,6 @@
         ]
       }
     },
-    "/GlobalPublicApi/UK/{serviceId}/applications": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "Application upload result",
-            "schema": {
-              "$ref": "#/definitions/ApplicationUploadResult"
-            }
-          }
-        },
-        "operationId": "CreateUKDraftApplication",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/DraftApplicationUK"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/application/{ApplicationId}/status": {
       "get": {
         "responses": {
@@ -3368,39 +3231,32 @@
       "properties": {
         "SecurityId": {
           "description": "Security Id.",
-          "minLength": 0,
           "type": "string"
         },
         "Quantity": {
           "description": "Quantity of security.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "HoldingType": {
           "description": "IssuerSponsored = 0, Chess = 1.",
-          "minLength": 0,
           "$ref": "#/definitions/HoldingType"
         },
         "SponsorOrIssuer": {
           "description": "Is the security held with a sponsor or issuer.",
-          "minLength": 0,
           "type": "string"
         },
         "ParticipantId": {
           "description": "The participant Id.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "HinOrSrn": {
           "description": "Is the security transfer held under a HIN or SRN.",
-          "minLength": 0,
           "type": "string"
         },
         "Direction": {
           "description": "In = 0, Out = 1.",
-          "minLength": 0,
           "$ref": "#/definitions/TransferDirection"
         }
       },
@@ -3429,24 +3285,20 @@
       "properties": {
         "Amount": {
           "description": "Amount of regular transaction from the account.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Frequency": {
           "description": "Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.",
-          "minLength": 0,
           "$ref": "#/definitions/PaymentFrequencyType"
         },
         "CommencementDate": {
           "description": "The commencement date of the regular transaction.",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "TerminationDate": {
           "description": "The termination date of the regular transaction.",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         }
@@ -3458,13 +3310,11 @@
       "properties": {
         "Amount": {
           "description": "Amount of regular cash contributions to the account.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Frequency": {
           "description": "Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.",
-          "minLength": 0,
           "$ref": "#/definitions/PaymentFrequencyType"
         }
       },
@@ -3483,19 +3333,16 @@
       "properties": {
         "InitialInvestment": {
           "description": "Initial investment of account.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "InitialTransferValue": {
           "description": "Estimated total in-specie value for transfers into the account.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "CashInvestmentMethod": {
           "description": "Initial investment source. BPay = 1, DirectDebit = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/CashInvestmentMethod"
         }
       },
@@ -3532,28 +3379,23 @@
       "properties": {
         "Id": {
           "description": "The account fee ID.",
-          "minLength": 0,
           "type": "string"
         },
         "FeeType": {
           "description": "FeeTable = 0, Contribution = 1, Establishment = 2, Termination = 3, Withdrawal = 4, Ongoing = 5.",
-          "minLength": 0,
           "$ref": "#/definitions/FeeType"
         },
         "Value": {
           "description": "The value of the fee.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "IsPercent": {
           "description": "Whether the fee is a percent.",
-          "minLength": 0,
           "type": "boolean"
         },
         "IncludesTax": {
           "description": "Does the fee include tax.",
-          "minLength": 0,
           "type": "boolean"
         }
       },
@@ -3564,12 +3406,10 @@
       "properties": {
         "ModelCode": {
           "description": "The model code.",
-          "minLength": 0,
           "type": "string"
         },
         "ModelPercent": {
           "description": "The percentage of the model.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -3581,22 +3421,18 @@
       "properties": {
         "Bsb": {
           "description": "Bank account BSB.",
-          "minLength": 0,
           "type": "string"
         },
         "AccountNumber": {
           "description": "Bank account number.",
-          "minLength": 0,
           "type": "string"
         },
         "AccountName": {
           "description": "Bank account name.",
-          "minLength": 0,
           "type": "string"
         },
         "Usages": {
           "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "minLength": 0,
           "items": {
             "type": "string"
           },
@@ -3610,12 +3446,10 @@
       "properties": {
         "ModelCode": {
           "description": "The model code.",
-          "minLength": 0,
           "type": "string"
         },
         "Percentage": {
           "description": "The percentage of the model.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -3627,7 +3461,6 @@
       "properties": {
         "SecurityTransfers": {
           "description": "Security transfers.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/SecurityTransfer"
           },
@@ -3635,58 +3468,47 @@
         },
         "RegularWithdrawal": {
           "description": "Bank account to be used for regular withdrawals.",
-          "minLength": 0,
           "$ref": "#/definitions/RegularTransaction"
         },
         "RegularContribution": {
           "description": "Bank account to be used for direct debiting regular contribution plan.",
-          "minLength": 0,
           "$ref": "#/definitions/RegularContribution"
         },
         "AccountSetup": {
           "description": "To be used for regular SMA accounts.",
-          "minLength": 0,
           "$ref": "#/definitions/AccountSetup"
         },
         "Name": {
           "description": "Account name.",
-          "minLength": 0,
           "type": "string"
         },
         "AdviserId": {
           "description": "The Adviser ID to create the application under.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "RegisteredName": {
           "description": "Account registered name.",
-          "minLength": 0,
           "type": "string"
         },
         "EntityType": {
           "description": "The entity type of the account. Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
-          "minLength": 0,
           "$ref": "#/definitions/EntityType"
         },
         "PdsId": {
           "description": "PDS ID of account.",
-          "minLength": 0,
           "type": "string"
         },
         "CurrencyCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsCorporate": {
           "description": "Is the account a corporate.",
-          "minLength": 0,
           "type": "boolean"
         },
         "Fees": {
           "description": "Account fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/AccountFee"
           },
@@ -3710,7 +3532,6 @@
         },
         "FeeInstructions": {
           "description": "Model allocation to deduct fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -3718,7 +3539,6 @@
         },
         "IncomeInstructions": {
           "description": "Model allocation to reinvest income.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -3741,12 +3561,10 @@
       "properties": {
         "Id": {
           "description": "Unique ApplicationID to be used as an application reference.",
-          "minLength": 0,
           "type": "string"
         },
         "Code": {
           "description": "Account Id.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -3757,17 +3575,14 @@
       "properties": {
         "SourceOfContribution": {
           "description": "Contribution source.",
-          "minLength": 0,
           "type": "string"
         },
         "EntireBalance": {
           "description": "Whether the entire balance of the external fund account will be transferred.",
-          "minLength": 0,
           "type": "boolean"
         },
         "ExpectedAmount": {
           "description": "Expected contribution amount to be transferred. Set if ContributionSources.EntireBalance is false.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -3788,17 +3603,14 @@
       "properties": {
         "TransferFromAccountId": {
           "description": "Account ID of the other SuperSMA account to transfer to this account.",
-          "minLength": 0,
           "type": "string"
         },
         "TransferMethod": {
           "description": "WholeAmountWithClose = 0, WholeAmountKeepOpen = 1, SpecifiedAmount = 2 - whether the source account will be kept open.",
-          "minLength": 0,
           "$ref": "#/definitions/TransferMethodType"
         },
         "Amount": {
           "description": "If Account.Transfers.TransferMethod is WholeAmountKeepOpenSpecifiedAmount, the amount to be transferred.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -3829,12 +3641,10 @@
       "properties": {
         "ContributionType": {
           "description": "Unknown = 0, Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
-          "minLength": 0,
           "$ref": "#/definitions/ContributionTypes"
         },
         "ExpectedAmount": {
           "description": "Expected other contribution amount to be transferred.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -3846,7 +3656,6 @@
       "properties": {
         "ContributionSources": {
           "description": "Source of fund information.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/InflowsContributionSource"
           },
@@ -3854,7 +3663,6 @@
         },
         "Transfers": {
           "description": "Contains details on other SuperSMA account(s) to be transferred to this account.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/InflowsTransfer"
           },
@@ -3862,7 +3670,6 @@
         },
         "OtherContributions": {
           "description": "Contains details of other assets that will be used to fund this account.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/InflowsOtherContribution"
           },
@@ -3870,74 +3677,60 @@
         },
         "EmployerContributions": {
           "description": "Contains details of other assets that will be used to fund this account.",
-          "minLength": 0,
           "type": "boolean"
         },
         "IsConsolidationAccount": {
           "description": "Is the account consolidated.",
-          "minLength": 0,
           "type": "boolean"
         },
         "InitialInvestmentAmount": {
           "description": "The amount of cash that will be invested in the account.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "InitialInvestmentType": {
           "description": "Unknown = 0, Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
-          "minLength": 0,
           "$ref": "#/definitions/ContributionTypes"
         },
         "ContributionType": {
           "description": "Unknown = 0, Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
-          "minLength": 0,
           "$ref": "#/definitions/ContributionTypes"
         },
         "RegularContribution": {
           "description": "Contains details of the regular contribution plan for this account.",
-          "minLength": 0,
           "$ref": "#/definitions/RegularContribution"
         },
         "Name": {
           "description": "Account name.",
-          "minLength": 0,
           "type": "string"
         },
         "AdviserId": {
           "description": "The Adviser ID to create the application under.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "RegisteredName": {
           "description": "Account registered name.",
-          "minLength": 0,
           "type": "string"
         },
         "EntityType": {
           "description": "The entity type of the account. Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
-          "minLength": 0,
           "$ref": "#/definitions/EntityType"
         },
         "PdsId": {
           "description": "PDS ID of account.",
-          "minLength": 0,
           "type": "string"
         },
         "CurrencyCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsCorporate": {
           "description": "Is the account a corporate.",
-          "minLength": 0,
           "type": "boolean"
         },
         "Fees": {
           "description": "Account fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/AccountFee"
           },
@@ -3961,7 +3754,6 @@
         },
         "FeeInstructions": {
           "description": "Model allocation to deduct fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -3969,7 +3761,6 @@
         },
         "IncomeInstructions": {
           "description": "Model allocation to reinvest income.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -4000,28 +3791,23 @@
       "properties": {
         "UseExisting": {
           "description": "Link an existing SuperSMA accumulation account to the pension account.",
-          "minLength": 0,
           "type": "boolean"
         },
         "AccountCode": {
           "description": "AccountCode of the linking SuperSMA Account.",
-          "minLength": 0,
           "type": "string"
         },
         "TransferMethod": {
           "description": "WholeAmountWithClose = 0, WholeAmountKeepOpen = 1, SpecifiedAmount = 2 - whether the source account will be kept open.",
-          "minLength": 0,
           "$ref": "#/definitions/TransferMethodType"
         },
         "Amount": {
           "description": "Specifies the amount of the transfer from the existing account.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "CloseOnRollover": {
           "description": "Specifies whether the Account provided should be closed on successful rollover.",
-          "minLength": 0,
           "type": "boolean"
         }
       },
@@ -4041,12 +3827,10 @@
       "properties": {
         "PensionType": {
           "description": "AccountBasedPension = 1, TransitionToRetirement = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/ManagedPensionType"
         },
         "ContributionSources": {
           "description": "SuperSMA source of fund information.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/InflowsContributionSource"
           },
@@ -4054,7 +3838,6 @@
         },
         "Transfers": {
           "description": "Contains details on other SuperSMA account(s) to be transferred to this account.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/InflowsTransfer"
           },
@@ -4062,7 +3845,6 @@
         },
         "OtherContributions": {
           "description": "Contains details of other assets that will be used to fund this account.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/InflowsOtherContribution"
           },
@@ -4070,27 +3852,22 @@
         },
         "Consolidation": {
           "description": "Establish an accumulation account. You can open an accumulation account in the same application alongside a pension account. Only available for SuperSMA Pension.",
-          "minLength": 0,
           "$ref": "#/definitions/InflowsConsolidation"
         },
         "PensionPayments": {
           "description": "The payment amount paid from the pension account. Only available for SuperSMA Pension.",
-          "minLength": 0,
           "$ref": "#/definitions/RegularTransaction"
         },
         "PaymentType": {
           "description": "Specified = 0, Minimum = 1, Maximum = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/PensionPaymentType"
         },
         "CentrelinkSchedule": {
           "description": "If a Centrelink schedule is required.",
-          "minLength": 0,
           "type": "boolean"
         },
         "PensionPaymentInstructions": {
           "description": "Pension payment instructions.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -4098,43 +3875,35 @@
         },
         "Name": {
           "description": "Account name.",
-          "minLength": 0,
           "type": "string"
         },
         "AdviserId": {
           "description": "The Adviser ID to create the application under.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "RegisteredName": {
           "description": "Account registered name.",
-          "minLength": 0,
           "type": "string"
         },
         "EntityType": {
           "description": "The entity type of the account. Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
-          "minLength": 0,
           "$ref": "#/definitions/EntityType"
         },
         "PdsId": {
           "description": "PDS ID of account.",
-          "minLength": 0,
           "type": "string"
         },
         "CurrencyCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsCorporate": {
           "description": "Is the account a corporate.",
-          "minLength": 0,
           "type": "boolean"
         },
         "Fees": {
           "description": "Account fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/AccountFee"
           },
@@ -4158,7 +3927,6 @@
         },
         "FeeInstructions": {
           "description": "Model allocation to deduct fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -4166,7 +3934,6 @@
         },
         "IncomeInstructions": {
           "description": "Model allocation to reinvest income.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Instruction"
           },
@@ -4206,12 +3973,10 @@
       "properties": {
         "ModelCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Percent": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -4231,12 +3996,10 @@
       "properties": {
         "RebalanceType": {
           "description": "Floating = 0, Fixed = 1.",
-          "minLength": 0,
           "$ref": "#/definitions/RebalanceType"
         },
         "AccountId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "AccountModelWeightings": {
@@ -4259,7 +4022,6 @@
       "properties": {
         "AccountId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "AccountModelWeightings": {
@@ -4281,22 +4043,18 @@
       "properties": {
         "Id": {
           "description": "ModelId as returned by the Models endpoint.",
-          "minLength": 0,
           "type": "string"
         },
         "Name": {
           "description": "Model name.",
-          "minLength": 0,
           "type": "string"
         },
         "Style": {
           "description": "Model style.",
-          "minLength": 0,
           "type": "string"
         },
         "Code": {
           "description": "Model code.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -4315,19 +4073,16 @@
       "properties": {
         "ValueAppliedFrom": {
           "description": "Date the value is applied from.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "FeePercent": {
           "description": "Fee percent.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "FeePercentWithTax": {
           "description": "Fee percent with tax.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -4339,25 +4094,21 @@
       "properties": {
         "MinAmount": {
           "description": "Fee overwrite minimum amount.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "MaxAmount": {
           "description": "Fee overwrite maximum amount.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "MinAmountWithTax": {
           "description": "Fee overwrite minimum amount with tax.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "MaxAmountWithTax": {
           "description": "Fee overwrite maximum amount with tax.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -4388,23 +4139,19 @@
       "properties": {
         "Type": {
           "description": "None = 0, Both = 0, Cpi = 1, Custom = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/FeeIndexationType"
         },
         "TypeAllowed": {
           "description": "None = 0, Both = 0, Cpi = 1, Custom = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/FeeIndexationType"
         },
         "Value": {
           "description": "Fee indexation value.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "ValueMax": {
           "description": "Fee indexation maximum value.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -4416,27 +4163,22 @@
       "properties": {
         "Id": {
           "description": "Id of fee",
-          "minLength": 0,
           "type": "string"
         },
         "Type": {
           "description": "FeeTable = 0, Contribution = 1, Establishment = 2, Termination = 3, Withdrawal = 4, Ongoing = 5.",
-          "minLength": 0,
           "$ref": "#/definitions/FeeType"
         },
         "Class": {
           "description": "Adviser = 1, NonAdviser = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/FeeClass"
         },
         "Name": {
           "description": "Name of fee.",
-          "minLength": 0,
           "type": "string"
         },
         "Tiers": {
           "description": "Tiers of fee",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsFeeTier"
           },
@@ -4444,34 +4186,28 @@
         },
         "DollarOverwriteSettings": {
           "description": "Dollar overwrite settings.",
-          "minLength": 0,
           "$ref": "#/definitions/PdsFeeOverwriteSettings"
         },
         "PercentOverwriteSettings": {
           "description": "Percent overwrite settings.",
-          "minLength": 0,
           "$ref": "#/definitions/PdsFeeOverwriteSettings"
         },
         "DefaultValue": {
           "description": "Default value of overwrite.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "DefaultValueWithTax": {
           "description": "Default value of overwrite with tax.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "DefaultType": {
           "description": "Dollar = 1, Percent = 2.",
-          "minLength": 0,
           "$ref": "#/definitions/FeeValueType"
         },
         "IndexationSettings": {
           "description": "Indexation settings.",
-          "minLength": 0,
           "$ref": "#/definitions/PdsFeeIndexationSettings"
         }
       },
@@ -4482,22 +4218,18 @@
       "properties": {
         "Usage": {
           "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "minLength": 0,
           "type": "string"
         },
         "Description": {
           "description": "This will advise the bank account usage.",
-          "minLength": 0,
           "type": "string"
         },
         "IsMandatory": {
           "description": "If the bank account is mandatory, true or false.",
-          "minLength": 0,
           "type": "boolean"
         },
         "HelpText": {
           "description": "Help text with regards to the bank account.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -4508,12 +4240,10 @@
       "properties": {
         "Code": {
           "description": "Tax Option code.",
-          "minLength": 0,
           "type": "string"
         },
         "Description": {
           "description": "Tax option description.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -4524,7 +4254,6 @@
       "properties": {
         "Models": {
           "description": "List of available model codes.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsModelAU"
           },
@@ -4532,33 +4261,27 @@
         },
         "Id": {
           "description": "The ID of the PDS.",
-          "minLength": 0,
           "type": "string"
         },
         "Name": {
           "description": "The name of the PDS.",
-          "minLength": 0,
           "type": "string"
         },
         "MaxNoOfBankAccounts": {
           "description": "The maximum number of bank accounts allowed by the PDS.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "IsSuperSma": {
           "description": "If the PDS is specific to SuperSMA.",
-          "minLength": 0,
           "type": "boolean"
         },
         "Status": {
           "description": "The status of the PDS, active = 1, closed = 2.",
-          "minLength": 0,
           "type": "string"
         },
         "Fees": {
           "description": "The fees associated to the PDS.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsFee"
           },
@@ -4566,7 +4289,6 @@
         },
         "BankAccountUsages": {
           "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/BankAccountUsage"
           },
@@ -4574,7 +4296,6 @@
         },
         "TaxOptions": {
           "description": "List of available tax options.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsTaxOption"
           },
@@ -4597,13 +4318,11 @@
       "properties": {
         "From": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Percentage": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -4614,28 +4333,23 @@
       "properties": {
         "Name": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Id": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Value": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "IsTiered": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "Tiers": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/FeeTier"
           },
@@ -4648,32 +4362,26 @@
       "properties": {
         "ManagerName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "FeeOverride": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/FeeOverride"
         },
         "Id": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Name": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Style": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Code": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -4714,33 +4422,27 @@
       "properties": {
         "Id": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsSingleBankAccount": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "ProductProviderName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ProductName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "TaxWrapperId": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "AvailableModelCodes": {
           "description": "",
-          "minLength": 0,
           "items": {
             "type": "string"
           },
@@ -4748,12 +4450,10 @@
         },
         "DisableAdviserFeesUk": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "DisableAdviserFeesInternational": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         }
       },
@@ -4763,27 +4463,22 @@
       "properties": {
         "ServiceId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ServiceName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Region": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/ApplicantRegion"
         },
         "CurrencyCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Models": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsModelUK"
           },
@@ -4791,7 +4486,6 @@
         },
         "AvailableAccountTypes": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/AccountType"
           },
@@ -4799,7 +4493,6 @@
         },
         "Products": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/Product"
           },
@@ -4807,33 +4500,27 @@
         },
         "Id": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Name": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "MaxNoOfBankAccounts": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "IsSuperSma": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "Status": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Fees": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsFee"
           },
@@ -4841,7 +4528,6 @@
         },
         "BankAccountUsages": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/BankAccountUsage"
           },
@@ -4849,7 +4535,6 @@
         },
         "TaxOptions": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/PdsTaxOption"
           },
@@ -4862,7 +4547,6 @@
       "properties": {
         "UserId": {
           "description": "User ID",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         }
@@ -4874,37 +4558,30 @@
       "properties": {
         "Street": {
           "description": "Address line 1.",
-          "minLength": 0,
           "type": "string"
         },
         "Line2": {
           "description": "Address line 2.",
-          "minLength": 0,
           "type": "string"
         },
         "Line3": {
           "description": "Address line 3.",
-          "minLength": 0,
           "type": "string"
         },
         "Postcode": {
           "description": "Postcode of address.",
-          "minLength": 0,
           "type": "string"
         },
         "Suburb": {
           "description": "Suburb of address.",
-          "minLength": 0,
           "type": "string"
         },
         "CountryCode": {
           "description": "Country code of address.",
-          "minLength": 0,
           "type": "string"
         },
         "IsRegistered": {
           "description": "Whether address is registered.",
-          "minLength": 0,
           "type": "boolean"
         }
       },
@@ -4915,48 +4592,39 @@
       "properties": {
         "Title": {
           "description": "Title of Contact",
-          "minLength": 0,
           "type": "string"
         },
         "FirstName": {
           "description": "First name of Contact.",
-          "minLength": 0,
           "type": "string"
         },
         "LastName": {
           "description": "Last name of Contact",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
           "description": "Date of birth of Contact",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
           "description": "Email of Contact",
-          "minLength": 0,
           "type": "string"
         },
         "Phone": {
           "description": "Phone Number of Contact",
-          "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
           "description": "Secondary contact number of Contact",
-          "minLength": 0,
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
           "description": "Whether applicant is politically exposed.",
-          "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
           "description": "If applicant is politically exposed, details must be supplied.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -4981,68 +4649,55 @@
       "properties": {
         "Capacity": {
           "description": "Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.",
-          "minLength": 0,
           "$ref": "#/definitions/CorporateCapacity"
         },
         "TaxNumber": {
           "description": "TaxNumber of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "CountryOfBirth": {
           "description": "Country of Birth of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "Address": {
           "description": "Address of signatory.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressAU"
         },
         "Title": {
           "description": "Title of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "FirstName": {
           "description": "First name of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "LastName": {
           "description": "Last name of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
           "description": "Date of birth of signatory.",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
           "description": "Email address of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "Phone": {
           "description": "Phone number of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
           "description": "Secondary contact number of signatory.",
-          "minLength": 0,
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
           "description": "Whether applicant is politically exposed.",
-          "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
           "description": "If applicant is politically exposed, details must be supplied.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5073,22 +4728,18 @@
       "properties": {
         "Type": {
           "description": "Identification type of applicant.",
-          "minLength": 0,
           "$ref": "#/definitions/IdentificationType"
         },
         "Value": {
           "description": "Identification value of applicant.",
-          "minLength": 0,
           "type": "string"
         },
         "MissingReason": {
           "description": "CountryDoesntIssue = 1, DontNeedOne = 2, Other = 99.",
-          "minLength": 0,
           "$ref": "#/definitions/MissingReason"
         },
         "MissingReasonText": {
           "description": "Reason identification of applicant is missing.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5099,22 +4750,18 @@
       "properties": {
         "BusinessAddress": {
           "description": "Business address.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressAU"
         },
         "MailingAddress": {
           "description": "Mailing address.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressAU"
         },
         "Contact": {
           "description": "Primary contact",
-          "minLength": 0,
           "$ref": "#/definitions/DraftContactAU"
         },
         "Signatories": {
           "description": "Corporate signatories.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftSignatoryAU"
           },
@@ -5122,7 +4769,6 @@
         },
         "Identifications": {
           "description": "Array of TFN / TIN / ABN / NIN",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftApplicantIdentification"
           },
@@ -5130,17 +4776,14 @@
         },
         "ContactIsSignatory": {
           "description": "Whether the contact is a signatory on the account. ",
-          "minLength": 0,
           "type": "boolean"
         },
         "Name": {
           "description": "Name of the corporate applicant.",
-          "minLength": 0,
           "type": "string"
         },
         "TradingName": {
           "description": "Trading name of the corporate applicant.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5151,7 +4794,6 @@
       "properties": {
         "Identifications": {
           "description": "Tfn = 0, Abn = 1, Tin = 2, Nin = 3.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftApplicantIdentification"
           },
@@ -5159,88 +4801,71 @@
         },
         "TaxResidenceCountryCode": {
           "description": "Tax residence country code.",
-          "minLength": 0,
           "type": "string"
         },
         "CitizenshipCountryCode": {
           "description": "Citizenship country code.",
-          "minLength": 0,
           "type": "string"
         },
         "BirthCountryCode": {
-          "description": "",
-          "minLength": 0,
+          "description": "Birth country code.",
           "type": "string"
         },
         "HomeAddress": {
           "description": "Home address of individual applicant.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressAU"
         },
         "MailingAddress": {
           "description": "Mailing address of individual applicant.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressAU"
         },
         "Gender": {
           "description": "Gender of individual applicant.",
-          "minLength": 0,
           "type": "string"
         },
         "UserName": {
           "description": "User Name of individual applicant.",
-          "minLength": 0,
           "type": "string"
         },
         "UserId": {
           "description": "User ID of individual applicant.",
-          "minLength": 0,
           "type": "string"
         },
         "Title": {
           "description": "Title: Mr, Mrs, Ms, Miss, Doctor, Lady, Prof and Sir.",
-          "minLength": 0,
           "type": "string"
         },
         "FirstName": {
           "description": "First name of individual",
-          "minLength": 0,
           "type": "string"
         },
         "LastName": {
           "description": "Last name of individual",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
           "description": "Date of birth of the individual",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
           "description": "E-mail address of the individual",
-          "minLength": 0,
           "type": "string"
         },
         "Phone": {
           "description": "Primary contact number of the individual",
-          "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
           "description": "Other phone of the individual",
-          "minLength": 0,
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
           "description": "Whether applicant is politically exposed.",
-          "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
           "description": "If applicant is politically exposed, details must be supplied.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5260,23 +4885,19 @@
       "properties": {
         "CorporateDetails": {
           "description": "Used for Corporate applicants.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftCorporateApplicantAU"
         },
         "IndividualDetails": {
           "description": "Used for Individual applicants.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftIndividualApplicantAU"
         },
         "OwnerAdviserId": {
           "description": "The individual Owner Adviser ID.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "ApplicantType": {
           "description": "Individual = 0, Corporate = 1.",
-          "minLength": 0,
           "$ref": "#/definitions/ApplicantType"
         }
       },
@@ -5289,18 +4910,15 @@
       "properties": {
         "Id": {
           "description": "Fee Id.",
-          "minLength": 0,
           "type": "string"
         },
         "Rate": {
           "description": "Fee rate.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Unit": {
           "description": "Fee unit, dollars or percentage.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5311,12 +4929,10 @@
       "properties": {
         "Bsb": {
           "description": "Bank account BSB.",
-          "minLength": 0,
           "type": "string"
         },
         "Usages": {
           "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "minLength": 0,
           "items": {
             "type": "string"
           },
@@ -5324,12 +4940,10 @@
         },
         "AccountNumber": {
           "description": "Bank account number.",
-          "minLength": 0,
           "type": "string"
         },
         "AccountName": {
           "description": "Bank account name.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5361,12 +4975,10 @@
       "properties": {
         "Code": {
           "description": "Model code.",
-          "minLength": 0,
           "type": "string"
         },
         "Proportion": {
           "description": "Proportion of model.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         }
@@ -5378,12 +4990,10 @@
       "properties": {
         "Code": {
           "description": "The security code of the security.",
-          "minLength": 0,
           "type": "string"
         },
         "Exchange": {
           "description": "The exchange code of the security.",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5394,7 +5004,6 @@
       "properties": {
         "Security": {
           "description": "The security code of the exclusion.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftSecurity"
         }
       },
@@ -5417,19 +5026,16 @@
       "properties": {
         "Cash": {
           "description": "Select if the inital investment will include cash.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Shares": {
           "description": "Select if the inital investment will include shares.",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Method": {
           "description": "BPay = 0, DirectDebit = 1.",
-          "minLength": 0,
           "$ref": "#/definitions/PaymentMethods"
         }
       },
@@ -5442,7 +5048,6 @@
       "properties": {
         "Fees": {
           "description": "Account fees.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftFeeAU"
           },
@@ -5450,7 +5055,6 @@
         },
         "BankAccounts": {
           "description": "Bank accounts",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftAccountBankAccountAU"
           },
@@ -5458,32 +5062,26 @@
         },
         "Name": {
           "description": "Account name.",
-          "minLength": 0,
           "type": "string"
         },
         "RegisteredName": {
           "description": "Account registered name.",
-          "minLength": 0,
           "type": "string"
         },
         "ShortName": {
           "description": "Account short name.",
-          "minLength": 0,
           "type": "string"
         },
         "AccountType": {
           "description": "Company = 13, Individual = 14.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAccountType"
         },
         "PdsId": {
           "description": "PDS ID of account.",
-          "minLength": 0,
           "type": "string"
         },
         "Models": {
           "description": "Account models.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftModel"
           },
@@ -5491,7 +5089,6 @@
         },
         "Exclusions": {
           "description": "Account exclusions.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftExclusion"
           },
@@ -5499,12 +5096,10 @@
         },
         "InitialInvestment": {
           "description": "Initial investment of account.",
-          "minLength": 0,
           "$ref": "#/definitions/DraftInitialInvestment"
         },
         "OwnerAdviserId": {
           "description": "Owner Adviser Id.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         }
@@ -5526,7 +5121,6 @@
         },
         "Accounts": {
           "description": "Array of accounts to be opened with the application. Must be linked to an included applicant.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftAccountAU"
           },
@@ -5534,13 +5128,11 @@
         },
         "AdviserId": {
           "description": "The adviser ID to create the application under.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "OwnerAdviserId": {
           "description": "The owner adviser ID to create the application under.",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         }
@@ -5555,7 +5147,6 @@
       "properties": {
         "ApplicationId": {
           "description": "Application Id.",
-          "minLength": 0,
           "format": "uuid",
           "type": "string"
         }
@@ -5567,42 +5158,34 @@
       "properties": {
         "Addressee": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Street": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Line2": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Line3": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Postcode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Suburb": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "CountryCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsRegistered": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         }
       },
@@ -5623,17 +5206,14 @@
       "properties": {
         "CountryOfNationality": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IdentifierType": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftIdentifierType"
         },
         "IdentifierCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5643,58 +5223,47 @@
       "properties": {
         "NationalIdentifier": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "Title": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "FirstName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "LastName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Phone": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5704,78 +5273,63 @@
       "properties": {
         "Capacity": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/CorporateCapacity"
         },
         "TaxNumber": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "CountryOfBirth": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Address": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "NationalIdentifier": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "Title": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "FirstName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "LastName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Phone": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5785,22 +5339,18 @@
       "properties": {
         "BusinessAddress": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "MailingAddress": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "Contact": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftContactUK"
         },
         "Signatories": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftSignatoryUK"
           },
@@ -5808,58 +5358,47 @@
         },
         "CompanyRegistrationNumber": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "TaxId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Lei": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "CountryOfIncorporation": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfIncorporation": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "NatureOfActivities": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "NameOfRegulator": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "RegulatorReferenceNumber": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ContactIsDirectorOrSignificantShareholder": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "Name": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "TradingName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -5869,29 +5408,24 @@
       "properties": {
         "CountryCode": {
           "description": "Applicant's tax residence country code.",
-          "minLength": 0,
           "type": "string"
         },
         "From": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "To": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Identification": {
           "description": "Applicant's tax residence identification.",
-          "minLength": 0,
           "type": "string"
         },
         "NoDocument": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         }
       },
@@ -5902,42 +5436,34 @@
       "properties": {
         "CitizenshipCountryCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "BirthCountryCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "HomeAddress": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "MailingAddress": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "Gender": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "UserName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "UserId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "TaxResidences": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftApplicantTaxResidence"
           },
@@ -5945,73 +5471,59 @@
         },
         "UsPerson": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "SourceOfWealth": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Profession": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "NationalIdentifier": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "Title": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "FirstName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "LastName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfBirth": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "Email": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Phone": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "PhoneOther": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "IsPoliticallyExposedPerson": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "PepDetails": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -6040,38 +5552,31 @@
       "properties": {
         "TrustName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "NatureOfTrust": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/TrustNature"
         },
         "Lei": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "DateOfEstablishment": {
           "description": "",
-          "minLength": 0,
           "format": "date-time",
           "type": "string"
         },
         "TaxDomicile": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Address": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAddressUK"
         },
         "Signatories": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftSignatoryUK"
           },
@@ -6079,7 +5584,6 @@
         },
         "CorporateTrustees": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftCorporateApplicantUK"
           },
@@ -6092,28 +5596,23 @@
       "properties": {
         "CorporateDetails": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftCorporateApplicantUK"
         },
         "IndividualDetails": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftIndividualApplicantUK"
         },
         "TrustDetails": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftTrustApplicantUK"
         },
         "OwnerAdviserId": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "ApplicantType": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/ApplicantType"
         }
       },
@@ -6126,23 +5625,19 @@
       "properties": {
         "Type": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Id": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Rate": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Unit": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -6152,32 +5647,26 @@
       "properties": {
         "SortCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Bic": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Iban": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "RoutingNumber": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "AccountNumber": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "AccountName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -6187,17 +5676,14 @@
       "properties": {
         "Name": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Abn": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Tfn": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -6217,18 +5703,15 @@
       "properties": {
         "Amount": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "Method": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/PaymentMethods"
         },
         "Frequency": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/Frequency"
         }
       },
@@ -6247,7 +5730,6 @@
       "properties": {
         "Fees": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftFeeUK"
           },
@@ -6255,7 +5737,6 @@
         },
         "BankAccounts": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftAccountBankAccountUK"
           },
@@ -6263,93 +5744,75 @@
         },
         "TrustOrFundDetails": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/TrustOrFundDetails"
         },
         "SourceOfFunds": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "OngoingFeeAmount": {
           "description": "",
-          "minLength": 0,
           "format": "double",
           "type": "number"
         },
         "ReinvestIncome": {
           "description": "",
-          "minLength": 0,
           "type": "boolean"
         },
         "ProductProviderName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ProductProviderReference": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ProductName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ProductId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "RegularContribution": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/ApplicationRegularTransaction"
         },
         "RegularWithdrawal": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/ApplicationRegularTransaction"
         },
         "Region": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/Region"
         },
         "CurrencyCode": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Name": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "RegisteredName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "ShortName": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "AccountType": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftAccountType"
         },
         "PdsId": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "Models": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftModel"
           },
@@ -6357,7 +5820,6 @@
         },
         "Exclusions": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftExclusion"
           },
@@ -6365,12 +5827,10 @@
         },
         "InitialInvestment": {
           "description": "",
-          "minLength": 0,
           "$ref": "#/definitions/DraftInitialInvestment"
         },
         "OwnerAdviserId": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         }
@@ -6392,7 +5852,6 @@
         },
         "Accounts": {
           "description": "",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/DraftAccountUK"
           },
@@ -6400,13 +5859,11 @@
         },
         "AdviserId": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "OwnerAdviserId": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         }
@@ -6436,12 +5893,10 @@
       "properties": {
         "AccountCode": {
           "description": "Account ID.",
-          "minLength": 0,
           "type": "string"
         },
         "Status": {
           "description": "Draft = 0, AwaitingSignature = 1, AwaitingApproval = 2, AwaitingFund = 3, Funded = 4, Trading = 5, ClosureRequested = 6, Closed = 7, Deleted = 8.",
-          "minLength": 0,
           "$ref": "#/definitions/AccountLifeCycle"
         }
       },
@@ -6452,18 +5907,15 @@
       "properties": {
         "ApplicationId": {
           "description": "Unique ApplicationID to be used as an application reference.",
-          "minLength": 0,
           "format": "uuid",
           "type": "string"
         },
         "Status": {
           "description": "Draft / Submitted.",
-          "minLength": 0,
           "type": "string"
         },
         "AccountsStatus": {
           "description": "Refer to endpoint description.",
-          "minLength": 0,
           "items": {
             "$ref": "#/definitions/ApplicationAccountStatus"
           },
@@ -6477,12 +5929,10 @@
       "properties": {
         "Application": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "UserId": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         }
@@ -6497,7 +5947,6 @@
       "properties": {
         "SsoUrl": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
@@ -6508,24 +5957,20 @@
       "properties": {
         "token_type": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         },
         "expires_in": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "ext_expires_in": {
           "description": "",
-          "minLength": 0,
           "format": "int32",
           "type": "integer"
         },
         "access_token": {
           "description": "",
-          "minLength": 0,
           "type": "string"
         }
       },
