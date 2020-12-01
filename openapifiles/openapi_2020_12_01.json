@@ -76,7 +76,7 @@
             "name": "SecurityTransfers.ParticipantId",
             "in": "body",
             "required": false,
-            "description": "The participant Id.",
+            "description": "Participant Id.",
             "format": "int32",
             "type": "integer"
           },
@@ -149,7 +149,7 @@
             "name": "RegularWithdrawal.CommencementDate",
             "in": "body",
             "required": false,
-            "description": "The commencement date of the regular transaction.",
+            "description": "Commencement date of the regular transaction.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -157,7 +157,7 @@
             "name": "RegularWithdrawal.TerminationDate",
             "in": "body",
             "required": false,
-            "description": "The termination date of the regular transaction.",
+            "description": "Termination date of the regular transaction.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -323,7 +323,7 @@
             "name": "Fees.Id",
             "in": "body",
             "required": false,
-            "description": "The account fee ID.",
+            "description": "Account fee ID.",
             "type": "string"
           },
           {
@@ -349,7 +349,7 @@
             "name": "Fees.Value",
             "in": "body",
             "required": false,
-            "description": "The value of the fee.",
+            "description": "Value of the fee.",
             "format": "double",
             "type": "double"
           },
@@ -364,7 +364,7 @@
             "name": "Fees.IncludesTax",
             "in": "body",
             "required": false,
-            "description": "The fee including tax.",
+            "description": "Fee including tax.",
             "type": "boolean"
           },
           {
@@ -383,14 +383,14 @@
             "name": "Models.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "Models.ModelPercent",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -455,14 +455,14 @@
             "name": "FeeInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "FeeInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -482,14 +482,14 @@
             "name": "IncomeInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "IncomeInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -858,7 +858,7 @@
             "name": "Fees.Id",
             "in": "body",
             "required": false,
-            "description": "The account fee ID.",
+            "description": "Account fee ID.",
             "type": "string"
           },
           {
@@ -884,7 +884,7 @@
             "name": "Fees.Value",
             "in": "body",
             "required": false,
-            "description": "The value of the fee.",
+            "description": "Value of the fee.",
             "format": "double",
             "type": "double"
           },
@@ -899,7 +899,7 @@
             "name": "Fees.IncludesTax",
             "in": "body",
             "required": false,
-            "description": "The fee including tax.",
+            "description": "Fee including tax.",
             "type": "boolean"
           },
           {
@@ -918,14 +918,14 @@
             "name": "Models.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "Models.ModelPercent",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -990,14 +990,14 @@
             "name": "FeeInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "FeeInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -1017,14 +1017,14 @@
             "name": "IncomeInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "IncomeInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -1275,7 +1275,7 @@
             "schema": {
               "$ref": "#/definitions/RegularTransaction"
             },
-            "description": "The payment amount paid from the pension account. Only available for SuperSMA Pension.",
+            "description": "Payment amount paid from the pension account. Only available for SuperSMA Pension.",
             "type": "object"
           },
           {
@@ -1315,7 +1315,7 @@
             "name": "PensionPayments.CommencementDate",
             "in": "body",
             "required": false,
-            "description": "The commencement date of the regular transaction.",
+            "description": "Commencement date of the regular transaction.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -1323,7 +1323,7 @@
             "name": "PensionPayments.TerminationDate",
             "in": "body",
             "required": false,
-            "description": "The termination date of the regular transaction.",
+            "description": "Termination date of the regular transaction.",
             "format": "date-time",
             "type": "date-time"
           },
@@ -1366,14 +1366,14 @@
             "name": "PensionPaymentInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "PensionPaymentInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -1455,7 +1455,7 @@
             "name": "Fees.Id",
             "in": "body",
             "required": false,
-            "description": "The account fee ID.",
+            "description": "Account fee ID.",
             "type": "string"
           },
           {
@@ -1481,7 +1481,7 @@
             "name": "Fees.Value",
             "in": "body",
             "required": false,
-            "description": "The value of the fee.",
+            "description": "Value of the fee.",
             "format": "double",
             "type": "double"
           },
@@ -1496,7 +1496,7 @@
             "name": "Fees.IncludesTax",
             "in": "body",
             "required": false,
-            "description": "The fee including tax.",
+            "description": "Fee including tax.",
             "type": "boolean"
           },
           {
@@ -1515,14 +1515,14 @@
             "name": "Models.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "Models.ModelPercent",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -1587,14 +1587,14 @@
             "name": "FeeInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "FeeInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -1614,14 +1614,14 @@
             "name": "IncomeInstructions.ModelCode",
             "in": "body",
             "required": false,
-            "description": "The model code.",
+            "description": "Model code.",
             "type": "string"
           },
           {
             "name": "IncomeInstructions.Percentage",
             "in": "body",
             "required": false,
-            "description": "The percentage of the model.",
+            "description": "Percentage of the model.",
             "format": "double",
             "type": "double"
           },
@@ -1959,7 +1959,7 @@
             "name": "AdviserId",
             "in": "body",
             "required": true,
-            "description": "The adviser ID to create the application under.",
+            "description": "Adviser ID to create the application under.",
             "format": "int32",
             "type": "integer"
           },
@@ -1967,7 +1967,7 @@
             "name": "OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "The owner adviser ID to create the application under.",
+            "description": "Owner adviser ID to create the application under.",
             "format": "int32",
             "type": "integer"
           },
@@ -1987,7 +1987,7 @@
             "name": "Applicants.OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "The individual Owner Adviser ID.",
+            "description": "Owner Adviser ID.",
             "format": "int32",
             "type": "integer"
           },
@@ -2256,7 +2256,7 @@
             "name": "Applicants.CorporateDetails.Contact.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -2266,7 +2266,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2281,7 +2281,7 @@
             "name": "Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -2475,14 +2475,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The signatory's national identifier.",
+            "description": "Signatory's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.CorporateDetails.Signatories.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -2492,7 +2492,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2507,7 +2507,7 @@
             "name": "Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -2571,7 +2571,7 @@
             "name": "Applicants.CorporateDetails.NatureOfActivities",
             "in": "body",
             "required": false,
-            "description": "The nature of activities that the Company performs.",
+            "description": "Nature of activities that the Company performs.",
             "type": "string"
           },
           {
@@ -2965,14 +2965,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The individual's national identifier.",
+            "description": "Individual's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.IndividualDetails.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -2982,7 +2982,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -2997,7 +2997,7 @@
             "name": "Applicants.IndividualDetails.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -3322,14 +3322,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The signatory's national identifier.",
+            "description": "Signatory's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.TrustDetails.Signatories.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -3339,7 +3339,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -3354,7 +3354,7 @@
             "name": "Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -3629,7 +3629,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -3639,7 +3639,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -3654,7 +3654,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -3848,14 +3848,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The signatory's national identifier.",
+            "description": "Signatory's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -3865,7 +3865,7 @@
             "schema": {
               "$ref": "#/definitions/DraftIdentifierType"
             },
-            "description": "The applicant's national identifier type.",
+            "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -3880,7 +3880,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -3944,7 +3944,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.NatureOfActivities",
             "in": "body",
             "required": false,
-            "description": "The nature of activities that the Company performs.",
+            "description": "Nature of activities that the Company performs.",
             "type": "string"
           },
           {
@@ -4131,21 +4131,21 @@
             "name": "Accounts.BankAccounts.Bic",
             "in": "body",
             "required": false,
-            "description": "The Bank Identifier Code (BIC) of your banking institution. (UK only)",
+            "description": "Bank Identifier Code (BIC) of your banking institution. (UK only)",
             "type": "string"
           },
           {
             "name": "Accounts.BankAccounts.Iban",
             "in": "body",
             "required": false,
-            "description": "The International Bank Account Number (IBAN) of your banking institution. (UK only)",
+            "description": "International Bank Account Number (IBAN) of your banking institution. (UK only)",
             "type": "string"
           },
           {
             "name": "Accounts.BankAccounts.RoutingNumber",
             "in": "body",
             "required": false,
-            "description": "The routing number of your banking institution. (UK only)",
+            "description": "Routing number of banking institution. (UK only)",
             "type": "string"
           },
           {
@@ -4167,21 +4167,21 @@
             "schema": {
               "$ref": "#/definitions/DraftSecurity"
             },
-            "description": "The security code of the exclusion.",
+            "description": "Security code of the exclusion.",
             "type": "object"
           },
           {
             "name": "Accounts.Exclusions.Security.Code",
             "in": "body",
             "required": false,
-            "description": "The security code of the security.",
+            "description": "Security code of the security.",
             "type": "string"
           },
           {
             "name": "Accounts.Exclusions.Security.Exchange",
             "in": "body",
             "required": false,
-            "description": "The exchange code of the security.",
+            "description": "Exchange code of the security.",
             "type": "string"
           },
           {
@@ -4242,7 +4242,7 @@
             "name": "Accounts.TrustOrFundDetails.Name",
             "in": "body",
             "required": false,
-            "description": "The name of the Trust or Fund.",
+            "description": "Name of the Trust or Fund.",
             "type": "string"
           },
           {
@@ -4278,7 +4278,7 @@
             "name": "Accounts.ReinvestIncome",
             "in": "body",
             "required": false,
-            "description": "reinvest income.",
+            "description": "Reinvest income.",
             "type": "boolean"
           },
           {
@@ -4313,13 +4313,13 @@
             "name": "Accounts.RegularContribution",
             "in": "body",
             "required": false,
-            "description": "Regular cash contributions to the SMA."
+            "description": "Regular cash contributions to the account."
           },
           {
             "name": "Accounts.RegularWithdrawal",
             "in": "body",
             "required": false,
-            "description": "Regular cash withdrawals from the SMA."
+            "description": "Regular cash withdrawals from the account."
           },
           {
             "name": "Accounts.OwnerAdviserId",
@@ -4336,7 +4336,7 @@
             "schema": {
               "$ref": "#/definitions/Region"
             },
-            "description": "",
+            "description": "Region.",
             "format": "int32",
             "type": "enum",
             "enum": [
@@ -4539,7 +4539,7 @@
           "type": "string"
         },
         "ParticipantId": {
-          "description": "The participant Id.",
+          "description": "Participant Id.",
           "format": "int32",
           "type": "integer"
         },
@@ -4585,12 +4585,12 @@
           "$ref": "#/definitions/PaymentFrequencyType"
         },
         "CommencementDate": {
-          "description": "The commencement date of the regular transaction.",
+          "description": "Commencement date of the regular transaction.",
           "format": "date-time",
           "type": "string"
         },
         "TerminationDate": {
-          "description": "The termination date of the regular transaction.",
+          "description": "Termination date of the regular transaction.",
           "format": "date-time",
           "type": "string"
         }
@@ -4670,7 +4670,7 @@
     "AccountFee": {
       "properties": {
         "Id": {
-          "description": "The account fee ID.",
+          "description": "Account fee ID.",
           "type": "string"
         },
         "FeeType": {
@@ -4678,7 +4678,7 @@
           "$ref": "#/definitions/FeeType"
         },
         "Value": {
-          "description": "The value of the fee.",
+          "description": "Value of the fee.",
           "format": "double",
           "type": "number"
         },
@@ -4687,7 +4687,7 @@
           "type": "boolean"
         },
         "IncludesTax": {
-          "description": "The fee including tax.",
+          "description": "Fee including tax.",
           "type": "boolean"
         }
       },
@@ -4697,11 +4697,11 @@
     "AccountModelLink": {
       "properties": {
         "ModelCode": {
-          "description": "The model code.",
+          "description": "Model code.",
           "type": "string"
         },
         "ModelPercent": {
-          "description": "The percentage of the model.",
+          "description": "Percentage of the model.",
           "format": "double",
           "type": "number"
         }
@@ -4737,11 +4737,11 @@
     "Instruction": {
       "properties": {
         "ModelCode": {
-          "description": "The model code.",
+          "description": "Model code.",
           "type": "string"
         },
         "Percentage": {
-          "description": "The percentage of the model.",
+          "description": "Percentage of the model.",
           "format": "double",
           "type": "number"
         }
@@ -5147,7 +5147,7 @@
           "$ref": "#/definitions/InflowsConsolidation"
         },
         "PensionPayments": {
-          "description": "The payment amount paid from the pension account. Only available for SuperSMA Pension.",
+          "description": "Payment amount paid from the pension account. Only available for SuperSMA Pension.",
           "$ref": "#/definitions/RegularTransaction"
         },
         "PaymentType": {
@@ -5469,7 +5469,7 @@
           "type": "string"
         },
         "Tiers": {
-          "description": "Tiers of fee",
+          "description": "Tiers of fee.",
           "items": {
             "$ref": "#/definitions/PdsFeeTier"
           },
@@ -5508,7 +5508,7 @@
     "BankAccountUsage": {
       "properties": {
         "Usage": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "description": "This allows you to define a regular cash addition or withdrawal from the account.",
           "type": "string"
         },
         "Description": {
@@ -6274,11 +6274,11 @@
     "DraftSecurity": {
       "properties": {
         "Code": {
-          "description": "The security code of the security.",
+          "description": "Security code of the security.",
           "type": "string"
         },
         "Exchange": {
-          "description": "The exchange code of the security.",
+          "description": "Exchange code of the security.",
           "type": "string"
         }
       },
@@ -6288,7 +6288,7 @@
     "DraftExclusion": {
       "properties": {
         "Security": {
-          "description": "The security code of the exclusion.",
+          "description": "Security code of the exclusion.",
           "$ref": "#/definitions/DraftSecurity"
         }
       },
@@ -6489,15 +6489,15 @@
     "DraftNationalIdentifier": {
       "properties": {
         "CountryOfNationality": {
-          "description": "The applicant's country of national identifier.",
+          "description": "Applicant's country of national identifier.",
           "type": "string"
         },
         "IdentifierType": {
-          "description": "The applicant's national identifier type.",
+          "description": "NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.",
           "$ref": "#/definitions/DraftIdentifierType"
         },
         "IdentifierCode": {
-          "description": "The applicant's national identifier code.",
+          "description": "Applicant's national identifier code.",
           "type": "string"
         }
       },
@@ -6960,7 +6960,7 @@
     "TrustOrFundDetails": {
       "properties": {
         "Name": {
-          "description": "The name of the Trust or Fund.",
+          "description": "Name of the Trust or Fund.",
           "type": "string"
         },
         "Abn": {
@@ -6988,7 +6988,7 @@
     "ApplicationRegularTransaction": {
       "properties": {
         "Amount": {
-          "description": "The amount of the regular contribution.",
+          "description": "Amount of the regular contribution.",
           "format": "double",
           "type": "number"
         },
@@ -7401,7 +7401,7 @@
           "type": "string"
         },
         "NationalIdentifier": {
-          "description": "The signatory's national identifier.",
+          "description": "Signatory's national identifier.",
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
@@ -7480,7 +7480,7 @@
           "type": "string"
         },
         "NatureOfActivities": {
-          "description": "The nature of activities that the Company performs.",
+          "description": "Nature of activities that the Company performs.",
           "type": "string"
         },
         "NameOfRegulator": {
@@ -7588,7 +7588,7 @@
           "type": "string"
         },
         "NationalIdentifier": {
-          "description": "The individual's national identifier.",
+          "description": "Individual's national identifier.",
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
@@ -7653,7 +7653,7 @@
     "DraftApplicant": {
       "properties": {
         "OwnerAdviserId": {
-          "description": "The individual Owner Adviser ID.",
+          "description": "Owner Adviser ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -7724,15 +7724,15 @@
           "type": "array"
         },
         "Bic": {
-          "description": "The Bank Identifier Code (BIC) of your banking institution. (UK only)",
+          "description": "Bank Identifier Code (BIC) of your banking institution. (UK only)",
           "type": "string"
         },
         "Iban": {
-          "description": "The International Bank Account Number (IBAN) of your banking institution. (UK only)",
+          "description": "International Bank Account Number (IBAN) of your banking institution. (UK only)",
           "type": "string"
         },
         "RoutingNumber": {
-          "description": "The routing number of your banking institution. (UK only)",
+          "description": "Routing number of banking institution. (UK only)",
           "type": "string"
         }
       },
@@ -7805,7 +7805,7 @@
           "type": "number"
         },
         "ReinvestIncome": {
-          "description": "reinvest income.",
+          "description": "Reinvest income.",
           "type": "boolean"
         },
         "ProductProviderName": {
@@ -7825,10 +7825,10 @@
           "type": "string"
         },
         "RegularContribution": {
-          "description": "Regular cash contributions to the SMA."
+          "description": "Regular cash contributions to the account."
         },
         "RegularWithdrawal": {
-          "description": "Regular cash withdrawals from the SMA."
+          "description": "Regular cash withdrawals from the account."
         },
         "OwnerAdviserId": {
           "description": "Owner Adviser Id.",
@@ -7836,7 +7836,7 @@
           "type": "integer"
         },
         "Region": {
-          "description": "",
+          "description": "Region.",
           "$ref": "#/definitions/Region"
         },
         "CurrencyCode": {
@@ -7852,12 +7852,12 @@
     "DraftApplication": {
       "properties": {
         "AdviserId": {
-          "description": "The adviser ID to create the application under.",
+          "description": "Adviser ID to create the application under.",
           "format": "int32",
           "type": "integer"
         },
         "OwnerAdviserId": {
-          "description": "The owner adviser ID to create the application under.",
+          "description": "Owner adviser ID to create the application under.",
           "format": "int32",
           "type": "integer"
         },
@@ -7938,15 +7938,15 @@
     "PdsDetail": {
       "properties": {
         "Id": {
-          "description": "The ID of the PDS.",
+          "description": "ID of the PDS.",
           "type": "string"
         },
         "Name": {
-          "description": "The name of the PDS.",
+          "description": "Name of the PDS.",
           "type": "string"
         },
         "MaxNoOfBankAccounts": {
-          "description": "The maximum number of bank accounts allowed by the PDS.",
+          "description": "Maximum number of bank accounts allowed by the PDS.",
           "format": "int32",
           "type": "integer"
         },
@@ -7955,7 +7955,7 @@
           "type": "boolean"
         },
         "Status": {
-          "description": "The status of the PDS, active = 1, closed = 2.",
+          "description": "Status of the PDS, active = 1, closed = 2.",
           "type": "string"
         },
         "ServiceId": {
@@ -7967,7 +7967,7 @@
           "type": "string"
         },
         "Region": {
-          "description": "Region for the PDS.",
+          "description": "Region of the PDS.",
           "$ref": "#/definitions/ApplicantRegion"
         },
         "CurrencyCode": {
@@ -7975,7 +7975,7 @@
           "type": "string"
         },
         "Fees": {
-          "description": "The fees associated to the PDS.",
+          "description": "Fees associated to the PDS.",
           "items": {
             "$ref": "#/definitions/PdsFee"
           },
@@ -7996,14 +7996,14 @@
           "type": "array"
         },
         "Models": {
-          "description": "Models for the PDS.",
+          "description": "List of available models.",
           "items": {
             "$ref": "#/definitions/PdsModel"
           },
           "type": "array"
         },
         "AvailableAccountTypes": {
-          "description": "The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
+          "description": "Type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
           "items": {
             "$ref": "#/definitions/AccountType"
           },

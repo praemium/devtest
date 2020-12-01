@@ -604,7 +604,7 @@
             "name": "Applicants.CorporateDetails.Contact.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -629,7 +629,7 @@
             "name": "Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -823,14 +823,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The signatory's national identifier.",
+            "description": "Signatory's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.CorporateDetails.Signatories.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -855,7 +855,7 @@
             "name": "Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -969,7 +969,7 @@
             "name": "Applicants.CorporateDetails.NatureOfActivities",
             "in": "body",
             "required": false,
-            "description": "The nature of activities that the Company performs.",
+            "description": "Nature of activities that the Company performs.",
             "type": "string"
           },
           {
@@ -1261,14 +1261,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The individual's national identifier.",
+            "description": "Individual's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.IndividualDetails.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -1293,7 +1293,7 @@
             "name": "Applicants.IndividualDetails.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -1618,14 +1618,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The signatory's national identifier.",
+            "description": "Signatory's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.TrustDetails.Signatories.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -1650,7 +1650,7 @@
             "name": "Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -1892,7 +1892,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -1917,7 +1917,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -2111,14 +2111,14 @@
             "schema": {
               "$ref": "#/definitions/DraftNationalIdentifier"
             },
-            "description": "The signatory's national identifier.",
+            "description": "Signatory's national identifier.",
             "type": "object"
           },
           {
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.CountryOfNationality",
             "in": "body",
             "required": false,
-            "description": "The applicant's country of national identifier.",
+            "description": "Applicant's country of national identifier.",
             "type": "string"
           },
           {
@@ -2143,7 +2143,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierCode",
             "in": "body",
             "required": false,
-            "description": "The applicant's national identifier code.",
+            "description": "Applicant's national identifier code.",
             "type": "string"
           },
           {
@@ -2257,7 +2257,7 @@
             "name": "Applicants.TrustDetails.CorporateTrustees.NatureOfActivities",
             "in": "body",
             "required": false,
-            "description": "The nature of activities that the Company performs.",
+            "description": "Nature of activities that the Company performs.",
             "type": "string"
           },
           {
@@ -2299,7 +2299,7 @@
             "name": "Applicants.OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "The individual Owner Adviser ID.",
+            "description": "Owner Adviser ID.",
             "format": "int32",
             "type": "integer"
           },
@@ -2395,21 +2395,21 @@
             "name": "Accounts.BankAccounts.Bic",
             "in": "body",
             "required": false,
-            "description": "The Bank Identifier Code (BIC) of your banking institution.",
+            "description": "Bank Identifier Code (BIC) of your banking institution.",
             "type": "string"
           },
           {
             "name": "Accounts.BankAccounts.Iban",
             "in": "body",
             "required": false,
-            "description": "The International Bank Account Number (IBAN) of your banking institution.",
+            "description": "International Bank Account Number (IBAN) of your banking institution.",
             "type": "string"
           },
           {
             "name": "Accounts.BankAccounts.RoutingNumber",
             "in": "body",
             "required": false,
-            "description": "The routing number of your banking institution.",
+            "description": "Routing number of banking institution.",
             "type": "string"
           },
           {
@@ -2440,7 +2440,7 @@
             "name": "Accounts.TrustOrFundDetails.Name",
             "in": "body",
             "required": false,
-            "description": "The name of the Trust or Fund.",
+            "description": "Name of the Trust or Fund.",
             "type": "string"
           },
           {
@@ -2521,7 +2521,7 @@
             "name": "Accounts.RegularContribution.Amount",
             "in": "body",
             "required": false,
-            "description": "The amount of the regular contribution.",
+            "description": "Amount of the regular contribution.",
             "format": "double",
             "type": "double"
           },
@@ -2574,7 +2574,7 @@
             "name": "Accounts.RegularWithdrawal.Amount",
             "in": "body",
             "required": false,
-            "description": "The amount of the regular contribution.",
+            "description": "Amount of the regular contribution.",
             "format": "double",
             "type": "double"
           },
@@ -2738,21 +2738,21 @@
             "schema": {
               "$ref": "#/definitions/DraftSecurity"
             },
-            "description": "The security code of the exclusion.",
+            "description": "Security code of the exclusion.",
             "type": "object"
           },
           {
             "name": "Accounts.Exclusions.Security.Code",
             "in": "body",
             "required": false,
-            "description": "The security code of the security.",
+            "description": "Security code of the security.",
             "type": "string"
           },
           {
             "name": "Accounts.Exclusions.Security.Exchange",
             "in": "body",
             "required": false,
-            "description": "The exchange code of the security.",
+            "description": "Exchange code of the security.",
             "type": "string"
           },
           {
@@ -2811,7 +2811,7 @@
             "name": "AdviserId",
             "in": "body",
             "required": true,
-            "description": "The adviser ID to create the application under.",
+            "description": "Adviser ID to create the application under.",
             "format": "int32",
             "type": "integer"
           },
@@ -2819,7 +2819,7 @@
             "name": "OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "The owner adviser ID to create the application under.",
+            "description": "Owner adviser ID to create the application under.",
             "format": "int32",
             "type": "integer"
           },
@@ -4120,7 +4120,7 @@
           "type": "boolean"
         },
         "Tiers": {
-          "description": "The fee override tier if applicable.",
+          "description": "Fee override tier if applicable.",
           "items": {
             "$ref": "#/definitions/FeeTier"
           },
@@ -4244,7 +4244,7 @@
           "type": "string"
         },
         "Region": {
-          "description": "Region for the PDS.",
+          "description": "Region of the PDS.",
           "$ref": "#/definitions/ApplicantRegion"
         },
         "CurrencyCode": {
@@ -4252,14 +4252,14 @@
           "type": "string"
         },
         "Models": {
-          "description": "Models for the PDS.",
+          "description": "List of available models.",
           "items": {
             "$ref": "#/definitions/PdsModelUK"
           },
           "type": "array"
         },
         "AvailableAccountTypes": {
-          "description": "The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
+          "description": "Type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
           "items": {
             "$ref": "#/definitions/AccountType"
           },
@@ -4273,11 +4273,11 @@
           "type": "array"
         },
         "Id": {
-          "description": "The ID of the PDS.",
+          "description": "ID of the PDS.",
           "type": "string"
         },
         "Name": {
-          "description": "The name of the PDS.",
+          "description": "Name of the PDS.",
           "type": "string"
         },
         "MaxNoOfBankAccounts": {
@@ -4290,7 +4290,7 @@
           "type": "boolean"
         },
         "Status": {
-          "description": "PDS Status.",
+          "description": "Status of the PDS, active = 1, closed = 2.",
           "type": "string"
         },
         "Fees": {
@@ -4755,11 +4755,11 @@
     "DraftSecurity": {
       "properties": {
         "Code": {
-          "description": "The security code of the security.",
+          "description": "Security code of the security.",
           "type": "string"
         },
         "Exchange": {
-          "description": "The exchange code of the security.",
+          "description": "Exchange code of the security.",
           "type": "string"
         }
       },
@@ -4769,7 +4769,7 @@
     "DraftExclusion": {
       "properties": {
         "Security": {
-          "description": "The security code of the exclusion.",
+          "description": "Security code of the exclusion.",
           "$ref": "#/definitions/DraftSecurity"
         }
       },
@@ -4972,7 +4972,7 @@
     "DraftNationalIdentifier": {
       "properties": {
         "CountryOfNationality": {
-          "description": "The applicant's country of national identifier.",
+          "description": "Applicant's country of national identifier.",
           "type": "string"
         },
         "IdentifierType": {
@@ -4980,7 +4980,7 @@
           "$ref": "#/definitions/DraftIdentifierType"
         },
         "IdentifierCode": {
-          "description": "The applicant's national identifier code.",
+          "description": "Applicant's national identifier code.",
           "type": "string"
         }
       },
@@ -5057,7 +5057,7 @@
           "$ref": "#/definitions/DraftAddressUK"
         },
         "NationalIdentifier": {
-          "description": "The signatory's national identifier.",
+          "description": "Signatory's national identifier.",
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
@@ -5148,7 +5148,7 @@
           "type": "string"
         },
         "NatureOfActivities": {
-          "description": "The nature of activities that the Company performs.",
+          "description": "Nature of activities that the Company performs.",
           "type": "string"
         },
         "NameOfRegulator": {
@@ -5253,7 +5253,7 @@
           "type": "string"
         },
         "NationalIdentifier": {
-          "description": "The individual's national identifier.",
+          "description": "Individual's national identifier.",
           "$ref": "#/definitions/DraftNationalIdentifier"
         },
         "ReceiveCommunicationByPost": {
@@ -5380,7 +5380,7 @@
           "$ref": "#/definitions/DraftTrustApplicantUK"
         },
         "OwnerAdviserId": {
-          "description": "The individual Owner Adviser ID.",
+          "description": "Owner Adviser ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -5424,15 +5424,15 @@
           "type": "string"
         },
         "Bic": {
-          "description": "The Bank Identifier Code (BIC) of your banking institution.",
+          "description": "Bank Identifier Code (BIC) of your banking institution.",
           "type": "string"
         },
         "Iban": {
-          "description": "The International Bank Account Number (IBAN) of your banking institution.",
+          "description": "International Bank Account Number (IBAN) of your banking institution.",
           "type": "string"
         },
         "RoutingNumber": {
-          "description": "The routing number of your banking institution.",
+          "description": "Routing number of banking institution.",
           "type": "string"
         },
         "AccountNumber": {
@@ -5450,7 +5450,7 @@
     "TrustOrFundDetails": {
       "properties": {
         "Name": {
-          "description": "The name of the Trust or Fund.",
+          "description": "Name of the Trust or Fund.",
           "type": "string"
         },
         "Abn": {
@@ -5478,7 +5478,7 @@
     "ApplicationRegularTransaction": {
       "properties": {
         "Amount": {
-          "description": "The amount of the regular contribution.",
+          "description": "Amount of the regular contribution.",
           "format": "double",
           "type": "number"
         },
@@ -5636,12 +5636,12 @@
           "type": "array"
         },
         "AdviserId": {
-          "description": "The adviser ID to create the application under.",
+          "description": "Adviser ID to create the application under.",
           "format": "int32",
           "type": "integer"
         },
         "OwnerAdviserId": {
-          "description": "The owner adviser ID to create the application under.",
+          "description": "Owner adviser ID to create the application under.",
           "format": "int32",
           "type": "integer"
         }

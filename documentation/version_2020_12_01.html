@@ -1332,17 +1332,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>The ID of the PDS.</td>
+<td>ID of the PDS.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td>The name of the PDS.</td>
+<td>Name of the PDS.</td>
 </tr>
 <tr>
 <td>MaxNoOfBankAccounts</td>
 <td>integer</td>
-<td>The maximum number of bank accounts allowed by the PDS.</td>
+<td>Maximum number of bank accounts allowed by the PDS.</td>
 </tr>
 <tr>
 <td>IsSuperSma</td>
@@ -1352,7 +1352,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Status</td>
 <td>string</td>
-<td>The status of the PDS, active = 1, closed = 2.</td>
+<td>Status of the PDS, active = 1, closed = 2.</td>
 </tr>
 <tr>
 <td>ServiceId</td>
@@ -1367,7 +1367,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Region</td>
 <td>integer</td>
-<td>Region for the PDS.</td>
+<td>Region of the PDS.</td>
 </tr>
 <tr>
 <td>CurrencyCode</td>
@@ -1377,7 +1377,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Fees</td>
 <td>array</td>
-<td>The fees associated to the PDS.</td>
+<td>Fees associated to the PDS.</td>
 </tr>
 <tr>
 <td>Fees.Id</td>
@@ -1402,7 +1402,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Fees.Tiers</td>
 <td>array</td>
-<td>Tiers of fee</td>
+<td>Tiers of fee.</td>
 </tr>
 <tr>
 <td>Fees.Tiers.ValueAppliedFrom</td>
@@ -1517,7 +1517,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>BankAccountUsages.Usage</td>
 <td>string</td>
-<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
+<td>This allows you to define a regular cash addition or withdrawal from the account.</td>
 </tr>
 <tr>
 <td>BankAccountUsages.Description</td>
@@ -1552,7 +1552,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Models</td>
 <td>array</td>
-<td>Models for the PDS.</td>
+<td>List of available models.</td>
 </tr>
 <tr>
 <td>Models.Id</td>
@@ -1622,7 +1622,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>AvailableAccountTypes</td>
 <td>integer</td>
-<td>The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.</td>
+<td>Type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.</td>
 </tr>
 <tr>
 <td>Products</td>
@@ -1812,12 +1812,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>AdviserId<span class="required">required</span></td>
 <td>integer</td>
-<td>The adviser ID to create the application under.</td>
+<td>Adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>OwnerAdviserId</td>
 <td>integer</td>
-<td>The owner adviser ID to create the application under.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants<span class="required">required</span></td>
@@ -1827,7 +1827,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>The individual Owner Adviser ID.</td>
+<td>Owner Adviser ID.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -2002,17 +2002,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.Contact.NationalIdentifier.CountryOfNationality</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
+<td>Applicant&#39;s country of national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierType</td>
 <td>enum</td>
-<td>The applicant&#39;s national identifier type.</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierCode</td>
 <td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
+<td>Applicant&#39;s national identifier code.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.ReceiveCommunicationByPost</td>
@@ -2132,22 +2132,22 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.Signatories.NationalIdentifier</td>
 <td>object</td>
-<td>The signatory&#39;s national identifier.</td>
+<td>Signatory&#39;s national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
+<td>Applicant&#39;s country of national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierType</td>
 <td>enum</td>
-<td>The applicant&#39;s national identifier type.</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierCode</td>
 <td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
+<td>Applicant&#39;s national identifier code.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.ReceiveCommunicationByPost</td>
@@ -2192,7 +2192,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.CorporateDetails.NatureOfActivities</td>
 <td>string</td>
-<td>The nature of activities that the Company performs.</td>
+<td>Nature of activities that the Company performs.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.NameOfRegulator</td>
@@ -2442,22 +2442,22 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.IndividualDetails.NationalIdentifier</td>
 <td>object</td>
-<td>The individual&#39;s national identifier.</td>
+<td>Individual&#39;s national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.NationalIdentifier.CountryOfNationality</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
+<td>Applicant&#39;s country of national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.NationalIdentifier.IdentifierType</td>
 <td>enum</td>
-<td>The applicant&#39;s national identifier type.</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.NationalIdentifier.IdentifierCode</td>
 <td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
+<td>Applicant&#39;s national identifier code.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.ReceiveCommunicationByPost</td>
@@ -2652,22 +2652,22 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.Signatories.NationalIdentifier</td>
 <td>object</td>
-<td>The signatory&#39;s national identifier.</td>
+<td>Signatory&#39;s national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
+<td>Applicant&#39;s country of national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierType</td>
 <td>enum</td>
-<td>The applicant&#39;s national identifier type.</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierCode</td>
 <td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
+<td>Applicant&#39;s national identifier code.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.ReceiveCommunicationByPost</td>
@@ -2852,17 +2852,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.CountryOfNationality</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
+<td>Applicant&#39;s country of national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierType</td>
 <td>enum</td>
-<td>The applicant&#39;s national identifier type.</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.NationalIdentifier.IdentifierCode</td>
 <td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
+<td>Applicant&#39;s national identifier code.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Contact.ReceiveCommunicationByPost</td>
@@ -2982,22 +2982,22 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier</td>
 <td>object</td>
-<td>The signatory&#39;s national identifier.</td>
+<td>Signatory&#39;s national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.CountryOfNationality</td>
 <td>string</td>
-<td>The applicant&#39;s country of national identifier.</td>
+<td>Applicant&#39;s country of national identifier.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierType</td>
 <td>enum</td>
-<td>The applicant&#39;s national identifier type.</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.NationalIdentifier.IdentifierCode</td>
 <td>string</td>
-<td>The applicant&#39;s national identifier code.</td>
+<td>Applicant&#39;s national identifier code.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Signatories.ReceiveCommunicationByPost</td>
@@ -3042,7 +3042,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.NatureOfActivities</td>
 <td>string</td>
-<td>The nature of activities that the Company performs.</td>
+<td>Nature of activities that the Company performs.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.NameOfRegulator</td>
@@ -3157,17 +3157,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.BankAccounts.Bic</td>
 <td>string</td>
-<td>The Bank Identifier Code (BIC) of your banking institution. (UK only)</td>
+<td>Bank Identifier Code (BIC) of your banking institution. (UK only)</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Iban</td>
 <td>string</td>
-<td>The International Bank Account Number (IBAN) of your banking institution. (UK only)</td>
+<td>International Bank Account Number (IBAN) of your banking institution. (UK only)</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.RoutingNumber</td>
 <td>string</td>
-<td>The routing number of your banking institution. (UK only)</td>
+<td>Routing number of banking institution. (UK only)</td>
 </tr>
 <tr>
 <td>Accounts.Exclusions</td>
@@ -3177,17 +3177,17 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.Exclusions.Security</td>
 <td>object</td>
-<td>The security code of the exclusion.</td>
+<td>Security code of the exclusion.</td>
 </tr>
 <tr>
 <td>Accounts.Exclusions.Security.Code</td>
 <td>string</td>
-<td>The security code of the security.</td>
+<td>Security code of the security.</td>
 </tr>
 <tr>
 <td>Accounts.Exclusions.Security.Exchange</td>
 <td>string</td>
-<td>The exchange code of the security.</td>
+<td>Exchange code of the security.</td>
 </tr>
 <tr>
 <td>Accounts.InitialInvestment</td>
@@ -3217,7 +3217,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.TrustOrFundDetails.Name</td>
 <td>string</td>
-<td>The name of the Trust or Fund.</td>
+<td>Name of the Trust or Fund.</td>
 </tr>
 <tr>
 <td>Accounts.TrustOrFundDetails.Abn</td>
@@ -3242,7 +3242,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.ReinvestIncome</td>
 <td>boolean</td>
-<td>reinvest income.</td>
+<td>Reinvest income.</td>
 </tr>
 <tr>
 <td>Accounts.ProductProviderName</td>
@@ -3267,12 +3267,12 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.RegularContribution</td>
 <td></td>
-<td>Regular cash contributions to the SMA.</td>
+<td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
 <td></td>
-<td>Regular cash withdrawals from the SMA.</td>
+<td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
 <td>Accounts.OwnerAdviserId</td>
@@ -3282,7 +3282,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>Accounts.Region</td>
 <td>enum</td>
-<td></td>
+<td>Region.</td>
 </tr>
 <tr>
 <td>Accounts.CurrencyCode</td>

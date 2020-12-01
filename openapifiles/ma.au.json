@@ -2741,7 +2741,7 @@
             "name": "Applicants.OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "The individual Owner Adviser ID.",
+            "description": "Owner Adviser ID.",
             "format": "int32",
             "type": "integer"
           },
@@ -2954,21 +2954,21 @@
             "schema": {
               "$ref": "#/definitions/DraftSecurity"
             },
-            "description": "The security code of the exclusion.",
+            "description": "Security code of the exclusion.",
             "type": "object"
           },
           {
             "name": "Accounts.Exclusions.Security.Code",
             "in": "body",
             "required": false,
-            "description": "The security code of the security.",
+            "description": "Security code of the security.",
             "type": "string"
           },
           {
             "name": "Accounts.Exclusions.Security.Exchange",
             "in": "body",
             "required": false,
-            "description": "The exchange code of the security.",
+            "description": "Exchange code of the security.",
             "type": "string"
           },
           {
@@ -3027,7 +3027,7 @@
             "name": "AdviserId",
             "in": "body",
             "required": true,
-            "description": "The adviser ID to create the application under.",
+            "description": "Adviser ID to create the application under.",
             "format": "int32",
             "type": "integer"
           },
@@ -3035,7 +3035,7 @@
             "name": "OwnerAdviserId",
             "in": "body",
             "required": false,
-            "description": "The owner adviser ID to create the application under.",
+            "description": "Owner adviser ID to create the application under.",
             "format": "int32",
             "type": "integer"
           },
@@ -4178,7 +4178,7 @@
           "type": "string"
         },
         "Tiers": {
-          "description": "Tiers of fee",
+          "description": "Tiers of fee.",
           "items": {
             "$ref": "#/definitions/PdsFeeTier"
           },
@@ -4253,22 +4253,22 @@
     "PdsDetailAU": {
       "properties": {
         "Models": {
-          "description": "List of available model codes.",
+          "description": "List of available models.",
           "items": {
             "$ref": "#/definitions/PdsModelAU"
           },
           "type": "array"
         },
         "Id": {
-          "description": "The ID of the PDS.",
+          "description": "ID of the PDS.",
           "type": "string"
         },
         "Name": {
-          "description": "The name of the PDS.",
+          "description": "Name of the PDS.",
           "type": "string"
         },
         "MaxNoOfBankAccounts": {
-          "description": "The maximum number of bank accounts allowed by the PDS.",
+          "description": "Maximum number of bank accounts allowed by the PDS.",
           "format": "int32",
           "type": "integer"
         },
@@ -4277,7 +4277,7 @@
           "type": "boolean"
         },
         "Status": {
-          "description": "The status of the PDS, active = 1, closed = 2.",
+          "description": "Status of the PDS, active = 1, closed = 2.",
           "type": "string"
         },
         "Fees": {
@@ -4892,7 +4892,7 @@
           "$ref": "#/definitions/DraftIndividualApplicantAU"
         },
         "OwnerAdviserId": {
-          "description": "The individual Owner Adviser ID.",
+          "description": "Owner Adviser ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -4989,11 +4989,11 @@
     "DraftSecurity": {
       "properties": {
         "Code": {
-          "description": "The security code of the security.",
+          "description": "Security code of the security.",
           "type": "string"
         },
         "Exchange": {
-          "description": "The exchange code of the security.",
+          "description": "Exchange code of the security.",
           "type": "string"
         }
       },
@@ -5003,7 +5003,7 @@
     "DraftExclusion": {
       "properties": {
         "Security": {
-          "description": "The security code of the exclusion.",
+          "description": "Security code of the exclusion.",
           "$ref": "#/definitions/DraftSecurity"
         }
       },
@@ -5127,12 +5127,12 @@
           "type": "array"
         },
         "AdviserId": {
-          "description": "The adviser ID to create the application under.",
+          "description": "Adviser ID to create the application under.",
           "format": "int32",
           "type": "integer"
         },
         "OwnerAdviserId": {
-          "description": "The owner adviser ID to create the application under.",
+          "description": "Owner adviser ID to create the application under.",
           "format": "int32",
           "type": "integer"
         }
