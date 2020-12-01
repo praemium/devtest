@@ -5946,7 +5946,7 @@
     "SsoLoginResponse": {
       "properties": {
         "SsoUrl": {
-          "description": "",
+          "description": "The SSO url.",
           "type": "string"
         }
       },
