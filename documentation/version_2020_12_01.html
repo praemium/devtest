@@ -315,7 +315,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='../openapifiles/openapi_2020_11_30.json'>OpenAPI File</a></li>
+            <li><a href='../openapifiles/openapi_2020_12_01.json'>OpenAPI File</a></li>
             <li><a href='../previous_versions.html'>Previous Versions</a></li>
         </ul>
     </div>
@@ -1330,64 +1330,59 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 </tr>
 </thead><tbody>
 <tr>
-<td>Models</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.Id</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.Name</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.Style</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Models.Code</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
 <td>Id</td>
 <td>string</td>
-<td></td>
+<td>The ID of the PDS.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>string</td>
-<td></td>
+<td>The name of the PDS.</td>
 </tr>
 <tr>
 <td>MaxNoOfBankAccounts</td>
 <td>integer</td>
-<td></td>
+<td>The maximum number of bank accounts allowed by the PDS.</td>
 </tr>
 <tr>
 <td>IsSuperSma</td>
 <td>boolean</td>
-<td></td>
+<td>If the PDS is specific to SuperSMA.</td>
 </tr>
 <tr>
 <td>Status</td>
 <td>string</td>
-<td></td>
+<td>The status of the PDS, active = 1, closed = 2.</td>
+</tr>
+<tr>
+<td>ServiceId</td>
+<td>string</td>
+<td>Service Id.</td>
+</tr>
+<tr>
+<td>ServiceName</td>
+<td>string</td>
+<td>Service Name.</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>integer</td>
+<td>Region for the PDS.</td>
+</tr>
+<tr>
+<td>CurrencyCode</td>
+<td>string</td>
+<td>Currency code for the PDS.</td>
 </tr>
 <tr>
 <td>Fees</td>
 <td>array</td>
-<td></td>
+<td>The fees associated to the PDS.</td>
 </tr>
 <tr>
 <td>Fees.Id</td>
 <td>string</td>
-<td>Id of fee</td>
+<td>Id of fee.</td>
 </tr>
 <tr>
 <td>Fees.Type</td>
@@ -1517,7 +1512,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>BankAccountUsages</td>
 <td>array</td>
-<td></td>
+<td>This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.</td>
 </tr>
 <tr>
 <td>BankAccountUsages.Usage</td>
@@ -1542,7 +1537,7 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <tr>
 <td>TaxOptions</td>
 <td>array</td>
-<td></td>
+<td>Tax options for the PDS.</td>
 </tr>
 <tr>
 <td>TaxOptions.Code</td>
@@ -1553,6 +1548,126 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <td>TaxOptions.Description</td>
 <td>string</td>
 <td>Tax option description.</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>array</td>
+<td>Models for the PDS.</td>
+</tr>
+<tr>
+<td>Models.Id</td>
+<td>string</td>
+<td>ModelId as returned by the Models endpoint.</td>
+</tr>
+<tr>
+<td>Models.Name</td>
+<td>string</td>
+<td>Model name.</td>
+</tr>
+<tr>
+<td>Models.Style</td>
+<td>string</td>
+<td>Model style.</td>
+</tr>
+<tr>
+<td>Models.Code</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>Models.ManagerName</td>
+<td>string</td>
+<td>Model Manager name.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride</td>
+<td>object</td>
+<td>Fee override.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.Name</td>
+<td>string</td>
+<td>Name of the fee override.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.Id</td>
+<td>string</td>
+<td>Fee override Id.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.Value</td>
+<td>double</td>
+<td>Fee override value.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.IsTiered</td>
+<td>boolean</td>
+<td>If the fee override is tiered.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.Tiers</td>
+<td>array</td>
+<td>The fee override tier if applicable.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.Tiers.From</td>
+<td>double</td>
+<td>Date from when the fee tier is applicable.</td>
+</tr>
+<tr>
+<td>Models.FeeOverride.Tiers.Percentage</td>
+<td>double</td>
+<td>Fee percentage.</td>
+</tr>
+<tr>
+<td>AvailableAccountTypes</td>
+<td>integer</td>
+<td>The type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.</td>
+</tr>
+<tr>
+<td>Products</td>
+<td>array</td>
+<td>Products for the PDS.</td>
+</tr>
+<tr>
+<td>Products.Id</td>
+<td>string</td>
+<td>Product Id.</td>
+</tr>
+<tr>
+<td>Products.IsSingleBankAccount</td>
+<td>boolean</td>
+<td>Is a single bank account, true or false.</td>
+</tr>
+<tr>
+<td>Products.ProductProviderName</td>
+<td>string</td>
+<td>Product provider name.</td>
+</tr>
+<tr>
+<td>Products.ProductName</td>
+<td>string</td>
+<td>Product name.</td>
+</tr>
+<tr>
+<td>Products.TaxWrapperId</td>
+<td>integer</td>
+<td>Tax wrapper Id.</td>
+</tr>
+<tr>
+<td>Products.AvailableModelCodes</td>
+<td>array</td>
+<td>List of available model codes.</td>
+</tr>
+<tr>
+<td>Products.DisableAdviserFeesUk</td>
+<td>boolean</td>
+<td>Disable adviser fees UK.</td>
+</tr>
+<tr>
+<td>Products.DisableAdviserFeesInternational</td>
+<td>boolean</td>
+<td>Disable adviser fees International.</td>
 </tr>
 </tbody></table>
 
