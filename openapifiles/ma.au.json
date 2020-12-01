@@ -407,6 +407,13 @@
             "type": "array"
           },
           {
+            "name": "BankAccounts.BankName",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
+          },
+          {
             "name": "BankAccounts.Bsb",
             "in": "body",
             "required": false,
@@ -940,6 +947,13 @@
             },
             "description": "Bank accounts.",
             "type": "array"
+          },
+          {
+            "name": "BankAccounts.BankName",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "BankAccounts.Bsb",
@@ -1537,6 +1551,13 @@
             },
             "description": "Bank accounts.",
             "type": "array"
+          },
+          {
+            "name": "BankAccounts.BankName",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
           },
           {
             "name": "BankAccounts.Bsb",
@@ -2820,23 +2841,18 @@
             "type": "array"
           },
           {
+            "name": "Accounts.BankAccounts.BankName",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "type": "string"
+          },
+          {
             "name": "Accounts.BankAccounts.Bsb",
             "in": "body",
             "required": false,
             "description": "Bank account BSB.",
             "type": "string"
-          },
-          {
-            "name": "Accounts.BankAccounts.Usages",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "items": {
-                "type": "string"
-              }
-            },
-            "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-            "type": "array"
           },
           {
             "name": "Accounts.BankAccounts.AccountNumber",
@@ -2851,6 +2867,18 @@
             "required": false,
             "description": "Bank account name.",
             "type": "string"
+          },
+          {
+            "name": "Accounts.BankAccounts.Usages",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+            "type": "array"
           },
           {
             "name": "Accounts.Name",
@@ -3419,6 +3447,10 @@
     },
     "BankAccount": {
       "properties": {
+        "BankName": {
+          "description": "",
+          "type": "string"
+        },
         "Bsb": {
           "description": "Bank account BSB.",
           "type": "string"
@@ -4927,16 +4959,13 @@
     },
     "DraftAccountBankAccountAU": {
       "properties": {
+        "BankName": {
+          "description": "",
+          "type": "string"
+        },
         "Bsb": {
           "description": "Bank account BSB.",
           "type": "string"
-        },
-        "Usages": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
         },
         "AccountNumber": {
           "description": "Bank account number.",
@@ -4945,6 +4974,13 @@
         "AccountName": {
           "description": "Bank account name.",
           "type": "string"
+        },
+        "Usages": {
+          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [],
@@ -5645,10 +5681,6 @@
     },
     "DraftAccountBankAccountUK": {
       "properties": {
-        "SortCode": {
-          "description": "",
-          "type": "string"
-        },
         "Bic": {
           "description": "",
           "type": "string"
@@ -5657,7 +5689,19 @@
           "description": "",
           "type": "string"
         },
+        "Type": {
+          "description": "",
+          "type": "string"
+        },
         "RoutingNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "BankName": {
+          "description": "",
+          "type": "string"
+        },
+        "Bsb": {
           "description": "",
           "type": "string"
         },
@@ -5668,6 +5712,13 @@
         "AccountName": {
           "description": "",
           "type": "string"
+        },
+        "Usages": {
+          "description": "",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
