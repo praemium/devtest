@@ -2127,12 +2127,12 @@
     "DraftInitialInvestment": {
       "properties": {
         "Cash": {
-          "description": "Select if the inital investment will include cash.",
+          "description": "Select if the initial investment will include cash.",
           "format": "double",
           "type": "number"
         },
         "Shares": {
-          "description": "Select if the inital investment will include shares.",
+          "description": "Select if the initial investment will include shares.",
           "format": "double",
           "type": "number"
         },
