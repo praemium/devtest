@@ -2052,6 +2052,324 @@
       "required": [],
       "type": "object"
     },
+    "TrustOrFundDetails": {
+      "properties": {
+        "Name": {
+          "description": "",
+          "type": "string"
+        },
+        "Abn": {
+          "description": "",
+          "type": "string"
+        },
+        "Tfn": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Frequency": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "DraftPensionPayment": {
+      "properties": {
+        "Type": {
+          "description": "",
+          "$ref": "#/definitions/PensionPaymentType"
+        },
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Frequency": {
+          "description": "",
+          "$ref": "#/definitions/Frequency"
+        },
+        "CommencementDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ContributionType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        24,
+        31,
+        32,
+        33,
+        41,
+        42,
+        43
+      ]
+    },
+    "PaymentMethods": {
+      "required": [],
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "RegularContributionAccum": {
+      "properties": {
+        "ContributionType": {
+          "description": "",
+          "$ref": "#/definitions/ContributionType"
+        },
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Method": {
+          "description": "",
+          "$ref": "#/definitions/PaymentMethods"
+        },
+        "Frequency": {
+          "description": "",
+          "$ref": "#/definitions/Frequency"
+        }
+      },
+      "type": "object"
+    },
+    "TargetAllocationInstruction": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Percentage": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "DraftTargetAllocation": {
+      "properties": {
+        "Fees": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TargetAllocationInstruction"
+          },
+          "type": "array"
+        },
+        "Income": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TargetAllocationInstruction"
+          },
+          "type": "array"
+        },
+        "Payments": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TargetAllocationInstruction"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "InflowsContributionSourceFund": {
+      "properties": {
+        "ProductName": {
+          "description": "",
+          "type": "string"
+        },
+        "Usi": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ApplicationInflowsContributionSource": {
+      "properties": {
+        "MemberNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "SourceOfContribution": {
+          "description": "",
+          "$ref": "#/definitions/InflowsContributionSourceFund"
+        },
+        "EntireBalance": {
+          "description": "",
+          "type": "boolean"
+        },
+        "ExpectedAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "SmaTransferMethodType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "InflowsContributionTransfer": {
+      "properties": {
+        "AccountId": {
+          "description": "",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TransferMethod": {
+          "description": "",
+          "$ref": "#/definitions/SmaTransferMethodType"
+        },
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "ApplicationInflowsOtherContribution": {
+      "properties": {
+        "ContributionType": {
+          "description": "",
+          "$ref": "#/definitions/ContributionType"
+        },
+        "ExpectedAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "DraftInitialInvestmentSuper": {
+      "properties": {
+        "ContributionSources": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/ApplicationInflowsContributionSource"
+          },
+          "type": "array"
+        },
+        "Transfers": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/InflowsContributionTransfer"
+          },
+          "type": "array"
+        },
+        "OtherContributions": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/ApplicationInflowsOtherContribution"
+          },
+          "type": "array"
+        },
+        "AccumContribution": {
+          "description": "",
+          "$ref": "#/definitions/ApplicationInflowsOtherContribution"
+        }
+      },
+      "type": "object"
+    },
+    "Gender": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "BeneficiaryRelationship": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2,
+        3,
+        8
+      ]
+    },
+    "NominatedReversionaryBeneficiary": {
+      "properties": {
+        "Sex": {
+          "description": "",
+          "$ref": "#/definitions/Gender"
+        },
+        "FullName": {
+          "description": "",
+          "type": "string"
+        },
+        "Relationship": {
+          "description": "",
+          "$ref": "#/definitions/BeneficiaryRelationship"
+        },
+        "DateOfBirth": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "DraftNominatedBeneficiary": {
+      "properties": {
+        "Proportion": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Address": {
+          "description": "",
+          "$ref": "#/definitions/DraftAddressAU"
+        },
+        "FullName": {
+          "description": "",
+          "type": "string"
+        },
+        "Relationship": {
+          "description": "",
+          "$ref": "#/definitions/BeneficiaryRelationship"
+        },
+        "DateOfBirth": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "DraftAccountType": {
       "format": "int32",
       "type": "integer",
@@ -2070,7 +2388,11 @@
         11,
         12,
         13,
-        14
+        14,
+        15,
+        16,
+        17,
+        18
       ]
     },
     "DraftModel": {
@@ -2112,18 +2434,6 @@
       "required": [],
       "type": "object"
     },
-    "PaymentMethods": {
-      "required": [],
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
     "DraftInitialInvestment": {
       "properties": {
         "Cash": {
@@ -2161,6 +2471,45 @@
             "$ref": "#/definitions/DraftAccountBankAccountAU"
           },
           "type": "array"
+        },
+        "TrustOrFundDetails": {
+          "description": "",
+          "$ref": "#/definitions/TrustOrFundDetails"
+        },
+        "PensionPayment": {
+          "description": "",
+          "$ref": "#/definitions/DraftPensionPayment"
+        },
+        "RegularContributionAccum": {
+          "description": "",
+          "$ref": "#/definitions/RegularContributionAccum"
+        },
+        "TargetAllocation": {
+          "description": "",
+          "$ref": "#/definitions/DraftTargetAllocation"
+        },
+        "InitialInvestmentSuper": {
+          "description": "",
+          "$ref": "#/definitions/DraftInitialInvestmentSuper"
+        },
+        "ReversionaryBeneficiary": {
+          "description": "",
+          "$ref": "#/definitions/NominatedReversionaryBeneficiary"
+        },
+        "Beneficiaries": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/DraftNominatedBeneficiary"
+          },
+          "type": "array"
+        },
+        "IsBindingNomination": {
+          "description": "",
+          "type": "boolean"
+        },
+        "IsEmployerContributing": {
+          "description": "",
+          "type": "boolean"
         },
         "Name": {
           "description": "Account name.",
@@ -2361,7 +2710,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.12.07",
+    "version": "2020.12.09",
     "title": "Public API"
   }
 }
