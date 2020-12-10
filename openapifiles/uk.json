@@ -586,11 +586,11 @@
     "AccountModelWeighting": {
       "properties": {
         "ModelCode": {
-          "description": "",
+          "description": "Model code.",
           "type": "string"
         },
         "Percent": {
-          "description": "",
+          "description": "Percent of model.",
           "format": "double",
           "type": "number"
         }
@@ -601,11 +601,11 @@
     "PutAccountModelWeightingRequestUK": {
       "properties": {
         "AccountId": {
-          "description": "",
+          "description": "Account Id.",
           "type": "string"
         },
         "AccountModelWeightings": {
-          "description": "",
+          "description": "Account model weighting.",
           "minLength": 1,
           "items": {
             "$ref": "#/definitions/AccountModelWeighting"
@@ -1065,7 +1065,7 @@
     "CedingPartyResponse": {
       "properties": {
         "CedingPartyId": {
-          "description": "",
+          "description": "Ceding party Id.",
           "type": "string"
         },
         "CedingPartyName": {
@@ -1073,7 +1073,7 @@
           "type": "string"
         },
         "AcceptsElectronicTransfer": {
-          "description": "",
+          "description": "Ceding party name.",
           "type": "boolean"
         }
       },
@@ -1083,27 +1083,27 @@
     "SecurityResponse": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Security Id.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Security code.",
           "type": "string"
         },
         "Description": {
-          "description": "",
+          "description": "Description.",
           "type": "string"
         },
         "ISIN": {
-          "description": "",
+          "description": "ISIN of security code.",
           "type": "string"
         },
         "Exchange": {
-          "description": "",
+          "description": "Exchange of security.",
           "type": "string"
         },
         "IsAllowedByApl": {
-          "description": "",
+          "description": "Is the security allowed by the Approved Product List.",
           "type": "boolean"
         }
       },
@@ -2022,30 +2022,30 @@
           "type": "string"
         },
         "AdviserReference": {
-          "description": "",
+          "description": "Adviser Reference.",
           "type": "string"
         },
         "InSpecieCashStockTransfers": {
-          "description": "",
+          "description": "In Specie cash stock transfers.",
           "items": {
             "$ref": "#/definitions/DraftInSpecieCashStockTransfer"
           },
           "type": "array"
         },
         "IsTradeFreezeOn": {
-          "description": "",
+          "description": "If a trade freeze is required.",
           "type": "boolean"
         },
         "TradeFreezeReason": {
-          "description": "",
+          "description": "Trade freeze reason.",
           "$ref": "#/definitions/TradeFreezeReason"
         },
         "TradeFreezeNote": {
-          "description": "",
+          "description": "Trade freeze note.",
           "type": "string"
         },
         "IllustrationData": {
-          "description": "",
+          "description": "Illustration data.",
           "$ref": "#/definitions/IllustrationData"
         },
         "Name": {
@@ -2186,11 +2186,11 @@
     "SsoLoginRequest": {
       "properties": {
         "Application": {
-          "description": "",
+          "description": "Application.",
           "type": "string"
         },
         "UserId": {
-          "description": "",
+          "description": "User Id.",
           "format": "int32",
           "type": "integer"
         }
@@ -2204,7 +2204,7 @@
     "SsoLoginResponse": {
       "properties": {
         "SsoUrl": {
-          "description": "",
+          "description": "SSO Ural.",
           "type": "string"
         }
       },
@@ -2214,11 +2214,11 @@
     "TokenResponse": {
       "properties": {
         "token_type": {
-          "description": "",
+          "description": "Token type.",
           "type": "string"
         },
         "expires_in": {
-          "description": "",
+          "description": "Expires in.",
           "format": "int32",
           "type": "integer"
         },
