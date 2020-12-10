@@ -1069,11 +1069,11 @@
           "type": "string"
         },
         "CedingPartyName": {
-          "description": "",
+          "description": "Ceding party name.",
           "type": "string"
         },
         "AcceptsElectronicTransfer": {
-          "description": "Ceding party name.",
+          "description": "Ceding party accepts electronic transfers.",
           "type": "boolean"
         }
       },
