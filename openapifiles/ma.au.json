@@ -392,6 +392,77 @@
         ]
       }
     },
+    "/api/securities": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Securities",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SecurityResponse"
+              }
+            }
+          }
+        },
+        "operationId": "FindAUSecurities",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "exchangeType",
+            "in": "query",
+            "required": false,
+            "description": "Share = 1, Fund = 2.",
+            "type": "enum"
+          },
+          {
+            "name": "pdsId",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "type": "string"
+          },
+          {
+            "name": "allowInternational",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          }
+        ]
+      }
+    },
     "/api/application": {
       "post": {
         "responses": {
@@ -1656,6 +1727,36 @@
       "required": [],
       "type": "object"
     },
+    "SecurityResponse": {
+      "properties": {
+        "Id": {
+          "description": "",
+          "type": "string"
+        },
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Description": {
+          "description": "",
+          "type": "string"
+        },
+        "ISIN": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        },
+        "IsAllowedByApl": {
+          "description": "",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "DraftAddressAU": {
       "properties": {
         "Street": {
@@ -1687,7 +1788,9 @@
           "type": "boolean"
         }
       },
-      "required": [],
+      "required": [
+        "Street"
+      ],
       "type": "object"
     },
     "DraftContactAU": {
@@ -1730,7 +1833,10 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "FirstName",
+        "LastName"
+      ],
       "type": "object"
     },
     "CorporateCapacity": {
@@ -1803,7 +1909,11 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "Capacity",
+        "FirstName",
+        "LastName"
+      ],
       "type": "object"
     },
     "IdentificationType": {
@@ -1889,7 +1999,9 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "Name"
+      ],
       "type": "object"
     },
     "DraftIndividualApplicantAU": {
@@ -1971,7 +2083,10 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "FirstName",
+        "LastName"
+      ],
       "type": "object"
     },
     "ApplicantType": {
@@ -2024,7 +2139,9 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "Id"
+      ],
       "type": "object"
     },
     "DraftAccountBankAccountAU": {
@@ -2049,7 +2166,10 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "AccountNumber",
+        "Bsb"
+      ],
       "type": "object"
     },
     "TrustOrFundDetails": {
@@ -2407,7 +2527,9 @@
           "type": "number"
         }
       },
-      "required": [],
+      "required": [
+        "Code"
+      ],
       "type": "object"
     },
     "DraftSecurity": {
@@ -2421,7 +2543,10 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "Code",
+        "Exchange"
+      ],
       "type": "object"
     },
     "DraftExclusion": {
@@ -2556,7 +2681,8 @@
         }
       },
       "required": [
-        "AccountType"
+        "AccountType",
+        "PdsId"
       ],
       "type": "object"
     },
@@ -2603,6 +2729,108 @@
         }
       },
       "required": [],
+      "type": "object"
+    },
+    "InSpecieCashStockTransferType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "DraftInSpecieCashStockTransferDetails": {
+      "properties": {
+        "SecurityIsin": {
+          "description": "",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "BookCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [
+        "SecurityIsin"
+      ],
+      "type": "object"
+    },
+    "DraftInSpecieCashStockTransfer": {
+      "properties": {
+        "TransferType": {
+          "description": "",
+          "$ref": "#/definitions/InSpecieCashStockTransferType"
+        },
+        "CedingPartyId": {
+          "description": "",
+          "type": "string"
+        },
+        "CedingAccountNumber": {
+          "description": "",
+          "type": "string"
+        },
+        "InSpecieCashStockTransferDetails": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/DraftInSpecieCashStockTransferDetails"
+          },
+          "type": "array"
+        },
+        "CashTransferAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "AmountUsedThisYear": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "FeeAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "FeePercent": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [
+        "TransferType"
+      ],
+      "type": "object"
+    },
+    "CostAndChargeType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "CostAndCharge": {
+      "properties": {
+        "Type": {
+          "description": "",
+          "$ref": "#/definitions/CostAndChargeType"
+        },
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
       "type": "object"
     },
     "AccountLifeCycle": {
@@ -2710,7 +2938,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.12.09",
+    "version": "2020.12.10",
     "title": "Public API"
   }
 }
