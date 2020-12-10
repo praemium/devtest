@@ -1827,15 +1827,15 @@
     "CedingPartyResponse": {
       "properties": {
         "CedingPartyId": {
-          "description": "",
+          "description": "Ceding party Id.",
           "type": "string"
         },
         "CedingPartyName": {
-          "description": "",
+          "description": "Ceding party name.",
           "type": "string"
         },
         "AcceptsElectronicTransfer": {
-          "description": "",
+          "description": "Ceding party accepts electronic transfers.",
           "type": "boolean"
         }
       },
@@ -1845,27 +1845,27 @@
     "SecurityResponse": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Security Id.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Security code.",
           "type": "string"
         },
         "Description": {
-          "description": "",
+          "description": "Description.",
           "type": "string"
         },
         "ISIN": {
-          "description": "",
+          "description": "ISIN of security code.",
           "type": "string"
         },
         "Exchange": {
-          "description": "",
+          "description": "Exchange of security.",
           "type": "string"
         },
         "IsAllowedByApl": {
-          "description": "",
+          "description": "Is the security allowed by the Approved Product List.",
           "type": "boolean"
         }
       },

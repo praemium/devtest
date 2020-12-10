@@ -208,7 +208,7 @@
             "name": "userName",
             "in": "path",
             "required": true,
-            "description": "",
+            "description": "Username.",
             "type": "string"
           },
           {
@@ -1054,7 +1054,7 @@
     "User": {
       "properties": {
         "UserId": {
-          "description": "User ID",
+          "description": "User ID.",
           "format": "int32",
           "type": "integer"
         }
@@ -2186,11 +2186,11 @@
     "SsoLoginRequest": {
       "properties": {
         "Application": {
-          "description": "Application.",
+          "description": "The ID of the application the user will be sent to once logged in. Platform=V-Wrap, Investor=Investor Portal, Adviser=Adviser Portal, Applications=Application Portal.",
           "type": "string"
         },
         "UserId": {
-          "description": "User Id.",
+          "description": "ID of the user to log in. Either UserId or Username is required.",
           "format": "int32",
           "type": "integer"
         }
@@ -2204,7 +2204,7 @@
     "SsoLoginResponse": {
       "properties": {
         "SsoUrl": {
-          "description": "SSO Ural.",
+          "description": "SSO Url.",
           "type": "string"
         }
       },
