@@ -417,7 +417,11 @@
 <h1 id='pds'>PDS</h1><h3 id='get-pds'><span class="get">GET</span> PDS</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/pds</p>
+</blockquote>
 
+<p>This endpoint returns the PDS details for the service.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -1954,7 +1958,11 @@
 <h3 id='get-application-status'><span class="get">GET</span> Application Status</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application/{ApplicationId}/status</p>
+</blockquote>
 
+<p>This endpoint returns the status of the application. This can be used to check which state an application is in, and the awaiting action.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -2057,7 +2065,11 @@
 <h1 id='accounts'>Accounts</h1><h3 id='post-sma-account'><span class="post">POST</span> SMA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/account/Sma</p>
+</blockquote>
 
+<p>This endpoint creates a new SMA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -2440,7 +2452,11 @@
 <h3 id='post-supersma-accumulation-account'><span class="post">POST</span> SuperSMA Accumulation Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/account/SuperSmaAccumulation</p>
+</blockquote>
 
+<p>This endpoint creates a new SuperSMA Accumulation account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -2818,7 +2834,11 @@
 <h3 id='post-supersma-pension-account'><span class="post">POST</span> SuperSMA Pension Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/account/SuperSmaPension</p>
+</blockquote>
 
+<p>This endpoint creates a new SuperSMA Pension account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3241,7 +3261,11 @@
 <h1 id='app-form'>App Form</h1><h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
+</blockquote>
 
+<p>This endpoint returns a PDF version of the application form for the specified account. This is a confirmation to the client of the details of their account. The PDF is returned as a base64 encoded string.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3295,7 +3319,11 @@
 <h1 id='account-model-weightings'>Account Model Weightings</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+</blockquote>
 
+<p>This endpoint returns the account model weightings for the account.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3462,7 +3490,11 @@
 <h1 id='sso-login'>SSO Login</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
+</blockquote>
 
+<p>his endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again. <br>Either UserId or Username is required.<br>Parameters are used to pass in additional data for certain applications. The following parameters are valid for Platform &amp; Reporting: <br> - AccountID is the internal ID of the account to be selected when the user is logged in.<br> - AreaID is an ID to determine which page the user will load initially (e.g. 103 - Transaction History, 1171 - Reporting).<br> - Frameless is an option to determine whether or not the menu and logo are hidden.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3546,7 +3578,11 @@
 <h1 id='users'>Users</h1><h3 id='get-user'><span class="get">GET</span> User</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/user/{username}</p>
+</blockquote>
 
+<p>This endpoint returns the user links for the account.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3622,7 +3658,11 @@
 <h1 id='securities'>Securities</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
+</blockquote>
 
+<p>This endpoint returns the securties details for the service.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
