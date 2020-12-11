@@ -2220,6 +2220,7 @@
           "type": "string"
         }
       },
+      "required": [],
       "type": "object"
     },
     "ContributionType": {
@@ -2274,6 +2275,7 @@
           "$ref": "#/definitions/Frequency"
         }
       },
+      "required": [],
       "type": "object"
     },
     "TargetAllocationInstruction": {
@@ -2288,6 +2290,7 @@
           "type": "number"
         }
       },
+      "required": [],
       "type": "object"
     },
     "DraftTargetAllocation": {
@@ -2314,6 +2317,7 @@
           "type": "array"
         }
       },
+      "required": [],
       "type": "object"
     },
     "InflowsContributionSourceFund": {
@@ -2327,6 +2331,7 @@
           "type": "string"
         }
       },
+      "required": [],
       "type": "object"
     },
     "ApplicationInflowsContributionSource": {
@@ -2349,6 +2354,7 @@
           "type": "number"
         }
       },
+      "required": [],
       "type": "object"
     },
     "SmaTransferMethodType": {
@@ -2377,6 +2383,7 @@
           "type": "number"
         }
       },
+      "required": [],
       "type": "object"
     },
     "ApplicationInflowsOtherContribution": {
@@ -2391,6 +2398,7 @@
           "type": "number"
         }
       },
+      "required": [],
       "type": "object"
     },
     "DraftInitialInvestmentSuper": {
@@ -2421,6 +2429,7 @@
           "$ref": "#/definitions/ApplicationInflowsOtherContribution"
         }
       },
+      "required": [],
       "type": "object"
     },
     "Gender": {
@@ -2461,6 +2470,7 @@
           "type": "string"
         }
       },
+      "required": [],
       "type": "object"
     },
     "DraftNominatedBeneficiary": {
@@ -2488,6 +2498,7 @@
           "type": "string"
         }
       },
+      "required": [],
       "type": "object"
     },
     "DraftAccountType": {
@@ -2649,7 +2660,7 @@
           "type": "string"
         },
         "AccountType": {
-          "description": "Company = 13, Individual = 14.",
+          "description": "Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18.",
           "$ref": "#/definitions/DraftAccountType"
         },
         "PdsId": {
