@@ -3273,7 +3273,11 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <h1 id='sso-login'>SSO Login</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
+</blockquote>
 
+<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again. <br>Either UserId or Username is required.<br>Parameters are used to pass in additional data for certain applications. The following parameters are valid for Platform &amp; Reporting: <br> - AccountID is the internal ID of the account to be selected when the user is logged in.<br> - AreaID is an ID to determine which page the user will load initially (e.g. 103 - Transaction History, 1171 - Reporting).<br> - Frameless is an option to determine whether or not the menu and logo are hidden.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
