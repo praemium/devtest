@@ -1963,6 +1963,14 @@
       "required": [],
       "type": "object"
     },
+    "Gender": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
     "ApplicantType": {
       "format": "int32",
       "type": "integer",
@@ -1985,7 +1993,7 @@
     "DraftPensionPayment": {
       "properties": {
         "Type": {
-          "description": "",
+          "description": "Specified = 0, Minimum = 1, Maximum = 2.",
           "$ref": "#/definitions/PensionPaymentType"
         },
         "Amount": {
@@ -1994,67 +2002,13 @@
           "type": "number"
         },
         "Frequency": {
-          "description": "",
+          "description": "Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.",
           "$ref": "#/definitions/Frequency"
         },
         "CommencementDate": {
           "description": "",
           "format": "date-time",
           "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "ContributionType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        11,
-        12,
-        13,
-        21,
-        22,
-        23,
-        24,
-        31,
-        32,
-        33,
-        41,
-        42,
-        43
-      ]
-    },
-    "PaymentMethods": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    "RegularContributionAccum": {
-      "properties": {
-        "ContributionType": {
-          "description": "",
-          "$ref": "#/definitions/ContributionType"
-        },
-        "Amount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Method": {
-          "description": "",
-          "$ref": "#/definitions/PaymentMethods"
-        },
-        "Frequency": {
-          "description": "",
-          "$ref": "#/definitions/Frequency"
         }
       },
       "required": [],
@@ -2156,7 +2110,7 @@
           "type": "integer"
         },
         "TransferMethod": {
-          "description": "",
+          "description": "WholeAmountWithClose = 0, WholeAmountKeepOpen = 1, SpecifiedAmount = 2 - whether the source account will be kept open.",
           "$ref": "#/definitions/SmaTransferMethodType"
         },
         "Amount": {
@@ -2168,10 +2122,30 @@
       "required": [],
       "type": "object"
     },
+    "ContributionType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        11,
+        12,
+        13,
+        21,
+        22,
+        23,
+        24,
+        31,
+        32,
+        33,
+        41,
+        42,
+        43
+      ]
+    },
     "ApplicationInflowsOtherContribution": {
       "properties": {
         "ContributionType": {
-          "description": "",
+          "description": "NonConcessional_Personal = 21, NonConcessional_Spouse = 22, NonConcessional_Child = 24, Downsizer = 43.",
           "$ref": "#/definitions/ContributionType"
         },
         "ExpectedAmount": {
@@ -2214,14 +2188,6 @@
       "required": [],
       "type": "object"
     },
-    "Gender": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        1,
-        2
-      ]
-    },
     "BeneficiaryRelationship": {
       "format": "int32",
       "type": "integer",
@@ -2235,7 +2201,7 @@
     "NominatedReversionaryBeneficiary": {
       "properties": {
         "Sex": {
-          "description": "",
+          "description": "Male = 1, Female = 2.",
           "$ref": "#/definitions/Gender"
         },
         "FullName": {
@@ -2243,7 +2209,7 @@
           "type": "string"
         },
         "Relationship": {
-          "description": "",
+          "description": "Spouse = 1, Child = 2, Other = 3.",
           "$ref": "#/definitions/BeneficiaryRelationship"
         },
         "DateOfBirth": {
@@ -2271,7 +2237,7 @@
           "type": "string"
         },
         "Relationship": {
-          "description": "",
+          "description": "Spouse = 1, Child = 2, Other = 3, PersonalLegalRepresentative = 8.",
           "$ref": "#/definitions/BeneficiaryRelationship"
         },
         "DateOfBirth": {
@@ -2326,6 +2292,17 @@
       },
       "required": [],
       "type": "object"
+    },
+    "PaymentMethods": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
     },
     "DraftInitialInvestment": {
       "properties": {
@@ -2410,7 +2387,7 @@
           "type": "string"
         },
         "NoDocument": {
-          "description": "If the appplicant does not hold a identification document.",
+          "description": "If the applicant does not hold a identification document.",
           "type": "boolean"
         }
       },
@@ -2497,7 +2474,7 @@
     "DraftInSpecieCashStockTransfer": {
       "properties": {
         "TransferType": {
-          "description": "",
+          "description": "StockAndCash = 0, CashOnly = 1.",
           "$ref": "#/definitions/InSpecieCashStockTransferType"
         },
         "CedingPartyId": {
@@ -2568,7 +2545,7 @@
     "CostAndCharge": {
       "properties": {
         "Type": {
-          "description": "",
+          "description": "OneOffCharges = 0, OngoingCharges = 1, TransactionCharges = 2, IncidentalCharges = 3, ThirdPartyPayment = 4.",
           "$ref": "#/definitions/CostAndChargeType"
         },
         "Amount": {
@@ -3006,6 +2983,10 @@
           "description": "Nature of activities that the Company performs.",
           "type": "string"
         },
+        "BearerSharesAreInIssue": {
+          "description": "",
+          "type": "boolean"
+        },
         "NameOfRegulator": {
           "description": "Name of regulator.",
           "type": "string"
@@ -3047,8 +3028,8 @@
           "$ref": "#/definitions/DraftAddress"
         },
         "Gender": {
-          "description": "Gender of individual applicant.",
-          "type": "string"
+          "description": "Male = 1, Female = 2.",
+          "$ref": "#/definitions/Gender"
         },
         "UserName": {
           "description": "User Name of individual applicant.",
@@ -3136,7 +3117,7 @@
           "type": "string"
         },
         "NatureOfTrust": {
-          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in posession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
+          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
           "$ref": "#/definitions/TrustNature"
         },
         "Lei": {
@@ -3318,10 +3299,6 @@
           "description": "",
           "$ref": "#/definitions/DraftPensionPayment"
         },
-        "RegularContributionAccum": {
-          "description": "",
-          "$ref": "#/definitions/RegularContributionAccum"
-        },
         "TargetAllocation": {
           "description": "",
           "$ref": "#/definitions/DraftTargetAllocation"
@@ -3415,7 +3392,7 @@
           "type": "boolean"
         },
         "TradeFreezeReason": {
-          "description": "",
+          "description": "TransferIn = 0, TransferOut = 1, Incident = 2, Deceased = 3, RemovalOfAdviser = 4, AdviserInstructed = 5, Bespoke = 6.",
           "$ref": "#/definitions/TradeFreezeReason"
         },
         "TradeFreezeNote": {

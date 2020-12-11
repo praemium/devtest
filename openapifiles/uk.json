@@ -1124,6 +1124,14 @@
         7
       ]
     },
+    "Gender": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
     "ApplicantType": {
       "format": "int32",
       "type": "integer",
@@ -1141,18 +1149,6 @@
         1,
         2,
         3
-      ]
-    },
-    "PaymentMethods": {
-      "required": [],
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4
       ]
     },
     "DraftAccountType": {
@@ -1223,6 +1219,18 @@
       },
       "required": [],
       "type": "object"
+    },
+    "PaymentMethods": {
+      "required": [],
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
     },
     "DraftInitialInvestment": {
       "properties": {
@@ -1548,7 +1556,7 @@
           "type": "string"
         },
         "NoDocument": {
-          "description": "If the appplicant does not hold a identification document.",
+          "description": "If the applicant does not hold a identification document.",
           "type": "boolean"
         }
       },
@@ -1574,8 +1582,8 @@
           "$ref": "#/definitions/DraftAddressUK"
         },
         "Gender": {
-          "description": "Gender of individual applicant.",
-          "type": "string"
+          "description": "Male = 1, Female = 2.",
+          "$ref": "#/definitions/Gender"
         },
         "UserName": {
           "description": "User Name of individual applicant.",
@@ -1652,6 +1660,7 @@
       },
       "required": [
         "FirstName",
+        "Gender",
         "LastName"
       ],
       "type": "object"
@@ -1682,7 +1691,7 @@
           "type": "string"
         },
         "NatureOfTrust": {
-          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in posession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
+          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
           "$ref": "#/definitions/TrustNature"
         },
         "Lei": {
@@ -1832,7 +1841,6 @@
       "type": "object"
     },
     "Region": {
-      "required": [],
       "format": "int32",
       "type": "integer",
       "enum": [
@@ -1874,7 +1882,7 @@
     "DraftInSpecieCashStockTransfer": {
       "properties": {
         "TransferType": {
-          "description": "",
+          "description": "StockAndCash = 0, CashOnly = 1.",
           "$ref": "#/definitions/InSpecieCashStockTransferType"
         },
         "CedingPartyId": {
@@ -1945,7 +1953,7 @@
     "CostAndCharge": {
       "properties": {
         "Type": {
-          "description": "",
+          "description": "OneOffCharges = 0, OngoingCharges = 1, TransactionCharges = 2, IncidentalCharges = 3, ThirdPartyPayment = 4.",
           "$ref": "#/definitions/CostAndChargeType"
         },
         "Amount": {
@@ -1954,6 +1962,7 @@
           "type": "number"
         }
       },
+      "required": [],
       "type": "object"
     },
     "IllustrationData": {
@@ -1966,6 +1975,7 @@
           "type": "array"
         }
       },
+      "required": [],
       "type": "object"
     },
     "DraftAccountUK": {
@@ -2037,7 +2047,7 @@
           "type": "boolean"
         },
         "TradeFreezeReason": {
-          "description": "Trade freeze reason.",
+          "description": "TransferIn = 0, TransferOut = 1, Incident = 2, Deceased = 3, RemovalOfAdviser = 4, AdviserInstructed = 5, Bespoke = 6.",
           "$ref": "#/definitions/TradeFreezeReason"
         },
         "TradeFreezeNote": {
