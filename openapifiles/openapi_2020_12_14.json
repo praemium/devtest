@@ -2649,119 +2649,6 @@
       "required": [],
       "type": "object"
     },
-    "PdsModel": {
-      "properties": {
-        "Id": {
-          "description": "ModelId as returned by the Models endpoint.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Model name.",
-          "type": "string"
-        },
-        "Style": {
-          "description": "Model style.",
-          "type": "string"
-        },
-        "Code": {
-          "description": "Model code.",
-          "type": "string"
-        },
-        "ManagerName": {
-          "description": "Model Manager name.",
-          "type": "string"
-        },
-        "FeeOverride": {
-          "description": "Fee override.",
-          "$ref": "#/definitions/FeeOverride"
-        }
-      },
-      "type": "object"
-    },
-    "PdsDetail": {
-      "properties": {
-        "Id": {
-          "description": "ID of the PDS.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Name of the PDS.",
-          "type": "string"
-        },
-        "MaxNoOfBankAccounts": {
-          "description": "Maximum number of bank accounts allowed by the PDS.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "IsSuperSma": {
-          "description": "If the PDS is specific to SuperSMA.",
-          "type": "boolean"
-        },
-        "Status": {
-          "description": "Status of the PDS, active = 1, closed = 2.",
-          "type": "string"
-        },
-        "ServiceId": {
-          "description": "Service Id.",
-          "type": "string"
-        },
-        "ServiceName": {
-          "description": "Service Name.",
-          "type": "string"
-        },
-        "Region": {
-          "description": "Region of the PDS.",
-          "$ref": "#/definitions/ApplicantRegion"
-        },
-        "CurrencyCode": {
-          "description": "Currency code for the PDS.",
-          "type": "string"
-        },
-        "Fees": {
-          "description": "Fees associated to the PDS.",
-          "items": {
-            "$ref": "#/definitions/PdsFee"
-          },
-          "type": "array"
-        },
-        "BankAccountUsages": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "items": {
-            "$ref": "#/definitions/BankAccountUsage"
-          },
-          "type": "array"
-        },
-        "TaxOptions": {
-          "description": "Tax options for the PDS.",
-          "items": {
-            "$ref": "#/definitions/PdsTaxOption"
-          },
-          "type": "array"
-        },
-        "Models": {
-          "description": "List of available models.",
-          "items": {
-            "$ref": "#/definitions/PdsModel"
-          },
-          "type": "array"
-        },
-        "AvailableAccountTypes": {
-          "description": "Type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
-          "items": {
-            "$ref": "#/definitions/AccountType"
-          },
-          "type": "array"
-        },
-        "Products": {
-          "description": "Products for the PDS.",
-          "items": {
-            "$ref": "#/definitions/Product"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
     "DraftAddress": {
       "properties": {
         "Addressee": {
@@ -3443,6 +3330,142 @@
       ],
       "type": "object"
     },
+    "PdsModel": {
+      "properties": {
+        "Id": {
+          "description": "ModelId as returned by the Models endpoint.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Model name.",
+          "type": "string"
+        },
+        "Style": {
+          "description": "Model style.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "ManagerName": {
+          "description": "Model Manager name.",
+          "type": "string"
+        },
+        "FeeOverride": {
+          "description": "Fee override.",
+          "$ref": "#/definitions/FeeOverride"
+        }
+      },
+      "type": "object"
+    },
+    "PdsDetail": {
+      "properties": {
+        "Id": {
+          "description": "ID of the PDS.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Name of the PDS.",
+          "type": "string"
+        },
+        "MaxNoOfBankAccounts": {
+          "description": "Maximum number of bank accounts allowed by the PDS.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsSuperSma": {
+          "description": "If the PDS is specific to SuperSMA.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Status of the PDS, active = 1, closed = 2.",
+          "type": "string"
+        },
+        "ServiceId": {
+          "description": "Service Id.",
+          "type": "string"
+        },
+        "ServiceName": {
+          "description": "Service Name.",
+          "type": "string"
+        },
+        "Region": {
+          "description": "Region of the PDS.",
+          "$ref": "#/definitions/ApplicantRegion"
+        },
+        "CurrencyCode": {
+          "description": "Currency code for the PDS.",
+          "type": "string"
+        },
+        "Fees": {
+          "description": "Fees associated to the PDS.",
+          "items": {
+            "$ref": "#/definitions/PdsFee"
+          },
+          "type": "array"
+        },
+        "BankAccountUsages": {
+          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "items": {
+            "$ref": "#/definitions/BankAccountUsage"
+          },
+          "type": "array"
+        },
+        "TaxOptions": {
+          "description": "Tax options for the PDS.",
+          "items": {
+            "$ref": "#/definitions/PdsTaxOption"
+          },
+          "type": "array"
+        },
+        "Models": {
+          "description": "List of available models.",
+          "items": {
+            "$ref": "#/definitions/PdsModel"
+          },
+          "type": "array"
+        },
+        "AvailableAccountTypes": {
+          "description": "Type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
+          "items": {
+            "$ref": "#/definitions/AccountType"
+          },
+          "type": "array"
+        },
+        "Products": {
+          "description": "Products for the PDS.",
+          "items": {
+            "$ref": "#/definitions/Product"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TokenResponse": {
+      "properties": {
+        "token_type": {
+          "description": "",
+          "type": "string"
+        },
+        "expires_in": {
+          "description": "",
+          "format": "int32",
+          "type": "integer"
+        },
+        "ext_expires_in": {
+          "description": "",
+          "format": "int32",
+          "type": "integer"
+        },
+        "access_token": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "PutAccountModelWeightingRequest": {
       "properties": {
         "AccountId": {
@@ -3467,29 +3490,6 @@
         "AccountModelWeightings",
         "RebalanceType"
       ],
-      "type": "object"
-    },
-    "TokenResponse": {
-      "properties": {
-        "token_type": {
-          "description": "",
-          "type": "string"
-        },
-        "expires_in": {
-          "description": "",
-          "format": "int32",
-          "type": "integer"
-        },
-        "ext_expires_in": {
-          "description": "",
-          "format": "int32",
-          "type": "integer"
-        },
-        "access_token": {
-          "description": "",
-          "type": "string"
-        }
-      },
       "type": "object"
     }
   },
