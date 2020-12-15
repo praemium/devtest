@@ -199,7 +199,7 @@
             "name": "AccountId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Account Id.",
             "type": "string"
           }
         ]
@@ -229,6 +229,7 @@
             "name": "accountId",
             "in": "query",
             "required": true,
+            "description": "Account Id.",
             "type": "string"
           },
           {
@@ -365,7 +366,7 @@
             "name": "userName",
             "in": "path",
             "required": true,
-            "description": "",
+            "description": "User Name.",
             "type": "string"
           },
           {
@@ -450,14 +451,14 @@
             "name": "pdsId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "PDS Id.",
             "type": "string"
           },
           {
             "name": "allowInternational",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "If allowed for International.",
             "type": "boolean"
           }
         ]
@@ -539,7 +540,7 @@
             "name": "applicationId",
             "in": "path",
             "required": true,
-            "description": "",
+            "description": "Application Id.",
             "format": "uuid",
             "type": "string"
           },
@@ -1077,6 +1078,7 @@
         21,
         22,
         23,
+        24,
         31,
         32,
         33,
@@ -1404,11 +1406,11 @@
     "AccountModelWeighting": {
       "properties": {
         "ModelCode": {
-          "description": "",
+          "description": "Model code.",
           "type": "string"
         },
         "Percent": {
-          "description": "",
+          "description": "Percent of model.",
           "format": "double",
           "type": "number"
         }
@@ -1431,11 +1433,11 @@
           "$ref": "#/definitions/RebalanceType"
         },
         "AccountId": {
-          "description": "",
+          "description": "Account Id.",
           "type": "string"
         },
         "AccountModelWeightings": {
-          "description": "",
+          "description": "Account model weighting.",
           "minLength": 1,
           "items": {
             "$ref": "#/definitions/AccountModelWeighting"
@@ -2215,7 +2217,7 @@
           "$ref": "#/definitions/PensionPaymentType"
         },
         "Amount": {
-          "description": "",
+          "description": "Amount of pension payment.",
           "format": "double",
           "type": "number"
         },
@@ -2224,7 +2226,7 @@
           "$ref": "#/definitions/Frequency"
         },
         "CommencementDate": {
-          "description": "",
+          "description": "Commencement date of pension payment.",
           "format": "date-time",
           "type": "string"
         }
@@ -2235,11 +2237,11 @@
     "TargetAllocationInstruction": {
       "properties": {
         "Code": {
-          "description": "",
+          "description": "Code for target allocation instruction.",
           "type": "string"
         },
         "Percentage": {
-          "description": "",
+          "description": "Percentage for target allocation instruction.",
           "format": "double",
           "type": "number"
         }
@@ -2250,21 +2252,21 @@
     "DraftTargetAllocation": {
       "properties": {
         "Fees": {
-          "description": "",
+          "description": "Fees.",
           "items": {
             "$ref": "#/definitions/TargetAllocationInstruction"
           },
           "type": "array"
         },
         "Income": {
-          "description": "",
+          "description": "Income.",
           "items": {
             "$ref": "#/definitions/TargetAllocationInstruction"
           },
           "type": "array"
         },
         "Payments": {
-          "description": "",
+          "description": "Payments.",
           "items": {
             "$ref": "#/definitions/TargetAllocationInstruction"
           },
@@ -2277,11 +2279,11 @@
     "InflowsContributionSourceFund": {
       "properties": {
         "ProductName": {
-          "description": "",
+          "description": "Product name.",
           "type": "string"
         },
         "Usi": {
-          "description": "",
+          "description": "USI of product.",
           "type": "string"
         }
       },
@@ -2291,19 +2293,19 @@
     "ApplicationInflowsContributionSource": {
       "properties": {
         "MemberNumber": {
-          "description": "",
+          "description": "Member number.",
           "type": "string"
         },
         "SourceOfContribution": {
-          "description": "",
+          "description": "Source of contribution.",
           "$ref": "#/definitions/InflowsContributionSourceFund"
         },
         "EntireBalance": {
-          "description": "",
+          "description": "If the entire balance.",
           "type": "boolean"
         },
         "ExpectedAmount": {
-          "description": "",
+          "description": "Expected amount.",
           "format": "double",
           "type": "number"
         }
@@ -2323,7 +2325,7 @@
     "InflowsContributionTransfer": {
       "properties": {
         "AccountId": {
-          "description": "",
+          "description": "Account Id.",
           "format": "int32",
           "type": "integer"
         },
@@ -2332,7 +2334,7 @@
           "$ref": "#/definitions/SmaTransferMethodType"
         },
         "Amount": {
-          "description": "",
+          "description": "Amount.",
           "format": "double",
           "type": "number"
         }
@@ -2367,7 +2369,7 @@
           "$ref": "#/definitions/ContributionType"
         },
         "ExpectedAmount": {
-          "description": "",
+          "description": "Expected amount.",
           "format": "double",
           "type": "number"
         }
@@ -2378,28 +2380,28 @@
     "DraftInitialInvestmentSuper": {
       "properties": {
         "ContributionSources": {
-          "description": "",
+          "description": "Contribution sources.",
           "items": {
             "$ref": "#/definitions/ApplicationInflowsContributionSource"
           },
           "type": "array"
         },
         "Transfers": {
-          "description": "",
+          "description": "Transfers.",
           "items": {
             "$ref": "#/definitions/InflowsContributionTransfer"
           },
           "type": "array"
         },
         "OtherContributions": {
-          "description": "",
+          "description": "Other contributions.",
           "items": {
             "$ref": "#/definitions/ApplicationInflowsOtherContribution"
           },
           "type": "array"
         },
         "AccumContribution": {
-          "description": "",
+          "description": "Accumulation contribution.",
           "$ref": "#/definitions/ApplicationInflowsOtherContribution"
         }
       },
@@ -2423,7 +2425,7 @@
           "$ref": "#/definitions/Gender"
         },
         "FullName": {
-          "description": "",
+          "description": "Full name of beneficiary.",
           "type": "string"
         },
         "Relationship": {
@@ -2431,7 +2433,7 @@
           "$ref": "#/definitions/BeneficiaryRelationship"
         },
         "DateOfBirth": {
-          "description": "",
+          "description": "Date of birth of beneficiary.",
           "format": "date-time",
           "type": "string"
         }
@@ -2442,16 +2444,16 @@
     "DraftNominatedBeneficiary": {
       "properties": {
         "Proportion": {
-          "description": "",
+          "description": "The portion of the benefit that should be paid to the beneficiary. These must add up to 100%.",
           "format": "double",
           "type": "number"
         },
         "Address": {
-          "description": "",
+          "description": "Address of the beneficiary.",
           "$ref": "#/definitions/DraftAddressAU"
         },
         "FullName": {
-          "description": "",
+          "description": "Full name of beneficiary.",
           "type": "string"
         },
         "Relationship": {
@@ -2459,7 +2461,7 @@
           "$ref": "#/definitions/BeneficiaryRelationship"
         },
         "DateOfBirth": {
-          "description": "",
+          "description": "Date of birth of beneficiary.",
           "format": "date-time",
           "type": "string"
         }
@@ -2869,14 +2871,24 @@
       "required": [],
       "type": "object"
     },
+    "TargetApplication": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
     "SsoLoginRequest": {
       "properties": {
         "Application": {
-          "description": "",
-          "type": "string"
+          "description": "The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.",
+          "$ref": "#/definitions/TargetApplication"
         },
         "UserId": {
-          "description": "",
+          "description": "ID of the user to log in. Either UserId or Username is required.",
           "format": "int32",
           "type": "integer"
         }
@@ -2923,7 +2935,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.12.14",
+    "version": "2020.12.15",
     "title": "Public API"
   }
 }

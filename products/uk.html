@@ -916,7 +916,11 @@
 <h1 id='applications'>Applications</h1><h3 id='post-individual-applicant-amp-gia-account-uk'><span class="post">POST</span> Individual Applicant &amp; GIA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a individual applicant and GIA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -1541,12 +1545,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -1692,7 +1696,11 @@
 <h3 id='post-corporate-applicant-amp-gia-account-uk'><span class="post">POST</span> Corporate Applicant &amp; GIA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a corporate applicant and GIA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -2507,12 +2515,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -2658,7 +2666,11 @@
 <h3 id='post-trust-applicant-amp-gia-account-uk'><span class="post">POST</span> Trust Applicant &amp; GIA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a Trust applicant and GIA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3414,12 +3426,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -3565,7 +3577,11 @@
 <h3 id='post-individual-applicant-amp-isa-account-uk'><span class="post">POST</span> Individual Applicant &amp; ISA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a individual applicant and ISA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -4190,12 +4206,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -4391,7 +4407,7 @@
 <tr>
 <td>ApplicationId<span class="required">required</span></td>
 <td>string</td>
-<td></td>
+<td>Application Id.</td>
 </tr>
 </tbody></table>
 
@@ -4486,7 +4502,7 @@
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
 <span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
 <span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
 </code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
@@ -4500,7 +4516,7 @@
 <tr>
 <td>AccountId<span class="required">required</span></td>
 <td>string</td>
-<td></td>
+<td>Account Id.</td>
 </tr>
 <tr>
 <td>Recipient</td>
@@ -4550,6 +4566,25 @@
 <td>x-pps-api-version<span class="required">required</span></td>
 <td>string</td>
 <td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account Id.</td>
 </tr>
 </tbody></table>
 
@@ -4626,7 +4661,7 @@
 <p><strong>Request Parameter - Body Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1000000112"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
@@ -4670,7 +4705,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
 </blockquote>
 
-<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again. <br>Either UserId or Username is required.<br>Parameters are used to pass in additional data for certain applications. The following parameters are valid for Platform &amp; Reporting: <br> - AccountID is the internal ID of the account to be selected when the user is logged in.<br> - AreaID is an ID to determine which page the user will load initially (e.g. 103 - Transaction History, 1171 - Reporting).<br> - Frameless is an option to determine whether or not the menu and logo are hidden.</p>
+<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again. UserId is required.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -4720,8 +4755,8 @@
 </thead><tbody>
 <tr>
 <td>Application<span class="required">required</span></td>
-<td>string</td>
-<td>The ID of the application the user will be sent to once logged in. Platform=V-Wrap, Investor=Investor Portal, Adviser=Adviser Portal, Applications=Application Portal.</td>
+<td>enum</td>
+<td>The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.</td>
 </tr>
 <tr>
 <td>UserId<span class="required">required</span></td>
@@ -4876,7 +4911,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountType</span><span class="pi">:</span> <span class="m">15</span>
 <span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
-</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4892,7 +4927,7 @@
 <tr>
 <td>Search<span class="required">required</span></td>
 <td>string</td>
-<td></td>
+<td>Search for Ceding party.</td>
 </tr>
 </tbody></table>
 
@@ -4976,7 +5011,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
 <span class="na">AllowInternational</span><span class="pi">:</span> <span class="no">false</span>
-</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4992,7 +5027,7 @@
 <tr>
 <td>AllowInternational</td>
 <td>boolean</td>
-<td></td>
+<td>If allowed for International.</td>
 </tr>
 </tbody></table>
 

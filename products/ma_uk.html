@@ -269,6 +269,14 @@
               </ul>
           </li>
           <li>
+            <a href="#app-form" class="toc-h1 toc-link" data-title="App Form">App Form</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-app-form" class="toc-h2 toc-link" data-title="GET App Form"><span class="get">GET</span> App Form</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#ceding-parties" class="toc-h1 toc-link" data-title="Ceding Parties">Ceding Parties</a>
               <ul class="toc-list-h2">
                   <li>
@@ -881,7 +889,11 @@
 <h1 id='applications'>Applications</h1><h3 id='post-individual-applicant-amp-gia-account-uk'><span class="post">POST</span> Individual Applicant &amp; GIA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a individual applicant and GIA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -1506,12 +1518,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -1657,7 +1669,11 @@
 <h3 id='post-corporate-applicant-amp-gia-account-uk'><span class="post">POST</span> Corporate Applicant &amp; GIA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a corporate applicant and GIA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -2472,12 +2488,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -2623,7 +2639,11 @@
 <h3 id='post-trust-applicant-amp-gia-account-uk'><span class="post">POST</span> Trust Applicant &amp; GIA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a Trust applicant and GIA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -3379,12 +3399,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -3530,7 +3550,11 @@
 <h3 id='post-individual-applicant-amp-isa-account-uk'><span class="post">POST</span> Individual Applicant &amp; ISA Account - UK</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
 
+<p>This endpoint creates a individual applicant and ISA account in the system.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
@@ -4155,12 +4179,12 @@
 </tr>
 <tr>
 <td>Accounts.RegularContribution</td>
-<td></td>
+<td>object</td>
 <td>Regular cash contributions to the account.</td>
 </tr>
 <tr>
 <td>Accounts.RegularWithdrawal</td>
-<td></td>
+<td>object</td>
 <td>Regular cash withdrawals from the account.</td>
 </tr>
 <tr>
@@ -4356,7 +4380,7 @@
 <tr>
 <td>ApplicationId<span class="required">required</span></td>
 <td>string</td>
-<td></td>
+<td>Application Id.</td>
 </tr>
 </tbody></table>
 
@@ -4410,12 +4434,12 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='ceding-parties'>Ceding Parties</h1><h3 id='get-ceding-parties'><span class="get">GET</span> Ceding Parties</h3>
+<h1 id='app-form'>App Form</h1><h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
 <blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
 </blockquote>
 
-<p>This endpoint returns the ceding parties details for the service.</p>
+<p>This endpoint returns a PDF version of the application form for the specified account. This is a confirmation to the client of the details of their account. The PDF is returned as a base64 encoded string.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -4451,9 +4475,79 @@
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
+<span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
+<span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
+</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account Id.</td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td>enum</td>
+<td>Adviser = 0, Investor = 1</td>
+</tr>
+<tr>
+<td>FormType</td>
+<td>enum</td>
+<td>Digital = 0, Paper = 1</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='ceding-parties'>Ceding Parties</h1><h3 id='get-ceding-parties'><span class="get">GET</span> Ceding Parties</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
+</blockquote>
+
+<p>This endpoint returns the ceding parties details for the service.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountType</span><span class="pi">:</span> <span class="m">15</span>
 <span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
-</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4469,7 +4563,7 @@
 <tr>
 <td>Search<span class="required">required</span></td>
 <td>string</td>
-<td></td>
+<td>Search for Ceding party.</td>
 </tr>
 </tbody></table>
 
@@ -4523,7 +4617,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-10'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4553,7 +4647,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
 <span class="na">AllowInternational</span><span class="pi">:</span> <span class="no">false</span>
-</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4569,7 +4663,7 @@
 <tr>
 <td>AllowInternational</td>
 <td>boolean</td>
-<td></td>
+<td>If allowed for International.</td>
 </tr>
 </tbody></table>
 

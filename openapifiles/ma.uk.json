@@ -34,7 +34,7 @@
             "name": "AccountId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Account Id.",
             "type": "string"
           },
           {
@@ -74,6 +74,13 @@
           "text/json"
         ],
         "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account Id.",
+            "type": "string"
+          },
           {
             "name": "Authorization",
             "in": "header",
@@ -287,7 +294,7 @@
             "name": "search",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Search for Ceding party.",
             "type": "string"
           }
         ]
@@ -345,7 +352,7 @@
             "name": "allowInternational",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "If allowed for International.",
             "type": "boolean"
           }
         ]
@@ -427,7 +434,7 @@
             "name": "applicationId",
             "in": "path",
             "required": true,
-            "description": "",
+            "description": "Application Id.",
             "format": "uuid",
             "type": "string"
           },
@@ -921,7 +928,8 @@
         22,
         25,
         26,
-        27
+        27,
+        28
       ]
     },
     "Product": {
@@ -1506,7 +1514,7 @@
           "type": "string"
         },
         "BearerSharesAreInIssue": {
-          "description": "",
+          "description": "Bearer shares are in issue.",
           "type": "boolean"
         },
         "NameOfRegulator": {
@@ -1860,16 +1868,16 @@
     "DraftInSpecieCashStockTransferDetails": {
       "properties": {
         "SecurityIsin": {
-          "description": "",
+          "description": "Security is in of stock transfer.",
           "type": "string"
         },
         "Quantity": {
-          "description": "",
+          "description": "Quantity of stock transfer.",
           "format": "double",
           "type": "number"
         },
         "BookCost": {
-          "description": "",
+          "description": "Book cost of stock transfer.",
           "format": "double",
           "type": "number"
         }
@@ -1886,37 +1894,37 @@
           "$ref": "#/definitions/InSpecieCashStockTransferType"
         },
         "CedingPartyId": {
-          "description": "",
+          "description": "Ceding party Id.",
           "type": "string"
         },
         "CedingAccountNumber": {
-          "description": "",
+          "description": "Ceding account number.",
           "type": "string"
         },
         "InSpecieCashStockTransferDetails": {
-          "description": "",
+          "description": "In specie cash stock transfer details.",
           "items": {
             "$ref": "#/definitions/DraftInSpecieCashStockTransferDetails"
           },
           "type": "array"
         },
         "CashTransferAmount": {
-          "description": "",
+          "description": "Cash transfer amount.",
           "format": "double",
           "type": "number"
         },
         "AmountUsedThisYear": {
-          "description": "",
+          "description": "Amount used this year.",
           "format": "double",
           "type": "number"
         },
         "FeeAmount": {
-          "description": "",
+          "description": "Fee amount.",
           "format": "double",
           "type": "number"
         },
         "FeePercent": {
-          "description": "",
+          "description": "Fee percent.",
           "format": "double",
           "type": "number"
         }
@@ -1957,7 +1965,7 @@
           "$ref": "#/definitions/CostAndChargeType"
         },
         "Amount": {
-          "description": "",
+          "description": "Amount of cost and charge.",
           "format": "double",
           "type": "number"
         }
@@ -1968,7 +1976,7 @@
     "IllustrationData": {
       "properties": {
         "CostsAndCharges": {
-          "description": "",
+          "description": "Cost and charges.",
           "items": {
             "$ref": "#/definitions/CostAndCharge"
           },
@@ -2193,11 +2201,21 @@
       "required": [],
       "type": "object"
     },
+    "TargetApplication": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
     "SsoLoginRequest": {
       "properties": {
         "Application": {
-          "description": "The ID of the application the user will be sent to once logged in. Platform=V-Wrap, Investor=Investor Portal, Adviser=Adviser Portal, Applications=Application Portal.",
-          "type": "string"
+          "description": "The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.",
+          "$ref": "#/definitions/TargetApplication"
         },
         "UserId": {
           "description": "ID of the user to log in. Either UserId or Username is required.",
@@ -2247,7 +2265,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2020.12.14",
+    "version": "2020.12.15",
     "title": "Public API"
   }
 }
