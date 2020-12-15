@@ -6139,6 +6139,11 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <td>The to date used when calculating data for the request.</td>
 </tr>
 <tr>
+<td>DateRangeType</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>BuysAndSellsOnly</td>
 <td>integer</td>
 <td>Includes Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close.</td>
@@ -6375,6 +6380,16 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <td>The date on which the transaction occurred.</td>
 </tr>
 <tr>
+<td>ResponseData.Transactions.EntryDate</td>
+<td>date-time</td>
+<td></td>
+</tr>
+<tr>
+<td>ResponseData.Transactions.AmendmentDate</td>
+<td>date-time</td>
+<td></td>
+</tr>
+<tr>
 <td>ResponseData.Transactions.TransactionType</td>
 <td>string</td>
 <td>A categorised type of the transaction.</td>
@@ -6545,6 +6560,11 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <td>ToDate<span class="required">required</span></td>
 <td>date-time</td>
 <td>The to date used when calculating data for the request.</td>
+</tr>
+<tr>
+<td>DateRangeType</td>
+<td>string</td>
+<td></td>
 </tr>
 <tr>
 <td>Loans</td>
@@ -6767,6 +6787,16 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <td>ResponseData.CashBooks.Transactions.TransactionDate</td>
 <td>date-time</td>
 <td>The date on which the transaction occurred.</td>
+</tr>
+<tr>
+<td>ResponseData.CashBooks.Transactions.EntryDate</td>
+<td>date-time</td>
+<td></td>
+</tr>
+<tr>
+<td>ResponseData.CashBooks.Transactions.AmendmentDate</td>
+<td>date-time</td>
+<td></td>
 </tr>
 <tr>
 <td>ResponseData.CashBooks.Transactions.Currency</td>
@@ -7866,7 +7896,7 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <p><strong>Definition:</strong> https://api.praemium.biz/public/api/reports/Events</p>
 </blockquote>
 
-<p>This endpoint returns a list of events that were created in report publisher. The Id from this endpoint can be used to view published files in the /published endpoint.</p>
+<p>This endpoint returns a list of events that were created in report publisher. The ID from this endpoint can be used to view published files in the /published endpoint.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>

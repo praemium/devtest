@@ -34,7 +34,7 @@
             "name": "AccountId",
             "in": "query",
             "required": true,
-            "description": "Account Id.",
+            "description": "Account ID.",
             "type": "string"
           },
           {
@@ -78,7 +78,7 @@
             "name": "accountId",
             "in": "query",
             "required": true,
-            "description": "Account Id.",
+            "description": "Account ID.",
             "type": "string"
           },
           {
@@ -345,7 +345,7 @@
             "name": "search",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Search term based on security code or security description.",
             "type": "string"
           },
           {
@@ -434,7 +434,7 @@
             "name": "applicationId",
             "in": "path",
             "required": true,
-            "description": "Application Id.",
+            "description": "Application ID.",
             "format": "uuid",
             "type": "string"
           },
@@ -608,7 +608,7 @@
     "PutAccountModelWeightingRequestUK": {
       "properties": {
         "AccountId": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "type": "string"
         },
         "AccountModelWeightings": {
@@ -727,7 +727,7 @@
     "PdsFee": {
       "properties": {
         "Id": {
-          "description": "Id of fee.",
+          "description": "ID of fee.",
           "type": "string"
         },
         "Type": {
@@ -847,7 +847,7 @@
           "type": "string"
         },
         "Id": {
-          "description": "Fee override Id.",
+          "description": "Fee override ID.",
           "type": "string"
         },
         "Value": {
@@ -935,7 +935,7 @@
     "Product": {
       "properties": {
         "Id": {
-          "description": "Product Id.",
+          "description": "Product ID.",
           "type": "string"
         },
         "IsSingleBankAccount": {
@@ -951,7 +951,7 @@
           "type": "string"
         },
         "TaxWrapperId": {
-          "description": "Tax wrapper Id.",
+          "description": "Tax wrapper ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -977,7 +977,7 @@
     "PdsDetailUK": {
       "properties": {
         "ServiceId": {
-          "description": "Service Id.",
+          "description": "Service ID.",
           "type": "string"
         },
         "ServiceName": {
@@ -1073,7 +1073,7 @@
     "CedingPartyResponse": {
       "properties": {
         "CedingPartyId": {
-          "description": "Ceding party Id.",
+          "description": "Ceding party ID.",
           "type": "string"
         },
         "CedingPartyName": {
@@ -1091,7 +1091,7 @@
     "SecurityResponse": {
       "properties": {
         "Id": {
-          "description": "Security Id.",
+          "description": "Security ID.",
           "type": "string"
         },
         "Code": {
@@ -1265,7 +1265,7 @@
     "ApplicationUploadResult": {
       "properties": {
         "ApplicationId": {
-          "description": "Application Id.",
+          "description": "Application ID.",
           "format": "uuid",
           "type": "string"
         }
@@ -1779,7 +1779,7 @@
           "type": "string"
         },
         "Id": {
-          "description": "Fee Id.",
+          "description": "Fee ID.",
           "type": "string"
         },
         "Rate": {
@@ -1894,7 +1894,7 @@
           "$ref": "#/definitions/InSpecieCashStockTransferType"
         },
         "CedingPartyId": {
-          "description": "Ceding party Id.",
+          "description": "Ceding party ID.",
           "type": "string"
         },
         "CedingAccountNumber": {
@@ -2016,7 +2016,7 @@
           "type": "boolean"
         },
         "ProductId": {
-          "description": "Product Id.",
+          "description": "Product ID.",
           "type": "string"
         },
         "ProductProviderReference": {
@@ -2105,7 +2105,7 @@
           "$ref": "#/definitions/DraftInitialInvestment"
         },
         "OwnerAdviserId": {
-          "description": "Owner Adviser Id.",
+          "description": "Owner Adviser ID.",
           "format": "int32",
           "type": "integer"
         }
@@ -2232,7 +2232,7 @@
     "SsoLoginResponse": {
       "properties": {
         "SsoUrl": {
-          "description": "SSO Url.",
+          "description": "SSO URL.",
           "type": "string"
         }
       },

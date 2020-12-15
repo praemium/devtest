@@ -4017,6 +4017,12 @@
             "type": "string"
           },
           {
+            "name": "request.dateRangeType",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "request.buysAndSellsOnly",
             "in": "query",
             "required": false,
@@ -4114,6 +4120,12 @@
             "required": true,
             "description": "The to date used when calculating data for the request.",
             "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "request.dateRangeType",
+            "in": "query",
+            "required": false,
             "type": "string"
           },
           {
@@ -9046,6 +9058,16 @@
           "format": "date-time",
           "type": "string"
         },
+        "EntryDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "AmendmentDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
         "TransactionType": {
           "description": "A categorised type of the transaction.",
           "type": "string"
@@ -9257,6 +9279,16 @@
         },
         "TransactionDate": {
           "description": "The date on which the transaction occurred.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "EntryDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "AmendmentDate": {
+          "description": "",
           "format": "date-time",
           "type": "string"
         },

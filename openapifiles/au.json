@@ -199,7 +199,7 @@
             "name": "AccountId",
             "in": "query",
             "required": true,
-            "description": "Account Id.",
+            "description": "Account ID.",
             "type": "string"
           }
         ]
@@ -229,7 +229,7 @@
             "name": "accountId",
             "in": "query",
             "required": true,
-            "description": "Account Id.",
+            "description": "Account ID.",
             "type": "string"
           },
           {
@@ -438,6 +438,7 @@
             "name": "search",
             "in": "query",
             "required": true,
+            "description": "Search term based on security code or security description.",
             "type": "string"
           },
           {
@@ -451,7 +452,7 @@
             "name": "pdsId",
             "in": "query",
             "required": true,
-            "description": "PDS Id.",
+            "description": "PDS ID.",
             "type": "string"
           },
           {
@@ -540,7 +541,7 @@
             "name": "applicationId",
             "in": "path",
             "required": true,
-            "description": "Application Id.",
+            "description": "Application ID.",
             "format": "uuid",
             "type": "string"
           },
@@ -679,7 +680,7 @@
     "SecurityTransfer": {
       "properties": {
         "SecurityId": {
-          "description": "Security Id.",
+          "description": "Security ID.",
           "type": "string"
         },
         "Quantity": {
@@ -696,7 +697,7 @@
           "type": "string"
         },
         "ParticipantId": {
-          "description": "The participant Id.",
+          "description": "The participant ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -949,7 +950,7 @@
           "type": "string"
         },
         "CurrencyCode": {
-          "description": "",
+          "description": "The currency code of the account.",
           "type": "string"
         },
         "IsCorporate": {
@@ -1013,7 +1014,7 @@
           "type": "string"
         },
         "Code": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "type": "string"
         }
       },
@@ -1172,7 +1173,7 @@
           "type": "string"
         },
         "CurrencyCode": {
-          "description": "",
+          "description": "The currency code of the account.",
           "type": "string"
         },
         "IsCorporate": {
@@ -1345,7 +1346,7 @@
           "type": "string"
         },
         "CurrencyCode": {
-          "description": "",
+          "description": "The currency code of the account.",
           "type": "string"
         },
         "IsCorporate": {
@@ -1433,7 +1434,7 @@
           "$ref": "#/definitions/RebalanceType"
         },
         "AccountId": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "type": "string"
         },
         "AccountModelWeightings": {
@@ -1575,7 +1576,7 @@
     "PdsFee": {
       "properties": {
         "Id": {
-          "description": "Id of fee",
+          "description": "ID of fee",
           "type": "string"
         },
         "Type": {
@@ -1732,27 +1733,27 @@
     "SecurityResponse": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Security ID.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Security code.",
           "type": "string"
         },
         "Description": {
-          "description": "",
+          "description": "Description.",
           "type": "string"
         },
         "ISIN": {
-          "description": "",
+          "description": "ISIN of security code.",
           "type": "string"
         },
         "Exchange": {
-          "description": "",
+          "description": "Exchange of security.",
           "type": "string"
         },
         "IsAllowedByApl": {
-          "description": "",
+          "description": "Is the security allowed by the Approved Product List.",
           "type": "boolean"
         }
       },
@@ -2137,7 +2138,7 @@
     "DraftFeeAU": {
       "properties": {
         "Id": {
-          "description": "Fee Id.",
+          "description": "Fee ID.",
           "type": "string"
         },
         "Rate": {
@@ -2325,7 +2326,7 @@
     "InflowsContributionTransfer": {
       "properties": {
         "AccountId": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -2662,7 +2663,7 @@
           "$ref": "#/definitions/DraftInitialInvestment"
         },
         "OwnerAdviserId": {
-          "description": "Owner Adviser Id.",
+          "description": "Owner Adviser ID.",
           "format": "int32",
           "type": "integer"
         }
@@ -2710,7 +2711,7 @@
     "ApplicationUploadResult": {
       "properties": {
         "ApplicationId": {
-          "description": "Application Id.",
+          "description": "Application ID.",
           "format": "uuid",
           "type": "string"
         }
@@ -2902,7 +2903,7 @@
     "SsoLoginResponse": {
       "properties": {
         "SsoUrl": {
-          "description": "The SSO url.",
+          "description": "SSO URL.",
           "type": "string"
         }
       },

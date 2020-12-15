@@ -199,7 +199,7 @@
             "name": "AccountId",
             "in": "query",
             "required": true,
-            "description": "Account Id.",
+            "description": "Account ID.",
             "type": "string"
           },
           {
@@ -243,7 +243,7 @@
             "name": "accountId",
             "in": "query",
             "required": true,
-            "description": "Account Id.",
+            "description": "Account ID.",
             "type": "string"
           },
           {
@@ -510,6 +510,7 @@
             "name": "search",
             "in": "query",
             "required": true,
+            "description": "Search term based on security code or security description.",
             "type": "string"
           },
           {
@@ -523,7 +524,7 @@
             "name": "pdsId",
             "in": "query",
             "required": true,
-            "description": "PDS Id.",
+            "description": "PDS ID.",
             "type": "string"
           },
           {
@@ -612,7 +613,7 @@
             "name": "applicationId",
             "in": "path",
             "required": true,
-            "description": "Application Id.",
+            "description": "Application ID.",
             "format": "uuid",
             "type": "string"
           },
@@ -751,7 +752,7 @@
     "SecurityTransfer": {
       "properties": {
         "SecurityId": {
-          "description": "Security Id.",
+          "description": "Security ID.",
           "type": "string"
         },
         "Quantity": {
@@ -768,7 +769,7 @@
           "type": "string"
         },
         "ParticipantId": {
-          "description": "Participant Id.",
+          "description": "Participant ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -1085,7 +1086,7 @@
           "type": "string"
         },
         "Code": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "type": "string"
         }
       },
@@ -1599,7 +1600,7 @@
     "PdsFee": {
       "properties": {
         "Id": {
-          "description": "Id of fee.",
+          "description": "ID of fee.",
           "type": "string"
         },
         "Type": {
@@ -1719,7 +1720,7 @@
           "type": "string"
         },
         "Id": {
-          "description": "Fee override Id.",
+          "description": "Fee override ID.",
           "type": "string"
         },
         "Value": {
@@ -1777,7 +1778,7 @@
     "Product": {
       "properties": {
         "Id": {
-          "description": "Product Id.",
+          "description": "Product ID.",
           "type": "string"
         },
         "IsSingleBankAccount": {
@@ -1793,7 +1794,7 @@
           "type": "string"
         },
         "TaxWrapperId": {
-          "description": "Tax wrapper Id.",
+          "description": "Tax wrapper ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -1830,7 +1831,7 @@
     "CedingPartyResponse": {
       "properties": {
         "CedingPartyId": {
-          "description": "Ceding party Id.",
+          "description": "Ceding party ID.",
           "type": "string"
         },
         "CedingPartyName": {
@@ -1848,7 +1849,7 @@
     "SecurityResponse": {
       "properties": {
         "Id": {
-          "description": "Security Id.",
+          "description": "Security ID.",
           "type": "string"
         },
         "Code": {
@@ -2108,7 +2109,7 @@
     "InflowsContributionTransfer": {
       "properties": {
         "AccountId": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -2332,7 +2333,7 @@
     "ApplicationUploadResult": {
       "properties": {
         "ApplicationId": {
-          "description": "Application Id.",
+          "description": "Application ID.",
           "format": "uuid",
           "type": "string"
         }
@@ -2481,7 +2482,7 @@
           "$ref": "#/definitions/InSpecieCashStockTransferType"
         },
         "CedingPartyId": {
-          "description": "Ceding party Id.",
+          "description": "Ceding party ID.",
           "type": "string"
         },
         "CedingAccountNumber": {
@@ -2655,7 +2656,7 @@
     "SsoLoginResponse": {
       "properties": {
         "SsoUrl": {
-          "description": "SSO url",
+          "description": "SSO URL.",
           "type": "string"
         }
       },
@@ -2715,7 +2716,7 @@
           "type": "string"
         },
         "ServiceId": {
-          "description": "Service Id.",
+          "description": "Service ID.",
           "type": "string"
         },
         "ServiceName": {
@@ -3196,7 +3197,7 @@
     "DraftFee": {
       "properties": {
         "Id": {
-          "description": "Fee Id.",
+          "description": "Fee ID.",
           "type": "string"
         },
         "Rate": {
@@ -3365,7 +3366,7 @@
           "type": "string"
         },
         "ProductId": {
-          "description": "Product Id.",
+          "description": "Product ID.",
           "type": "string"
         },
         "RegularContribution": {
@@ -3377,7 +3378,7 @@
           "$ref": "#/definitions/ApplicationRegularTransaction"
         },
         "OwnerAdviserId": {
-          "description": "Owner Adviser Id.",
+          "description": "Owner Adviser ID.",
           "format": "int32",
           "type": "integer"
         },
@@ -3459,7 +3460,7 @@
     "PutAccountModelWeightingRequest": {
       "properties": {
         "AccountId": {
-          "description": "Account Id.",
+          "description": "Account ID.",
           "type": "string"
         },
         "RebalanceType": {
