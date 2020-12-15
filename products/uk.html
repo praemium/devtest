@@ -333,7 +333,11 @@
 <h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
+</blockquote>
 
+<p>This endpoint returns access token that can be used to access public API endpoints.</p>
+
+<blockquote>
 <p><strong>Header Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Content-Type</span><span class="pi">:</span> <span class="s">application/x-www-form-urlencoded</span>
@@ -397,22 +401,22 @@
 <tr>
 <td>token_type</td>
 <td>string</td>
-<td>Token type.</td>
+<td>Token type is always Bearer.</td>
 </tr>
 <tr>
 <td>expires_in</td>
 <td>integer</td>
-<td>Expires in.</td>
+<td>After how many seconds an access token will expire.</td>
 </tr>
 <tr>
 <td>ext_expires_in</td>
 <td>integer</td>
-<td></td>
+<td>Extended lifetime of access token if value of this field is greater than value of expires_in.</td>
 </tr>
 <tr>
 <td>access_token</td>
 <td>string</td>
-<td></td>
+<td>Access token that can be used to access public API endpoints.</td>
 </tr>
 </tbody></table>
 
@@ -4705,7 +4709,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
 </blockquote>
 
-<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again. UserId is required.</p>
+<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>

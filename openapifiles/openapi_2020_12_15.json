@@ -3485,21 +3485,21 @@
     "TokenResponse": {
       "properties": {
         "token_type": {
-          "description": "",
+          "description": "Token type is always Bearer.",
           "type": "string"
         },
         "expires_in": {
-          "description": "",
+          "description": "After how many seconds an access token will expire.",
           "format": "int32",
           "type": "integer"
         },
         "ext_expires_in": {
-          "description": "",
+          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
           "format": "int32",
           "type": "integer"
         },
         "access_token": {
-          "description": "",
+          "description": "Access token that can be used to access public API endpoints.",
           "type": "string"
         }
       },
