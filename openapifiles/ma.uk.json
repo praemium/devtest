@@ -1699,7 +1699,7 @@
           "type": "string"
         },
         "NatureOfTrust": {
-          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Persion Pension = 8, Mulitple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
+          "description": "Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Person Pension = 8, Multiple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.",
           "$ref": "#/definitions/TrustNature"
         },
         "Lei": {
@@ -1716,7 +1716,7 @@
           "type": "string"
         },
         "BeneficiariesHaveVestedRights": {
-          "description": "",
+          "description": "If beneficiaries have vested rights.",
           "type": "boolean"
         },
         "Address": {
