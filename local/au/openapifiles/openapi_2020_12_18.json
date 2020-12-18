@@ -4020,7 +4020,7 @@
             "name": "request.dateRangeType",
             "in": "query",
             "required": false,
-            "description": "The date field that is compared to be between the from and to dates. Valuation is the default.",
+            "description": "The date field that is compared to be between the from and to dates. Options are 'Valuation' (default) or 'Amendment'.",
             "type": "string"
           },
           {
@@ -4127,7 +4127,7 @@
             "name": "request.dateRangeType",
             "in": "query",
             "required": false,
-            "description": "The date field that is compared to be between the from and to dates. Valuation is the default.",
+            "description": "The date field that is compared to be between the from and to dates. Options are 'Valuation' (default) or 'Amendment'.",
             "type": "string"
           },
           {
