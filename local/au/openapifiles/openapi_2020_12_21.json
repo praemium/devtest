@@ -9223,12 +9223,12 @@
           "type": "string"
         },
         "EntryDate": {
-          "description": "",
+          "description": "The date on which the transaction was first uploaded to our system.",
           "format": "date-time",
           "type": "string"
         },
         "AmendmentDate": {
-          "description": "",
+          "description": "The latest date on which the transaction has been updated.",
           "format": "date-time",
           "type": "string"
         },
@@ -9447,12 +9447,12 @@
           "type": "string"
         },
         "EntryDate": {
-          "description": "",
+          "description": "The date on which the transaction was first uploaded to our system.",
           "format": "date-time",
           "type": "string"
         },
         "AmendmentDate": {
-          "description": "",
+          "description": "The latest date on which the transaction has been updated.",
           "format": "date-time",
           "type": "string"
         },
