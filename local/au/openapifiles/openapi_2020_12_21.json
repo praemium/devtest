@@ -3618,7 +3618,7 @@
             "in": "query",
             "required": true,
             "collectionFormat": "multi",
-            "description": "A list of account IDs (Max 100 accounts per request). For example, AccountIds=AU123456&AccountIds=AU2345678.",
+            "description": "A list of account IDs (Max 100 accounts per request). Query string should be like AccountIds=AU378902&AccountIds=AU387198.",
             "items": {
               "type": "string"
             },
