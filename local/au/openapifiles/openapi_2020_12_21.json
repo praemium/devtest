@@ -8470,7 +8470,11 @@
           "type": "string"
         }
       },
-      "required": [],
+      "required": [
+        "Application",
+        "UserEmail",
+        "AccountId"
+      ],
       "type": "object"
     },
     "PraemiumAPI.Public.Contract.Sso.ServiceProviderSsoResponse": {
