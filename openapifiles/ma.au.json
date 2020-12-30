@@ -1160,7 +1160,7 @@
     "InflowsOtherContribution": {
       "properties": {
         "ContributionType": {
-          "description": "Unknown = 0, Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
+          "description": "Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
           "$ref": "#/definitions/ContributionTypes"
         },
         "ExpectedAmount": {
@@ -1209,11 +1209,11 @@
           "type": "number"
         },
         "InitialInvestmentType": {
-          "description": "Unknown = 0, Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
+          "description": "Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
           "$ref": "#/definitions/ContributionTypes"
         },
         "ContributionType": {
-          "description": "Unknown = 0, Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
+          "description": "Concessional_Employee = 11, Concessional_Personal = 12, Concessional_OtherFriendsAndFamily = 13, NonConcessional_Personal = 21, NonConcessional_SpouseAndChild = 22, NonConcessional_FirstHomeSaverAccount = 23, Exempt_CGT_15Year = 31, Exempt_CGT_Retirement = 32, Exempt_PersonalInjuryElection = 33, Other_GovernmentCoContribution = 41, Other_LowIncomeSuperContribution = 42, Downsizer = 43.",
           "$ref": "#/definitions/ContributionTypes"
         },
         "RegularContribution": {
