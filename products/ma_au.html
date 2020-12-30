@@ -954,7 +954,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -964,7 +964,7 @@
 <tr>
 <td>Applicants.IndividualDetails</td>
 <td>object</td>
-<td>Used for Individual applicants.</td>
+<td>Used for individual applicants.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Title</td>
@@ -989,7 +989,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -1163,7 +1163,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Individual = 14.</td>
 </tr>
 <tr>
@@ -1174,7 +1174,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.Fees</td>
@@ -1195,11 +1195,6 @@
 <td>Accounts.Fees.Unit</td>
 <td>string</td>
 <td>Fee unit, dollars or percentage.</td>
-</tr>
-<tr>
-<td>Accounts.Fees.Type</td>
-<td>string</td>
-<td>Fee type.</td>
 </tr>
 <tr>
 <td>Accounts.Models</td>
@@ -1301,7 +1296,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -1463,7 +1458,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -1473,7 +1468,7 @@
 <tr>
 <td>Applicants.CorporateDetails</td>
 <td>object</td>
-<td>Used for Corporate applicants.</td>
+<td>Used for corporate applicants.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Name</td>
@@ -1487,7 +1482,7 @@
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Identifications</td>
-<td></td>
+<td>array</td>
 <td>Array of TFN / ABN</td>
 </tr>
 <tr>
@@ -1582,7 +1577,7 @@
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.ContactIsSignatory</td>
-<td></td>
+<td>boolean</td>
 <td>Whether the contact is a signatory on the account.</td>
 </tr>
 <tr>
@@ -1593,27 +1588,27 @@
 <tr>
 <td>Applicants.CorporateDetails.Contact.Title</td>
 <td>string</td>
-<td>Title of Contact.</td>
+<td>Title of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.FirstName</td>
 <td>string</td>
-<td>First name of Contact.</td>
+<td>First name of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.LastName</td>
 <td>string</td>
-<td>Last name of Contact.</td>
+<td>Last name of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Email</td>
 <td>string</td>
-<td>Email of Contact.</td>
+<td>Email of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Phone</td>
 <td>string</td>
-<td>Phone Number of Contact.</td>
+<td>Phone Number of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories</td>
@@ -1663,12 +1658,12 @@
 <tr>
 <td>Applicants.CorporateDetails.Signatories.TaxNumber</td>
 <td>string</td>
-<td>TaxNumber of signatory.</td>
+<td>Tax number of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td>Country of Birth of signatory.</td>
+<td>Country of birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.Address</td>
@@ -1732,7 +1727,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Company = 13.</td>
 </tr>
 <tr>
@@ -1843,7 +1838,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 </tbody></table>
 
@@ -1865,7 +1860,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -2042,7 +2037,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -2052,7 +2047,7 @@
 <tr>
 <td>Applicants.IndividualDetails</td>
 <td>object</td>
-<td>Used for Individual applicants.</td>
+<td>Used for individual applicants.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Title</td>
@@ -2077,7 +2072,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -2251,7 +2246,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Trust = 15.</td>
 </tr>
 <tr>
@@ -2262,7 +2257,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.Fees</td>
@@ -2283,11 +2278,6 @@
 <td>Accounts.Fees.Unit</td>
 <td>string</td>
 <td>Fee unit, dollars or percentage.</td>
-</tr>
-<tr>
-<td>Accounts.Fees.Type</td>
-<td>string</td>
-<td>Fee type.</td>
 </tr>
 <tr>
 <td>Accounts.Models</td>
@@ -2444,7 +2434,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -2620,7 +2610,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -2630,7 +2620,7 @@
 <tr>
 <td>Applicants.CorporateDetails</td>
 <td>object</td>
-<td>Used for Corporate applicants.</td>
+<td>Used for corporate applicants.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Name</td>
@@ -2644,7 +2634,7 @@
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Identifications</td>
-<td></td>
+<td>array</td>
 <td>Array of TFN / ABN</td>
 </tr>
 <tr>
@@ -2739,7 +2729,7 @@
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.ContactIsSignatory</td>
-<td></td>
+<td>boolean</td>
 <td>Whether the contact is a signatory on the account.</td>
 </tr>
 <tr>
@@ -2750,27 +2740,27 @@
 <tr>
 <td>Applicants.CorporateDetails.Contact.Title</td>
 <td>string</td>
-<td>Title of Contact.</td>
+<td>Title of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.FirstName</td>
 <td>string</td>
-<td>First name of Contact.</td>
+<td>First name of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.LastName</td>
 <td>string</td>
-<td>Last name of Contact.</td>
+<td>Last name of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Email</td>
 <td>string</td>
-<td>Email of Contact.</td>
+<td>Email of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Phone</td>
 <td>string</td>
-<td>Phone Number of Contact.</td>
+<td>Phone Number of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories</td>
@@ -2820,12 +2810,12 @@
 <tr>
 <td>Applicants.CorporateDetails.Signatories.TaxNumber</td>
 <td>string</td>
-<td>TaxNumber of signatory.</td>
+<td>Tax number of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td>Country of Birth of signatory.</td>
+<td>Country of birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.Address</td>
@@ -2889,7 +2879,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Trust = 15.</td>
 </tr>
 <tr>
@@ -3000,7 +2990,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.TrustOrFundDetails</td>
@@ -3077,7 +3067,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -3226,6 +3216,19 @@
             </span><span class="nl">"EntireBalance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
           </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Transfers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU123456"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"TransferMethod"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"OtherContributions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ContributionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"Beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -3276,7 +3279,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -3286,7 +3289,7 @@
 <tr>
 <td>Applicants.IndividualDetails</td>
 <td>object</td>
-<td>Used for Individual applicants.</td>
+<td>Used for individual applicants.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Title</td>
@@ -3311,7 +3314,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -3485,7 +3488,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>SuperSmaAccumulation = 16.</td>
 </tr>
 <tr>
@@ -3512,11 +3515,6 @@
 <td>Accounts.Fees.Unit</td>
 <td>string</td>
 <td>Fee unit, dollars or percentage.</td>
-</tr>
-<tr>
-<td>Accounts.Fees.Type</td>
-<td>string</td>
-<td>Fee type.</td>
 </tr>
 <tr>
 <td>Accounts.Models</td>
@@ -3616,7 +3614,7 @@
 <tr>
 <td>Accounts.InitialInvestmentSuper</td>
 <td>object</td>
-<td>Initial investment super.</td>
+<td>Initial investment for super.</td>
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.ContributionSources</td>
@@ -3660,7 +3658,7 @@
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.Transfers.AccountId</td>
-<td>integer</td>
+<td>string</td>
 <td>Transfer account ID.</td>
 </tr>
 <tr>
@@ -3771,12 +3769,12 @@
 <tr>
 <td>Accounts.IsBindingNomination</td>
 <td>boolean</td>
-<td>Is nomination binding.</td>
+<td>If nomination is binding.</td>
 </tr>
 <tr>
 <td>Accounts.IsEmployerContributing</td>
 <td>boolean</td>
-<td>Is employer contributing.</td>
+<td>If employer is contributing.</td>
 </tr>
 </tbody></table>
 
@@ -3798,7 +3796,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -3939,6 +3937,19 @@
             </span><span class="nl">"EntireBalance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
           </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Transfers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU123456"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"TransferMethod"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"OtherContributions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ContributionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"PensionPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3994,7 +4005,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -4004,7 +4015,7 @@
 <tr>
 <td>Applicants.IndividualDetails</td>
 <td>object</td>
-<td>Used for Individual applicants.</td>
+<td>Used for individual applicants.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Title</td>
@@ -4029,7 +4040,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -4203,7 +4214,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>SuperSmaPensionAbp = 17.</td>
 </tr>
 <tr>
@@ -4230,11 +4241,6 @@
 <td>Accounts.Fees.Unit</td>
 <td>string</td>
 <td>Fee unit, dollars or percentage.</td>
-</tr>
-<tr>
-<td>Accounts.Fees.Type</td>
-<td>string</td>
-<td>Fee type.</td>
 </tr>
 <tr>
 <td>Accounts.Models</td>
@@ -4374,7 +4380,7 @@
 <tr>
 <td>Accounts.InitialInvestmentSuper</td>
 <td>object</td>
-<td>Initial investment super.</td>
+<td>Initial investment for super.</td>
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.ContributionSources</td>
@@ -4418,7 +4424,7 @@
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.Transfers.AccountId</td>
-<td>integer</td>
+<td>string</td>
 <td>Transfer account ID.</td>
 </tr>
 <tr>
@@ -4539,7 +4545,7 @@
 <tr>
 <td>Accounts.IsBindingNomination</td>
 <td>boolean</td>
-<td>Is nomination binding.</td>
+<td>If nomination is binding.</td>
 </tr>
 </tbody></table>
 
@@ -4561,7 +4567,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -4702,6 +4708,19 @@
             </span><span class="nl">"EntireBalance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
           </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Transfers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU123456"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"TransferMethod"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"OtherContributions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ContributionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+          </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"PensionPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -4757,7 +4776,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -4767,7 +4786,7 @@
 <tr>
 <td>Applicants.IndividualDetails</td>
 <td>object</td>
-<td>Used for Individual applicants.</td>
+<td>Used for individual applicants.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Title</td>
@@ -4792,7 +4811,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -4966,7 +4985,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>SuperSmaPensionTtr = 18.</td>
 </tr>
 <tr>
@@ -4993,11 +5012,6 @@
 <td>Accounts.Fees.Unit</td>
 <td>string</td>
 <td>Fee unit, dollars or percentage.</td>
-</tr>
-<tr>
-<td>Accounts.Fees.Type</td>
-<td>string</td>
-<td>Fee type.</td>
 </tr>
 <tr>
 <td>Accounts.Models</td>
@@ -5137,7 +5151,7 @@
 <tr>
 <td>Accounts.InitialInvestmentSuper</td>
 <td>object</td>
-<td>Initial investment super.</td>
+<td>Initial investment for super.</td>
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.ContributionSources</td>
@@ -5181,7 +5195,7 @@
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.Transfers.AccountId</td>
-<td>integer</td>
+<td>string</td>
 <td>Transfer account ID.</td>
 </tr>
 <tr>
@@ -5302,7 +5316,7 @@
 <tr>
 <td>Accounts.IsBindingNomination</td>
 <td>boolean</td>
-<td>Is nomination binding.</td>
+<td>If nomination is binding.</td>
 </tr>
 </tbody></table>
 
@@ -5324,7 +5338,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -5383,7 +5397,7 @@
 <tr>
 <td>ApplicationId<span class="required">required</span></td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -5412,7 +5426,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Unique ApplicationID to be used as an application reference.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 <tr>
 <td>Status</td>
@@ -5422,12 +5436,12 @@
 <tr>
 <td>AccountsStatus</td>
 <td>array</td>
-<td>Refer to endpoint description.</td>
+<td>Account status.</td>
 </tr>
 <tr>
 <td>AccountsStatus.AccountCode</td>
 <td>string</td>
-<td>Account ID.</td>
+<td>Account code.</td>
 </tr>
 <tr>
 <td>AccountsStatus.Status</td>

@@ -981,8 +981,7 @@
           </span><span class="nl">"NoNationalIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"ReceiveCommunicationByPost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"PepDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senior politician"</span><span class="w">
+        </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -1108,7 +1107,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -1243,7 +1242,7 @@
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.CountryCode</td>
 <td>string</td>
-<td>Applicant&#39;s tax residence country code.</td>
+<td>Tax residence country code.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.From</td>
@@ -1258,7 +1257,7 @@
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.Identification</td>
 <td>string</td>
-<td>Applicant&#39;s tax residence identification.</td>
+<td>Tax residence identification.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.NoDocument</td>
@@ -1303,7 +1302,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -1346,11 +1345,6 @@
 <td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
-<td>Applicants.IndividualDetails.PepDetails</td>
-<td>string</td>
-<td>If applicant is politically exposed, details must be supplied.</td>
-</tr>
-<tr>
 <td>Accounts</td>
 <td>array</td>
 <td>Array of accounts to be opened with the application. Must be linked to an included applicant.</td>
@@ -1372,7 +1366,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Gia = 1.</td>
 </tr>
 <tr>
@@ -1443,12 +1437,12 @@
 <tr>
 <td>Accounts.BankAccounts.Bic</td>
 <td>string</td>
-<td>Bank Identifier Code (BIC) of your banking institution.</td>
+<td>Bank identifier code (BIC) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Iban</td>
 <td>string</td>
-<td>International Bank Account Number (IBAN) of your banking institution.</td>
+<td>International bank account number (IBAN) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.RoutingNumber</td>
@@ -1493,7 +1487,7 @@
 <tr>
 <td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
 <td>enum</td>
-<td>BPay = 0, DirectDebit = 1, ElectronicTransfer = 2, Cheque = 3.</td>
+<td>ElectronicTransfer = 2, Cheque = 3.</td>
 </tr>
 <tr>
 <td>Accounts.SourceOfFunds</td>
@@ -1533,7 +1527,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.Region</td>
@@ -1548,12 +1542,12 @@
 <tr>
 <td>Accounts.AdviserReference</td>
 <td>string</td>
-<td>Adviser reference.</td>
+<td>Adviser reference..</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers</td>
 <td>array</td>
-<td>In Specie cash stock transfers.</td>
+<td>In specie cash stock transfers.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.TransferType<span class="required">required</span></td>
@@ -1563,7 +1557,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingPartyId</td>
 <td>string</td>
-<td>Ceding party Id.</td>
+<td>Ceding party ID.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingAccountNumber</td>
@@ -1578,7 +1572,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.SecurityIsin<span class="required">required</span></td>
 <td>string</td>
-<td>Security is in of stock transfer.</td>
+<td>Security ISIN of stock transfer.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.Quantity</td>
@@ -1613,7 +1607,7 @@
 <tr>
 <td>Accounts.IsTradeFreezeOn</td>
 <td>boolean</td>
-<td>Is trade freeze on.</td>
+<td>If a trade freeze is on.</td>
 </tr>
 <tr>
 <td>Accounts.TradeFreezeReason</td>
@@ -1628,7 +1622,7 @@
 <tr>
 <td>Accounts.IllustrationData</td>
 <td>object</td>
-<td>Illustration Data.</td>
+<td>Illustration data.</td>
 </tr>
 <tr>
 <td>Accounts.IllustrationData.CostsAndCharges</td>
@@ -1665,7 +1659,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -1719,6 +1713,7 @@
       </span><span class="nl">"CorporateDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test company"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"TradingName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test company"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CompanyType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="nl">"BusinessAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"Addressee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test company"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Street A"</span><span class="p">,</span><span class="w">
@@ -1948,7 +1943,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -1969,6 +1964,11 @@
 <td>Applicants.CorporateDetails.TradingName</td>
 <td>string</td>
 <td>Trading name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.CompanyType</td>
+<td>enum</td>
+<td>Plc = 0, Ltd = 1, Llp = 2, Partnership = 3.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.BusinessAddress</td>
@@ -2073,37 +2073,37 @@
 <tr>
 <td>Applicants.CorporateDetails.Contact.Title</td>
 <td>string</td>
-<td>Title of Contact.</td>
+<td>Title of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.FirstName</td>
 <td>string</td>
-<td>First name of Contact.</td>
+<td>First name of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.LastName</td>
 <td>string</td>
-<td>Last name of Contact.</td>
+<td>Last name of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.DateOfBirth</td>
 <td>date-time</td>
-<td>Date of birth of Contact.</td>
+<td>Date of birth of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Email</td>
 <td>string</td>
-<td>Email of Contact.</td>
+<td>Email of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.Phone</td>
 <td>string</td>
-<td>Phone Number of Contact.</td>
+<td>Phone Number of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.PhoneOther</td>
 <td>string</td>
-<td>Secondary contact number of Contact.</td>
+<td>Secondary contact number of contact.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Contact.NationalIdentifier</td>
@@ -2136,11 +2136,6 @@
 <td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
-<td>Applicants.CorporateDetails.Contact.PepDetails</td>
-<td>string</td>
-<td>If applicant is politically exposed, details must be supplied.</td>
-</tr>
-<tr>
 <td>Applicants.CorporateDetails.Signatories</td>
 <td>array</td>
 <td>Corporate signatories.</td>
@@ -2153,12 +2148,12 @@
 <tr>
 <td>Applicants.CorporateDetails.Signatories.TaxNumber</td>
 <td>string</td>
-<td>TaxNumber of signatory.</td>
+<td>Tax number of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td>Country of Birth of signatory.</td>
+<td>Country of birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Signatories.Address</td>
@@ -2271,11 +2266,6 @@
 <td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
-<td>Applicants.CorporateDetails.Signatories.PepDetails</td>
-<td>string</td>
-<td>If applicant is politically exposed, details must be supplied.</td>
-</tr>
-<tr>
 <td>Applicants.CorporateDetails.CompanyRegistrationNumber</td>
 <td>string</td>
 <td>Register number of the company.</td>
@@ -2283,7 +2273,7 @@
 <tr>
 <td>Applicants.CorporateDetails.TaxId</td>
 <td>string</td>
-<td>Tax Identity of the company.</td>
+<td>Tax identity of the company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.Lei</td>
@@ -2293,17 +2283,17 @@
 <tr>
 <td>Applicants.CorporateDetails.CountryOfIncorporation</td>
 <td>string</td>
-<td>Country of Incorporation of the Company.</td>
+<td>Country of incorporation of the company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.DateOfIncorporation</td>
 <td>date-time</td>
-<td>Date of Incorporation of the Company.</td>
+<td>Date of incorporation of the company.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.NatureOfActivities</td>
 <td>string</td>
-<td>Nature of activities that the Company performs.</td>
+<td>Nature of activities that the company performs.</td>
 </tr>
 <tr>
 <td>Applicants.CorporateDetails.BearerSharesAreInIssue</td>
@@ -2342,7 +2332,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Gia = 1.</td>
 </tr>
 <tr>
@@ -2413,12 +2403,12 @@
 <tr>
 <td>Accounts.BankAccounts.Bic</td>
 <td>string</td>
-<td>Bank Identifier Code (BIC) of your banking institution.</td>
+<td>Bank identifier code (BIC) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Iban</td>
 <td>string</td>
-<td>International Bank Account Number (IBAN) of your banking institution.</td>
+<td>International bank account number (IBAN) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.RoutingNumber</td>
@@ -2463,7 +2453,7 @@
 <tr>
 <td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
 <td>enum</td>
-<td>BPay = 0, DirectDebit = 1, ElectronicTransfer = 2, Cheque = 3.</td>
+<td>ElectronicTransfer = 2, Cheque = 3.</td>
 </tr>
 <tr>
 <td>Accounts.SourceOfFunds</td>
@@ -2503,7 +2493,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.Region</td>
@@ -2518,12 +2508,12 @@
 <tr>
 <td>Accounts.AdviserReference</td>
 <td>string</td>
-<td>Adviser reference.</td>
+<td>Adviser reference..</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers</td>
 <td>array</td>
-<td>In Specie cash stock transfers.</td>
+<td>In specie cash stock transfers.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.TransferType<span class="required">required</span></td>
@@ -2533,7 +2523,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingPartyId</td>
 <td>string</td>
-<td>Ceding party Id.</td>
+<td>Ceding party ID.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingAccountNumber</td>
@@ -2548,7 +2538,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.SecurityIsin<span class="required">required</span></td>
 <td>string</td>
-<td>Security is in of stock transfer.</td>
+<td>Security ISIN of stock transfer.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.Quantity</td>
@@ -2583,7 +2573,7 @@
 <tr>
 <td>Accounts.IsTradeFreezeOn</td>
 <td>boolean</td>
-<td>Is trade freeze on.</td>
+<td>If a trade freeze is on.</td>
 </tr>
 <tr>
 <td>Accounts.TradeFreezeReason</td>
@@ -2598,7 +2588,7 @@
 <tr>
 <td>Accounts.IllustrationData</td>
 <td>object</td>
-<td>Illustration Data.</td>
+<td>Illustration data.</td>
 </tr>
 <tr>
 <td>Accounts.IllustrationData.CostsAndCharges</td>
@@ -2635,7 +2625,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -2736,6 +2726,7 @@
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test company"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"TradingName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"CompanyType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="nl">"BusinessAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"Addressee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test company"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Street A"</span><span class="p">,</span><span class="w">
@@ -2756,7 +2747,36 @@
             </span><span class="nl">"TaxId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6i87899"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"Lei"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"NameOfRegulator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test regulator"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"RegulatorReferenceNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="w">
+            </span><span class="nl">"RegulatorReferenceNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Director"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Addressee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111 222"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Line2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Line3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"u090"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kingston"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HKG"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"IsRegistered"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"TaxNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ji000"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"CountryOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"222"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"FullName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1998-12-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@praemium.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"Phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"NationalIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"CountryOfNationality"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"IdentifierType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"IdentifierCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"NoNationalIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"ReceiveCommunicationByPost"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">        
       </span><span class="p">}</span><span class="w">
@@ -2884,7 +2904,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -2904,22 +2924,22 @@
 <tr>
 <td>Applicants.TrustDetails.NatureOfTrust</td>
 <td>enum</td>
-<td>Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Person Pension = 8, Multiple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12,.</td>
+<td>Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Person Pension = 8, Multiple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Lei</td>
 <td>string</td>
-<td>LEI of Trust.</td>
+<td>LEI of trust.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.DateOfEstablishment</td>
 <td>date-time</td>
-<td>Date Trust was established.</td>
+<td>Date trust was established.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.TaxDomicile</td>
 <td>string</td>
-<td>Tax domicile of Trust.</td>
+<td>Tax domicile of trust.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.BeneficiariesHaveVestedRights</td>
@@ -2984,12 +3004,12 @@
 <tr>
 <td>Applicants.TrustDetails.Signatories.TaxNumber</td>
 <td>string</td>
-<td>TaxNumber of signatory.</td>
+<td>Tax number of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.CountryOfBirth</td>
 <td>string</td>
-<td>Country of Birth of signatory.</td>
+<td>Country of birth of signatory.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.Signatories.Address</td>
@@ -3102,11 +3122,6 @@
 <td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
-<td>Applicants.TrustDetails.Signatories.PepDetails</td>
-<td>string</td>
-<td>If applicant is politically exposed, details must be supplied.</td>
-</tr>
-<tr>
 <td>Applicants.TrustDetails.CorporateTrustees</td>
 <td>array</td>
 <td>Corporate trustees of the trust.</td>
@@ -3120,6 +3135,11 @@
 <td>Applicants.TrustDetails.CorporateTrustees.TradingName</td>
 <td>string</td>
 <td>Trading name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.CompanyType</td>
+<td>enum</td>
+<td>Plc = 0, Ltd = 1, Llp = 2, Partnership = 3.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress</td>
@@ -3219,7 +3239,7 @@
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.TaxId</td>
 <td>string</td>
-<td>Tax Identity of the company.</td>
+<td>Tax identity of the company.</td>
 </tr>
 <tr>
 <td>Applicants.TrustDetails.CorporateTrustees.Lei</td>
@@ -3235,6 +3255,136 @@
 <td>Applicants.TrustDetails.CorporateTrustees.RegulatorReferenceNumber</td>
 <td>string</td>
 <td>Regulator reference number.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director</td>
+<td>object</td>
+<td>Director of the corporate trustee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Title</td>
+<td>string</td>
+<td>Title of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>First name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>Last name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.DateOfBirth</td>
+<td>date-time</td>
+<td>Date of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Email</td>
+<td>string</td>
+<td>Email address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Phone</td>
+<td>string</td>
+<td>Phone number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.PhoneOther</td>
+<td>string</td>
+<td>Secondary contact number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Capacity</td>
+<td>enum</td>
+<td></td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.TaxNumber</td>
+<td>string</td>
+<td>Tax number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.CountryOfBirth</td>
+<td>string</td>
+<td>Country of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address</td>
+<td>object</td>
+<td>Address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier</td>
+<td>object</td>
+<td>Signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>Applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>Applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td>If you would like to opt out of electronic communications.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.IsPoliticallyExposedPerson</td>
+<td>boolean</td>
+<td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
 <td>Accounts</td>
@@ -3258,7 +3408,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Gia = 1.</td>
 </tr>
 <tr>
@@ -3329,12 +3479,12 @@
 <tr>
 <td>Accounts.BankAccounts.Bic</td>
 <td>string</td>
-<td>Bank Identifier Code (BIC) of your banking institution.</td>
+<td>Bank identifier code (BIC) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Iban</td>
 <td>string</td>
-<td>International Bank Account Number (IBAN) of your banking institution.</td>
+<td>International bank account number (IBAN) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.RoutingNumber</td>
@@ -3379,7 +3529,7 @@
 <tr>
 <td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
 <td>enum</td>
-<td>BPay = 0, DirectDebit = 1, ElectronicTransfer = 2, Cheque = 3.</td>
+<td>ElectronicTransfer = 2, Cheque = 3.</td>
 </tr>
 <tr>
 <td>Accounts.SourceOfFunds</td>
@@ -3419,7 +3569,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.Region</td>
@@ -3434,12 +3584,12 @@
 <tr>
 <td>Accounts.AdviserReference</td>
 <td>string</td>
-<td>Adviser reference.</td>
+<td>Adviser reference..</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers</td>
 <td>array</td>
-<td>In Specie cash stock transfers.</td>
+<td>In specie cash stock transfers.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.TransferType<span class="required">required</span></td>
@@ -3449,7 +3599,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingPartyId</td>
 <td>string</td>
-<td>Ceding party Id.</td>
+<td>Ceding party ID.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingAccountNumber</td>
@@ -3464,7 +3614,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.SecurityIsin<span class="required">required</span></td>
 <td>string</td>
-<td>Security is in of stock transfer.</td>
+<td>Security ISIN of stock transfer.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.Quantity</td>
@@ -3499,7 +3649,7 @@
 <tr>
 <td>Accounts.IsTradeFreezeOn</td>
 <td>boolean</td>
-<td>Is trade freeze on.</td>
+<td>If a trade freeze is on.</td>
 </tr>
 <tr>
 <td>Accounts.TradeFreezeReason</td>
@@ -3514,7 +3664,7 @@
 <tr>
 <td>Accounts.IllustrationData</td>
 <td>object</td>
-<td>Illustration Data.</td>
+<td>Illustration data.</td>
 </tr>
 <tr>
 <td>Accounts.IllustrationData.CostsAndCharges</td>
@@ -3551,7 +3701,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -3647,8 +3797,7 @@
           </span><span class="nl">"NoNationalIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"ReceiveCommunicationByPost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"PepDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Senior politician"</span><span class="w">
+        </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -3774,7 +3923,7 @@
 <tr>
 <td>Applicants.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Applicants.ApplicantType</td>
@@ -3909,7 +4058,7 @@
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.CountryCode</td>
 <td>string</td>
-<td>Applicant&#39;s tax residence country code.</td>
+<td>Tax residence country code.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.From</td>
@@ -3924,7 +4073,7 @@
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.Identification</td>
 <td>string</td>
-<td>Applicant&#39;s tax residence identification.</td>
+<td>Tax residence identification.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.TaxResidences.NoDocument</td>
@@ -3969,7 +4118,7 @@
 <tr>
 <td>Applicants.IndividualDetails.Email</td>
 <td>string</td>
-<td>E-mail address of the individual.</td>
+<td>Email address of the individual.</td>
 </tr>
 <tr>
 <td>Applicants.IndividualDetails.Phone</td>
@@ -4012,11 +4161,6 @@
 <td>Whether applicant is politically exposed.</td>
 </tr>
 <tr>
-<td>Applicants.IndividualDetails.PepDetails</td>
-<td>string</td>
-<td>If applicant is politically exposed, details must be supplied.</td>
-</tr>
-<tr>
 <td>Accounts</td>
 <td>array</td>
 <td>Array of accounts to be opened with the application. Must be linked to an included applicant.</td>
@@ -4038,7 +4182,7 @@
 </tr>
 <tr>
 <td>Accounts.AccountType<span class="required">required</span></td>
-<td></td>
+<td>enum</td>
 <td>Isa = 0.</td>
 </tr>
 <tr>
@@ -4109,12 +4253,12 @@
 <tr>
 <td>Accounts.BankAccounts.Bic</td>
 <td>string</td>
-<td>Bank Identifier Code (BIC) of your banking institution.</td>
+<td>Bank identifier code (BIC) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.Iban</td>
 <td>string</td>
-<td>International Bank Account Number (IBAN) of your banking institution.</td>
+<td>International bank account number (IBAN) of your banking institution.</td>
 </tr>
 <tr>
 <td>Accounts.BankAccounts.RoutingNumber</td>
@@ -4159,7 +4303,7 @@
 <tr>
 <td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
 <td>enum</td>
-<td>BPay = 0, DirectDebit = 1, ElectronicTransfer = 2, Cheque = 3.</td>
+<td>ElectronicTransfer = 2, Cheque = 3.</td>
 </tr>
 <tr>
 <td>Accounts.SourceOfFunds</td>
@@ -4199,7 +4343,7 @@
 <tr>
 <td>Accounts.OwnerAdviserId</td>
 <td>integer</td>
-<td>Owner Adviser ID.</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 <tr>
 <td>Accounts.Region</td>
@@ -4214,12 +4358,12 @@
 <tr>
 <td>Accounts.AdviserReference</td>
 <td>string</td>
-<td>Adviser reference.</td>
+<td>Adviser reference..</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers</td>
 <td>array</td>
-<td>In Specie cash stock transfers.</td>
+<td>In specie cash stock transfers.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.TransferType<span class="required">required</span></td>
@@ -4229,7 +4373,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingPartyId</td>
 <td>string</td>
-<td>Ceding party Id.</td>
+<td>Ceding party ID.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.CedingAccountNumber</td>
@@ -4244,7 +4388,7 @@
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.SecurityIsin<span class="required">required</span></td>
 <td>string</td>
-<td>Security is in of stock transfer.</td>
+<td>Security ISIN of stock transfer.</td>
 </tr>
 <tr>
 <td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.Quantity</td>
@@ -4279,7 +4423,7 @@
 <tr>
 <td>Accounts.IsTradeFreezeOn</td>
 <td>boolean</td>
-<td>Is trade freeze on.</td>
+<td>If a trade freeze is on.</td>
 </tr>
 <tr>
 <td>Accounts.TradeFreezeReason</td>
@@ -4294,7 +4438,7 @@
 <tr>
 <td>Accounts.IllustrationData</td>
 <td>object</td>
-<td>Illustration Data.</td>
+<td>Illustration data.</td>
 </tr>
 <tr>
 <td>Accounts.IllustrationData.CostsAndCharges</td>
@@ -4331,7 +4475,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -4389,7 +4533,7 @@
 <tr>
 <td>ApplicationId<span class="required">required</span></td>
 <td>string</td>
-<td>Application ID.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 </tbody></table>
 
@@ -4418,7 +4562,7 @@
 <tr>
 <td>ApplicationId</td>
 <td>string</td>
-<td>Unique ApplicationID to be used as an application reference.</td>
+<td>Unique application ID to be used as an application reference.</td>
 </tr>
 <tr>
 <td>Status</td>
@@ -4428,12 +4572,12 @@
 <tr>
 <td>AccountsStatus</td>
 <td>array</td>
-<td>Refer to endpoint description.</td>
+<td>Account status.</td>
 </tr>
 <tr>
 <td>AccountsStatus.AccountCode</td>
 <td>string</td>
-<td>Portfolio ID.</td>
+<td>Account code.</td>
 </tr>
 <tr>
 <td>AccountsStatus.Status</td>
