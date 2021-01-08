@@ -7042,20 +7042,20 @@
 <p><strong>Request Parameter - Body Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"Name"</span><span class="p">:</span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"AdviserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">37309</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"PdsId"</span><span class="p">:</span><span class="s2">"AU1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PdsId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"CurrencyCode"</span><span class="p">:</span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"CurrencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"IsConsolidationAccount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"FamilyTrustElection"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"Fees"</span><span class="p">:[</span><span class="w">
+  </span><span class="nl">"Fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"Id"</span><span class="p">:</span><span class="s2">"AU5794"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"FeeType"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Value"</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"IsPercent"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"IncludesTax"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+      </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU5794"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FeeType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IsPercent"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IncludesTax"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"Models"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -7068,34 +7068,25 @@
       </span><span class="nl">"ModelPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"Fees"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"Id"</span><span class="p">:</span><span class="s2">"AU5794"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"FeeType"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"Value"</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"IsPercent"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"IncludesTax"</span><span class="p">:</span><span class="kc">true</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"BankAccounts"</span><span class="p">:[</span><span class="w">
+  </span><span class="nl">"BankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"Bsb"</span><span class="p">:</span><span class="s2">"012012"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"AccountNumber"</span><span class="p">:</span><span class="s2">"6555567"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"AccountName"</span><span class="p">:</span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Bsb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012012"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6555567"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"CashContributions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"SmaWithdrawals"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"PayoutIncome"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"FeeOffset"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"RegularContributionPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"Usages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="s2">"SMAWDWL"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"CASHCON"</span><span class="w">
+        </span><span class="s2">"SMAWDWL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CASHCON"</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"Bsb"</span><span class="p">:</span><span class="s2">"012012"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"AccountNumber"</span><span class="p">:</span><span class="s2">"8888888"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"AccountName"</span><span class="p">:</span><span class="s2">"Jane A Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Bsb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012012"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8888888"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane A Smith"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"CashContributions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"SmaWithdrawals"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nl">"PayoutIncome"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
