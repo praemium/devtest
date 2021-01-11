@@ -894,10 +894,6 @@
     },
     "AccountFee": {
       "properties": {
-        "Id": {
-          "description": "The account fee ID.",
-          "type": "string"
-        },
         "FeeType": {
           "description": "FeeTable = 0, Contribution = 1, Establishment = 2, Termination = 3, Withdrawal = 4, Ongoing = 5.",
           "$ref": "#/definitions/FeeType"
@@ -1313,8 +1309,8 @@
           "description": "Link an existing SuperSMA accumulation account to the pension account.",
           "type": "boolean"
         },
-        "AccountCode": {
-          "description": "Account code.",
+        "AccountId": {
+          "description": "Account ID.",
           "type": "string"
         },
         "TransferMethod": {
@@ -1325,10 +1321,6 @@
           "description": "Specifies the amount of the transfer from the existing account.",
           "format": "double",
           "type": "number"
-        },
-        "CloseOnRollover": {
-          "description": "Specifies whether the Account provided should be closed on successful rollover.",
-          "type": "boolean"
         }
       },
       "required": [],
@@ -3099,7 +3091,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.01.08",
+    "version": "2021.01.11",
     "title": "Public API"
   }
 }
