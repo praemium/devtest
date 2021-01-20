@@ -1981,9 +1981,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "AccountNumber"
-      ],
+      "required": [],
       "type": "object"
     },
     "DraftRegularTransaction": {
@@ -2426,7 +2424,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.01.13",
+    "version": "2021.01.20",
     "title": "Public API"
   }
 }
