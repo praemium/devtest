@@ -2424,7 +2424,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.01.24",
+    "version": "2021.01.25",
     "title": "Public API"
   }
 }
