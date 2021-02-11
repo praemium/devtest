@@ -1537,18 +1537,6 @@
       ],
       "type": "object"
     },
-    "ConsolidationType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        78,
-        80,
-        84,
-        85,
-        86,
-        87
-      ]
-    },
     "AccountType": {
       "format": "int32",
       "type": "integer",
@@ -1579,33 +1567,6 @@
         26,
         27,
         28
-      ]
-    },
-    "AccountStatus": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "RecalcType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2
-      ]
-    },
-    "RecalcStatus": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1
       ]
     },
     "AccountModelWeighting": {
@@ -3552,7 +3513,7 @@
           "type": "integer"
         },
         "Region": {
-          "description": "Region.",
+          "description": "Australia = 0, International = 1, UnitedKingdom = 2.",
           "$ref": "#/definitions/Region"
         },
         "CurrencyCode": {
@@ -3647,27 +3608,27 @@
         },
         "ConsolidationType": {
           "description": "None = 78, Portfolio = 80, Transaction = 84, FeeGroup = 85, ShareTrader = 86, SuperFund = 87.",
-          "$ref": "#/definitions/ConsolidationType"
+          "type": "enum"
         },
         "AccountType": {
           "description": "Standard = 0, Sma = 1, Smsf = 3, SuperSmaAccumulation = 4, SuperSmaPension = 5.",
-          "$ref": "#/definitions/AccountType"
+          "type": "enum"
         },
         "EntityType": {
           "description": "Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
-          "$ref": "#/definitions/EntityType"
+          "type": "enum"
         },
         "Status": {
           "description": "Active = 0, Draft = 1, Closed = 2, Deleted = 3.",
-          "$ref": "#/definitions/AccountStatus"
+          "type": "enum"
         },
         "RecalcType": {
           "description": "None = 0, Manual = 1, Auto = 2.",
-          "$ref": "#/definitions/RecalcType"
+          "type": "enum"
         },
         "RecalcStatus": {
           "description": "OK = 0, Error = 1.",
-          "$ref": "#/definitions/RecalcStatus"
+          "type": "enum"
         }
       },
       "type": "object"
@@ -3756,7 +3717,7 @@
           "type": "string"
         },
         "Region": {
-          "description": "Region of the PDS.",
+          "description": "Australia, UnitedKingdom or International.",
           "$ref": "#/definitions/ApplicantRegion"
         },
         "CurrencyCode": {
@@ -3811,7 +3772,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.10",
+    "version": "2021.02.11",
     "title": "Public API"
   }
 }

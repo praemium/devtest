@@ -983,7 +983,7 @@
           "type": "string"
         },
         "Region": {
-          "description": "Region of the PDS.",
+          "description": "Australia, UnitedKingdom or International.",
           "$ref": "#/definitions/ApplicantRegion"
         },
         "CurrencyCode": {
@@ -2191,7 +2191,7 @@
           "$ref": "#/definitions/DraftRegularTransaction"
         },
         "Region": {
-          "description": "Region.",
+          "description": "Australia = 0, International = 1, UnitedKingdom = 2.",
           "$ref": "#/definitions/Region"
         },
         "CurrencyCode": {
@@ -2424,7 +2424,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.10",
+    "version": "2021.02.11",
     "title": "Public API"
   }
 }
