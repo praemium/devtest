@@ -8671,7 +8671,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
 </blockquote>
 
-<p>This endpoint allows you to replace security exclusions for the account.</p>
+<p>This endpoint allows you to replace security exclusions for the account. If a blank array of SecurityExclusions is sent as a body parameter, all exclusions will be removed.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -8827,7 +8827,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
 </blockquote>
 
-<p>This endpoint allows you to delete security exclusions for the account.</p>
+<p>This endpoint allows you to delete security exclusions for the account. If SecurityId is provided, the single exclusion will be removed. If SecurityId is not provided, all exclusions will be removed.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -9022,7 +9022,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securitysubstitutions</p>
 </blockquote>
 
-<p>This endpoint allows you to replace security substitutions for the account.</p>
+<p>This endpoint allows you to replace security substitutions for the account.If a blank array of SecuritySubstitutions is sent as a body parameter, all substitutions will be removed.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -9184,7 +9184,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securitysubstitutions</p>
 </blockquote>
 
-<p>This endpoint allows you to delete security substitutions for the account.</p>
+<p>This endpoint allows you to delete security substitutions for the account. If FromSecurityId and ToSecurityId are provided, the single substitution will be removed. If FromSecurityId and ToSecurityId are not provided, all substitutions will be removed.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
