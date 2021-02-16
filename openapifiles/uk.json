@@ -213,7 +213,7 @@
         "parameters": [
           {
             "name": "userName",
-            "in": "query",
+            "in": "path",
             "required": true,
             "description": "Username.",
             "type": "string"
@@ -1114,6 +1114,19 @@
         }
       },
       "required": [],
+      "type": "object"
+    },
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "CorporateCapacity": {
@@ -2424,7 +2437,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.11",
+    "version": "2021.02.16",
     "title": "Public API"
   }
 }

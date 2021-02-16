@@ -431,7 +431,7 @@
         "parameters": [
           {
             "name": "userName",
-            "in": "query",
+            "in": "path",
             "required": true,
             "description": "User Name.",
             "type": "string"
@@ -528,6 +528,481 @@
             "required": false,
             "description": "If allowed for International.",
             "type": "boolean"
+          }
+        ]
+      }
+    },
+    "/api/securityexclusions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Security exclusions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SecurityExclusionResponse"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUSecurityExclusions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "ReplaceAUSecurityExclusions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecurityExclusionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "AddAUSecurityExclusions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecurityExclusionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DeleteAUSecurityExclusions",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "securityId",
+            "in": "query",
+            "required": false,
+            "description": "Security ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/securitysubstitutions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Security substitutions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SecuritySubstitutionResponse"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUSecuritySubstitutions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "ReplaceAUSecuritySubstitutions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecuritySubstitutionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "AddAUSecuritySubstitutions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecuritySubstitutionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DeleteAUSecuritySubstitutions",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "fromSecurityId",
+            "in": "query",
+            "required": false,
+            "description": "Security ID to substitute from.",
+            "type": "string"
+          },
+          {
+            "name": "toSecurityId",
+            "in": "query",
+            "required": false,
+            "description": "Security ID to substitute to.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/minimumtradesize": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Minimum trade size",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RebalanceTolerance"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUMinimumTradeSize",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "UpdateAUMinimumTradeSize",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PatchMinimumTradeSizeRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
           }
         ]
       }
@@ -1937,6 +2412,172 @@
       "required": [],
       "type": "object"
     },
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SecurityExclusionResponse": {
+      "properties": {
+        "CreatedDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SecurityExclusion": {
+      "properties": {
+        "SecurityId": {
+          "description": "Security ID.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SecurityId"
+      ],
+      "type": "object"
+    },
+    "SecurityExclusionRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "SecurityExclusions": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/SecurityExclusion"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId"
+      ],
+      "type": "object"
+    },
+    "SecuritySubstitutionResponse": {
+      "properties": {
+        "CreatedDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "FromSecurity": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "ToSecurity": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SecuritySubstitution": {
+      "properties": {
+        "FromSecurityId": {
+          "description": "",
+          "type": "string"
+        },
+        "ToSecurityId": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "FromSecurityId",
+        "ToSecurityId"
+      ],
+      "type": "object"
+    },
+    "SecuritySubstitutionRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "SecuritySubstitutions": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/SecuritySubstitution"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId"
+      ],
+      "type": "object"
+    },
+    "RebalanceTolerance": {
+      "properties": {
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Percentage": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Units": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "PatchMinimumTradeSizeRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Amount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Percentage": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Units": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [
+        "AccountId",
+        "Amount",
+        "Percentage",
+        "Units"
+      ],
+      "type": "object"
+    },
     "DraftAddressAU": {
       "properties": {
         "Street": {
@@ -3088,7 +3729,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.11",
+    "version": "2021.02.16",
     "title": "Public API"
   }
 }
