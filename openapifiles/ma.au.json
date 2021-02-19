@@ -2415,11 +2415,11 @@
     "Security": {
       "properties": {
         "Code": {
-          "description": "",
+          "description": "Security code.",
           "type": "string"
         },
         "Exchange": {
-          "description": "",
+          "description": "Security exchange.",
           "type": "string"
         }
       },
@@ -2429,12 +2429,12 @@
     "SecurityExclusionResponse": {
       "properties": {
         "CreatedDate": {
-          "description": "",
+          "description": "Date security exclusion was created.",
           "format": "date-time",
           "type": "string"
         },
         "Security": {
-          "description": "",
+          "description": "Security name.",
           "$ref": "#/definitions/Security"
         }
       },
@@ -2460,7 +2460,7 @@
           "type": "string"
         },
         "SecurityExclusions": {
-          "description": "",
+          "description": "Security exclusion.",
           "items": {
             "$ref": "#/definitions/SecurityExclusion"
           },
@@ -2475,16 +2475,16 @@
     "SecuritySubstitutionResponse": {
       "properties": {
         "CreatedDate": {
-          "description": "",
+          "description": "Date security substitution was created.",
           "format": "date-time",
           "type": "string"
         },
         "FromSecurity": {
-          "description": "",
+          "description": "From security.",
           "$ref": "#/definitions/Security"
         },
         "ToSecurity": {
-          "description": "",
+          "description": "To security.",
           "$ref": "#/definitions/Security"
         }
       },
@@ -2494,11 +2494,11 @@
     "SecuritySubstitution": {
       "properties": {
         "FromSecurityId": {
-          "description": "",
+          "description": "From security ID.",
           "type": "string"
         },
         "ToSecurityId": {
-          "description": "",
+          "description": "To security ID.",
           "type": "string"
         }
       },
@@ -2515,7 +2515,7 @@
           "type": "string"
         },
         "SecuritySubstitutions": {
-          "description": "",
+          "description": "Security substitution.",
           "items": {
             "$ref": "#/definitions/SecuritySubstitution"
           },
@@ -2530,17 +2530,17 @@
     "RebalanceTolerance": {
       "properties": {
         "Amount": {
-          "description": "",
+          "description": "Rebalance tolerance amount. Prevents trades of a value less than this figure.",
           "format": "double",
           "type": "number"
         },
         "Percentage": {
-          "description": "",
+          "description": "Rebalance tolerance percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.",
           "format": "double",
           "type": "number"
         },
         "Units": {
-          "description": "",
+          "description": "Rebalance tolernace number of units. Prevents trades of a quantity less than this figure.",
           "format": "double",
           "type": "number"
         }
@@ -2555,17 +2555,17 @@
           "type": "string"
         },
         "Amount": {
-          "description": "",
+          "description": "Minimum trade size amount. Prevents trades of a value less than this figure.",
           "format": "double",
           "type": "number"
         },
         "Percentage": {
-          "description": "",
+          "description": "Minimum trade size percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.",
           "format": "double",
           "type": "number"
         },
         "Units": {
-          "description": "",
+          "description": "Minimum trade size number of units. Prevents trades of a quantity less than this figure.",
           "format": "double",
           "type": "number"
         }
@@ -3729,7 +3729,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.16",
+    "version": "2021.02.19",
     "title": "Public API"
   }
 }
