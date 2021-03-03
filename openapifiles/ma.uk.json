@@ -669,7 +669,7 @@
     "PdsFeeTier": {
       "properties": {
         "ValueAppliedFrom": {
-          "description": "Date the value is applied from.",
+          "description": "The value is applied from.",
           "format": "double",
           "type": "number"
         },
@@ -857,7 +857,7 @@
     "FeeTier": {
       "properties": {
         "From": {
-          "description": "Date from when the fee tier is applicable.",
+          "description": "Value from which the fee tier is applicable.",
           "format": "double",
           "type": "number"
         },
@@ -2437,7 +2437,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.23",
+    "version": "2021.03.03",
     "title": "Public API"
   }
 }

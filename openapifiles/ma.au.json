@@ -272,6 +272,57 @@
         ]
       }
     },
+    "/api/childaccounts": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Child accounts",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ChildAccountAU"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUChildAccounts",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/accountmodelweightings": {
       "get": {
         "responses": {
@@ -528,6 +579,47 @@
             "required": false,
             "description": "If allowed for International.",
             "type": "boolean"
+          }
+        ]
+      }
+    },
+    "/api/recalc/status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Service Recalc Status",
+            "schema": {
+              "$ref": "#/definitions/ServiceRecalcStatus"
+            }
+          }
+        },
+        "operationId": "GetAURecalcStatus",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
           }
         ]
       }
@@ -1111,6 +1203,115 @@
         ]
       }
     },
+    "/api/assetclassperformance": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Asset class performance",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AssetClassInvestment"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUAssetClassPerformance",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "IncludeCash",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          },
+          {
+            "name": "IncludeLoans",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          },
+          {
+            "name": "IncludeTaxCredits",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          },
+          {
+            "name": "IncludeForeignTaxPaid",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          },
+          {
+            "name": "ExcludeAssets",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          },
+          {
+            "name": "CalculationMethod",
+            "in": "query",
+            "required": false,
+            "description": "ApproximateReturns = 0, TimeWeightedReturn = 1",
+            "type": "enum"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/ssologin": {
       "post": {
         "responses": {
@@ -1141,6 +1342,136 @@
             "schema": {
               "$ref": "#/definitions/SsoLoginRequest"
             }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/assetclasssummary": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Asset class summary",
+            "schema": {
+              "$ref": "#/definitions/AssetClassSummary"
+            }
+          }
+        },
+        "operationId": "GetAUAssetClassSummary",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "IncludeLoans",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "boolean"
+          },
+          {
+            "name": "ValuationDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/holdingsbymodel": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Holdings By Model",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HoldingsHistoryByModel"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUHoldingsByModel",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
           },
           {
             "name": "Authorization",
@@ -2058,6 +2389,16 @@
       "required": [],
       "type": "object"
     },
+    "ChildAccountAU": {
+      "properties": {
+        "Id": {
+          "description": "Child account ID.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "AccountModelWeighting": {
       "properties": {
         "ModelCode": {
@@ -2140,7 +2481,7 @@
     "PdsFeeTier": {
       "properties": {
         "ValueAppliedFrom": {
-          "description": "Date the value is applied from.",
+          "description": "The value is applied from.",
           "format": "double",
           "type": "number"
         },
@@ -2407,6 +2748,17 @@
         "IsAllowedByApl": {
           "description": "Is the security allowed by the Approved Product List.",
           "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "ServiceRecalcStatus": {
+      "properties": {
+        "RecalcAsAtDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
         }
       },
       "required": [],
@@ -3665,6 +4017,45 @@
       "required": [],
       "type": "object"
     },
+    "AssetClassInvestment": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "Benchmark": {
+          "description": "",
+          "type": "string"
+        },
+        "StartValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "EndValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalReturn": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalReturnPercent": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "BenchmarkReturnPercent": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "TargetApplication": {
       "format": "int32",
       "type": "integer",
@@ -3703,6 +4094,200 @@
       "required": [],
       "type": "object"
     },
+    "AssetClassValuation": {
+      "properties": {
+        "TotalCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "NetValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalGainOrLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassDetails": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "Value": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentNetValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "MinTargetAllocation": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "MaxTargetAllocation": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "MidPointTargetAllocation": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Variance": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassReceivableAndPayable": {
+      "properties": {
+        "Description": {
+          "description": "",
+          "type": "string"
+        },
+        "TotalAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "IncludedInNetValue": {
+          "description": "",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassSummary": {
+      "properties": {
+        "Valuation": {
+          "description": "",
+          "$ref": "#/definitions/AssetClassValuation"
+        },
+        "AssetClasses": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/AssetClassDetails"
+          },
+          "type": "array"
+        },
+        "ReceivablesAndPayables": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/AssetClassReceivableAndPayable"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingValueByModel": {
+      "properties": {
+        "Asset": {
+          "description": "",
+          "type": "string"
+        },
+        "ExchangeCode": {
+          "description": "",
+          "type": "string"
+        },
+        "Value": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingsByModel": {
+      "properties": {
+        "ModelCode": {
+          "description": "",
+          "type": "string"
+        },
+        "ModelDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "ModelPercentage": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Holdings": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/HoldingValueByModel"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingsHistoryByModel": {
+      "properties": {
+        "Date": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "HoldingsByModel": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/HoldingsByModel"
+          },
+          "type": "array"
+        },
+        "HoldingsNotInModel": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/HoldingValueByModel"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "TokenResponse": {
       "properties": {
         "token_type": {
@@ -3729,7 +4314,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.02.23",
+    "version": "2021.03.03",
     "title": "Public API"
   }
 }
