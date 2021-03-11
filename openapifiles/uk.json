@@ -998,7 +998,7 @@
           "type": "array"
         },
         "AvailableAccountTypes": {
-          "description": "Type of account you would like to ope such as Isa/Sipp/RtsRats/Qrops/OffshoreBond.",
+          "description": "Type of account you would like to ope such as OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19.",
           "items": {
             "$ref": "#/definitions/AccountType"
           },
@@ -2437,7 +2437,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.03.03",
+    "version": "2021.03.11",
     "title": "Public API"
   }
 }
