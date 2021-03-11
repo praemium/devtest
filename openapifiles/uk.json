@@ -998,7 +998,7 @@
           "type": "array"
         },
         "AvailableAccountTypes": {
-          "description": "Type of account you would like to ope such as OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19.",
+          "description": "OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19.",
           "items": {
             "$ref": "#/definitions/AccountType"
           },
