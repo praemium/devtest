@@ -998,7 +998,7 @@
           "type": "array"
         },
         "AvailableAccountTypes": {
-          "description": "OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19.",
+          "description": "Standard = 0, OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19, Jisa = 26, OnshoreBond = 27, OffshoreBondPersonalised = 28.",
           "items": {
             "$ref": "#/definitions/AccountType"
           },
