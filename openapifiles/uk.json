@@ -344,7 +344,7 @@
           {
             "name": "search",
             "in": "query",
-            "required": true,
+            "required": false,
             "description": "Search term based on security code or security description.",
             "type": "string"
           },
@@ -354,6 +354,16 @@
             "required": false,
             "description": "If allowed for International.",
             "type": "boolean"
+          },
+          {
+            "name": "securityIds",
+            "in": "query",
+            "required": false,
+            "description": "A list of security IDs to search.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           }
         ]
       }
@@ -554,6 +564,19 @@
     }
   },
   "definitions": {
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "FeeType": {
       "format": "int32",
       "type": "integer",
@@ -949,7 +972,7 @@
           "type": "string"
         },
         "TaxWrapperId": {
-          "description": "Tax wrapper ID.",
+          "description": "Tax wrapper ID. CgtChargeable = 1, TaxExempt = 2, Isa = 4, OffshoreBond = 5, OnshoreBond = 6, PersonalPension = 7, RtsRats = 8, Sipp = 9, GroupSipp = 10, Ssas = 11, S32 = 12, TrustNotUkTaxable = 13, CompanyNotUkTaxable = 14, Qnups = 15, Qrops = 16, Efurbs = 17, Ebt = 18, Jisa = 20, OffshoreBondPersonalised = 21.",
           "format": "int32",
           "type": "integer"
         },
@@ -1114,19 +1137,6 @@
         }
       },
       "required": [],
-      "type": "object"
-    },
-    "Security": {
-      "properties": {
-        "Code": {
-          "description": "",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "",
-          "type": "string"
-        }
-      },
       "type": "object"
     },
     "CorporateCapacity": {
@@ -2373,6 +2383,115 @@
       "required": [],
       "type": "object"
     },
+    "DollarReturnData": {
+      "properties": {
+        "CapitalAppreciation": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalIncome": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxCredits": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "ForexMovements": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "GrossDollarReturn": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalExpenses": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "NetDollarReturn": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "PerformanceReturn": {
+      "properties": {
+        "PeriodDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "GrossPercentReturn": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "NetPercentReturn": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "Performance": {
+      "properties": {
+        "HoldingsExcluded": {
+          "description": "",
+          "type": "boolean"
+        },
+        "BeginningMarketValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "EndingMarketValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "NetCapitalMovement": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "NetInternalTransfers": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "CashExpenses": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "UnallocatedAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "DollarReturn": {
+          "description": "",
+          "$ref": "#/definitions/DollarReturnData"
+        },
+        "PercentReturns": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/PerformanceReturn"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "TargetApplication": {
       "format": "int32",
       "type": "integer",
@@ -2411,6 +2530,218 @@
       "required": [],
       "type": "object"
     },
+    "RealisedCgtAssetDisposal": {
+      "properties": {
+        "CgtGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountedGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "OptimalCgtCalculationMethod": {
+          "description": "",
+          "type": "string"
+        },
+        "GrossGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "SaleProceeds": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxFreeAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "ActualCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "SaleDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "PurchaseDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TaxDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "AdjustedCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "PreCgtGainLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "TaxFreeAndTaxDeferredAmount": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TaxDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "PurchaseDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "SaleDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "ActualCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxDeferred": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxFree": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "AdjustedCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "TrustCgtDistribution": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TaxDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "GrossGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountedGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherGain": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtGainLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "PreCgtGainLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "RealisedCgt": {
+      "properties": {
+        "CgtAssetDisposals": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/RealisedCgtAssetDisposal"
+          },
+          "type": "array"
+        },
+        "TaxFreeAndTaxDeferredAmounts": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TaxFreeAndTaxDeferredAmount"
+          },
+          "type": "array"
+        },
+        "TrustCgtDistributions": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TrustCgtDistribution"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "TokenResponse": {
       "properties": {
         "token_type": {
@@ -2437,7 +2768,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.03.11",
+    "version": "2021.03.21",
     "title": "Public API"
   }
 }
