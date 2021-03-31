@@ -4807,12 +4807,15 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
 <span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
-<span class="na">AllowInternational</span><span class="pi">:</span> <span class="no">false</span>
 
 <span class="c1"># Search by security IDs</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU1</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU2</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU3</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK1</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK2</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK3</span>
+
+<span class="c1"># Search by security codes</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.LSE</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">ROC.LON</span>
 </code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
@@ -4825,11 +4828,6 @@
 <td>Search</td>
 <td>string</td>
 <td>Search term based on security code or security description.</td>
-</tr>
-<tr>
-<td>AllowInternational</td>
-<td>boolean</td>
-<td>If allowed for International.</td>
 </tr>
 <tr>
 <td>SecurityIds</td>
@@ -4847,7 +4845,9 @@
     </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK94"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Isin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU000000ROC4"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LSE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -4875,14 +4875,19 @@
 <td>Description.</td>
 </tr>
 <tr>
-<td>ISIN</td>
+<td>Isin</td>
 <td>string</td>
-<td>ISIN of security code.</td>
+<td>ISIN of security.</td>
 </tr>
 <tr>
 <td>Exchange</td>
 <td>string</td>
 <td>Exchange of security.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>string</td>
+<td>Currency of security.</td>
 </tr>
 <tr>
 <td>IsAllowedByApl</td>
