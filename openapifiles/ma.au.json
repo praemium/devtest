@@ -1,1009 +1,5 @@
 {
   "paths": {
-    "/api/reporteventpublishedfiles": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Published files for report event",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ReportEventPublishedFile"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUPublishedFilesForEvent",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/reportfile": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        },
-        "operationId": "DowwnloadAUReportFile",
-        "parameters": [
-          {
-            "name": "fileId",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/ssologin": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "SSO login",
-            "schema": {
-              "$ref": "#/definitions/SsoLoginResponse"
-            }
-          }
-        },
-        "operationId": "SsoLogin",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SsoLoginRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/realisedcgt": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Realised CGT",
-            "schema": {
-              "$ref": "#/definitions/RealisedCgt"
-            }
-          }
-        },
-        "operationId": "GetAURealisedCgt",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/realisedcgtsummary": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Realised CGT summary",
-            "schema": {
-              "$ref": "#/definitions/TaxSummary"
-            }
-          }
-        },
-        "operationId": "GetAURealisedCgtSummary",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/unrealisedcgt": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Unrealised CGT",
-            "schema": {
-              "$ref": "#/definitions/UnrealisedCgtParcelIEnumerablePagedResponse"
-            }
-          }
-        },
-        "operationId": "GetAUUnrealisedCgt",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/unrealisedcgtsummary": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Unrealised CGT Summary",
-            "schema": {
-              "$ref": "#/definitions/UnrealisedCgtSummary"
-            }
-          }
-        },
-        "operationId": "GetAUUnrealisedCgtSummary",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/transactions": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Transactions",
-            "schema": {
-              "$ref": "#/definitions/TransactionIEnumerablePagedResponse"
-            }
-          }
-        },
-        "operationId": "GetAUTransactions",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "BuysAndSellsOnly",
-            "in": "query",
-            "required": false,
-            "description": "",
-            "type": "boolean"
-          },
-          {
-            "name": "ShowUnconfirmed",
-            "in": "query",
-            "required": false,
-            "description": "",
-            "type": "boolean"
-          },
-          {
-            "name": "Page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "required": false,
-            "description": "TransactionDate = 0, Security = 1.",
-            "type": "enum"
-          },
-          {
-            "name": "Order",
-            "in": "query",
-            "required": false,
-            "description": "Asc = 0, Desc = 1.",
-            "type": "enum"
-          }
-        ]
-      }
-    },
-    "/api/cashtransactions": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Cash transactions",
-            "schema": {
-              "$ref": "#/definitions/CashBookIEnumerablePagedResponse"
-            }
-          }
-        },
-        "operationId": "GetAUCashTransactions",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "IncludePendingUnsettled",
-            "in": "query",
-            "required": false,
-            "description": "",
-            "type": "boolean"
-          },
-          {
-            "name": "Page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/unsettledtransactions": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Unsettled transactions",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UnsettledTransaction"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUUnsettledTransactions",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/dividendreinvestmentdetails": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Dividend reinvestment details",
-            "schema": {
-              "$ref": "#/definitions/DividendReinvestmentDetailIEnumerablePagedResponse"
-            }
-          }
-        },
-        "operationId": "GetAUDividendReinvestmentDetails",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/assetclasssummary": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Asset class summary",
-            "schema": {
-              "$ref": "#/definitions/AssetClassSummary"
-            }
-          }
-        },
-        "operationId": "GetAUAssetClassSummary",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "IncludeLoans",
-            "in": "query",
-            "required": false,
-            "description": "",
-            "type": "boolean"
-          },
-          {
-            "name": "ValuationDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/holdingsbymodel": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Holdings By Model",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/HoldingsHistoryByModel"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUHoldingsByModel",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/bulkvaluation": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Bulk Valuation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/BulkValuationData"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUBulkValuation",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "OAuth 2.0 access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "AccountIds",
-            "required": true,
-            "description": "An array of account IDs.",
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          {
-            "name": "ValuationDate",
-            "in": "query",
-            "required": true,
-            "description": "",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ClassificationType",
-            "in": "query",
-            "required": true,
-            "description": "AssetClassLookThrough = 1, AssetClassPrimaryClass = 2, MarketType = 3.",
-            "type": "enum"
-          }
-        ]
-      }
-    },
     "/api/account/Sma": {
       "post": {
         "responses": {
@@ -1227,20 +223,6 @@
         ],
         "parameters": [
           {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
             "name": "search",
             "in": "query",
             "required": false,
@@ -1251,7 +233,7 @@
             "name": "accountIds",
             "in": "query",
             "required": false,
-            "description": "An array of account IDs. If AccountIds is provided, all other parameters will be ignored.",
+            "description": "An array of account IDs. If AccountIds are provided, all other parameters will be ignored.",
             "items": {
               "type": "string"
             },
@@ -1317,20 +299,6 @@
           "text/json"
         ],
         "parameters": [
-          {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
           {
             "name": "accountId",
             "in": "query",
@@ -1601,7 +569,7 @@
           {
             "name": "pdsId",
             "in": "query",
-            "required": false,
+            "required": true,
             "description": "PDS ID.",
             "type": "string"
           },
@@ -1609,7 +577,17 @@
             "name": "securityIds",
             "in": "query",
             "required": false,
-            "description": "A list of security IDs to search.",
+            "description": "A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "name": "securityCodes",
+            "in": "query",
+            "required": false,
+            "description": "A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.",
             "items": {
               "type": "string"
             },
@@ -2259,20 +1237,6 @@
         ],
         "parameters": [
           {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
             "name": "AccountId",
             "in": "query",
             "required": true,
@@ -2283,7 +1247,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2291,7 +1255,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2340,20 +1304,6 @@
         ],
         "parameters": [
           {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
             "name": "AccountId",
             "in": "query",
             "required": true,
@@ -2364,7 +1314,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2372,7 +1322,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2421,20 +1371,6 @@
         ],
         "parameters": [
           {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
             "name": "AccountId",
             "in": "query",
             "required": true,
@@ -2445,7 +1381,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2453,7 +1389,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2546,14 +1482,14 @@
             "name": "modelId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "ModelId as returned by the model endpoint.",
             "type": "string"
           },
           {
             "name": "valuationDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Date used to display the data.",
             "format": "date-time",
             "type": "string"
           },
@@ -2602,14 +1538,14 @@
             "name": "ModelId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "ModelId as returned by the model endpoint.",
             "type": "string"
           },
           {
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2617,7 +1553,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2669,14 +1605,14 @@
             "name": "modelId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "ModelId as returned by the model endpoint.",
             "type": "string"
           },
           {
             "name": "valuationDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Date used to display the data.",
             "format": "date-time",
             "type": "string"
           },
@@ -2728,7 +1664,7 @@
             "name": "modelId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "ModelId as returned by the model endpoint.",
             "type": "string"
           },
           {
@@ -2852,35 +1788,35 @@
             "name": "IncludeCash",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether cash should be included.",
             "type": "boolean"
           },
           {
             "name": "IncludeLoans",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether loans should be included.",
             "type": "boolean"
           },
           {
             "name": "IncludeTaxCredits",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include tax credits.",
             "type": "boolean"
           },
           {
             "name": "IncludeForeignTaxPaid",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include foreign tax paid.",
             "type": "boolean"
           },
           {
-            "name": "ExcludeAssets",
+            "name": "IncludeExcludedSecurities",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include any security that has been excluded from performance.",
             "type": "boolean"
           },
           {
@@ -2894,7 +1830,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2902,7 +1838,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           }
@@ -2958,7 +1894,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2966,7 +1902,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -2974,28 +1910,28 @@
             "name": "IncludeCash",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether cash should be included.",
             "type": "boolean"
           },
           {
             "name": "IncludeLoans",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether loans should be included.",
             "type": "boolean"
           },
           {
-            "name": "ExcludeAssets",
+            "name": "IncludeExcludedSecurities",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include any security that has been excluded from performance.",
             "type": "boolean"
           },
           {
             "name": "IncludeTaxCredits",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include tax credits.",
             "type": "boolean"
           },
           {
@@ -3072,7 +2008,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3080,7 +2016,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3088,7 +2024,7 @@
             "name": "IncludeTaxCredits",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include tax credits.",
             "type": "boolean"
           },
           {
@@ -3153,7 +2089,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3161,7 +2097,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3169,21 +2105,21 @@
             "name": "IncludeCash",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether cash should be included.",
             "type": "boolean"
           },
           {
-            "name": "ExcludeAssets",
+            "name": "IncludeExcludedSecurities",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include any security that has been excluded from performance.",
             "type": "boolean"
           },
           {
             "name": "IncludeTaxCredits",
             "in": "query",
             "required": false,
-            "description": "",
+            "description": "Whether or not to include tax credits.",
             "type": "boolean"
           },
           {
@@ -3271,7 +2207,7 @@
             "name": "BenchmarkId",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Praemium ID of the Benchmark as returned in the benchmark endpoint.",
             "type": "string"
           },
           {
@@ -3286,7 +2222,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3294,7 +2230,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3343,20 +2279,6 @@
         ],
         "parameters": [
           {
-            "name": "serviceId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "modelProviderId",
-            "in": "query",
-            "required": false,
-            "format": "int32",
-            "type": "integer"
-          },
-          {
             "name": "AccountId",
             "in": "query",
             "required": true,
@@ -3367,7 +2289,7 @@
             "name": "FromDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The from date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3375,7 +2297,7 @@
             "name": "ToDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "The to date used when calculating data for the request.",
             "format": "date-time",
             "type": "string"
           },
@@ -3447,6 +2369,884 @@
         ]
       }
     },
+    "/api/reporteventpublishedfiles": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Published files for report event",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ReportEventPublishedFile"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUPublishedFilesForEvent",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "query",
+            "required": true,
+            "description": "EventId as returned by the report event endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/reportfile": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DowwnloadAUReportFile",
+        "parameters": [
+          {
+            "name": "fileId",
+            "in": "query",
+            "required": true,
+            "description": "FileID as returned in the report event published file endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/ssologin": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "SSO login",
+            "schema": {
+              "$ref": "#/definitions/SsoLoginResponse"
+            }
+          }
+        },
+        "operationId": "SsoLogin",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SsoLoginRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/realisedcgt": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Realised CGT",
+            "schema": {
+              "$ref": "#/definitions/RealisedCgt"
+            }
+          }
+        },
+        "operationId": "GetAURealisedCgt",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/realisedcgtsummary": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Realised CGT summary",
+            "schema": {
+              "$ref": "#/definitions/TaxSummary"
+            }
+          }
+        },
+        "operationId": "GetAURealisedCgtSummary",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/unrealisedcgt": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Unrealised CGT",
+            "schema": {
+              "$ref": "#/definitions/UnrealisedCgtParcelIEnumerablePagedResponse"
+            }
+          }
+        },
+        "operationId": "GetAUUnrealisedCgt",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to return. Default to 1.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "description": "Page size to return.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/unrealisedcgtsummary": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Unrealised CGT Summary",
+            "schema": {
+              "$ref": "#/definitions/UnrealisedCgtSummary"
+            }
+          }
+        },
+        "operationId": "GetAUUnrealisedCgtSummary",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/transactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Transactions",
+            "schema": {
+              "$ref": "#/definitions/TransactionIEnumerablePagedResponse"
+            }
+          }
+        },
+        "operationId": "GetAUTransactions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "BuysAndSellsOnly",
+            "in": "query",
+            "required": false,
+            "description": "Whether to includes only Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close.",
+            "type": "boolean"
+          },
+          {
+            "name": "ShowUnconfirmed",
+            "in": "query",
+            "required": false,
+            "description": "Whether to show unconfirmed transactions.",
+            "type": "boolean"
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to return. Default to 1.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Size",
+            "in": "query",
+            "required": false,
+            "description": "Page size to return.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "required": false,
+            "description": "TransactionDate = 0, Security = 1.",
+            "type": "enum"
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "required": false,
+            "description": "Asc = 0, Desc = 1.",
+            "type": "enum"
+          }
+        ]
+      }
+    },
+    "/api/cashtransactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Cash transactions",
+            "schema": {
+              "$ref": "#/definitions/CashBookIEnumerablePagedResponse"
+            }
+          }
+        },
+        "operationId": "GetAUCashTransactions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "IncludePendingUnsettled",
+            "in": "query",
+            "required": false,
+            "description": "Whether to include pending unsettled cash transactions.",
+            "type": "boolean"
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to return. Default to 1.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Size",
+            "in": "query",
+            "required": false,
+            "description": "Page size to return.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/unsettledtransactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Unsettled transactions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UnsettledTransaction"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUUnsettledTransactions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to return. Default to 1.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Size",
+            "in": "query",
+            "required": false,
+            "description": "Page size to return.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/dividendreinvestmentdetails": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Dividend reinvestment details",
+            "schema": {
+              "$ref": "#/definitions/DividendReinvestmentDetailIEnumerablePagedResponse"
+            }
+          }
+        },
+        "operationId": "GetAUDividendReinvestmentDetails",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/assetclasssummary": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Asset class summary",
+            "schema": {
+              "$ref": "#/definitions/AssetClassSummary"
+            }
+          }
+        },
+        "operationId": "GetAUAssetClassSummary",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "IncludeLoans",
+            "in": "query",
+            "required": false,
+            "description": "Whether loans should be included in the net account value.",
+            "type": "boolean"
+          },
+          {
+            "name": "ValuationDate",
+            "in": "query",
+            "required": true,
+            "description": "Date used to display the data.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/holdingsbymodel": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Holdings By Model",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HoldingsHistoryByModel"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUHoldingsByModel",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/bulkvaluation": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Bulk Valuation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BulkValuationData"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUBulkValuation",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "OAuth 2.0 access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "AccountIds",
+            "required": true,
+            "description": "An array of account IDs.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "name": "ValuationDate",
+            "in": "query",
+            "required": true,
+            "description": "Date used to display the data.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ClassificationType",
+            "in": "query",
+            "required": true,
+            "description": "The classification type of the security valuation. AssetClassLookThrough = 1, AssetClassPrimaryClass = 2, MarketType = 3.",
+            "type": "enum"
+          }
+        ]
+      }
+    },
     "/api/token": {
       "post": {
         "responses": {
@@ -3484,1441 +3284,6 @@
     }
   },
   "definitions": {
-    "ReportEventPublishedFile": {
-      "properties": {
-        "FileId": {
-          "description": "",
-          "type": "string"
-        },
-        "AccountId": {
-          "description": "",
-          "type": "string"
-        },
-        "FileName": {
-          "description": "",
-          "type": "string"
-        },
-        "GeneratedDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "PublishedDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "TargetApplication": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "SsoLoginRequest": {
-      "properties": {
-        "Application": {
-          "description": "The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.",
-          "$ref": "#/definitions/TargetApplication"
-        },
-        "UserId": {
-          "description": "ID of the user to log in. Either UserId or Username is required.",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [
-        "Application",
-        "UserId"
-      ],
-      "type": "object"
-    },
-    "SsoLoginResponse": {
-      "properties": {
-        "SsoUrl": {
-          "description": "SSO URL.",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Security": {
-      "properties": {
-        "Code": {
-          "description": "Security code.",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "Security exchange.",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "RealisedCgtAssetDisposal": {
-      "properties": {
-        "CgtGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OptimalCgtCalculationMethod": {
-          "description": "",
-          "type": "string"
-        },
-        "GrossGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "SaleProceeds": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxFreeAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ActualCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "SaleDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "PurchaseDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "AdjustedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PreCgtGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "TaxFreeAndTaxDeferredAmount": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "PurchaseDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "SaleDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ActualCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxDeferred": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxFree": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AdjustedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "TrustCgtDistribution": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "GrossGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PreCgtGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "RealisedCgt": {
-      "properties": {
-        "CgtAssetDisposals": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/RealisedCgtAssetDisposal"
-          },
-          "type": "array"
-        },
-        "TaxFreeAndTaxDeferredAmounts": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/TaxFreeAndTaxDeferredAmount"
-          },
-          "type": "array"
-        },
-        "TrustCgtDistributions": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/TrustCgtDistribution"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "TaxSummary": {
-      "properties": {
-        "LossesCarriedForward": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "LossesCurrentYear": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtDisposalsDiscounted": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtDisposalsIndexed": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtDisposalsOther": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtDistributionsDiscounted": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtDistributionsIndexed": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtDistributionsOther": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "LossesAppliedDiscounted": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "LossesAppliedIndexed": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "LossesAppliedOther": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountApplied": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetCapitalGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetCapitalGainLossDiscounted": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetCapitalGainLossIndexed": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetCapitalGainLossOther": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "UnrealisedCgtParcel": {
-      "properties": {
-        "CgtGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OptimalCgtCalculationMethod": {
-          "description": "",
-          "type": "string"
-        },
-        "GrossGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "MarketValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AdjustedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxFreeAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxDeferredAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ActualCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CostBaseUnknown": {
-          "description": "",
-          "type": "boolean"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PurchaseDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "CgtLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtExemptGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Metadata": {
-      "properties": {
-        "TotalCount": {
-          "description": "",
-          "format": "int32",
-          "type": "integer"
-        },
-        "TotalPages": {
-          "description": "",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "UnrealisedCgtParcelIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/UnrealisedCgtParcel"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "UnrealisedCgtSummary": {
-      "properties": {
-        "CostBaseUnknown": {
-          "description": "",
-          "type": "boolean"
-        },
-        "ActualCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AdjustedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "MarketValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "GrossGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtExemptGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Transaction": {
-      "properties": {
-        "DeemedAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CostBaseUnknown": {
-          "description": "",
-          "type": "boolean"
-        },
-        "BuyBack": {
-          "description": "",
-          "type": "boolean"
-        },
-        "AveragePriceInTradedCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AmountInTradedCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TradedCurrency": {
-          "description": "",
-          "type": "string"
-        },
-        "SettlementDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "AveragePriceInSettlementCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AmountInSettlementCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "SettlementCurrency": {
-          "description": "",
-          "type": "string"
-        },
-        "Broker": {
-          "description": "",
-          "type": "string"
-        },
-        "GstClaimable": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "BrokerageGst": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "BrokerageIncludingGst": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TransactionId": {
-          "description": "",
-          "type": "string"
-        },
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TransactionDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "int32",
-          "type": "integer"
-        },
-        "NetAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Unconfirmed": {
-          "description": "",
-          "type": "boolean"
-        },
-        "AveragePrice": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DisposalMethod": {
-          "description": "",
-          "type": "string"
-        },
-        "Narration": {
-          "description": "",
-          "type": "string"
-        },
-        "TransactionTypeDescription": {
-          "description": "",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "TransactionIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/Transaction"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "CashSummary": {
-      "properties": {
-        "CashBookCode": {
-          "description": "",
-          "type": "string"
-        },
-        "CashBookDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Currency": {
-          "description": "",
-          "type": "string"
-        },
-        "OpeningBalance": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Deposits": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Withdrawals": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ClosingBalance": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ClosingBalanceInAccountCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "CashTransaction": {
-      "properties": {
-        "TransactionId": {
-          "description": "",
-          "type": "string"
-        },
-        "TransactionDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Currency": {
-          "description": "",
-          "type": "string"
-        },
-        "TransactionTypeDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Narration": {
-          "description": "",
-          "type": "string"
-        },
-        "Deposit": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Withdrawal": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ValueInAccountCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Balance": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "CashBook": {
-      "properties": {
-        "Summary": {
-          "description": "",
-          "$ref": "#/definitions/CashSummary"
-        },
-        "Transactions": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/CashTransaction"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "CashBookIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/CashBook"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "UnsettledTransaction": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TransactionDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TransactionTypeDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AveragePrice": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Brokerage": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Gst": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "GstRefund": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DisposalMethod": {
-          "description": "",
-          "type": "string"
-        },
-        "Narration": {
-          "description": "",
-          "type": "string"
-        },
-        "TradedCurrency": {
-          "description": "",
-          "type": "string"
-        },
-        "AmountInTradedCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AveragePriceInTradedCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "SettlementDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "ContractNoteReference": {
-          "description": "",
-          "type": "string"
-        },
-        "OtherCharges": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherChargesGst": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "DrpType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1
-      ]
-    },
-    "DividendReinvestmentDetail": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "DrpType": {
-          "description": "",
-          "$ref": "#/definitions/DrpType"
-        },
-        "FromDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "ToDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "MaxSharesParticipating": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentSharesParticipating": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ExcludeFromDrp": {
-          "description": "",
-          "type": "boolean"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "DividendReinvestmentDetailIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/DividendReinvestmentDetail"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassValuation": {
-      "properties": {
-        "TotalCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalGainOrLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassDetails": {
-      "properties": {
-        "AssetClassDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Value": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentNetValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "MinTargetAllocation": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "MaxTargetAllocation": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "MidPointTargetAllocation": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Variance": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassReceivableAndPayable": {
-      "properties": {
-        "Description": {
-          "description": "",
-          "type": "string"
-        },
-        "TotalAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IncludedInNetValue": {
-          "description": "",
-          "type": "boolean"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassSummary": {
-      "properties": {
-        "Valuation": {
-          "description": "",
-          "$ref": "#/definitions/AssetClassValuation"
-        },
-        "AssetClasses": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/AssetClassDetails"
-          },
-          "type": "array"
-        },
-        "ReceivablesAndPayables": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/AssetClassReceivableAndPayable"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingValueByModel": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "Value": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingsByModel": {
-      "properties": {
-        "ModelCode": {
-          "description": "",
-          "type": "string"
-        },
-        "ModelPercentage": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Holdings": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/HoldingValueByModel"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingsHistoryByModel": {
-      "properties": {
-        "Date": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TotalValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "HoldingsByModel": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/HoldingsByModel"
-          },
-          "type": "array"
-        },
-        "HoldingsNotInModel": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/HoldingValueByModel"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Valuation": {
-      "properties": {
-        "ValuationDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TotalCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "NetValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalGainOrLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedIncome": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Yield": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingSecurity": {
-      "properties": {
-        "AssetClassDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "AssetClassCode": {
-          "description": "",
-          "type": "string"
-        },
-        "AssetClassCategory": {
-          "description": "",
-          "type": "string"
-        },
-        "TypeDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "GicsDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Code": {
-          "description": "",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Holding": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/HoldingSecurity"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Cost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitPriceDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Value": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "GainOrLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalGainOrLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedIncome": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Yield": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ValueInSecurityCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CostBaseUnknown": {
-          "description": "",
-          "format": "int32",
-          "type": "integer"
-        },
-        "TaxCredits": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedFrankingCredits": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedGrossYield": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "ReceivableAndPayable": {
-      "properties": {
-        "Code": {
-          "description": "",
-          "type": "string"
-        },
-        "Description": {
-          "description": "",
-          "type": "string"
-        },
-        "TypeDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Amount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IncludedInNetValue": {
-          "description": "",
-          "type": "boolean"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "SubscriptionModel": {
-      "properties": {
-        "ModelCode": {
-          "description": "",
-          "type": "string"
-        },
-        "Weighting": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "CashHub": {
-      "properties": {
-        "AUD": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Subscription": {
-      "properties": {
-        "Models": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/SubscriptionModel"
-          },
-          "type": "array"
-        },
-        "CashHub": {
-          "description": "",
-          "$ref": "#/definitions/CashHub"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "BulkValuationData": {
-      "properties": {
-        "AccountId": {
-          "description": "",
-          "type": "string"
-        },
-        "Valuation": {
-          "description": "",
-          "$ref": "#/definitions/Valuation"
-        },
-        "Holdings": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/Holding"
-          },
-          "type": "array"
-        },
-        "ReceivablesAndPayables": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/ReceivableAndPayable"
-          },
-          "type": "array"
-        },
-        "Subscriptions": {
-          "description": "",
-          "$ref": "#/definitions/Subscription"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "HoldingType": {
       "format": "int32",
       "type": "integer",
@@ -5780,6 +4145,22 @@
       "required": [],
       "type": "object"
     },
+    "Metadata": {
+      "properties": {
+        "TotalCount": {
+          "description": "Total number of results found.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TotalPages": {
+          "description": "Total pages of results.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "AccountAUIEnumerablePagedResponse": {
       "properties": {
         "Data": {
@@ -5790,7 +4171,7 @@
           "type": "array"
         },
         "Metadata": {
-          "description": "",
+          "description": "Metadata including pagination.",
           "$ref": "#/definitions/Metadata"
         }
       },
@@ -6168,8 +4549,22 @@
     "ServiceRecalcStatus": {
       "properties": {
         "RecalcAsAtDate": {
-          "description": "",
+          "description": "Recalc date.",
           "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "Security code.",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "Security exchange.",
           "type": "string"
         }
       },
@@ -7418,59 +5813,59 @@
     "Expense": {
       "properties": {
         "ExpenseId": {
-          "description": "",
+          "description": "Praemium expense id.",
           "type": "string"
         },
         "EffectiveDate": {
-          "description": "",
+          "description": "Date the expense was deemed to have been incurred.",
           "format": "date-time",
           "type": "string"
         },
         "TaxDate": {
-          "description": "",
+          "description": "Date used for tax action reporting purposes.",
           "format": "date-time",
           "type": "string"
         },
         "PaymentDate": {
-          "description": "",
+          "description": "Date the expense was paid.",
           "format": "date-time",
           "type": "string"
         },
         "ExpenseIncludingGst": {
-          "description": "",
+          "description": "Amount paid including GST. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "ExpenseExcludingGst": {
-          "description": "",
+          "description": "Amount paid excluding GST. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "GstRefundableAmount": {
-          "description": "",
+          "description": "Refundable amount of GST the account is eligible to claim for the expense. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "DeductibleAmount": {
-          "description": "",
+          "description": "Portion of the expense that can be claimed as a tax deduction. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NonDeductibleAmount": {
-          "description": "",
+          "description": "Portion of the expense that cannot be claimed as a tax deduction. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "ExpenseNarration": {
-          "description": "",
+          "description": "Notes attached to the expense.",
           "type": "string"
         },
         "ExpenseTypeGroupDescription": {
-          "description": "",
+          "description": "Expenses categorised as Admin / Investment / Member / Non-investment.",
           "type": "string"
         },
         "ExpenseTypeDescription": {
-          "description": "",
+          "description": "Description of the expense type. Please visit the “Expense Types” pages in Help Centre for a full list.",
           "type": "string"
         }
       },
@@ -7480,41 +5875,37 @@
     "IncomeAndTaxCredit": {
       "properties": {
         "TaxWithheld": {
-          "description": "",
+          "description": "Total tax withheld on the income record. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Receivable": {
-          "description": "",
+          "description": "Amount of income yet to be received. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "CashAmount": {
-          "description": "",
+          "description": "Amount received via cash. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Drp": {
-          "description": "",
+          "description": "Amount received via dividend reinvestment. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "IncomeTotal": {
-          "description": "",
+          "description": "Total value of the income record. (Account currency)",
           "format": "double",
           "type": "number"
         },
-        "Currency": {
-          "description": "",
-          "type": "string"
-        },
         "PaymentDate": {
-          "description": "",
+          "description": "Payment date of the income record.",
           "format": "date-time",
           "type": "string"
         },
         "ExecutionDate": {
-          "description": "",
+          "description": "Execution date of the income record.",
           "format": "date-time",
           "type": "string"
         },
@@ -7523,24 +5914,24 @@
           "$ref": "#/definitions/Security"
         },
         "IncomeTypeDescription": {
-          "description": "",
+          "description": "Type of income received.",
           "type": "string"
         },
         "IncomeSource": {
-          "description": "",
+          "description": "Whether the income was Australian or foreign based.",
           "type": "string"
         },
         "IncomeId": {
-          "description": "",
+          "description": "Praemium income ID.",
           "type": "string"
         },
         "ForeignTaxPay": {
-          "description": "",
+          "description": "Amount of foreign tax of the income record. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "FrankingCredit": {
-          "description": "",
+          "description": "Franking credit amount attributable to the income. (Account currency)",
           "format": "double",
           "type": "number"
         }
@@ -7551,94 +5942,94 @@
     "IncomeSchedule": {
       "properties": {
         "CashAmount": {
-          "description": "",
+          "description": "Amount received via cash. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TrustOtherExpenses": {
-          "description": "",
+          "description": "Other expenses related to the income record. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "ForeignIncomeTaxOffsetsTotal": {
-          "description": "",
+          "description": "Foreign income tax offsets. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TaxWithheld": {
-          "description": "",
+          "description": "Total tax withheld on the income record. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "IncomeTotal": {
-          "description": "",
+          "description": "Total value of the income record. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NonAssessableTotal": {
-          "description": "",
+          "description": "Total amount that is non assessable for tax purposes. (Account currency)",
           "format": "double",
           "type": "number"
         },
-        "TrustCGTDistributionsTotal": {
-          "description": "",
+        "TrustCgtDistributionsTotal": {
+          "description": "Amount received due to distributed capital gains. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "ForeignIncomeTotal": {
-          "description": "",
+          "description": "Amount received from non-Australian sources. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Drp": {
-          "description": "",
+          "description": "Amount received via dividend reinvestment. (Account currency)",
           "format": "double",
           "type": "number"
         },
-        "TrustOtherAust": {
-          "description": "",
+        "AustralianTrustOther": {
+          "description": "Australian sourced income component that is not classified as one of the other types. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "FrankedTotal": {
-          "description": "",
+          "description": "Amount received that was franked. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "UnfrankedTotal": {
-          "description": "",
+          "description": "Amount received that was unfranked. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Interest": {
-          "description": "",
+          "description": "Interest amount. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TaxDate": {
-          "description": "",
+          "description": "Tax date of the income record.",
           "format": "date-time",
           "type": "string"
         },
-        "AssetDescription": {
+        "Security": {
           "description": "",
-          "type": "string"
+          "$ref": "#/definitions/Security"
         },
         "IncomeTypeDescription": {
-          "description": "",
+          "description": "Type of income received.",
           "type": "string"
         },
         "IncomeId": {
-          "description": "",
+          "description": "Praemium income ID.",
           "type": "string"
         },
         "FrankingCreditsTotal": {
-          "description": "",
+          "description": "Imputation credits. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "AccruedAmount": {
-          "description": "",
+          "description": "Income amount that is accrued. (Account currency)",
           "format": "double",
           "type": "number"
         }
@@ -7658,15 +6049,15 @@
     "Model": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Praemium unique model Identifier.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Model code.",
           "type": "string"
         },
         "Description": {
-          "description": "",
+          "description": "A description of the model.",
           "type": "string"
         },
         "Status": {
@@ -7674,20 +6065,20 @@
           "$ref": "#/definitions/ModelStatus"
         },
         "FactSheetUrl": {
-          "description": "",
+          "description": "Fact sheet URL.",
           "type": "string"
         },
         "ProviderName": {
-          "description": "",
+          "description": "Model provider name.",
           "type": "string"
         },
         "UpdatedDate": {
-          "description": "",
+          "description": "Model status update. Note that this date refers to an update of the model description, not the model weights.",
           "format": "date-time",
           "type": "string"
         },
         "LastTransactionDate": {
-          "description": "",
+          "description": "Model weights update date.",
           "format": "date-time",
           "type": "string"
         }
@@ -7698,26 +6089,26 @@
     "AccountApproximateFum": {
       "properties": {
         "AccountId": {
-          "description": "",
+          "description": "Account ID.",
           "type": "string"
         },
         "TotalValue": {
-          "description": "",
+          "description": "Total market value of the account. (AUD)",
           "format": "double",
           "type": "number"
         },
         "ModelWeight": {
-          "description": "",
+          "description": "Account weight in the requested model.",
           "format": "double",
           "type": "number"
         },
         "TargetFum": {
-          "description": "",
+          "description": "Target FUM of the account. (AUD)",
           "format": "double",
           "type": "number"
         },
         "ApproximateFum": {
-          "description": "",
+          "description": "Approximate FUM of the account. (AUD)",
           "format": "double",
           "type": "number"
         }
@@ -7728,17 +6119,17 @@
     "ModelApproximateFum": {
       "properties": {
         "NumberOfAccountsLinked": {
-          "description": "",
+          "description": "Number of accounts linked to the model.",
           "format": "int32",
           "type": "integer"
         },
         "TotalTargetFum": {
-          "description": "",
+          "description": "Target FUM for all accounts. (AUD)",
           "format": "double",
           "type": "number"
         },
         "TotalApproximateFum": {
-          "description": "",
+          "description": "Approximate FUM for all accounts. (AUD)",
           "format": "double",
           "type": "number"
         },
@@ -7756,12 +6147,17 @@
     "ModelDailyPercentageReturn": {
       "properties": {
         "Date": {
-          "description": "",
+          "description": "The date used to calculate performance data.",
           "format": "date-time",
           "type": "string"
         },
         "PercentageReturn": {
-          "description": "",
+          "description": "The performance percentage return.",
+          "format": "double",
+          "type": "number"
+        },
+        "CumulativePercentageReturn": {
+          "description": "Cumulative percentage return from the FromDate to Date.",
           "format": "double",
           "type": "number"
         }
@@ -7771,22 +6167,22 @@
     },
     "PercentageReturn": {
       "properties": {
-        "Period": {
-          "description": "",
+        "PeriodDescription": {
+          "description": "A description of the period the returns are calculated for.",
           "type": "string"
         },
         "GrossPercentageReturn": {
-          "description": "",
+          "description": "The performance percentage return excluding expenses.",
           "format": "double",
           "type": "number"
         },
         "NetPercentageReturn": {
-          "description": "",
+          "description": "The performance percentage return including expenses.",
           "format": "double",
           "type": "number"
         },
         "Annualised": {
-          "description": "",
+          "description": "Whether the return is annualised.",
           "type": "boolean"
         }
       },
@@ -7820,12 +6216,17 @@
           "$ref": "#/definitions/Security"
         },
         "TargetValuePercentage": {
-          "description": "",
+          "description": "Target value in the model for the security.",
           "format": "double",
           "type": "number"
         },
         "ActualValuePercentage": {
-          "description": "",
+          "description": "Percentage that was implemented allowing for market movements and minimum cash. This is record in the model shadow account for the model.",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedYield": {
+          "description": "Estimated yield of the security.",
           "format": "double",
           "type": "number"
         }
@@ -7836,15 +6237,15 @@
     "ModelWeightAdjustmentSecurity": {
       "properties": {
         "Isin": {
-          "description": "",
+          "description": "International securities identification number of the security.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Security code of the security.",
           "type": "string"
         },
         "Exchange": {
-          "description": "",
+          "description": "Exchange code of the security.",
           "type": "string"
         }
       },
@@ -7858,7 +6259,7 @@
           "$ref": "#/definitions/ModelWeightAdjustmentSecurity"
         },
         "Target": {
-          "description": "",
+          "description": "The current percentage weight of the security in the model.",
           "format": "double",
           "type": "number"
         }
@@ -7869,11 +6270,11 @@
     "ModelWeightAdjustment": {
       "properties": {
         "SecurityId": {
-          "description": "",
+          "description": "Security ID.",
           "type": "string"
         },
         "Target": {
-          "description": "",
+          "description": "The target percentage weight of the security in the model.",
           "format": "double",
           "type": "number"
         }
@@ -7886,7 +6287,7 @@
     "PutModelWeightAdjustmentRequest": {
       "properties": {
         "ModelId": {
-          "description": "",
+          "description": "ModelId as returned by the model endpoint.",
           "type": "string"
         },
         "ModelWeightAdjustments": {
@@ -7907,35 +6308,35 @@
     "AssetClassInvestment": {
       "properties": {
         "AssetClassDescription": {
-          "description": "",
+          "description": "Asset class description.",
           "type": "string"
         },
         "Benchmark": {
-          "description": "",
+          "description": "Asset class benchmark.",
           "type": "string"
         },
         "StartValue": {
-          "description": "",
+          "description": "Market Value of the asset class at the FromDate. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "EndValue": {
-          "description": "",
+          "description": "Market Value of the asset class at the ToDate. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalReturn": {
-          "description": "",
+          "description": "Total dollar return for the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalReturnPercent": {
-          "description": "",
+          "description": "Total return for the period as a percentage.",
           "format": "double",
           "type": "number"
         },
         "BenchmarkReturnPercent": {
-          "description": "",
+          "description": "Total return for the benchmark as a percentage.",
           "format": "double",
           "type": "number"
         }
@@ -7946,37 +6347,37 @@
     "DollarReturnData": {
       "properties": {
         "CapitalAppreciation": {
-          "description": "",
+          "description": "Realised and unrealised gains / losses of the account. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalIncome": {
-          "description": "",
+          "description": "The total income of the account received within the performance period. Income and tax credits are included in performance calculations when they are first acknowledged in the account. That is, when they are first declared according to the ex-date. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TaxCredits": {
-          "description": "",
+          "description": "The total tax credits of the account received within the performance period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "ForexMovements": {
-          "description": "",
+          "description": "The gain/loss of the account attributable to foreign exchange movements. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "GrossDollarReturn": {
-          "description": "",
+          "description": "The sum of all dollar return fields excluding expenses. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalExpenses": {
-          "description": "",
+          "description": "The total expenses recorded against the account within the period. The Trading Activity > Income & Expenses > Expense Details page provides the ability to view these expenses. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NetDollarReturn": {
-          "description": "",
+          "description": "The sum of all dollar return fields. (Account currency)",
           "format": "double",
           "type": "number"
         }
@@ -7987,16 +6388,16 @@
     "PerformanceReturn": {
       "properties": {
         "PeriodDescription": {
-          "description": "",
+          "description": "A description of the period the returns are calculated for.",
           "type": "string"
         },
         "GrossPercentReturn": {
-          "description": "",
+          "description": "The performance percentage return excluding expenses.",
           "format": "double",
           "type": "number"
         },
         "NetPercentReturn": {
-          "description": "",
+          "description": "The performance percentage return including expenses.",
           "format": "double",
           "type": "number"
         }
@@ -8007,36 +6408,36 @@
     "Performance": {
       "properties": {
         "HoldingsExcluded": {
-          "description": "",
+          "description": "The number of individual securities excluded from account performance calculations.",
           "type": "boolean"
         },
         "BeginningMarketValue": {
-          "description": "",
+          "description": "The beginning market value of the account on the From Date. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "EndingMarketValue": {
-          "description": "",
+          "description": "The ending market value of the account on the To Date. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NetCapitalMovement": {
-          "description": "",
+          "description": "The net additions and withdrawals that flowed into and out of the account within the performance period. The transactions that make up this net amount when including cash are available from the Additions and withdrawals report. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NetInternalTransfers": {
-          "description": "",
+          "description": "Internal transfers between cash books that are not to be treated as a client addition or withdrawal. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "CashExpenses": {
-          "description": "",
+          "description": "Expenses incurred by the account within the period, to be paid from either a account cash book or external bank account. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "UnallocatedAmount": {
-          "description": "",
+          "description": "An unallocated amount will show if the sum of the above does not equal the Movement in value amount - that is, there is a component of the difference between the starting and ending market value that has not been explained. This will usually be because the cash side of a transaction or income event cannot be found. (Account currency)",
           "format": "double",
           "type": "number"
         },
@@ -8058,72 +6459,72 @@
     "Investment": {
       "properties": {
         "PercentTotalReturn": {
-          "description": "",
+          "description": "Total return for the period in percentage terms.",
           "format": "double",
           "type": "number"
         },
         "TotalReturn": {
-          "description": "",
+          "description": "Total dollar return for the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TaxCredits": {
-          "description": "",
+          "description": "Tax credit amount receivable within the period.(Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalIncome": {
-          "description": "",
+          "description": "Total income within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "IncomeNotYetPaid": {
-          "description": "",
+          "description": "Income declared but not yet paid at the ToDate. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "IncomeCash": {
-          "description": "",
+          "description": "Income that was paid to cash. (Account currency)",
           "format": "double",
           "type": "number"
         },
-        "IncomeDRP": {
-          "description": "",
+        "IncomeDrp": {
+          "description": "Income that was reinvested as part of a DRP. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "EndMarketValue": {
-          "description": "",
+          "description": "Market value of the security at the ToDate. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "PercentCapitalReturn": {
-          "description": "",
+          "description": "Return for the period attributable to capital returns.",
           "format": "double",
           "type": "number"
         },
         "GainOrLoss": {
-          "description": "",
+          "description": "Dollar gain / loss in the response period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Sales": {
-          "description": "",
+          "description": "Sum of sales within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Purchases": {
-          "description": "",
+          "description": "Sum of purchases within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
-        "StartMarketValue": {
-          "description": "",
+        "BeginningMarketValue": {
+          "description": "Market value of the security at the FromDate. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "IncludedInPerformance": {
-          "description": "",
+          "description": "Whether the security is included in performance calculations. (Account currency)",
           "type": "boolean"
         },
         "Security": {
@@ -8131,12 +6532,12 @@
           "$ref": "#/definitions/Security"
         },
         "NetOtherAmount": {
-          "description": "",
+          "description": "Other net amount within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "PercentIncomeReturn": {
-          "description": "",
+          "description": "Return for the period attributable to income returns.",
           "format": "double",
           "type": "number"
         }
@@ -8147,57 +6548,57 @@
     "CashAndEquivalent": {
       "properties": {
         "ForexMovements": {
-          "description": "",
+          "description": "Movement for the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Withdrawals": {
-          "description": "",
+          "description": "Withdrawal amount that the security received in the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Deposits": {
-          "description": "",
+          "description": "Deposit amount that the security received in the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Expenses": {
-          "description": "",
+          "description": "Expenses charged against the security within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "InternalTransfers": {
-          "description": "",
+          "description": "Transfer amount for the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "InterestReceipts": {
-          "description": "",
+          "description": "Interest amount that the security received in the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Income": {
-          "description": "",
+          "description": "Income amount that the security received in the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Other": {
-          "description": "",
+          "description": "Other amount that the security received in the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Purchases": {
-          "description": "",
+          "description": "Total security purchases within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "OpeningBalance": {
-          "description": "",
+          "description": "Opening balance of the security at the FromDate. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "IncludedInPerformance": {
-          "description": "",
+          "description": "Whether the security is included in performance calculations.",
           "format": "int32",
           "type": "integer"
         },
@@ -8206,12 +6607,12 @@
           "$ref": "#/definitions/Security"
         },
         "Sales": {
-          "description": "",
+          "description": "Total security sales within the period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "ClosingBalance": {
-          "description": "",
+          "description": "Closing balance of the security at the ToDate. (Account currency)",
           "format": "double",
           "type": "number"
         }
@@ -8242,57 +6643,57 @@
     "DailyReturn": {
       "properties": {
         "Date": {
-          "description": "",
+          "description": "The date of the return.",
           "format": "date-time",
           "type": "string"
         },
         "BeginningMarketValue": {
-          "description": "",
+          "description": "The beginning market value of the account on the Date. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "EndingMarketValue": {
-          "description": "",
+          "description": "The ending market value of the account on the Date. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NetContribution": {
-          "description": "",
+          "description": "The net additions and withdrawals that flowed into and out of the account within the performance period. The transactions that make up this net amount when including cash are available from the Additions and withdrawals report. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NetInternalTransfers": {
-          "description": "",
+          "description": "Internal transfers between cash books that are not to be treated as a client addition or withdrawal. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalExpenses": {
-          "description": "",
+          "description": "The total expenses recorded against the account within the period. The Trading Activity > Income & Expenses > Expense Details page provides the ability to view these expenses. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TaxCredits": {
-          "description": "",
+          "description": "The total tax credits of the account received within the performance period. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "PercentageReturn": {
-          "description": "",
+          "description": "The performance percentage return",
           "format": "double",
           "type": "number"
         },
         "NetPercentReturn": {
-          "description": "",
+          "description": "The performance percentage return inclusive of expenses.",
           "format": "double",
           "type": "number"
         },
         "CumulativePercentageReturn": {
-          "description": "",
+          "description": "The cumulative percentage return of the account from the From Date to the DailyReturns Date.",
           "format": "double",
           "type": "number"
         },
         "CumulativeNetPercentReturn": {
-          "description": "",
+          "description": "The cumulative net percentage return of the account from the From Date to the DailyReturns Date.",
           "format": "double",
           "type": "number"
         }
@@ -8303,15 +6704,15 @@
     "Benchmark": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "Praemium ID of the benchmark.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Benchmark code.",
           "type": "string"
         },
         "Name": {
-          "description": "",
+          "description": "Benchmark description.",
           "type": "string"
         }
       },
@@ -8321,11 +6722,11 @@
     "BenchmarkReturn": {
       "properties": {
         "PeriodDescription": {
-          "description": "",
+          "description": "The period the returns are calculated for.",
           "type": "string"
         },
         "PercentageReturn": {
-          "description": "",
+          "description": "The percentage return of the benchmark for the period.",
           "format": "double",
           "type": "number"
         }
@@ -8340,12 +6741,12 @@
           "$ref": "#/definitions/Security"
         },
         "FromDate": {
-          "description": "",
+          "description": "The start date the holding is excluded from performance calculations for the account.",
           "format": "date-time",
           "type": "string"
         },
         "ToDate": {
-          "description": "",
+          "description": "The end date the holding is excluded from performance calculations for the account.",
           "format": "date-time",
           "type": "string"
         }
@@ -8356,22 +6757,1421 @@
     "ReportingEvent": {
       "properties": {
         "Id": {
-          "description": "",
+          "description": "ID of the reporting event.",
           "type": "string"
         },
         "EventName": {
-          "description": "",
+          "description": "Name of the reporting event.",
           "type": "string"
         },
         "CreatedDate": {
-          "description": "",
+          "description": "Date the record was created.",
           "format": "date-time",
           "type": "string"
         },
         "UpdatedDate": {
-          "description": "",
+          "description": "Date the record was updated.",
           "format": "date-time",
           "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "ReportEventPublishedFile": {
+      "properties": {
+        "FileId": {
+          "description": "Unique ID of the generated file.",
+          "type": "string"
+        },
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "FileName": {
+          "description": "Generated file name of the report.",
+          "type": "string"
+        },
+        "GeneratedDate": {
+          "description": "Date the file was generated.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "PublishedDate": {
+          "description": "Date the file was published.",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "TargetApplication": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "SsoLoginRequest": {
+      "properties": {
+        "Application": {
+          "description": "The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.",
+          "$ref": "#/definitions/TargetApplication"
+        },
+        "UserId": {
+          "description": "ID of the user to log in. Either UserId or Username is required.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Application",
+        "UserId"
+      ],
+      "type": "object"
+    },
+    "SsoLoginResponse": {
+      "properties": {
+        "SsoUrl": {
+          "description": "SSO URL.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "RealisedCgtAssetDisposal": {
+      "properties": {
+        "CgtGain": {
+          "description": "Calculated based on what is optimal for the disposal method selected. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherGain": {
+          "description": "Equal to the gross gain if applicable. Applies if the asset was purchased within the last 12 months relative to the as at date requested for this section. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedGain": {
+          "description": "Shows the gain between the indexed cost and the market value, if applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountedGain": {
+          "description": "The net of the gross gain and discount applied based on amounts that have had the discount rate applied. If the account is for a company, then the discounted rate applied will be zero. For an individual the discount rate applied is 50%. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OptimalCgtCalculationMethod": {
+          "description": "The disposal method selected to calculate CGT gains.",
+          "type": "string"
+        },
+        "GrossGain": {
+          "description": "Equal to the market value minus the adjusted cost. Shows the gain before any discounting or indexing is applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "SaleProceeds": {
+          "description": "The amount the parcel was sold for. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedCost": {
+          "description": "If the security was acquired prior to 30/09/1999 and was held for more than one year, the cost base is increased by applying an indexation factor based on increase in CPI. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtLoss": {
+          "description": "Applicable if there is a loss on a tax parcel and the purchase date is post 19 September 1985. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxFreeAmount": {
+          "description": "Amount within the parcel that is tax free. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "ActualCost": {
+          "description": "The amount the parcel was purchased for less any GST refundable amount. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "description": "The number of units or shares disposed.",
+          "format": "double",
+          "type": "number"
+        },
+        "SaleDate": {
+          "description": "The disposal date.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "PurchaseDate": {
+          "description": "Typically, this is the same as the Tax date unless a corporate action has occurred, such as a takeover, where CGT rollover relief applies.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TaxDate": {
+          "description": "The date of the original purchase of the parcels, as used for tax purposes.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "AdjustedCost": {
+          "description": "The actual cost adjusted for any corporate actions, such as tax deferred distributions, or subsequent transactions. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PreCgtGainLoss": {
+          "description": "Gain if Pre-CGT calculation method is selected. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "TaxFreeAndTaxDeferredAmount": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TaxDate": {
+          "description": "The date of the original purchase of the parcels, as used for tax purposes.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "PurchaseDate": {
+          "description": "Typically, this is the same as the Tax date unless a corporate action has occurred, such as a takeover, where CGT rollover relief applies.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "SaleDate": {
+          "description": "The disposal date.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of units or shares disposed.",
+          "format": "double",
+          "type": "number"
+        },
+        "ActualCost": {
+          "description": "The amount the parcel was purchased for less any GST refundable amount. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxDeferredAmount": {
+          "description": "Amount within the parcel that is tax deferred. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxFreeAmount": {
+          "description": "Amount within the parcel that is tax free. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "AdjustedCost": {
+          "description": "The actual cost adjusted for any corporate actions, such as tax deferred distributions, or subsequent transactions. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "TrustCgtDistribution": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TaxDate": {
+          "description": "The date of the original purchase of the parcels, as used for tax purposes.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "GrossGain": {
+          "description": "Equal to the Market value minus the Adjusted cost. Shows the gain before any discounting or indexing is applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountedGain": {
+          "description": "The net of the gross gain and discount applied based on amounts that have had the discount rate applied. If the account is for a company, then the discounted rate applied will be zero. For an individual the discount rate applied is 50%. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedGain": {
+          "description": "Shows the gain between the indexed cost and the market value, if applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherGain": {
+          "description": "Equal to the gross gain if applicable. Applies if the asset was purchased within the last 12 months relative to the as at date requested for this section. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtGainLoss": {
+          "description": "The CGT gain is calculated based on what is optimal for the disposal method selected. In some cases the indexed gain is used to optimise the use of losses. The CGT gain calculated from a less than optimal method is shown in italics for information purposes only and is excluded from the totals for the account. NA is shown if a calculation method is not applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PreCgtGainLoss": {
+          "description": "Gain if Pre-CGT calculation method is selected. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "RealisedCgt": {
+      "properties": {
+        "CgtAssetDisposals": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/RealisedCgtAssetDisposal"
+          },
+          "type": "array"
+        },
+        "TaxFreeAndTaxDeferredAmounts": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TaxFreeAndTaxDeferredAmount"
+          },
+          "type": "array"
+        },
+        "TrustCgtDistributions": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TrustCgtDistribution"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "TaxSummary": {
+      "properties": {
+        "LossesCarriedForward": {
+          "description": "Any losses from the prior years that have been carried forward. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "LossesCurrentYear": {
+          "description": "The total amount of losses incurred from asset disposals during the tax year. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtDisposalsDiscounted": {
+          "description": "Disposal amounts that have had the discount rate applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtDisposalsIndexed": {
+          "description": "Shows the gain between the indexed cost and the disposal value, if applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtDisposalsOther": {
+          "description": "Applies if the asset was disposed within 12 months of acquisition. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtDistributionsDiscounted": {
+          "description": "Distribution amounts that have had the discount rate applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtDistributionsIndexed": {
+          "description": "Shows the gain between the indexed cost and the disposal value, if applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtDistributionsOther": {
+          "description": "Applies if the asset was disposed within 12 months of acquisition. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "LossesAppliedDiscounted": {
+          "description": "Losses attributable against discounted gains. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "LossesAppliedIndexed": {
+          "description": "Losses attributable against indexed gains. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "LossesAppliedOther": {
+          "description": "Losses attributable against other gains. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountApplied": {
+          "description": "The amount of discount allowable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetCapitalGainLoss": {
+          "description": "The account's net capital gain (or loss) for the tax year. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetCapitalGainLossDiscounted": {
+          "description": "The account's net capital gain (or loss) related to discounting. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetCapitalGainLossIndexed": {
+          "description": "The account's net capital gain (or loss) related to indexing. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetCapitalGainLossOther": {
+          "description": "The account's net capital gain (or loss) not relating to discounting or indexing. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UnrealisedCgtParcel": {
+      "properties": {
+        "CgtGain": {
+          "description": "Calculated based on what is optimal for the disposal method selected. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherGain": {
+          "description": "Equal to the gross gain if applicable. Applies if the asset was purchased within the last 12 months relative to the as at date requested for this section. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedGain": {
+          "description": "Shows the gain between the indexed cost and the market value, if applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountedGain": {
+          "description": "The net of the gross gain and discount applied based on amounts that have had the discount rate applied. If the account is for a company, then the discounted rate applied will be zero. For an individual the discount rate applied is 50%. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OptimalCgtCalculationMethod": {
+          "description": "The disposal method selected to calculate CGT gains.",
+          "type": "string"
+        },
+        "GrossGain": {
+          "description": "Equal to the market value minus the adjusted cost. Shows the gain before any discounting or indexing is applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "MarketValue": {
+          "description": "The amount the parcel is worth using the current market price. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedCost": {
+          "description": "If the security was acquired prior to 30/09/1999 and was held for more than one year, the cost base is increased by applying an indexation factor based on increase in CPI. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "AdjustedCost": {
+          "description": "The actual cost adjusted for any corporate actions, such as tax deferred distributions, or subsequent transactions. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxFreeAmount": {
+          "description": "Amount within the parcel that is tax free. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TaxDeferredAmount": {
+          "description": "Amount within the parcel that is tax deferred. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "ActualCost": {
+          "description": "The amount the parcel was purchased for less any GST refundable amount. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CostBaseUnknown": {
+          "description": "Whether cost base is unknown.",
+          "type": "boolean"
+        },
+        "Quantity": {
+          "description": "The number of units or shares held for each tax parcel.",
+          "format": "double",
+          "type": "number"
+        },
+        "PurchaseDate": {
+          "description": "Typically, this is the same as the Tax date unless a corporate action has occurred, such as a takeover, where CGT rollover relief applies.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TaxDate": {
+          "description": "The date of the original purchase of the parcels, as used for tax purposes.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "CgtLoss": {
+          "description": "Applicable if there is a loss on a tax parcel and the purchase date is post 19 September 1985. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtExemptGainLoss": {
+          "description": "The gross gain or loss on tax parcels with that are CGT exempt, including those with a purchase date before the CGT legislation applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UnrealisedCgtParcelIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/UnrealisedCgtParcel"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "Metadata including pagination.",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UnrealisedCgtSummary": {
+      "properties": {
+        "CostBaseUnknown": {
+          "description": "Whether cost base is unknown.",
+          "type": "boolean"
+        },
+        "ActualCost": {
+          "description": "The amount the parcel was purchased for less any GST refundable amount. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "AdjustedCost": {
+          "description": "The actual cost adjusted for any corporate actions, such as tax deferred distributions, or subsequent transactions. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "MarketValue": {
+          "description": "Market Value of the security at the ValuationDate. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "GrossGain": {
+          "description": "Equal to the market value minus the adjusted cost. Shows the gain before any discounting or indexing is applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DiscountedGain": {
+          "description": "The net of the gross gain and discount applied based on amounts that have had the discount rate applied. If the account is for a company, then the discounted rate applied will be zero. For an individual the discount rate applied is 50%. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IndexedGain": {
+          "description": "Shows the gain between the indexed cost and the market value, if applicable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherGain": {
+          "description": "Equal to the gross gain if applicable. Applies if the asset was purchased within the last 12 months relative to the as at date requested for this section. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtGain": {
+          "description": "Calculated based on what is optimal for the disposal method selected. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtLoss": {
+          "description": "Applicable if there is a loss on a tax parcel and the purchase date is post 19 September 1985. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CgtExemptGainLoss": {
+          "description": "The gross gain or loss on tax parcels with that are CGT exempt, including those with a purchase date before the CGT legislation applied. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Transaction": {
+      "properties": {
+        "DeemedAmount": {
+          "description": "The buyback capital value applied for CGT purposes. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "CostBaseUnknown": {
+          "description": "Whether cost base is unknown.",
+          "type": "boolean"
+        },
+        "BuyBack": {
+          "description": "If the transaction is classified as a buyback.",
+          "type": "boolean"
+        },
+        "AveragePriceInTradedCurrency": {
+          "description": "TradedCurrencyAmount divided by quantity.",
+          "format": "double",
+          "type": "number"
+        },
+        "AmountInTradedCurrency": {
+          "description": "Displays the amount traded in an international currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "TradedCurrency": {
+          "description": "For International Investments. Displays the currency in which the asset was traded.",
+          "type": "string"
+        },
+        "SettlementDate": {
+          "description": "The date on which the transaction settled.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "AveragePriceInSettlementCurrency": {
+          "description": "AmountInSettlementCurrency divided by quantity.",
+          "format": "double",
+          "type": "number"
+        },
+        "AmountInSettlementCurrency": {
+          "description": "Displays the amount settled in an international currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "SettlementCurrency": {
+          "description": "Displays the currency in which the trade was settled.",
+          "type": "string"
+        },
+        "Broker": {
+          "description": "The name of the broker against the transaction.",
+          "type": "string"
+        },
+        "GstClaimable": {
+          "description": "The total of any GST amount that is payable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "BrokerageGst": {
+          "description": "The GST amount of any brokerage for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "BrokerageIncludingGst": {
+          "description": "The total of any brokerage for the transaction including GST. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TransactionId": {
+          "description": "The unique identifier of the transaction.",
+          "type": "string"
+        },
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TransactionDate": {
+          "description": "The date on which the transaction occurred.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of units or shares disposed.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "NetAmount": {
+          "description": "This value should be adjusted (increased for a buy, decreased for a sell) for any brokerage, GST or other charges paid to transact. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Unconfirmed": {
+          "description": "Whether the transaction has not been confirmed.",
+          "type": "boolean"
+        },
+        "AveragePrice": {
+          "description": "Net amount divided by quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DisposalMethod": {
+          "description": "Tax method used on the security disposal.",
+          "type": "string"
+        },
+        "Narration": {
+          "description": "Displays any notes that have added to the transaction.",
+          "type": "string"
+        },
+        "TransactionTypeDescription": {
+          "description": "A categorised type of the transaction.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "TransactionIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/Transaction"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "Metadata including pagination.",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "CashSummary": {
+      "properties": {
+        "CashBookCode": {
+          "description": "The code of the cashbook.",
+          "type": "string"
+        },
+        "CashBookDescription": {
+          "description": "A description of the cashbook.",
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Denominated currency of the cashbook transactions.",
+          "type": "string"
+        },
+        "OpeningBalance": {
+          "description": "Cashbook balance at the FromDate in the denominated currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "Deposits": {
+          "description": "Sum of all credit type transactions for the cashbook in the denominated currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "Withdrawals": {
+          "description": "Sum of all debit type transactions for the cashbook in the denominated currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "ClosingBalance": {
+          "description": "Cashbook balance at the ToDate in the denominated currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "ClosingBalanceInAccountCurrency": {
+          "description": "ClosingBalance of the cashbook. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "CashTransaction": {
+      "properties": {
+        "TransactionId": {
+          "description": "The unique identifier of the transaction.",
+          "type": "string"
+        },
+        "TransactionDate": {
+          "description": "The date on which the transaction occurred.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Denominated currency of the transaction.",
+          "type": "string"
+        },
+        "TransactionTypeDescription": {
+          "description": "A categorised type of the transaction.",
+          "type": "string"
+        },
+        "Narration": {
+          "description": "Displays any notes that have added to the transaction.",
+          "type": "string"
+        },
+        "Deposit": {
+          "description": "The amount in the denominated currency if this transaction is a credit type.",
+          "format": "double",
+          "type": "number"
+        },
+        "Withdrawal": {
+          "description": "The amount in the denominated currency if this transaction is a debit type.",
+          "format": "double",
+          "type": "number"
+        },
+        "ValueInAccountCurrency": {
+          "description": "Value of the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Balance": {
+          "description": "The balance in the denominated currency of the cash book after the transaction has been credited or debited.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "CashBook": {
+      "properties": {
+        "Summary": {
+          "description": "",
+          "$ref": "#/definitions/CashSummary"
+        },
+        "Transactions": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/CashTransaction"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "CashBookIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/CashBook"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "Metadata including pagination.",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UnsettledTransaction": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TransactionDate": {
+          "description": "The date on which the transaction occurred.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TransactionTypeDescription": {
+          "description": "Transaction type description.",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of units or shares disposed.",
+          "format": "double",
+          "type": "number"
+        },
+        "NetAmount": {
+          "description": "This value should be adjusted (increased for a buy, decreased for a sell) for any brokerage, GST or other charges paid to transact. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "AveragePrice": {
+          "description": "Net amount divided by quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Brokerage": {
+          "description": "Total of any brokerage for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Gst": {
+          "description": "GST amount of any brokerage for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DisposalMethod": {
+          "description": "Tax method used on the security disposal.",
+          "type": "string"
+        },
+        "Narration": {
+          "description": "Displays any notes that have added to the transaction.",
+          "type": "string"
+        },
+        "TradedCurrency": {
+          "description": "For International Investments. Displays the currency in which the asset was traded.",
+          "type": "string"
+        },
+        "AmountInTradedCurrency": {
+          "description": "Displays the amount traded in an international currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "AveragePriceInTradedCurrency": {
+          "description": "TradedCurrencyAmount divided by quantity.",
+          "format": "double",
+          "type": "number"
+        },
+        "SettlementDate": {
+          "description": "The date on which the transaction settled.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "ContractNoteReference": {
+          "description": "Unique contract note reference number.",
+          "type": "string"
+        },
+        "OtherCharges": {
+          "description": "Total of any other charges (eg. international transaction processing fees) for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherChargesGst": {
+          "description": "GST amount of any other charges for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "DrpType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "DividendReinvestmentDetail": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "DrpType": {
+          "description": "Either DRP (Dividend Reinvestment Plan) or BSP (Bonus Share Plan).",
+          "$ref": "#/definitions/DrpType"
+        },
+        "FromDate": {
+          "description": "The date that the DRP is active from.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "ToDate": {
+          "description": "The date that the DRP is active to.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "MaxSharesParticipating": {
+          "description": "The number of shares held that are requested to participate in the reinvestment plan.",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentSharesParticipating": {
+          "description": "The percentage of the DRP to take as shares. Note that this cannot be used in conjunction with MaxSharesParticipating.",
+          "format": "double",
+          "type": "number"
+        },
+        "ExcludeFromDrp": {
+          "description": "Whether the security is excluded from the account-wide reinvestment plan.",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "DividendReinvestmentDetailIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/DividendReinvestmentDetail"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "Metadata including pagination.",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassValuation": {
+      "properties": {
+        "TotalCost": {
+          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalValue": {
+          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetValue": {
+          "description": "The total account value inclusive of receivables and payables. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalGainOrLoss": {
+          "description": "Total Gain/Loss is the nominal difference between the total value and the total cost. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassDetails": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "A description of the asset class.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The total value of the account holdings within the asset class. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "The percentage ratio of the value of this asset class to the total account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentNetValue": {
+          "description": "The percentage ratio of the value of this asset class to the net account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "MinTargetAllocation": {
+          "description": "The minimum asset class allocation target for this asset class entered for the account.",
+          "format": "double",
+          "type": "number"
+        },
+        "MaxTargetAllocation": {
+          "description": "The maximum asset class allocation target for this asset class entered for the account.",
+          "format": "double",
+          "type": "number"
+        },
+        "MidPointTargetAllocation": {
+          "description": "The middle value of the minimum and maximum target allocation for the asset class.",
+          "format": "double",
+          "type": "number"
+        },
+        "Variance": {
+          "description": "The variance of the asset class’s value outside of the target allocation range.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassReceivableAndPayable": {
+      "properties": {
+        "Description": {
+          "description": "Description of the receivable / payable holding.",
+          "type": "string"
+        },
+        "TotalAmount": {
+          "description": "Amount of the receivable / payable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IncludedInNetValue": {
+          "description": "Whether included in the account's net value.",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassSummary": {
+      "properties": {
+        "Valuation": {
+          "description": "",
+          "$ref": "#/definitions/AssetClassValuation"
+        },
+        "AssetClasses": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/AssetClassDetails"
+          },
+          "type": "array"
+        },
+        "ReceivablesAndPayables": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/AssetClassReceivableAndPayable"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingValueByModel": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "Value": {
+          "description": "The value that is attributable to this model on the date. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "description": "The quantity that is attributable to this model on the date. Please note that this may not be a whole number of shares because we blend holdings within our system in order to give a better investment outcome..",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingsByModel": {
+      "properties": {
+        "ModelCode": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "ModelPercentage": {
+          "description": "Percentage of the model.",
+          "format": "double",
+          "type": "number"
+        },
+        "Holdings": {
+          "description": "Contains the holdings attributable to the model on the date.",
+          "items": {
+            "$ref": "#/definitions/HoldingValueByModel"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingsHistoryByModel": {
+      "properties": {
+        "Date": {
+          "description": "The date that these holdings relate to.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalValue": {
+          "description": "The total value of the account on the date. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "HoldingsByModel": {
+          "description": "Holdings that are held by the account due to its model subscriptions.",
+          "items": {
+            "$ref": "#/definitions/HoldingsByModel"
+          },
+          "type": "array"
+        },
+        "HoldingsNotInModel": {
+          "description": "Hikdubgs that are not attributable to a model on the date. This can be due to holding locks or other customisations. The value and quantity of the HoldingsNotInModel relate to the values that are not attributable to any subscribed model.",
+          "items": {
+            "$ref": "#/definitions/HoldingValueByModel"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Valuation": {
+      "properties": {
+        "ValuationDate": {
+          "description": "Date used to display the data.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalCost": {
+          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalValue": {
+          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetValue": {
+          "description": "The total account value inclusive of receivables and payables. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalGainOrLoss": {
+          "description": " (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedIncome": {
+          "description": "Indicative field calculated based on the income of each asset generated over the past twelve months. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Yield": {
+          "description": "The estimated income as a percentage of the market value of the account.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingSecurity": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "A description of the security’s asset class.",
+          "type": "string"
+        },
+        "AssetClassCode": {
+          "description": "The asset class code of the security’s asset class.",
+          "type": "string"
+        },
+        "AssetClassCategory": {
+          "description": "The asset class category of the security’s asset class.",
+          "type": "string"
+        },
+        "TypeDescription": {
+          "description": "The asset type of the security’s asset class.",
+          "type": "string"
+        },
+        "GicsDescription": {
+          "description": "The global industry classification of the security.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Security code of the security.",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "Exchange code of the security.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Holding": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/HoldingSecurity"
+        },
+        "Quantity": {
+          "description": "The number of securities held by the account at the recalculation date.",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitCost": {
+          "description": "Average unit cost of the holding. This is the actual cost divided by the quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Cost": {
+          "description": "Actual cost is based on the cost base of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitValue": {
+          "description": "The last price of the holding available at the recalculation date. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitPriceDate": {
+          "description": "The date of the unit price. (Account currency)",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Value": {
+          "description": "Value is calculated based on the unit price multiplied by the quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "The percentage ratio of the value relative to the total account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "GainOrLoss": {
+          "description": " (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalGainOrLoss": {
+          "description": "The gain or loss expressed as a percentage over the adjusted cost base.",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedIncome": {
+          "description": "Indicative field calculated based on the income of each asset generated over the past twelve months. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Yield": {
+          "description": "The estimated income as a percentage of the market value of the account.",
+          "format": "double",
+          "type": "number"
+        },
+        "ValueInSecurityCurrency": {
+          "description": "The value based on the quantity and local price of unrealised holdings.",
+          "format": "double",
+          "type": "number"
+        },
+        "CostBaseUnknown": {
+          "description": "Whether cost base is unknown.",
+          "type": "boolean"
+        },
+        "TaxCredits": {
+          "description": "The tax credits available on the current holdings of the security. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedFrankingCredits": {
+          "description": "Amount expected to be received in franking credits. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedGrossYield": {
+          "description": "Estimated gross yield is based on the sum of the estimated income and franking credits as a percentage of the holding's market value.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "ReceivableAndPayable": {
+      "properties": {
+        "Code": {
+          "description": "The asset code of the receivable / payable.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "A description of the receivable / payable.",
+          "type": "string"
+        },
+        "TypeDescription": {
+          "description": "Type of the receivable / payable.",
+          "type": "string"
+        },
+        "Amount": {
+          "description": "The total value of the receivable/payable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IncludedInNetValue": {
+          "description": "Whether included in the account's net value.",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SubscriptionModel": {
+      "properties": {
+        "ModelCode": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "Weighting": {
+          "description": "Account’s model weighting at the valuation date.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "CashHub": {
+      "properties": {
+        "AUD": {
+          "description": "Cash model weighting at the valuation date.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Subscription": {
+      "properties": {
+        "Models": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/SubscriptionModel"
+          },
+          "type": "array"
+        },
+        "CashHub": {
+          "description": "",
+          "$ref": "#/definitions/CashHub"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "BulkValuationData": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Valuation": {
+          "description": "",
+          "$ref": "#/definitions/Valuation"
+        },
+        "Holdings": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/Holding"
+          },
+          "type": "array"
+        },
+        "ReceivablesAndPayables": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/ReceivableAndPayable"
+          },
+          "type": "array"
+        },
+        "Subscriptions": {
+          "description": "",
+          "$ref": "#/definitions/Subscription"
         }
       },
       "required": [],
@@ -8403,7 +8203,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.03.31",
+    "version": "2021.04.01",
     "title": "Public API"
   }
 }

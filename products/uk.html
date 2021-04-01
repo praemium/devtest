@@ -6827,7 +6827,12 @@
 <tr>
 <td>SecurityIds</td>
 <td>array</td>
-<td>A list of security IDs to search.</td>
+<td>A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.</td>
+</tr>
+<tr>
+<td>SecurityCodes</td>
+<td>array</td>
+<td>A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.</td>
 </tr>
 </tbody></table>
 
@@ -6883,11 +6888,6 @@
 <td>Currency</td>
 <td>string</td>
 <td>Currency of security.</td>
-</tr>
-<tr>
-<td>IsAllowedByApl</td>
-<td>boolean</td>
-<td>Is the security allowed by the Approved Product List.</td>
 </tr>
 </tbody></table>
 
