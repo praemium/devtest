@@ -644,7 +644,7 @@
           {
             "name": "pdsId",
             "in": "query",
-            "required": false,
+            "required": true,
             "description": "PDS ID. (AU only)",
             "type": "string"
           },
