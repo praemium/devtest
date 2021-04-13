@@ -1,0 +1,1854 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src https:"> 
+    <title>Public API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nn {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nl {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ni {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .bp {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vg {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vi {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .w {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="products products_mac_au" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="../index.html">
+        <img src="https://branding.onpraemium.com/image/gid_257/sidebar" class="logo" alt="Sidebar" />
+      </a>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#managed-account-customisations-australia" class="toc-h1 toc-link" data-title="Managed Account Customisations - Australia">Managed Account Customisations - Australia</a>
+          </li>
+          <li>
+            <a href="#authorisation" class="toc-h1 toc-link" data-title="Authorisation">Authorisation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-access-token" class="toc-h2 toc-link" data-title="POST Access Token"><span class="post">POST</span> Access Token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-accounts" class="toc-h2 toc-link" data-title="GET Accounts"><span class="get">GET</span> Accounts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account-model-weightings" class="toc-h1 toc-link" data-title="Account Model Weightings">Account Model Weightings</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-account-model-weightings" class="toc-h2 toc-link" data-title="GET Account Model Weightings"><span class="get">GET</span> Account Model Weightings</a>
+                  </li>
+                  <li>
+                    <a href="#put-account-model-weightings" class="toc-h2 toc-link" data-title="PUT Account Model Weightings"><span class="put">PUT</span> Account Model Weightings</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#securities" class="toc-h1 toc-link" data-title="Securities">Securities</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-securities" class="toc-h2 toc-link" data-title="GET Securities"><span class="get">GET</span> Securities</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#securityexclusions" class="toc-h1 toc-link" data-title="SecurityExclusions">SecurityExclusions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-security-exclusions" class="toc-h2 toc-link" data-title="GET Security Exclusions"><span class="get">GET</span> Security Exclusions</a>
+                  </li>
+                  <li>
+                    <a href="#put-security-exclusions" class="toc-h2 toc-link" data-title="PUT Security Exclusions"><span class="put">PUT</span> Security Exclusions</a>
+                  </li>
+                  <li>
+                    <a href="#post-security-exclusions" class="toc-h2 toc-link" data-title="POST Security Exclusions"><span class="post">POST</span> Security Exclusions</a>
+                  </li>
+                  <li>
+                    <a href="#delete-security-exclusions" class="toc-h2 toc-link" data-title="DELETE Security Exclusions"><span class="delete">DELETE</span> Security Exclusions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#securitysubstitutions" class="toc-h1 toc-link" data-title="SecuritySubstitutions">SecuritySubstitutions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-security-substitutions" class="toc-h2 toc-link" data-title="GET Security Substitutions"><span class="get">GET</span> Security Substitutions</a>
+                  </li>
+                  <li>
+                    <a href="#put-security-substitutions" class="toc-h2 toc-link" data-title="PUT Security Substitutions"><span class="put">PUT</span> Security Substitutions</a>
+                  </li>
+                  <li>
+                    <a href="#post-security-substitutions" class="toc-h2 toc-link" data-title="POST Security Substitutions"><span class="post">POST</span> Security Substitutions</a>
+                  </li>
+                  <li>
+                    <a href="#delete-security-substitutions" class="toc-h2 toc-link" data-title="DELETE Security Substitutions"><span class="delete">DELETE</span> Security Substitutions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#minimumtradesize" class="toc-h1 toc-link" data-title="MinimumTradeSize">MinimumTradeSize</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-minimum-trade-size" class="toc-h2 toc-link" data-title="GET Minimum Trade Size"><span class="get">GET</span> Minimum Trade Size</a>
+                  </li>
+                  <li>
+                    <a href="#patch-minimum-trade-size" class="toc-h2 toc-link" data-title="PATCH Minimum Trade Size"><span class="patch">PATCH</span> Minimum Trade Size</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='../openapifiles/mac.au.json'>OpenAPI File</a></li>
+            <li><a href="https://devtest.onpraemium.com/">Back to developer portal</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='managed-account-customisations-australia'>Managed Account Customisations - Australia</h1>
+<p>This product allows access to accounts, account model weightings, security exclusions, security substitutions, minimum trade size and securities.</p>
+<h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
+</blockquote>
+
+<p>This endpoint returns access token that can be used to access public API endpoints.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Content-Type</span><span class="pi">:</span> <span class="s">application/x-www-form-urlencoded</span>
+</code></pre></div><h5 id='header-parameters'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type<span class="required">required</span></td>
+<td>string</td>
+<td>Must be <strong>application/x-www-form-urlencoded</strong></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="s">client_id=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&amp;client_secret=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+</code></pre></div><h5 id='request-parameter-body'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Client_id<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 client ID provided by Praemium.</td>
+</tr>
+<tr>
+<td>Client_secret<span class="required">required</span></td>
+<td>string</td>
+<td>OAuth 2.0 client secret provided by Praemium.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ext_expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">3599</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGc..."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token_type</td>
+<td>string</td>
+<td>Token type is always Bearer.</td>
+</tr>
+<tr>
+<td>expires_in</td>
+<td>integer</td>
+<td>After how many seconds an access token will expire.</td>
+</tr>
+<tr>
+<td>ext_expires_in</td>
+<td>integer</td>
+<td>Extended lifetime of access token if value of this field is greater than value of expires_in.</td>
+</tr>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td>Access token that can be used to access public API endpoints.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='accounts'>Accounts</h1><h3 id='get-accounts'><span class="get">GET</span> Accounts</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accounts</p>
+</blockquote>
+
+<p>This endpoint returns a list of accounts.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
+<span class="na">Search</span><span class="pi">:</span> <span class="nv">*01</span>
+<span class="na">Page</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">Size</span><span class="pi">:</span> <span class="m">100</span>
+
+<span class="c1"># Search by account IDs</span>
+<span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU1</span>
+<span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU2</span>
+<span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU3</span>
+</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Search</td>
+<td>string</td>
+<td>Account search string. This parameter accepts wildcards (*).</td>
+</tr>
+<tr>
+<td>AccountIds</td>
+<td>array</td>
+<td>An array of account IDs. If AccountIds are provided, all other parameters will be ignored.</td>
+</tr>
+<tr>
+<td>Page</td>
+<td>integer</td>
+<td>Page number to return. Default to 1.</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>integer</td>
+<td>Page size to return. Default to 100 accounts per page.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU251995"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240153Cons"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-24T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU252176"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WalshCons"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-11T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU275166"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMA00275165_EXT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-30T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-2'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Data</td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td>Data.Id</td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>Data.Code</td>
+<td>string</td>
+<td>Account code.</td>
+</tr>
+<tr>
+<td>Data.Name</td>
+<td>string</td>
+<td>Account name.</td>
+</tr>
+<tr>
+<td>Data.ValuationDate</td>
+<td>date-time</td>
+<td>Account valuation date or asat date.</td>
+</tr>
+<tr>
+<td>Data.ConsolidationType</td>
+<td>enum</td>
+<td>None = 78, Portfolio = 80, Transaction = 84, FeeGroup = 85, ShareTrader = 86, SuperFund = 87.</td>
+</tr>
+<tr>
+<td>Data.AccountType</td>
+<td>enum</td>
+<td>Standard = 0, Sma = 1, Smsf = 3, SuperSmaAccumulation = 4, SuperSmaPension = 5.</td>
+</tr>
+<tr>
+<td>Data.EntityType</td>
+<td>enum</td>
+<td>Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.</td>
+</tr>
+<tr>
+<td>Data.IsSma</td>
+<td>boolean</td>
+<td>Whether the account is SMA.</td>
+</tr>
+<tr>
+<td>Data.Status</td>
+<td>enum</td>
+<td>Active = 0, Draft = 1, Closed = 2, Deleted = 3.</td>
+</tr>
+<tr>
+<td>Data.RecalcType</td>
+<td>enum</td>
+<td>None = 0, Manual = 1, Auto = 2.</td>
+</tr>
+<tr>
+<td>Data.RecalcStatus</td>
+<td>enum</td>
+<td>OK = 0, Error = 1.</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>object</td>
+<td>Metadata including pagination.</td>
+</tr>
+<tr>
+<td>Metadata.TotalCount</td>
+<td>integer</td>
+<td>Total number of results found.</td>
+</tr>
+<tr>
+<td>Metadata.TotalPages</td>
+<td>integer</td>
+<td>Total pages of results.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='account-model-weightings'>Account Model Weightings</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+</blockquote>
+
+<p>This endpoint returns the account model weightings for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td>double</td>
+<td>Percentage of model.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+</blockquote>
+
+<p>This endpoint allows you to modify the account model weightings for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"RebalanceType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">    
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-2'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>RebalanceType<span class="required">required</span></td>
+<td>enum</td>
+<td>Floating = 0, Fixed = 1.</td>
+</tr>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings<span class="required">required</span></td>
+<td>array</td>
+<td>Account model weighting.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.Percentage</td>
+<td>double</td>
+<td>Percentage of model.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h1 id='securities'>Securities</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
+</blockquote>
+
+<p>This endpoint returns the securties details for the service.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
+<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
+<span class="na">PdsId</span><span class="pi">:</span> <span class="s">AU123</span>
+
+<span class="c1"># Search by security IDs</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU1</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU2</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU3</span>
+
+<span class="c1"># Search by security codes</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.ASX</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">PPS.ASX</span>
+</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Search</td>
+<td>string</td>
+<td>Search term based on security code or security description.</td>
+</tr>
+<tr>
+<td>PdsId</td>
+<td>string</td>
+<td>PDS ID.</td>
+</tr>
+<tr>
+<td>SecurityIds</td>
+<td>array</td>
+<td>A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.</td>
+</tr>
+<tr>
+<td>SecurityCodes</td>
+<td>array</td>
+<td>A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU94"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Isin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU000000BHP4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Security ID.</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description.</td>
+</tr>
+<tr>
+<td>Isin</td>
+<td>string</td>
+<td>ISIN of security.</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>string</td>
+<td>Exchange of security.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>string</td>
+<td>Currency of security.</td>
+</tr>
+<tr>
+<td>IsAllowedByApl</td>
+<td>boolean</td>
+<td>Is the security allowed by the Approved Product List.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='securityexclusions'>SecurityExclusions</h1><h3 id='get-security-exclusions'><span class="get">GET</span> Security Exclusions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
+</blockquote>
+
+<p>This endpoint returns security exclusions for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-09T15:20:00.237+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WPL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10T10:13:54.67+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S32"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CreatedDate</td>
+<td>date-time</td>
+<td>Date security exclusion was created.</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>object</td>
+<td>Security name.</td>
+</tr>
+<tr>
+<td>Security.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>Security.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-security-exclusions'><span class="put">PUT</span> Security Exclusions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
+</blockquote>
+
+<p>This endpoint allows you to replace security exclusions for the account. If a blank array of SecurityExclusions is sent as a body parameter, all exclusions will be removed.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"SecurityExclusions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"SecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"SecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-3'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>SecurityExclusions</td>
+<td>array</td>
+<td>Security exclusion.</td>
+</tr>
+<tr>
+<td>SecurityExclusions.SecurityId<span class="required">required</span></td>
+<td>string</td>
+<td>Security ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h3 id='post-security-exclusions'><span class="post">POST</span> Security Exclusions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
+</blockquote>
+
+<p>This endpoint allows you to add security exclusions for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"SecurityExclusions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"SecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"SecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-4'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>SecurityExclusions</td>
+<td>array</td>
+<td>Security exclusion.</td>
+</tr>
+<tr>
+<td>SecurityExclusions.SecurityId<span class="required">required</span></td>
+<td>string</td>
+<td>Security ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h3 id='delete-security-exclusions'><span class="delete">DELETE</span> Security Exclusions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
+</blockquote>
+
+<p>This endpoint allows you to delete security exclusions for the account. If SecurityId is provided, the single exclusion will be removed. If SecurityId is not provided, all exclusions will be removed.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<span class="na">SecurityId</span><span class="pi">:</span> <span class="s">AU1</span>
+</code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>SecurityId</td>
+<td>string</td>
+<td>Security ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h1 id='securitysubstitutions'>SecuritySubstitutions</h1><h3 id='get-security-substitutions'><span class="get">GET</span> Security Substitutions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securitysubstitutions</p>
+</blockquote>
+
+<p>This endpoint returns security substitutions for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-10'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-6'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T16:17:07.61+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FromSecurity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEK"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ToSecurity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JBH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T16:17:09.307+11:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FromSecurity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CBA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"ToSecurity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NAB"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CreatedDate</td>
+<td>date-time</td>
+<td>Date security substitution was created.</td>
+</tr>
+<tr>
+<td>FromSecurity</td>
+<td>object</td>
+<td>From security.</td>
+</tr>
+<tr>
+<td>FromSecurity.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>FromSecurity.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+<tr>
+<td>ToSecurity</td>
+<td>object</td>
+<td>To security.</td>
+</tr>
+<tr>
+<td>ToSecurity.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>ToSecurity.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-security-substitutions'><span class="put">PUT</span> Security Substitutions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securitysubstitutions</p>
+</blockquote>
+
+<p>This endpoint allows you to replace security substitutions for the account.If a blank array of SecuritySubstitutions is sent as a body parameter, all substitutions will be removed.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-11'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"SecuritySubstitutions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"FromSecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ToSecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-5'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions</td>
+<td>array</td>
+<td>Security substitution.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.FromSecurityId<span class="required">required</span></td>
+<td>string</td>
+<td>From security ID.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.ToSecurityId<span class="required">required</span></td>
+<td>string</td>
+<td>To security ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h3 id='post-security-substitutions'><span class="post">POST</span> Security Substitutions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securitysubstitutions</p>
+</blockquote>
+
+<p>This endpoint allows you to add security substitutions for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-12'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"SecuritySubstitutions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"FromSecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"ToSecurityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-6'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions</td>
+<td>array</td>
+<td>Security substitution.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.FromSecurityId<span class="required">required</span></td>
+<td>string</td>
+<td>From security ID.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.ToSecurityId<span class="required">required</span></td>
+<td>string</td>
+<td>To security ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h3 id='delete-security-substitutions'><span class="delete">DELETE</span> Security Substitutions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securitysubstitutions</p>
+</blockquote>
+
+<p>This endpoint allows you to delete security substitutions for the account. If FromSecurityId and ToSecurityId are provided, the single substitution will be removed. If FromSecurityId and ToSecurityId are not provided, all substitutions will be removed.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-13'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<span class="na">FromSecurityId</span><span class="pi">:</span> <span class="s">AU1</span>
+<span class="na">ToSecurityId</span><span class="pi">:</span> <span class="s">AU2</span>
+</code></pre></div><h5 id='request-parameter-query-7'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>FromSecurityId</td>
+<td>string</td>
+<td>Security ID to substitute from.</td>
+</tr>
+<tr>
+<td>ToSecurityId</td>
+<td>string</td>
+<td>Security ID to substitute to.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h1 id='minimumtradesize'>MinimumTradeSize</h1><h3 id='get-minimum-trade-size'><span class="get">GET</span> Minimum Trade Size</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/minimumtradesize</p>
+</blockquote>
+
+<p>This endpoint returns minimum trade size for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-14'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-8'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.5128</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Units"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Amount</td>
+<td>double</td>
+<td>Rebalance tolerance amount. Prevents trades of a value less than this figure.</td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td>double</td>
+<td>Rebalance tolerance percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.</td>
+</tr>
+<tr>
+<td>Units</td>
+<td>double</td>
+<td>Rebalance tolernace number of units. Prevents trades of a quantity less than this figure.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='patch-minimum-trade-size'><span class="patch">PATCH</span> Minimum Trade Size</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/minimumtradesize</p>
+</blockquote>
+
+<p>This endpoint allows you to update minimum trade size for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-15'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.5128</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Units"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-7'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>Amount<span class="required">required</span></td>
+<td>double</td>
+<td>Minimum trade size amount. Prevents trades of a value less than this figure.</td>
+</tr>
+<tr>
+<td>Percentage<span class="required">required</span></td>
+<td>double</td>
+<td>Minimum trade size percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.</td>
+</tr>
+<tr>
+<td>Units<span class="required">required</span></td>
+<td>double</td>
+<td>Minimum trade size number of units. Prevents trades of a quantity less than this figure.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
