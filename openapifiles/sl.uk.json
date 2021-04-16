@@ -239,7 +239,7 @@
             "name": "accountType",
             "in": "query",
             "required": false,
-            "description": "Isa = 15, Gia = 16.",
+            "description": "ISA = 15, GIA = 16.",
             "type": "enum"
           },
           {

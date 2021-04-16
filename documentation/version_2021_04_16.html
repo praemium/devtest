@@ -567,19 +567,19 @@ Once your application is fully developed, you can request credentials for the Pr
 
 <p>The process for gaining access is as follows:</p>
 
-<p>1.) Contact your relationship manager or sales/support team, who will provide you a terms of use document</p>
-
-<p>2.) On acceptance of the terms, a login will be created that allows you to access our Test API and more detailed documentation relevant to your type of subscription</p>
-
-<p>3.) After your successful development and testing, you will be granted access to the Live environment</p>
+<ol>
+<li><p>Contact your relationship manager or sales/support team, who will provide you a terms of use document</p></li>
+<li><p>On acceptance of the terms, a login will be created that allows you to access our Test API and more detailed documentation relevant to your type of subscription</p></li>
+<li><p>After your successful development and testing, you will be granted access to the live environment</p>
 <h1 id='product-subscription'>Product Subscription</h1>
-<p>Product subscription key is required for accessing corresponding endpoints and should be added to your request as below:</p>
+<p>Product subscription key is required for accessing corresponding endpoints and should be added to your request as below:</p></li>
+</ol>
 
 <p><code>x-pps-subscription-key: d3e30ecd1ab345...</code></p>
 
 <p>Please log into our developer portal to subscribe to a product and generate corresponding product subscription key.</p>
 <h1 id='authorisation'>Authorisation</h1>
-<p>In order to access the Premium API, you will need to be granted a OAuth 2.0 client to authenticate and authorise your application.</p>
+<p>In order to access the Premium API, you will need to be granted a OAuth 2.0 client to authorise your application.</p>
 
 <p>Applications that try to access the API without a valid access token will receive a 403 (Forbidden) response.</p>
 
@@ -1554,7 +1554,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>AccountType</td>
 <td>enum</td>
-<td>Isa = 15, Gia = 16.</td>
+<td>ISA = 15, GIA = 16.</td>
 </tr>
 <tr>
 <td>Search<span class="required">required</span></td>
