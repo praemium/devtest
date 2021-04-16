@@ -252,16 +252,16 @@
             <a href="#applications" class="toc-h1 toc-link" data-title="Applications">Applications</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#post-individual-applicant-amp-gia-account-uk" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; GIA Account - UK"><span class="post">POST</span> Individual Applicant &amp; GIA Account - UK</a>
+                    <a href="#post-individual-applicant-amp-gia-account" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; GIA Account"><span class="post">POST</span> Individual Applicant &amp; GIA Account</a>
                   </li>
                   <li>
-                    <a href="#post-corporate-applicant-amp-gia-account-uk" class="toc-h2 toc-link" data-title="POST Corporate Applicant &amp; GIA Account - UK"><span class="post">POST</span> Corporate Applicant &amp; GIA Account - UK</a>
+                    <a href="#post-corporate-applicant-amp-gia-account" class="toc-h2 toc-link" data-title="POST Corporate Applicant &amp; GIA Account"><span class="post">POST</span> Corporate Applicant &amp; GIA Account</a>
                   </li>
                   <li>
-                    <a href="#post-trust-applicant-amp-gia-account-uk" class="toc-h2 toc-link" data-title="POST Trust Applicant &amp; GIA Account - UK"><span class="post">POST</span> Trust Applicant &amp; GIA Account - UK</a>
+                    <a href="#post-trust-applicant-amp-gia-account" class="toc-h2 toc-link" data-title="POST Trust Applicant &amp; GIA Account"><span class="post">POST</span> Trust Applicant &amp; GIA Account</a>
                   </li>
                   <li>
-                    <a href="#post-individual-applicant-amp-isa-account-uk" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; ISA Account - UK"><span class="post">POST</span> Individual Applicant &amp; ISA Account - UK</a>
+                    <a href="#post-individual-applicant-amp-isa-account" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; ISA Account"><span class="post">POST</span> Individual Applicant &amp; ISA Account</a>
                   </li>
                   <li>
                     <a href="#get-application-status" class="toc-h2 toc-link" data-title="GET Application Status"><span class="get">GET</span> Application Status</a>
@@ -899,7 +899,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='applications'>Applications</h1><h3 id='post-individual-applicant-amp-gia-account-uk'><span class="post">POST</span> Individual Applicant &amp; GIA Account - UK</h3>
+<h1 id='applications'>Applications</h1><h3 id='post-individual-applicant-amp-gia-account'><span class="post">POST</span> Individual Applicant &amp; GIA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -1673,7 +1673,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-corporate-applicant-amp-gia-account-uk'><span class="post">POST</span> Corporate Applicant &amp; GIA Account - UK</h3>
+<h3 id='post-corporate-applicant-amp-gia-account'><span class="post">POST</span> Corporate Applicant &amp; GIA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -2639,7 +2639,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-trust-applicant-amp-gia-account-uk'><span class="post">POST</span> Trust Applicant &amp; GIA Account - UK</h3>
+<h3 id='post-trust-applicant-amp-gia-account'><span class="post">POST</span> Trust Applicant &amp; GIA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -3715,7 +3715,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-individual-applicant-amp-isa-account-uk'><span class="post">POST</span> Individual Applicant &amp; ISA Account - UK</h3>
+<h3 id='post-individual-applicant-amp-isa-account'><span class="post">POST</span> Individual Applicant &amp; ISA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -4677,7 +4677,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
 </blockquote>
 
-<p>This endpoint returns the ceding parties details for the service.</p>
+<p>This endpoint returns the ceding party details for the service.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -4777,7 +4777,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
 </blockquote>
 
-<p>This endpoint returns the securties details for the service.</p>
+<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -4835,7 +4835,7 @@
 <tr>
 <td>Search</td>
 <td>string</td>
-<td>Search term based on security code or security description.</td>
+<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
 </tr>
 <tr>
 <td>SecurityIds</td>

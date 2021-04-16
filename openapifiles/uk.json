@@ -194,54 +194,6 @@
         ]
       }
     },
-    "/api/user/{username}": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        },
-        "operationId": "GetUser",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "userName",
-            "in": "path",
-            "required": true,
-            "description": "Username.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/cedingparties": {
       "get": {
         "responses": {
@@ -345,7 +297,7 @@
             "name": "search",
             "in": "query",
             "required": false,
-            "description": "Search term based on security code or security description.",
+            "description": "Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.",
             "type": "string"
           },
           {
@@ -505,6 +457,54 @@
             "schema": {
               "$ref": "#/definitions/SsoLoginRequest"
             }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/user/{username}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "operationId": "GetUser",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "path",
+            "required": true,
+            "description": "Username.",
+            "type": "string"
           },
           {
             "name": "Authorization",
@@ -1070,17 +1070,6 @@
       "required": [],
       "type": "object"
     },
-    "User": {
-      "properties": {
-        "UserId": {
-          "description": "User ID.",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "CedingPartyResponse": {
       "properties": {
         "CedingPartyId": {
@@ -1123,19 +1112,6 @@
         },
         "Currency": {
           "description": "Currency of security.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "Security": {
-      "properties": {
-        "Code": {
-          "description": "",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "",
           "type": "string"
         }
       },
@@ -2385,6 +2361,180 @@
       "required": [],
       "type": "object"
     },
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "HoldingSecurity": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "AssetClassCode": {
+          "description": "",
+          "type": "string"
+        },
+        "AssetClassCategory": {
+          "description": "",
+          "type": "string"
+        },
+        "TypeDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "GicsDescription": {
+          "description": "",
+          "type": "string"
+        },
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Holding": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/HoldingSecurity"
+        },
+        "Quantity": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitCost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Cost": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitPriceDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Value": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "GainOrLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalGainOrLoss": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedIncome": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Yield": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "ValueInSecurityCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "CostBaseUnknown": {
+          "description": "",
+          "type": "boolean"
+        },
+        "TaxCredits": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedFrankingCredits": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedGrossYield": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "SubscriptionModel": {
+      "properties": {
+        "ModelCode": {
+          "description": "",
+          "type": "string"
+        },
+        "Weighting": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "CashHub": {
+      "properties": {
+        "AUD": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "Subscription": {
+      "properties": {
+        "Models": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/SubscriptionModel"
+          },
+          "type": "array"
+        },
+        "CashHub": {
+          "description": "",
+          "$ref": "#/definitions/CashHub"
+        }
+      },
+      "type": "object"
+    },
     "ModelStatus": {
       "format": "int32",
       "type": "integer",
@@ -2580,377 +2730,15 @@
       "required": [],
       "type": "object"
     },
-    "RealisedCgtAssetDisposal": {
+    "User": {
       "properties": {
-        "CgtGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OptimalCgtCalculationMethod": {
-          "description": "",
-          "type": "string"
-        },
-        "GrossGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "SaleProceeds": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxFreeAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ActualCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "SaleDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "PurchaseDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "AdjustedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PreCgtGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
+        "UserId": {
+          "description": "User ID.",
+          "format": "int32",
+          "type": "integer"
         }
       },
-      "type": "object"
-    },
-    "TaxFreeAndTaxDeferredAmount": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "PurchaseDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "SaleDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ActualCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxDeferredAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "TaxFreeAmount": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "AdjustedCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
-    "TrustCgtDistribution": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TaxDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "GrossGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "DiscountedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "IndexedGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherGain": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CgtGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PreCgtGainLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
-    "RealisedCgt": {
-      "properties": {
-        "CgtAssetDisposals": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/RealisedCgtAssetDisposal"
-          },
-          "type": "array"
-        },
-        "TaxFreeAndTaxDeferredAmounts": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/TaxFreeAndTaxDeferredAmount"
-          },
-          "type": "array"
-        },
-        "TrustCgtDistributions": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/TrustCgtDistribution"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "HoldingSecurity": {
-      "properties": {
-        "AssetClassDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "AssetClassCode": {
-          "description": "",
-          "type": "string"
-        },
-        "AssetClassCategory": {
-          "description": "",
-          "type": "string"
-        },
-        "TypeDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "GicsDescription": {
-          "description": "",
-          "type": "string"
-        },
-        "Code": {
-          "description": "",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "Holding": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/HoldingSecurity"
-        },
-        "Quantity": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitCost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Cost": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitPriceDate": {
-          "description": "",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Value": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalValue": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "GainOrLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalGainOrLoss": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedIncome": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "Yield": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "ValueInSecurityCurrency": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "CostBaseUnknown": {
-          "description": "",
-          "type": "boolean"
-        },
-        "TaxCredits": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedFrankingCredits": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedGrossYield": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
-    "SubscriptionModel": {
-      "properties": {
-        "ModelCode": {
-          "description": "",
-          "type": "string"
-        },
-        "Weighting": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
-    "CashHub": {
-      "properties": {
-        "AUD": {
-          "description": "",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
-    "Subscription": {
-      "properties": {
-        "Models": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/SubscriptionModel"
-          },
-          "type": "array"
-        },
-        "CashHub": {
-          "description": "",
-          "$ref": "#/definitions/CashHub"
-        }
-      },
+      "required": [],
       "type": "object"
     },
     "TokenResponse": {
@@ -2979,7 +2767,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.13",
+    "version": "2021.04.16",
     "title": "Public API"
   }
 }

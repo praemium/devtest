@@ -378,7 +378,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
 </blockquote>
 
-<p>This endpoint returns the securties details for the service.</p>
+<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -437,7 +437,7 @@
 <tr>
 <td>Search</td>
 <td>string</td>
-<td>Search term based on security code or security description.</td>
+<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
 </tr>
 <tr>
 <td>PdsId</td>
@@ -512,7 +512,7 @@
 <tr>
 <td>IsAllowedByApl</td>
 <td>boolean</td>
-<td>Is the security allowed by the Approved Product List.</td>
+<td>Is the security allowed by the approved product list. (Only returned when PdsId is supplied)</td>
 </tr>
 </tbody></table>
 

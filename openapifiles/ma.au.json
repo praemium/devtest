@@ -470,54 +470,6 @@
         ]
       }
     },
-    "/api/user/{username}": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        },
-        "operationId": "GetUser",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "userName",
-            "in": "path",
-            "required": true,
-            "description": "User Name.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/securities": {
       "get": {
         "responses": {
@@ -563,7 +515,7 @@
             "name": "search",
             "in": "query",
             "required": false,
-            "description": "Search term based on security code or security description.",
+            "description": "Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.",
             "type": "string"
           },
           {
@@ -613,481 +565,6 @@
           "text/json"
         ],
         "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/securityexclusions": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Security exclusions",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SecurityExclusionResponse"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUSecurityExclusions",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "put": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "ReplaceAUSecurityExclusions",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SecurityExclusionRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "post": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "AddAUSecurityExclusions",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SecurityExclusionRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "DeleteAUSecurityExclusions",
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "securityId",
-            "in": "query",
-            "required": false,
-            "description": "Security ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/securitysubstitutions": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Security substitutions",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SecuritySubstitutionResponse"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUSecuritySubstitutions",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "put": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "ReplaceAUSecuritySubstitutions",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SecuritySubstitutionRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "post": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "AddAUSecuritySubstitutions",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SecuritySubstitutionRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "DeleteAUSecuritySubstitutions",
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "fromSecurityId",
-            "in": "query",
-            "required": false,
-            "description": "Security ID to substitute from.",
-            "type": "string"
-          },
-          {
-            "name": "toSecurityId",
-            "in": "query",
-            "required": false,
-            "description": "Security ID to substitute to.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/minimumtradesize": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Minimum trade size",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RebalanceTolerance"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUMinimumTradeSize",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      },
-      "patch": {
-        "responses": {
-          "204": {
-            "description": "Success"
-          }
-        },
-        "operationId": "UpdateAUMinimumTradeSize",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PatchMinimumTradeSizeRequest"
-            }
-          },
           {
             "name": "Authorization",
             "in": "header",
@@ -1216,11 +693,11 @@
         ]
       }
     },
-    "/api/expenses": {
+    "/api/expensedetail": {
       "get": {
         "responses": {
           "200": {
-            "description": "Expenses",
+            "description": "Expense detail",
             "schema": {
               "type": "array",
               "items": {
@@ -1229,7 +706,7 @@
             }
           }
         },
-        "operationId": "GetAUExpenses",
+        "operationId": "GetAUExpenseDetail",
         "produces": [
           "text/plain",
           "application/json",
@@ -1283,20 +760,354 @@
         ]
       }
     },
-    "/api/incomeandtaxcredit": {
+    "/api/publisherevents": {
       "get": {
         "responses": {
           "200": {
-            "description": "Income and tax credit",
+            "description": "Publisher events",
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/IncomeAndTaxCredit"
+                "$ref": "#/definitions/PublisherEvent"
               }
             }
           }
         },
-        "operationId": "GetAUIncomeAndTaxCredit",
+        "operationId": "GetAUPublisherEvents",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/publishereventdetail": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Publisher event detail",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PublisherEventDetail"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUPublisherEventDetail",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "query",
+            "required": true,
+            "description": "EventId as returned by the publisher event endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/file": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DowwnloadAUFile",
+        "parameters": [
+          {
+            "name": "fileId",
+            "in": "query",
+            "required": true,
+            "description": "FileID as returned in the publisher event detail endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/assetclasssummary": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Asset class summary",
+            "schema": {
+              "$ref": "#/definitions/AssetClassSummary"
+            }
+          }
+        },
+        "operationId": "GetAUAssetClassSummary",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "IncludeLoans",
+            "in": "query",
+            "required": false,
+            "description": "Whether loans should be included in the net account value.",
+            "type": "boolean"
+          },
+          {
+            "name": "ValuationDate",
+            "in": "query",
+            "required": true,
+            "description": "Date used to display the data.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/holdingspermodel": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Holdings per model",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HoldingsHistoryPerModel"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUHoldingsPerModel",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/holdings": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Holdings",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HoldingData"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUHoldings",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "AccountIds",
+            "in": "query",
+            "required": true,
+            "description": "An array of account IDs.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "name": "ValuationDate",
+            "in": "query",
+            "required": true,
+            "description": "Date used to display the data.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ClassificationType",
+            "in": "query",
+            "required": true,
+            "description": "The classification type of the security valuation. AssetClassLookThrough = 1, AssetClassPrimaryClass = 2, MarketType = 3.",
+            "type": "enum"
+          }
+        ]
+      }
+    },
+    "/api/incomedetail": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Income detail",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IncomeDetail"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUIncomeDetail",
         "produces": [
           "text/plain",
           "application/json",
@@ -2325,141 +2136,6 @@
         ]
       }
     },
-    "/api/reportevents": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Report events",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ReportingEvent"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUReportEvents",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/reporteventpublishedfiles": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Published files for report event",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ReportEventPublishedFile"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUPublishedFilesForEvent",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "query",
-            "required": true,
-            "description": "EventId as returned by the report event endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/reportfile": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        },
-        "operationId": "DowwnloadAUReportFile",
-        "parameters": [
-          {
-            "name": "fileId",
-            "in": "query",
-            "required": true,
-            "description": "FileID as returned in the report event published file endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/ssologin": {
       "post": {
         "responses": {
@@ -2559,13 +2235,61 @@
         ]
       }
     },
+    "/api/realisedcgtdetail": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Realised CGT detail",
+            "schema": {
+              "$ref": "#/definitions/RealisedCgtDetail"
+            }
+          }
+        },
+        "operationId": "GetAURealisedCgtDetail",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/realisedcgt": {
       "get": {
         "responses": {
           "200": {
             "description": "Realised CGT",
             "schema": {
-              "$ref": "#/definitions/RealisedCgt"
+              "$ref": "#/definitions/TaxSummary"
             }
           }
         },
@@ -2607,65 +2331,17 @@
         ]
       }
     },
-    "/api/realisedcgtsummary": {
+    "/api/unrealisedcgtdetail": {
       "get": {
         "responses": {
           "200": {
-            "description": "Realised CGT summary",
-            "schema": {
-              "$ref": "#/definitions/TaxSummary"
-            }
-          }
-        },
-        "operationId": "GetAURealisedCgtSummary",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/unrealisedcgt": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Unrealised CGT",
+            "description": "Unrealised CGT detail",
             "schema": {
               "$ref": "#/definitions/UnrealisedCgtParcelIEnumerablePagedResponse"
             }
           }
         },
-        "operationId": "GetAUUnrealisedCgt",
+        "operationId": "GetAUUnrealisedCgtDetail",
         "produces": [
           "text/plain",
           "application/json",
@@ -2719,17 +2395,17 @@
         ]
       }
     },
-    "/api/unrealisedcgtsummary": {
+    "/api/unrealisedcgt": {
       "get": {
         "responses": {
           "200": {
-            "description": "Unrealised CGT Summary",
+            "description": "Unrealised CGT",
             "schema": {
-              "$ref": "#/definitions/UnrealisedCgtSummary"
+              "$ref": "#/definitions/UnrealisedCgt"
             }
           }
         },
-        "operationId": "GetAUUnrealisedCgtSummary",
+        "operationId": "GetAUUnrealisedCgt",
         "produces": [
           "text/plain",
           "application/json",
@@ -2742,6 +2418,481 @@
             "required": true,
             "description": "Account ID.",
             "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/securityexclusions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Security exclusions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SecurityExclusionResponse"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUSecurityExclusions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "ReplaceAUSecurityExclusions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecurityExclusionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "AddAUSecurityExclusions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecurityExclusionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DeleteAUSecurityExclusions",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "securityId",
+            "in": "query",
+            "required": false,
+            "description": "Security ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/securitysubstitutions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Security substitutions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SecuritySubstitutionResponse"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUSecuritySubstitutions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "ReplaceAUSecuritySubstitutions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecuritySubstitutionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "AddAUSecuritySubstitutions",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SecuritySubstitutionRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DeleteAUSecuritySubstitutions",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "fromSecurityId",
+            "in": "query",
+            "required": false,
+            "description": "Security ID to substitute from.",
+            "type": "string"
+          },
+          {
+            "name": "toSecurityId",
+            "in": "query",
+            "required": false,
+            "description": "Security ID to substitute to.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/minimumtradesize": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Minimum trade size",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RebalanceTolerance"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUMinimumTradeSize",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "patch": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "UpdateAUMinimumTradeSize",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PatchMinimumTradeSizeRequest"
+            }
           },
           {
             "name": "Authorization",
@@ -3093,17 +3244,17 @@
         ]
       }
     },
-    "/api/assetclasssummary": {
+    "/api/user/{username}": {
       "get": {
         "responses": {
           "200": {
-            "description": "Asset class summary",
+            "description": "User",
             "schema": {
-              "$ref": "#/definitions/AssetClassSummary"
+              "$ref": "#/definitions/User"
             }
           }
         },
-        "operationId": "GetAUAssetClassSummary",
+        "operationId": "GetUser",
         "produces": [
           "text/plain",
           "application/json",
@@ -3111,25 +3262,10 @@
         ],
         "parameters": [
           {
-            "name": "AccountId",
-            "in": "query",
+            "name": "userName",
+            "in": "path",
             "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "IncludeLoans",
-            "in": "query",
-            "required": false,
-            "description": "Whether loans should be included in the net account value.",
-            "type": "boolean"
-          },
-          {
-            "name": "ValuationDate",
-            "in": "query",
-            "required": true,
-            "description": "Date used to display the data.",
-            "format": "date-time",
+            "description": "User Name.",
             "type": "string"
           },
           {
@@ -3152,141 +3288,6 @@
             "required": true,
             "description": "API version of the endpoint.",
             "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/holdingsbymodel": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Holdings By Model",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/HoldingsHistoryByModel"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUHoldingsByModel",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "The from date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "The to date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/bulkvaluation": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Bulk Valuation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/BulkValuationData"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUBulkValuation",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "AccountIds",
-            "required": true,
-            "description": "An array of account IDs.",
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          {
-            "name": "ValuationDate",
-            "in": "query",
-            "required": true,
-            "description": "Date used to display the data.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ClassificationType",
-            "in": "query",
-            "required": true,
-            "description": "The classification type of the security valuation. AssetClassLookThrough = 1, AssetClassPrimaryClass = 2, MarketType = 3.",
-            "type": "enum"
           }
         ]
       }
@@ -4545,17 +4546,6 @@
       "required": [],
       "type": "object"
     },
-    "User": {
-      "properties": {
-        "UserId": {
-          "description": "User ID",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "SecurityResponse": {
       "properties": {
         "Id": {
@@ -4583,7 +4573,7 @@
           "type": "string"
         },
         "IsAllowedByApl": {
-          "description": "Is the security allowed by the Approved Product List.",
+          "description": "Is the security allowed by the approved product list. (Only returned when PdsId is supplied)",
           "type": "boolean"
         }
       },
@@ -4599,172 +4589,6 @@
         }
       },
       "required": [],
-      "type": "object"
-    },
-    "Security": {
-      "properties": {
-        "Code": {
-          "description": "Security code.",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "Security exchange.",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "SecurityExclusionResponse": {
-      "properties": {
-        "CreatedDate": {
-          "description": "Date security exclusion was created.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Security": {
-          "description": "Security name.",
-          "$ref": "#/definitions/Security"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "SecurityExclusion": {
-      "properties": {
-        "SecurityId": {
-          "description": "Security ID.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "SecurityId"
-      ],
-      "type": "object"
-    },
-    "SecurityExclusionRequest": {
-      "properties": {
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "SecurityExclusions": {
-          "description": "Security exclusion.",
-          "items": {
-            "$ref": "#/definitions/SecurityExclusion"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "AccountId"
-      ],
-      "type": "object"
-    },
-    "SecuritySubstitutionResponse": {
-      "properties": {
-        "CreatedDate": {
-          "description": "Date security substitution was created.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "FromSecurity": {
-          "description": "From security.",
-          "$ref": "#/definitions/Security"
-        },
-        "ToSecurity": {
-          "description": "To security.",
-          "$ref": "#/definitions/Security"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "SecuritySubstitution": {
-      "properties": {
-        "FromSecurityId": {
-          "description": "From security ID.",
-          "type": "string"
-        },
-        "ToSecurityId": {
-          "description": "To security ID.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "FromSecurityId",
-        "ToSecurityId"
-      ],
-      "type": "object"
-    },
-    "SecuritySubstitutionRequest": {
-      "properties": {
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "SecuritySubstitutions": {
-          "description": "Security substitution.",
-          "items": {
-            "$ref": "#/definitions/SecuritySubstitution"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "AccountId"
-      ],
-      "type": "object"
-    },
-    "RebalanceTolerance": {
-      "properties": {
-        "Amount": {
-          "description": "Rebalance tolerance amount. Prevents trades of a value less than this figure.",
-          "format": "double",
-          "type": "number"
-        },
-        "Percentage": {
-          "description": "Rebalance tolerance percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.",
-          "format": "double",
-          "type": "number"
-        },
-        "Units": {
-          "description": "Rebalance tolernace number of units. Prevents trades of a quantity less than this figure.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "PatchMinimumTradeSizeRequest": {
-      "properties": {
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "Amount": {
-          "description": "Minimum trade size amount. Prevents trades of a value less than this figure.",
-          "format": "double",
-          "type": "number"
-        },
-        "Percentage": {
-          "description": "Minimum trade size percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.",
-          "format": "double",
-          "type": "number"
-        },
-        "Units": {
-          "description": "Minimum trade size number of units. Prevents trades of a quantity less than this figure.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [
-        "AccountId",
-        "Amount",
-        "Percentage",
-        "Units"
-      ],
       "type": "object"
     },
     "DraftAddressAU": {
@@ -5916,7 +5740,525 @@
       "required": [],
       "type": "object"
     },
-    "IncomeAndTaxCredit": {
+    "PublisherEvent": {
+      "properties": {
+        "Id": {
+          "description": "ID of the publisher event.",
+          "type": "string"
+        },
+        "EventName": {
+          "description": "Name of the publisher event.",
+          "type": "string"
+        },
+        "CreatedDate": {
+          "description": "Date the record was created.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "UpdatedDate": {
+          "description": "Date the record was updated.",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "PublisherEventDetail": {
+      "properties": {
+        "FileId": {
+          "description": "Unique ID of the generated file.",
+          "type": "string"
+        },
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "FileName": {
+          "description": "Generated file name of the file.",
+          "type": "string"
+        },
+        "GeneratedDate": {
+          "description": "Date the file was generated.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "PublishedDate": {
+          "description": "Date the file was published.",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassValuation": {
+      "properties": {
+        "TotalCost": {
+          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalValue": {
+          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetValue": {
+          "description": "The total account value inclusive of receivables and payables. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalGainOrLoss": {
+          "description": "Total Gain/Loss is the nominal difference between the total value and the total cost. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassDetails": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "A description of the asset class.",
+          "type": "string"
+        },
+        "Value": {
+          "description": "The total value of the account holdings within the asset class. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "The percentage ratio of the value of this asset class to the total account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentNetValue": {
+          "description": "The percentage ratio of the value of this asset class to the net account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "MinTargetAllocation": {
+          "description": "The minimum asset class allocation target for this asset class entered for the account.",
+          "format": "double",
+          "type": "number"
+        },
+        "MaxTargetAllocation": {
+          "description": "The maximum asset class allocation target for this asset class entered for the account.",
+          "format": "double",
+          "type": "number"
+        },
+        "MidPointTargetAllocation": {
+          "description": "The middle value of the minimum and maximum target allocation for the asset class.",
+          "format": "double",
+          "type": "number"
+        },
+        "Variance": {
+          "description": "The variance of the asset class’s value outside of the target allocation range.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassReceivableAndPayable": {
+      "properties": {
+        "Description": {
+          "description": "Description of the receivable / payable holding.",
+          "type": "string"
+        },
+        "TotalAmount": {
+          "description": "Amount of the receivable / payable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IncludedInNetValue": {
+          "description": "Whether included in the account's net value.",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AssetClassSummary": {
+      "properties": {
+        "Valuation": {
+          "description": "",
+          "$ref": "#/definitions/AssetClassValuation"
+        },
+        "AssetClasses": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/AssetClassDetails"
+          },
+          "type": "array"
+        },
+        "ReceivablesAndPayables": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/AssetClassReceivableAndPayable"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "Security code.",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "Security exchange.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingValuePerModel": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "Value": {
+          "description": "The value that is attributable to this model on the date. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Quantity": {
+          "description": "The quantity that is attributable to this model on the date. Please note that this may not be a whole number of shares because we blend holdings within our system in order to give a better investment outcome..",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingsPerModel": {
+      "properties": {
+        "ModelCode": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "ModelPercentage": {
+          "description": "Percentage of the model.",
+          "format": "double",
+          "type": "number"
+        },
+        "Holdings": {
+          "description": "Contains the holdings attributable to the model on the date.",
+          "items": {
+            "$ref": "#/definitions/HoldingValuePerModel"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingsHistoryPerModel": {
+      "properties": {
+        "Date": {
+          "description": "The date that these holdings relate to.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalValue": {
+          "description": "The total value of the account on the date. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "HoldingsInModel": {
+          "description": "Holdings that are held by the account due to its model subscriptions.",
+          "items": {
+            "$ref": "#/definitions/HoldingsPerModel"
+          },
+          "type": "array"
+        },
+        "HoldingsNotInModel": {
+          "description": "Holdings that are not attributable to a model on the date. This can be due to holding locks or other customisations. The value and quantity of the HoldingsNotInModel relate to the values that are not attributable to any subscribed model.",
+          "items": {
+            "$ref": "#/definitions/HoldingValuePerModel"
+          },
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Valuation": {
+      "properties": {
+        "ValuationDate": {
+          "description": "Date used to display the data.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalCost": {
+          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalValue": {
+          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "NetValue": {
+          "description": "The total account value inclusive of receivables and payables. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalGainOrLoss": {
+          "description": " (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedIncome": {
+          "description": "Indicative field calculated based on the income of each asset generated over the past twelve months. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Yield": {
+          "description": "The estimated income as a percentage of the market value of the account.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingSecurity": {
+      "properties": {
+        "AssetClassDescription": {
+          "description": "A description of the security’s asset class.",
+          "type": "string"
+        },
+        "AssetClassCode": {
+          "description": "The asset class code of the security’s asset class.",
+          "type": "string"
+        },
+        "AssetClassCategory": {
+          "description": "The asset class category of the security’s asset class.",
+          "type": "string"
+        },
+        "TypeDescription": {
+          "description": "The asset type of the security’s asset class.",
+          "type": "string"
+        },
+        "GicsDescription": {
+          "description": "The global industry classification of the security.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Security code of the security.",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "Exchange code of the security.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Holding": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/HoldingSecurity"
+        },
+        "Quantity": {
+          "description": "The number of securities held by the account at the recalculation date.",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitCost": {
+          "description": "Average unit cost of the holding. This is the actual cost divided by the quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Cost": {
+          "description": "Actual cost is based on the cost base of unrealised holdings. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitValue": {
+          "description": "The last price of the holding available at the recalculation date. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitPriceDate": {
+          "description": "The date of the unit price. (Account currency)",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Value": {
+          "description": "Value is calculated based on the unit price multiplied by the quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "The percentage ratio of the value relative to the total account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "GainOrLoss": {
+          "description": " (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalGainOrLoss": {
+          "description": "The gain or loss expressed as a percentage over the adjusted cost base.",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedIncome": {
+          "description": "Indicative field calculated based on the income of each asset generated over the past twelve months. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Yield": {
+          "description": "The estimated income as a percentage of the market value of the account.",
+          "format": "double",
+          "type": "number"
+        },
+        "ValueInSecurityCurrency": {
+          "description": "The value based on the quantity and local price of unrealised holdings.",
+          "format": "double",
+          "type": "number"
+        },
+        "CostBaseUnknown": {
+          "description": "Whether cost base is unknown.",
+          "type": "boolean"
+        },
+        "TaxCredits": {
+          "description": "The tax credits available on the current holdings of the security. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedFrankingCredits": {
+          "description": "Amount expected to be received in franking credits. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "EstimatedGrossYield": {
+          "description": "Estimated gross yield is based on the sum of the estimated income and franking credits as a percentage of the holding's market value.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "ReceivableAndPayable": {
+      "properties": {
+        "Code": {
+          "description": "The asset code of the receivable / payable.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "A description of the receivable / payable.",
+          "type": "string"
+        },
+        "TypeDescription": {
+          "description": "Type of the receivable / payable.",
+          "type": "string"
+        },
+        "Amount": {
+          "description": "The total value of the receivable/payable. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "IncludedInNetValue": {
+          "description": "Whether included in the account's net value.",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SubscriptionModel": {
+      "properties": {
+        "ModelCode": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "Weighting": {
+          "description": "Account’s model weighting at the valuation date.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "CashHub": {
+      "properties": {
+        "AUD": {
+          "description": "Cash model weighting at the valuation date.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Subscription": {
+      "properties": {
+        "Models": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/SubscriptionModel"
+          },
+          "type": "array"
+        },
+        "CashHub": {
+          "description": "",
+          "$ref": "#/definitions/CashHub"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "HoldingData": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Valuation": {
+          "description": "",
+          "$ref": "#/definitions/Valuation"
+        },
+        "Holdings": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/Holding"
+          },
+          "type": "array"
+        },
+        "ReceivablesAndPayables": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/ReceivableAndPayable"
+          },
+          "type": "array"
+        },
+        "Subscriptions": {
+          "description": "",
+          "$ref": "#/definitions/Subscription"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "IncomeDetail": {
       "properties": {
         "TaxWithheld": {
           "description": "Total tax withheld on the income record. (Account currency)",
@@ -6798,58 +7140,6 @@
       "required": [],
       "type": "object"
     },
-    "ReportingEvent": {
-      "properties": {
-        "Id": {
-          "description": "ID of the reporting event.",
-          "type": "string"
-        },
-        "EventName": {
-          "description": "Name of the reporting event.",
-          "type": "string"
-        },
-        "CreatedDate": {
-          "description": "Date the record was created.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "UpdatedDate": {
-          "description": "Date the record was updated.",
-          "format": "date-time",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "ReportEventPublishedFile": {
-      "properties": {
-        "FileId": {
-          "description": "Unique ID of the generated file.",
-          "type": "string"
-        },
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "FileName": {
-          "description": "Generated file name of the report.",
-          "type": "string"
-        },
-        "GeneratedDate": {
-          "description": "Date the file was generated.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "PublishedDate": {
-          "description": "Date the file was published.",
-          "format": "date-time",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "TargetApplication": {
       "format": "int32",
       "type": "integer",
@@ -7099,7 +7389,7 @@
       "required": [],
       "type": "object"
     },
-    "RealisedCgt": {
+    "RealisedCgtDetail": {
       "properties": {
         "CgtAssetDisposals": {
           "description": "",
@@ -7327,7 +7617,7 @@
       "required": [],
       "type": "object"
     },
-    "UnrealisedCgtSummary": {
+    "UnrealisedCgt": {
       "properties": {
         "CostBaseUnknown": {
           "description": "Whether cost base is unknown.",
@@ -7385,6 +7675,158 @@
         }
       },
       "required": [],
+      "type": "object"
+    },
+    "SecurityExclusionResponse": {
+      "properties": {
+        "CreatedDate": {
+          "description": "Date security exclusion was created.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Security": {
+          "description": "Security name.",
+          "$ref": "#/definitions/Security"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SecurityExclusion": {
+      "properties": {
+        "SecurityId": {
+          "description": "Security ID.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SecurityId"
+      ],
+      "type": "object"
+    },
+    "SecurityExclusionRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "SecurityExclusions": {
+          "description": "Security exclusion.",
+          "items": {
+            "$ref": "#/definitions/SecurityExclusion"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId"
+      ],
+      "type": "object"
+    },
+    "SecuritySubstitutionResponse": {
+      "properties": {
+        "CreatedDate": {
+          "description": "Date security substitution was created.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "FromSecurity": {
+          "description": "From security.",
+          "$ref": "#/definitions/Security"
+        },
+        "ToSecurity": {
+          "description": "To security.",
+          "$ref": "#/definitions/Security"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "SecuritySubstitution": {
+      "properties": {
+        "FromSecurityId": {
+          "description": "From security ID.",
+          "type": "string"
+        },
+        "ToSecurityId": {
+          "description": "To security ID.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "FromSecurityId",
+        "ToSecurityId"
+      ],
+      "type": "object"
+    },
+    "SecuritySubstitutionRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "SecuritySubstitutions": {
+          "description": "Security substitution.",
+          "items": {
+            "$ref": "#/definitions/SecuritySubstitution"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId"
+      ],
+      "type": "object"
+    },
+    "RebalanceTolerance": {
+      "properties": {
+        "Amount": {
+          "description": "Rebalance tolerance amount. Prevents trades of a value less than this figure.",
+          "format": "double",
+          "type": "number"
+        },
+        "Percentage": {
+          "description": "Rebalance tolerance percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.",
+          "format": "double",
+          "type": "number"
+        },
+        "Units": {
+          "description": "Rebalance tolernace number of units. Prevents trades of a quantity less than this figure.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "PatchMinimumTradeSizeRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Amount": {
+          "description": "Minimum trade size amount. Prevents trades of a value less than this figure.",
+          "format": "double",
+          "type": "number"
+        },
+        "Percentage": {
+          "description": "Minimum trade size percentage. Prevents trades unless they exceed this figure as a percentage of the portfolio’s value. For example, if this is set to 5, only trades that exceed five percent of the portfolio’s total value are performed.",
+          "format": "double",
+          "type": "number"
+        },
+        "Units": {
+          "description": "Minimum trade size number of units. Prevents trades of a quantity less than this figure.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [
+        "AccountId",
+        "Amount",
+        "Percentage",
+        "Units"
+      ],
       "type": "object"
     },
     "Transaction": {
@@ -7791,453 +8233,12 @@
       "required": [],
       "type": "object"
     },
-    "AssetClassValuation": {
+    "User": {
       "properties": {
-        "TotalCost": {
-          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalValue": {
-          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "NetValue": {
-          "description": "The total account value inclusive of receivables and payables. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalGainOrLoss": {
-          "description": "Total Gain/Loss is the nominal difference between the total value and the total cost. (Account currency)",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassDetails": {
-      "properties": {
-        "AssetClassDescription": {
-          "description": "A description of the asset class.",
-          "type": "string"
-        },
-        "Value": {
-          "description": "The total value of the account holdings within the asset class. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalValue": {
-          "description": "The percentage ratio of the value of this asset class to the total account value.",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentNetValue": {
-          "description": "The percentage ratio of the value of this asset class to the net account value.",
-          "format": "double",
-          "type": "number"
-        },
-        "MinTargetAllocation": {
-          "description": "The minimum asset class allocation target for this asset class entered for the account.",
-          "format": "double",
-          "type": "number"
-        },
-        "MaxTargetAllocation": {
-          "description": "The maximum asset class allocation target for this asset class entered for the account.",
-          "format": "double",
-          "type": "number"
-        },
-        "MidPointTargetAllocation": {
-          "description": "The middle value of the minimum and maximum target allocation for the asset class.",
-          "format": "double",
-          "type": "number"
-        },
-        "Variance": {
-          "description": "The variance of the asset class’s value outside of the target allocation range.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassReceivableAndPayable": {
-      "properties": {
-        "Description": {
-          "description": "Description of the receivable / payable holding.",
-          "type": "string"
-        },
-        "TotalAmount": {
-          "description": "Amount of the receivable / payable. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "IncludedInNetValue": {
-          "description": "Whether included in the account's net value.",
-          "type": "boolean"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "AssetClassSummary": {
-      "properties": {
-        "Valuation": {
-          "description": "",
-          "$ref": "#/definitions/AssetClassValuation"
-        },
-        "AssetClasses": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/AssetClassDetails"
-          },
-          "type": "array"
-        },
-        "ReceivablesAndPayables": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/AssetClassReceivableAndPayable"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingValueByModel": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "Value": {
-          "description": "The value that is attributable to this model on the date. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "Quantity": {
-          "description": "The quantity that is attributable to this model on the date. Please note that this may not be a whole number of shares because we blend holdings within our system in order to give a better investment outcome..",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingsByModel": {
-      "properties": {
-        "ModelCode": {
-          "description": "Model code.",
-          "type": "string"
-        },
-        "ModelPercentage": {
-          "description": "Percentage of the model.",
-          "format": "double",
-          "type": "number"
-        },
-        "Holdings": {
-          "description": "Contains the holdings attributable to the model on the date.",
-          "items": {
-            "$ref": "#/definitions/HoldingValueByModel"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingsHistoryByModel": {
-      "properties": {
-        "Date": {
-          "description": "The date that these holdings relate to.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TotalValue": {
-          "description": "The total value of the account on the date. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "HoldingsByModel": {
-          "description": "Holdings that are held by the account due to its model subscriptions.",
-          "items": {
-            "$ref": "#/definitions/HoldingsByModel"
-          },
-          "type": "array"
-        },
-        "HoldingsNotInModel": {
-          "description": "Hikdubgs that are not attributable to a model on the date. This can be due to holding locks or other customisations. The value and quantity of the HoldingsNotInModel relate to the values that are not attributable to any subscribed model.",
-          "items": {
-            "$ref": "#/definitions/HoldingValueByModel"
-          },
-          "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Valuation": {
-      "properties": {
-        "ValuationDate": {
-          "description": "Date used to display the data.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TotalCost": {
-          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalValue": {
-          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "NetValue": {
-          "description": "The total account value inclusive of receivables and payables. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "TotalGainOrLoss": {
-          "description": " (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedIncome": {
-          "description": "Indicative field calculated based on the income of each asset generated over the past twelve months. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "Yield": {
-          "description": "The estimated income as a percentage of the market value of the account.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "HoldingSecurity": {
-      "properties": {
-        "AssetClassDescription": {
-          "description": "A description of the security’s asset class.",
-          "type": "string"
-        },
-        "AssetClassCode": {
-          "description": "The asset class code of the security’s asset class.",
-          "type": "string"
-        },
-        "AssetClassCategory": {
-          "description": "The asset class category of the security’s asset class.",
-          "type": "string"
-        },
-        "TypeDescription": {
-          "description": "The asset type of the security’s asset class.",
-          "type": "string"
-        },
-        "GicsDescription": {
-          "description": "The global industry classification of the security.",
-          "type": "string"
-        },
-        "Code": {
-          "description": "Security code of the security.",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "Exchange code of the security.",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Holding": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/HoldingSecurity"
-        },
-        "Quantity": {
-          "description": "The number of securities held by the account at the recalculation date.",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitCost": {
-          "description": "Average unit cost of the holding. This is the actual cost divided by the quantity. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "Cost": {
-          "description": "Actual cost is based on the cost base of unrealised holdings. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitValue": {
-          "description": "The last price of the holding available at the recalculation date. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "UnitPriceDate": {
-          "description": "The date of the unit price. (Account currency)",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Value": {
-          "description": "Value is calculated based on the unit price multiplied by the quantity. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalValue": {
-          "description": "The percentage ratio of the value relative to the total account value.",
-          "format": "double",
-          "type": "number"
-        },
-        "GainOrLoss": {
-          "description": " (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentTotalGainOrLoss": {
-          "description": "The gain or loss expressed as a percentage over the adjusted cost base.",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedIncome": {
-          "description": "Indicative field calculated based on the income of each asset generated over the past twelve months. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "Yield": {
-          "description": "The estimated income as a percentage of the market value of the account.",
-          "format": "double",
-          "type": "number"
-        },
-        "ValueInSecurityCurrency": {
-          "description": "The value based on the quantity and local price of unrealised holdings.",
-          "format": "double",
-          "type": "number"
-        },
-        "CostBaseUnknown": {
-          "description": "Whether cost base is unknown.",
-          "type": "boolean"
-        },
-        "TaxCredits": {
-          "description": "The tax credits available on the current holdings of the security. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedFrankingCredits": {
-          "description": "Amount expected to be received in franking credits. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "EstimatedGrossYield": {
-          "description": "Estimated gross yield is based on the sum of the estimated income and franking credits as a percentage of the holding's market value.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "ReceivableAndPayable": {
-      "properties": {
-        "Code": {
-          "description": "The asset code of the receivable / payable.",
-          "type": "string"
-        },
-        "Description": {
-          "description": "A description of the receivable / payable.",
-          "type": "string"
-        },
-        "TypeDescription": {
-          "description": "Type of the receivable / payable.",
-          "type": "string"
-        },
-        "Amount": {
-          "description": "The total value of the receivable/payable. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "IncludedInNetValue": {
-          "description": "Whether included in the account's net value.",
-          "type": "boolean"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "SubscriptionModel": {
-      "properties": {
-        "ModelCode": {
-          "description": "Model code.",
-          "type": "string"
-        },
-        "Weighting": {
-          "description": "Account’s model weighting at the valuation date.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "CashHub": {
-      "properties": {
-        "AUD": {
-          "description": "Cash model weighting at the valuation date.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Subscription": {
-      "properties": {
-        "Models": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/SubscriptionModel"
-          },
-          "type": "array"
-        },
-        "CashHub": {
-          "description": "",
-          "$ref": "#/definitions/CashHub"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "BulkValuationData": {
-      "properties": {
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "Valuation": {
-          "description": "",
-          "$ref": "#/definitions/Valuation"
-        },
-        "Holdings": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/Holding"
-          },
-          "type": "array"
-        },
-        "ReceivablesAndPayables": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/ReceivableAndPayable"
-          },
-          "type": "array"
-        },
-        "Subscriptions": {
-          "description": "",
-          "$ref": "#/definitions/Subscription"
+        "UserId": {
+          "description": "User ID",
+          "format": "int32",
+          "type": "integer"
         }
       },
       "required": [],
@@ -8269,7 +8270,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.13",
+    "version": "2021.04.16",
     "title": "Public API"
   }
 }

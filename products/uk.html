@@ -244,10 +244,24 @@
               </ul>
           </li>
           <li>
-            <a href="#pds" class="toc-h1 toc-link" data-title="PDS">PDS</a>
+            <a href="#saml" class="toc-h1 toc-link" data-title="SAML">SAML</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-pds" class="toc-h2 toc-link" data-title="GET PDS"><span class="get">GET</span> PDS</a>
+                    <a href="#set-up-identity-provider" class="toc-h2 toc-link" data-title="Set up Identity Provider">Set up Identity Provider</a>
+                  </li>
+                  <li>
+                    <a href="#destination-applications" class="toc-h2 toc-link" data-title="Destination applications">Destination applications</a>
+                  </li>
+                  <li>
+                    <a href="#post-saml-login" class="toc-h2 toc-link" data-title="POST SAML Login"><span class="post">POST</span> SAML Login</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sso" class="toc-h1 toc-link" data-title="SSO">SSO</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-sso-login" class="toc-h2 toc-link" data-title="POST SSO Login"><span class="post">POST</span> SSO Login</a>
                   </li>
               </ul>
           </li>
@@ -255,49 +269,31 @@
             <a href="#applications" class="toc-h1 toc-link" data-title="Applications">Applications</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#get-pds" class="toc-h2 toc-link" data-title="GET PDS"><span class="get">GET</span> PDS</a>
+                  </li>
+                  <li>
+                    <a href="#get-ceding-parties" class="toc-h2 toc-link" data-title="GET Ceding Parties"><span class="get">GET</span> Ceding Parties</a>
+                  </li>
+                  <li>
                     <a href="#post-application" class="toc-h2 toc-link" data-title="POST Application"><span class="post">POST</span> Application</a>
                   </li>
                   <li>
-                    <a href="#post-individual-applicant-amp-gia-account-uk" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; GIA Account - UK"><span class="post">POST</span> Individual Applicant &amp; GIA Account - UK</a>
+                    <a href="#post-individual-applicant-amp-gia-account" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; GIA Account"><span class="post">POST</span> Individual Applicant &amp; GIA Account</a>
                   </li>
                   <li>
-                    <a href="#post-corporate-applicant-amp-gia-account-uk" class="toc-h2 toc-link" data-title="POST Corporate Applicant &amp; GIA Account - UK"><span class="post">POST</span> Corporate Applicant &amp; GIA Account - UK</a>
+                    <a href="#post-corporate-applicant-amp-gia-account" class="toc-h2 toc-link" data-title="POST Corporate Applicant &amp; GIA Account"><span class="post">POST</span> Corporate Applicant &amp; GIA Account</a>
                   </li>
                   <li>
-                    <a href="#post-trust-applicant-amp-gia-account-uk" class="toc-h2 toc-link" data-title="POST Trust Applicant &amp; GIA Account - UK"><span class="post">POST</span> Trust Applicant &amp; GIA Account - UK</a>
+                    <a href="#post-trust-applicant-amp-gia-account" class="toc-h2 toc-link" data-title="POST Trust Applicant &amp; GIA Account"><span class="post">POST</span> Trust Applicant &amp; GIA Account</a>
                   </li>
                   <li>
-                    <a href="#post-individual-applicant-amp-isa-account-uk" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; ISA Account - UK"><span class="post">POST</span> Individual Applicant &amp; ISA Account - UK</a>
+                    <a href="#post-individual-applicant-amp-isa-account" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; ISA Account"><span class="post">POST</span> Individual Applicant &amp; ISA Account</a>
                   </li>
-                  <li>
-                    <a href="#get-application-status" class="toc-h2 toc-link" data-title="GET Application Status"><span class="get">GET</span> Application Status</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#app-form" class="toc-h1 toc-link" data-title="App Form">App Form</a>
-              <ul class="toc-list-h2">
                   <li>
                     <a href="#get-app-form" class="toc-h2 toc-link" data-title="GET App Form"><span class="get">GET</span> App Form</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#account-model-weightings" class="toc-h1 toc-link" data-title="Account Model Weightings">Account Model Weightings</a>
-              <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-account-model-weightings" class="toc-h2 toc-link" data-title="GET Account Model Weightings"><span class="get">GET</span> Account Model Weightings</a>
-                  </li>
-                  <li>
-                    <a href="#put-account-model-weightings" class="toc-h2 toc-link" data-title="PUT Account Model Weightings"><span class="put">PUT</span> Account Model Weightings</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#sso-login" class="toc-h1 toc-link" data-title="SSO Login">SSO Login</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#post-sso-login" class="toc-h2 toc-link" data-title="POST SSO Login"><span class="post">POST</span> SSO Login</a>
+                    <a href="#get-application-status" class="toc-h2 toc-link" data-title="GET Application Status"><span class="get">GET</span> Application Status</a>
                   </li>
               </ul>
           </li>
@@ -310,15 +306,18 @@
               </ul>
           </li>
           <li>
-            <a href="#ceding-parties" class="toc-h1 toc-link" data-title="Ceding Parties">Ceding Parties</a>
+            <a href="#trading-sma" class="toc-h1 toc-link" data-title="Trading SMA">Trading SMA</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-ceding-parties" class="toc-h2 toc-link" data-title="GET Ceding Parties"><span class="get">GET</span> Ceding Parties</a>
+                    <a href="#get-account-model-weightings" class="toc-h2 toc-link" data-title="GET Account Model Weightings"><span class="get">GET</span> Account Model Weightings</a>
+                  </li>
+                  <li>
+                    <a href="#put-account-model-weightings" class="toc-h2 toc-link" data-title="PUT Account Model Weightings"><span class="put">PUT</span> Account Model Weightings</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#securities" class="toc-h1 toc-link" data-title="Securities">Securities</a>
+            <a href="#investments" class="toc-h1 toc-link" data-title="Investments">Investments</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-securities" class="toc-h2 toc-link" data-title="GET Securities"><span class="get">GET</span> Securities</a>
@@ -432,7 +431,162 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='pds'>PDS</h1><h3 id='get-pds'><span class="get">GET</span> PDS</h3>
+<h1 id='saml'>SAML</h1><h3 id='set-up-identity-provider'>Set up Identity Provider</h3>
+<p>Identity Provider (IdP) has to be set up before you can use the SAML SSO. To set up IdP, you will need to provide the following:</p>
+
+<ul>
+<li>X509 Certificate</li>
+<li>Issuer of SAML token</li>
+</ul>
+<h3 id='destination-applications'>Destination applications</h3>
+<p>To determine a destination application that users will be landing, you will need to add &quot;Application&quot; attribute/value into your SAML Assertion/Token. The followings are the supported values:</p>
+
+<ul>
+<li>Platform (Platform &amp; Reporting)</li>
+<li>Adviser (Adviser Portal)</li>
+<li>Investor (Investor Portal)</li>
+</ul>
+
+<p>If no &quot;Application&quot; attribute/value is provided, users will SSO into Platform &amp; Reporting by default.</p>
+<h3 id='post-saml-login'><span class="post">POST</span> SAML Login</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://saml.onpraemium.com/login</p>
+</blockquote>
+
+<p>This endpoint returns a SAML token for login to Praemium platform.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Content-Type</span><span class="pi">:</span> <span class="s">application/x-www-form-urlencoded</span>
+</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type<span class="required">required</span></td>
+<td>string</td>
+<td>Content type needs to be <strong>application/x-www-form-urlencoded</strong>.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Body Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="s">SAMLResponse={base64 encoded string of your SAML token}</span>
+</code></pre></div><h5 id='body-parameters'>Body Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SAMLResponse</td>
+<td>string</td>
+<td>The value of the SAMLResponse parameter is the base64 encoding of an SAML token.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># 302 - Redirect</span>
+<span class="s2">"</span><span class="s">https://login.onpraemium.com/useraccount/sso?token=******"</span>
+</code></pre></div><h1 id='sso'>SSO</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
+</blockquote>
+
+<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Application"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-2'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Application<span class="required">required</span></td>
+<td>enum</td>
+<td>The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.</td>
+</tr>
+<tr>
+<td>UserId<span class="required">required</span></td>
+<td>integer</td>
+<td>ID of the user to log in. Either UserId or Username is required.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"SsoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.onpraemium.com/useraccount/sso?token=XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXX"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-2'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SsoUrl</td>
+<td>string</td>
+<td>SSO URL.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='applications'>Applications</h1><h3 id='get-pds'><span class="get">GET</span> PDS</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/pds</p>
 </blockquote>
@@ -445,7 +599,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -578,7 +732,7 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-2'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -929,7 +1083,107 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='applications'>Applications</h1><h3 id='post-application'><span class="post">POST</span> Application</h3>
+<h3 id='get-ceding-parties'><span class="get">GET</span> Ceding Parties</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
+</blockquote>
+
+<p>This endpoint returns the ceding party details for the service.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountType</span><span class="pi">:</span> <span class="m">15</span>
+<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
+</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountType</td>
+<td>enum</td>
+<td>Isa = 15, Gia = 16.</td>
+</tr>
+<tr>
+<td>Search<span class="required">required</span></td>
+<td>string</td>
+<td>Search for Ceding party.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CedingPartyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"CedingPartyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Ceding Party"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AcceptsElectronicTransfer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CedingPartyId</td>
+<td>string</td>
+<td>Ceding party ID.</td>
+</tr>
+<tr>
+<td>CedingPartyName</td>
+<td>string</td>
+<td>Ceding party name.</td>
+</tr>
+<tr>
+<td>AcceptsElectronicTransfer</td>
+<td>boolean</td>
+<td>Ceding party accepts electronic transfers.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='post-application'><span class="post">POST</span> Application</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -942,7 +1196,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1104,7 +1358,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-2'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-3'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2531,7 +2785,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2547,7 +2801,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-individual-applicant-amp-gia-account-uk'><span class="post">POST</span> Individual Applicant &amp; GIA Account - UK</h3>
+<h3 id='post-individual-applicant-amp-gia-account'><span class="post">POST</span> Individual Applicant &amp; GIA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -2560,7 +2814,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2738,7 +2992,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-3'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-4'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3305,7 +3559,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3321,7 +3575,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-corporate-applicant-amp-gia-account-uk'><span class="post">POST</span> Corporate Applicant &amp; GIA Account - UK</h3>
+<h3 id='post-corporate-applicant-amp-gia-account'><span class="post">POST</span> Corporate Applicant &amp; GIA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -3334,7 +3588,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3574,7 +3828,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-4'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-5'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4271,7 +4525,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4287,7 +4541,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-trust-applicant-amp-gia-account-uk'><span class="post">POST</span> Trust Applicant &amp; GIA Account - UK</h3>
+<h3 id='post-trust-applicant-amp-gia-account'><span class="post">POST</span> Trust Applicant &amp; GIA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -4300,7 +4554,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4535,7 +4789,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-5'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-6'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5347,7 +5601,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-8'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5363,7 +5617,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='post-individual-applicant-amp-isa-account-uk'><span class="post">POST</span> Individual Applicant &amp; ISA Account - UK</h3>
+<h3 id='post-individual-applicant-amp-isa-account'><span class="post">POST</span> Individual Applicant &amp; ISA Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -5376,7 +5630,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-10'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5554,7 +5808,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-6'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-7'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6121,7 +6375,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-9'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6137,6 +6391,82 @@
 </tbody></table>
 
 <p><br/></p>
+<h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
+</blockquote>
+
+<p>This endpoint returns a PDF version of the application form for the specified account. This is a confirmation to the client of the details of their account. The PDF is returned directly as the response.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-11'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
+<span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
+<span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td>enum</td>
+<td>Adviser = 0, Investor = 1</td>
+</tr>
+<tr>
+<td>FormType</td>
+<td>enum</td>
+<td>Digital = 0, Paper = 1</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="err">Complete</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">stream</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">file</span><span class="w"> </span><span class="err">content.</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
 <h3 id='get-application-status'><span class="get">GET</span> Application Status</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application/{ApplicationId}/status</p>
@@ -6150,7 +6480,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-12'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6208,7 +6538,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-8'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-10'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6240,344 +6570,6 @@
 <td>AccountsStatus.Status</td>
 <td>enum</td>
 <td>Draft = 0, AwaitingSignature = 1, AwaitingApproval = 2, AwaitingFund = 3, Funded = 4, Trading = 5, ClosureRequested = 6, Closed = 7, Deleted = 8.</td>
-</tr>
-</tbody></table>
-
-<p><br/></p>
-<h1 id='app-form'>App Form</h1><h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
-</blockquote>
-
-<p>This endpoint returns a PDF version of the application form for the specified account. This is a confirmation to the client of the details of their account. The PDF is returned directly as the response.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
-<span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
-<span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
-</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountId<span class="required">required</span></td>
-<td>string</td>
-<td>Account ID.</td>
-</tr>
-<tr>
-<td>Recipient</td>
-<td>enum</td>
-<td>Adviser = 0, Investor = 1</td>
-</tr>
-<tr>
-<td>FormType</td>
-<td>enum</td>
-<td>Digital = 0, Paper = 1</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="err">Complete</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">stream</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">file</span><span class="w"> </span><span class="err">content.</span><span class="w">
-</span></code></pre></div>
-<p><br/></p>
-<h1 id='account-model-weightings'>Account Model Weightings</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
-</blockquote>
-
-<p>This endpoint returns the account model weightings for the account.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-10'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
-</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountId<span class="required">required</span></td>
-<td>string</td>
-<td>Account ID.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ROC"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-9'>Response Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ModelCode</td>
-<td>string</td>
-<td>Model code.</td>
-</tr>
-<tr>
-<td>Percentage</td>
-<td>double</td>
-<td>Percentage of model.</td>
-</tr>
-</tbody></table>
-
-<p><br/></p>
-<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
-</blockquote>
-
-<p>This endpoint allows you to modify the account model weightings for the account.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-11'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Body Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1000000112"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
-    </span><span class="p">}</span><span class="w">    
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-7'>Request Parameter - Body</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountId<span class="required">required</span></td>
-<td>string</td>
-<td>Account ID.</td>
-</tr>
-<tr>
-<td>AccountModelWeightings<span class="required">required</span></td>
-<td>array</td>
-<td>Account model weighting.</td>
-</tr>
-<tr>
-<td>AccountModelWeightings.ModelCode</td>
-<td>string</td>
-<td>Model code.</td>
-</tr>
-<tr>
-<td>AccountModelWeightings.Percentage</td>
-<td>double</td>
-<td>Percentage of model.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
-</span></code></pre></div>
-<p><br/></p>
-<h1 id='sso-login'>SSO Login</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
-</blockquote>
-
-<p>This endpoint is to authenticate a user&#39;s access to the Praemium API. It returns a URL that contains a one-time security token. By accessing this URL, an authenticated user will be logged in without having to specify the user&#39;s credentials again.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-12'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Body Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"Application"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-8'>Request Parameter - Body</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Application<span class="required">required</span></td>
-<td>enum</td>
-<td>The ID of the application the user will be sent to once logged in. Platform = 0, InvestorPortal = 1, AdviserPortal = 2, ApplicationPortal = 3.</td>
-</tr>
-<tr>
-<td>UserId<span class="required">required</span></td>
-<td>integer</td>
-<td>ID of the user to log in. Either UserId or Username is required.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"SsoUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.onpraemium.com/useraccount/sso?token=XXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXX"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-10'>Response Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>SsoUrl</td>
-<td>string</td>
-<td>SSO URL.</td>
 </tr>
 </tbody></table>
 
@@ -6662,12 +6654,12 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='ceding-parties'>Ceding Parties</h1><h3 id='get-ceding-parties'><span class="get">GET</span> Ceding Parties</h3>
+<h1 id='trading-sma'>Trading SMA</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
 <blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
 </blockquote>
 
-<p>This endpoint returns the ceding parties details for the service.</p>
+<p>This endpoint returns the account model weightings for the account.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -6703,8 +6695,7 @@
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountType</span><span class="pi">:</span> <span class="m">15</span>
-<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
 </code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
@@ -6714,14 +6705,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>AccountType</td>
-<td>enum</td>
-<td>Isa = 15, Gia = 16.</td>
-</tr>
-<tr>
-<td>Search<span class="required">required</span></td>
+<td>AccountId<span class="required">required</span></td>
 <td>string</td>
-<td>Search for Ceding party.</td>
+<td>Account ID.</td>
 </tr>
 </tbody></table>
 
@@ -6731,9 +6717,8 @@
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
 </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"CedingPartyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CedingPartyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Ceding Party"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"AcceptsElectronicTransfer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ROC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h5 id='response-parameters-12'>Response Parameters</h5>
@@ -6745,29 +6730,24 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>CedingPartyId</td>
+<td>ModelCode</td>
 <td>string</td>
-<td>Ceding party ID.</td>
+<td>Model code.</td>
 </tr>
 <tr>
-<td>CedingPartyName</td>
-<td>string</td>
-<td>Ceding party name.</td>
-</tr>
-<tr>
-<td>AcceptsElectronicTransfer</td>
-<td>boolean</td>
-<td>Ceding party accepts electronic transfers.</td>
+<td>Percentage</td>
+<td>double</td>
+<td>Percentage of model.</td>
 </tr>
 </tbody></table>
 
 <p><br/></p>
-<h1 id='securities'>Securities</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
+<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
 <blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
 </blockquote>
 
-<p>This endpoint returns the securties details for the service.</p>
+<p>This endpoint allows you to modify the account model weightings for the account.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -6776,6 +6756,92 @@
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
 </code></pre></div><h5 id='header-parameters-15'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1000000112"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">    
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-8'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings<span class="required">required</span></td>
+<td>array</td>
+<td>Account model weighting.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.Percentage</td>
+<td>double</td>
+<td>Percentage of model.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h1 id='investments'>Investments</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
+</blockquote>
+
+<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-16'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6825,7 +6891,7 @@
 <tr>
 <td>Search</td>
 <td>string</td>
-<td>Search term based on security code or security description.</td>
+<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
 </tr>
 <tr>
 <td>SecurityIds</td>
