@@ -41,14 +41,14 @@
             "name": "Recipient",
             "in": "query",
             "required": false,
-            "description": "Adviser = 0, Investor = 1 (INT only)",
+            "description": "Adviser = 0, Investor = 1 (INTL only)",
             "type": "enum"
           },
           {
             "name": "FormType",
             "in": "query",
             "required": false,
-            "description": "Digital = 0, Paper = 1 (INT only)",
+            "description": "Digital = 0, Paper = 1 (INTL only)",
             "type": "enum"
           }
         ]
@@ -7727,7 +7727,7 @@
           "type": "integer"
         },
         "ApplicantType": {
-          "description": "Individual = 0, Corporate = 1, Trust (INT only) = 2.",
+          "description": "Individual = 0, Corporate = 1, Trust (INTL only) = 2.",
           "$ref": "#/definitions/ApplicantType"
         },
         "CorporateDetails": {
@@ -7774,7 +7774,7 @@
           "type": "string"
         },
         "SortCode": {
-          "description": "Bank account sort code. (INT only)",
+          "description": "Bank account sort code. (INTL only)",
           "type": "string"
         },
         "AccountNumber": {
@@ -7793,15 +7793,15 @@
           "type": "array"
         },
         "Bic": {
-          "description": "Bank identifier code (BIC) of your banking institution. (INT only)",
+          "description": "Bank identifier code (BIC) of your banking institution. (INTL only)",
           "type": "string"
         },
         "Iban": {
-          "description": "International bank account number (IBAN) of your banking institution. (INT only)",
+          "description": "International bank account number (IBAN) of your banking institution. (INTL only)",
           "type": "string"
         },
         "RoutingNumber": {
-          "description": "Routing number of banking institution. (INT only)",
+          "description": "Routing number of banking institution. (INTL only)",
           "type": "string"
         }
       },
@@ -7822,7 +7822,7 @@
           "type": "string"
         },
         "AccountType": {
-          "description": "AU account types: Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18 <br /> INT account types: Isa = 0, Gia = 1, OffshoreBond = 2, Qrops = 3, Rats = 4, Sipp = 5, PraemiumRetirementAccount = 6, Pera = 7, PersonalPension = 8, GroupSipp = 9, Ssas = 10, Jisa = 11, OnshoreBond = 12.",
+          "description": "AU account types: Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18 <br /> INTL account types: Isa = 0, Gia = 1, OffshoreBond = 2, Qrops = 3, Rats = 4, Sipp = 5, PraemiumRetirementAccount = 6, Pera = 7, PersonalPension = 8, GroupSipp = 9, Ssas = 10, Jisa = 11, OnshoreBond = 12.",
           "$ref": "#/definitions/DraftAccountType"
         },
         "PdsId": {
