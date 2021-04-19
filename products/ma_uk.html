@@ -241,16 +241,17 @@
               </ul>
           </li>
           <li>
-            <a href="#pds" class="toc-h1 toc-link" data-title="PDS">PDS</a>
+            <a href="#applications" class="toc-h1 toc-link" data-title="Applications">Applications</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-pds" class="toc-h2 toc-link" data-title="GET PDS"><span class="get">GET</span> PDS</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#applications" class="toc-h1 toc-link" data-title="Applications">Applications</a>
-              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-ceding-parties" class="toc-h2 toc-link" data-title="GET Ceding Parties"><span class="get">GET</span> Ceding Parties</a>
+                  </li>
+                  <li>
+                    <a href="#post-application" class="toc-h2 toc-link" data-title="POST Application"><span class="post">POST</span> Application</a>
+                  </li>
                   <li>
                     <a href="#post-individual-applicant-amp-general-investment-account" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; General Investment Account"><span class="post">POST</span> Individual Applicant &amp; General Investment Account</a>
                   </li>
@@ -264,31 +265,10 @@
                     <a href="#post-individual-applicant-amp-individual-savings-account" class="toc-h2 toc-link" data-title="POST Individual Applicant &amp; Individual Savings Account"><span class="post">POST</span> Individual Applicant &amp; Individual Savings Account</a>
                   </li>
                   <li>
-                    <a href="#get-application-status" class="toc-h2 toc-link" data-title="GET Application Status"><span class="get">GET</span> Application Status</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#app-form" class="toc-h1 toc-link" data-title="App Form">App Form</a>
-              <ul class="toc-list-h2">
-                  <li>
                     <a href="#get-app-form" class="toc-h2 toc-link" data-title="GET App Form"><span class="get">GET</span> App Form</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#ceding-parties" class="toc-h1 toc-link" data-title="Ceding Parties">Ceding Parties</a>
-              <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-ceding-parties" class="toc-h2 toc-link" data-title="GET Ceding Parties"><span class="get">GET</span> Ceding Parties</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#securities" class="toc-h1 toc-link" data-title="Securities">Securities</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-securities" class="toc-h2 toc-link" data-title="GET Securities"><span class="get">GET</span> Securities</a>
+                    <a href="#get-application-status" class="toc-h2 toc-link" data-title="GET Application Status"><span class="get">GET</span> Application Status</a>
                   </li>
               </ul>
           </li>
@@ -297,6 +277,25 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-user" class="toc-h2 toc-link" data-title="GET User"><span class="get">GET</span> User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#trading-sma" class="toc-h1 toc-link" data-title="Trading SMA">Trading SMA</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-account-model-weightings" class="toc-h2 toc-link" data-title="GET Account Model Weightings"><span class="get">GET</span> Account Model Weightings</a>
+                  </li>
+                  <li>
+                    <a href="#put-account-model-weightings" class="toc-h2 toc-link" data-title="PUT Account Model Weightings"><span class="put">PUT</span> Account Model Weightings</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#investments" class="toc-h1 toc-link" data-title="Investments">Investments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-securities" class="toc-h2 toc-link" data-title="GET Securities"><span class="get">GET</span> Securities</a>
                   </li>
               </ul>
           </li>
@@ -310,7 +309,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='managed-accounts-united-kingdom'>Managed Accounts - United Kingdom</h1>
-<p>This product allows access to draft applications and PDS.</p>
+<p>This product allows access to applications, users, trading SMA and investments.</p>
 <h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
@@ -402,7 +401,7 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='pds'>PDS</h1><h3 id='get-pds'><span class="get">GET</span> PDS</h3>
+<h1 id='applications'>Applications</h1><h3 id='get-pds'><span class="get">GET</span> PDS</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/pds</p>
 </blockquote>
@@ -899,7 +898,1725 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='applications'>Applications</h1><h3 id='post-individual-applicant-amp-general-investment-account'><span class="post">POST</span> Individual Applicant &amp; General Investment Account</h3>
+<h3 id='get-ceding-parties'><span class="get">GET</span> Ceding Parties</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
+</blockquote>
+
+<p>This endpoint returns the ceding party details for the service.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountType</span><span class="pi">:</span> <span class="m">15</span>
+<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
+</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountType</td>
+<td>enum</td>
+<td>ISA = 15, GIA = 16.</td>
+</tr>
+<tr>
+<td>Search<span class="required">required</span></td>
+<td>string</td>
+<td>Search for Ceding party.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CedingPartyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"CedingPartyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Ceding Party"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AcceptsElectronicTransfer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CedingPartyId</td>
+<td>string</td>
+<td>Ceding party ID.</td>
+</tr>
+<tr>
+<td>CedingPartyName</td>
+<td>string</td>
+<td>Ceding party name.</td>
+</tr>
+<tr>
+<td>AcceptsElectronicTransfer</td>
+<td>boolean</td>
+<td>Ceding party accepts electronic transfers.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='post-application'><span class="post">POST</span> Application</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
+</blockquote>
+
+<p>This endpoint links an individual applicant to the created account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AdviserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Applicants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ApplicantType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"CorporateDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith &amp; Smith"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BusinessAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Test St"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR5 4HL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orpington"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KENT"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Signatories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j.smith@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Capacity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Director"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ApplicantType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IndividualDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"j.smith@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012489235"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PhoneOther"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012489235"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BirthCountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HomeAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Test St"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR5 4HL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orpington"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KENT"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"MailingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Test St"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR5 4HL"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Suburb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orpington"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"State"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KENT"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"CountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"IsPoliticallyExposedPerson"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"Accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RegisteredName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miss Jane Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ShortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"PdsId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK5"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK21871"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dollar"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Models"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK0001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Proportion"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN0001"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Proportion"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"BankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"SortCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12012"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"AccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6555555567"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Smith"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Exclusions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK0002"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"InitialInvestment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Cash"</span><span class="p">:</span><span class="w"> </span><span class="mf">132.12</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Shares"</span><span class="p">:</span><span class="w"> </span><span class="mf">321.32</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"CurrencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IllustrationData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"CostsAndCharges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.123</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">321.123</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.123</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"InSpecieCashStockTransfers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"TransferType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"CedingPartyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK29821"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"CedingAccountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"234324"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"InSpecieCashStockTransferDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"SecurityIsin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK000000ROC4"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"Quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">123.123</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"BookCost"</span><span class="p">:</span><span class="w"> </span><span class="mf">3242.32432</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"IsTradeFreezeOn"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"TradeFreezeReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"TradeFreezeNote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"just freeze it"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-2'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Applicants<span class="required">required</span></td>
+<td>array</td>
+<td>Objects containing the applicant data. There must be at least one applicant for the request to succeed. The array of objects may contain a mix of Individual and Corporate applicants.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails</td>
+<td>object</td>
+<td>Used for Corporate applicants.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress</td>
+<td>object</td>
+<td>Business address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BusinessAddress.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress</td>
+<td>object</td>
+<td>Mailing address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.MailingAddress.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact</td>
+<td>object</td>
+<td>Primary contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier</td>
+<td>object</td>
+<td>National identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>Applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>Applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td>If you would like to opt out of electronic communications.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.Title</td>
+<td>string</td>
+<td>Title of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>First name of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>Last name of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.DateOfBirth</td>
+<td>date-time</td>
+<td>Date of birth of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.Email</td>
+<td>string</td>
+<td>Email of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.Phone</td>
+<td>string</td>
+<td>Phone Number of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.PhoneOther</td>
+<td>string</td>
+<td>Secondary contact number of contact.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Contact.IsPoliticallyExposedPerson</td>
+<td>boolean</td>
+<td>Whether applicant is politically exposed.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories</td>
+<td>array</td>
+<td>Corporate signatories.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Capacity<span class="required">required</span></td>
+<td>enum</td>
+<td>Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.TaxNumber</td>
+<td>string</td>
+<td>Tax number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.CountryOfBirth</td>
+<td>string</td>
+<td>Country of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address</td>
+<td>object</td>
+<td>Address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Address.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier</td>
+<td>object</td>
+<td>Signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>Applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>Applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td>If you would like to opt out of electronic communications.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Title</td>
+<td>string</td>
+<td>Title of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>First name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>Last name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.DateOfBirth</td>
+<td>date-time</td>
+<td>Date of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Email</td>
+<td>string</td>
+<td>Email address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.Phone</td>
+<td>string</td>
+<td>Phone number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.PhoneOther</td>
+<td>string</td>
+<td>Secondary contact number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Signatories.IsPoliticallyExposedPerson</td>
+<td>boolean</td>
+<td>Whether applicant is politically exposed.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.CompanyRegistrationNumber</td>
+<td>string</td>
+<td>Register number of the company.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.TaxId</td>
+<td>string</td>
+<td>Tax identity of the company.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Lei</td>
+<td>string</td>
+<td>LEI of the Company.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.CountryOfIncorporation</td>
+<td>string</td>
+<td>Country of incorporation of the company.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.DateOfIncorporation</td>
+<td>date-time</td>
+<td>Date of incorporation of the company.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.NatureOfActivities</td>
+<td>string</td>
+<td>Nature of activities that the company performs.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.BearerSharesAreInIssue</td>
+<td>boolean</td>
+<td>Bearer shares are in issue.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.NameOfRegulator</td>
+<td>string</td>
+<td>Name of regulator.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.RegulatorReferenceNumber</td>
+<td>string</td>
+<td>Regulator reference number.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.ContactIsDirectorOrSignificantShareholder</td>
+<td>boolean</td>
+<td>Whether the contact is a signatory on the account.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.CompanyType</td>
+<td>enum</td>
+<td>Plc = 0, Ltd = 1, Llp = 2, Partnership = 3.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.Name<span class="required">required</span></td>
+<td>string</td>
+<td>Name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.CorporateDetails.TradingName</td>
+<td>string</td>
+<td>Trading name of the corporate applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails</td>
+<td>object</td>
+<td>Used for Individual applicants.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.CitizenshipCountryCode</td>
+<td>string</td>
+<td>Citizenship country code.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.BirthCountryCode</td>
+<td>string</td>
+<td>Birth country code.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress</td>
+<td>object</td>
+<td>Home address of individual applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.HomeAddress.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress</td>
+<td>object</td>
+<td>Mailing address of individual applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.MailingAddress.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Gender<span class="required">required</span></td>
+<td>enum</td>
+<td>Male = 1, Female = 2.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.UserName</td>
+<td>string</td>
+<td>User Name of individual applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.UserId</td>
+<td>string</td>
+<td>User ID of individual applicant.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidences</td>
+<td>array</td>
+<td>Applicant&#39;s tax residence.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidences.CountryCode</td>
+<td>string</td>
+<td>Tax residence country code.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidences.From</td>
+<td>date-time</td>
+<td>From date that applicant held tax residence in that country.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidences.To</td>
+<td>date-time</td>
+<td>To date that applicant held tax residence in that country.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidences.Identification</td>
+<td>string</td>
+<td>Tax residence identification.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.TaxResidences.NoDocument</td>
+<td>boolean</td>
+<td>If the applicant does not hold a identification document.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.UsPerson</td>
+<td>boolean</td>
+<td>Select if applicant is from the US.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.SourceOfWealth</td>
+<td>string</td>
+<td>Provide the applicant&#39;s source of wealth.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Profession</td>
+<td>string</td>
+<td>Provide the applicant&#39;s profession.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier</td>
+<td>object</td>
+<td>Individual&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>Applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>Applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td>If you would like to opt out of electronic communications.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Title</td>
+<td>string</td>
+<td>Title: Mr, Mrs, Ms, Miss, Doctor, Lady, Prof and Sir.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>First name of individual.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>Last name of individual.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.DateOfBirth</td>
+<td>date-time</td>
+<td>Date of birth of the individual.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Email</td>
+<td>string</td>
+<td>Email address of the individual.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.Phone</td>
+<td>string</td>
+<td>Primary contact number of the individual.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.PhoneOther</td>
+<td>string</td>
+<td>Other phone of the individual.</td>
+</tr>
+<tr>
+<td>Applicants.IndividualDetails.IsPoliticallyExposedPerson</td>
+<td>boolean</td>
+<td>Whether applicant is politically exposed.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails</td>
+<td>object</td>
+<td>Used for Trust applicants.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.TrustName<span class="required">required</span></td>
+<td>string</td>
+<td>Name of the trust.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.NatureOfTrust</td>
+<td>enum</td>
+<td>Nature of the trust. Bare = 0, Charitable = 1, Will = 2, Interest in possession = 3, Discretionary = 4, Accumulation = 5, Settlor interested = 6, Granted = 7, Single Person Pension = 8, Multiple Member Personal Pension = 9, Single Member SSAS = 10, Multiple Member SSAS = 11, Loan = 12.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Lei</td>
+<td>string</td>
+<td>LEI of trust.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.DateOfEstablishment</td>
+<td>date-time</td>
+<td>Date trust was established.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.TaxDomicile</td>
+<td>string</td>
+<td>Tax domicile of trust.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.BeneficiariesHaveVestedRights</td>
+<td>boolean</td>
+<td>If beneficiaries have vested rights.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address</td>
+<td>object</td>
+<td>Address of Trust.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Address.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories</td>
+<td>array</td>
+<td>Signatories of the trust.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Capacity<span class="required">required</span></td>
+<td>enum</td>
+<td>Director = 0, SoleDirector = 1, CompanySecretary = 2, Partner = 3, Trustee = 4, SignedUnderSeal = 5, SignificantShareholder = 6, Beneficiary = 7.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.TaxNumber</td>
+<td>string</td>
+<td>Tax number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.CountryOfBirth</td>
+<td>string</td>
+<td>Country of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address</td>
+<td>object</td>
+<td>Address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Address.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier</td>
+<td>object</td>
+<td>Signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>Applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>Applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td>If you would like to opt out of electronic communications.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Title</td>
+<td>string</td>
+<td>Title of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>First name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>Last name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.DateOfBirth</td>
+<td>date-time</td>
+<td>Date of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Email</td>
+<td>string</td>
+<td>Email address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.Phone</td>
+<td>string</td>
+<td>Phone number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.PhoneOther</td>
+<td>string</td>
+<td>Secondary contact number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.Signatories.IsPoliticallyExposedPerson</td>
+<td>boolean</td>
+<td>Whether applicant is politically exposed.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees</td>
+<td>array</td>
+<td>Corporate trustees of the trust.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress</td>
+<td>object</td>
+<td>Business address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.BusinessAddress.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress</td>
+<td>object</td>
+<td>Mailing address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.MailingAddress.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.CompanyRegistrationNumber</td>
+<td>string</td>
+<td>Register number of the company.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.TaxId</td>
+<td>string</td>
+<td>Tax identity of the company.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Lei</td>
+<td>string</td>
+<td>LEI of the Company.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.NameOfRegulator</td>
+<td>string</td>
+<td>Name of regulator.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.RegulatorReferenceNumber</td>
+<td>string</td>
+<td>Regulator reference number.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director</td>
+<td>object</td>
+<td>Director of the corporate trustee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.TaxNumber</td>
+<td>string</td>
+<td>Tax number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.CountryOfBirth</td>
+<td>string</td>
+<td>Country of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address</td>
+<td>object</td>
+<td>Address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Addressee</td>
+<td>string</td>
+<td>Addressee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Street<span class="required">required</span></td>
+<td>string</td>
+<td>Address line 1.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Line2</td>
+<td>string</td>
+<td>Address line 2.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Line3</td>
+<td>string</td>
+<td>Address line 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Postcode</td>
+<td>string</td>
+<td>Postcode of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.Suburb</td>
+<td>string</td>
+<td>Suburb of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.CountryCode</td>
+<td>string</td>
+<td>Country code of address.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Address.IsRegistered</td>
+<td>boolean</td>
+<td>Whether address is registered.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier</td>
+<td>object</td>
+<td>Signatory&#39;s national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier.CountryOfNationality</td>
+<td>string</td>
+<td>Applicant&#39;s country of national identifier.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier.IdentifierType</td>
+<td>enum</td>
+<td>NoDocument = 0, NationalId = 1, Passport = 2, TaxNumber = 3, LEI = 4.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.NationalIdentifier.IdentifierCode</td>
+<td>string</td>
+<td>Applicant&#39;s national identifier code.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.ReceiveCommunicationByPost</td>
+<td>boolean</td>
+<td>If you would like to opt out of electronic communications.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Title</td>
+<td>string</td>
+<td>Title of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>First name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>Last name of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.DateOfBirth</td>
+<td>date-time</td>
+<td>Date of birth of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Email</td>
+<td>string</td>
+<td>Email address of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.Phone</td>
+<td>string</td>
+<td>Phone number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.PhoneOther</td>
+<td>string</td>
+<td>Secondary contact number of signatory.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Director.IsPoliticallyExposedPerson</td>
+<td>boolean</td>
+<td>Whether applicant is politically exposed.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.CompanyType</td>
+<td>enum</td>
+<td>Plc = 0, Ltd = 1, Llp = 2, Partnership = 3.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.Name<span class="required">required</span></td>
+<td>string</td>
+<td>Name of the corporate trustee.</td>
+</tr>
+<tr>
+<td>Applicants.TrustDetails.CorporateTrustees.TradingName</td>
+<td>string</td>
+<td>Trading name of the corporate trustee.</td>
+</tr>
+<tr>
+<td>Applicants.OwnerAdviserId</td>
+<td>integer</td>
+<td>Owner adviser ID to create the application under.</td>
+</tr>
+<tr>
+<td>Applicants.ApplicantType<span class="required">required</span></td>
+<td>enum</td>
+<td>Individual = 0, Corporate = 1, Trust = 2.</td>
+</tr>
+<tr>
+<td>Accounts</td>
+<td>array</td>
+<td>Array of accounts to be opened with the application. Must be linked to an included applicant.</td>
+</tr>
+<tr>
+<td>Accounts.Fees</td>
+<td>array</td>
+<td>Account fees.</td>
+</tr>
+<tr>
+<td>Accounts.Fees.Type</td>
+<td>string</td>
+<td>Fee type.</td>
+</tr>
+<tr>
+<td>Accounts.Fees.Id<span class="required">required</span></td>
+<td>string</td>
+<td>Fee ID.</td>
+</tr>
+<tr>
+<td>Accounts.Fees.Rate</td>
+<td>double</td>
+<td>Fee rate.</td>
+</tr>
+<tr>
+<td>Accounts.Fees.Unit</td>
+<td>string</td>
+<td>Fee unit, dollars or percentage.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts</td>
+<td>array</td>
+<td>Bank accounts.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.SortCode</td>
+<td>string</td>
+<td>Bank account sort code.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.Bic</td>
+<td>string</td>
+<td>Bank identifier code (BIC) of your banking institution.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.Iban</td>
+<td>string</td>
+<td>International bank account number (IBAN) of your banking institution.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.RoutingNumber</td>
+<td>string</td>
+<td>Routing number of banking institution.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.AccountNumber</td>
+<td>string</td>
+<td>Bank account number.</td>
+</tr>
+<tr>
+<td>Accounts.BankAccounts.AccountName</td>
+<td>string</td>
+<td>Bank account name.</td>
+</tr>
+<tr>
+<td>Accounts.SourceOfFunds</td>
+<td>string</td>
+<td>Contribution source.</td>
+</tr>
+<tr>
+<td>Accounts.OngoingFeeAmount</td>
+<td>double</td>
+<td>Ongoing fee amount.</td>
+</tr>
+<tr>
+<td>Accounts.ReinvestIncome</td>
+<td>boolean</td>
+<td>Reinvest income.</td>
+</tr>
+<tr>
+<td>Accounts.ProductId</td>
+<td>string</td>
+<td>Product ID.</td>
+</tr>
+<tr>
+<td>Accounts.ProductProviderReference</td>
+<td>string</td>
+<td>Product provider reference.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContribution</td>
+<td>object</td>
+<td>Regular cash contributions to the account.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContribution.Amount</td>
+<td>double</td>
+<td>Amount of the regular contribution.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContribution.Method<span class="required">required</span></td>
+<td>enum</td>
+<td>ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContribution.Frequency</td>
+<td>enum</td>
+<td>Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal</td>
+<td>object</td>
+<td>Regular cash withdrawals from the account.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Amount</td>
+<td>double</td>
+<td>Amount of the regular contribution.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Method<span class="required">required</span></td>
+<td>enum</td>
+<td>ElectronicTransfer (not applicable for regular contribution) = 2, Cheque = 3, StandingOrder (for regular contribution only) = 4.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Frequency</td>
+<td>enum</td>
+<td>Monthly = 1, ThreeMonthly = 3, SixMonthly = 6, Annually = 12, Quarterly = 13, HalfYearly = 14.</td>
+</tr>
+<tr>
+<td>Accounts.Region</td>
+<td>enum</td>
+<td>Australia = 0, International = 1, UnitedKingdom = 2.</td>
+</tr>
+<tr>
+<td>Accounts.CurrencyCode</td>
+<td>string</td>
+<td>The currency code of the account.</td>
+</tr>
+<tr>
+<td>Accounts.AdviserReference</td>
+<td>string</td>
+<td>Adviser reference..</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers</td>
+<td>array</td>
+<td>In specie cash stock transfers.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.TransferType<span class="required">required</span></td>
+<td>enum</td>
+<td>StockAndCash = 0, CashOnly = 1.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.CedingPartyId</td>
+<td>string</td>
+<td>Ceding party ID.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.CedingAccountNumber</td>
+<td>string</td>
+<td>Ceding account number.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails</td>
+<td>array</td>
+<td>In specie cash stock transfer details.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.SecurityIsin<span class="required">required</span></td>
+<td>string</td>
+<td>Security ISIN of stock transfer.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.Quantity</td>
+<td>double</td>
+<td>Quantity of stock transfer.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.InSpecieCashStockTransferDetails.BookCost</td>
+<td>double</td>
+<td>Book cost of stock transfer.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.CashTransferAmount</td>
+<td>double</td>
+<td>Cash transfer amount.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.AmountUsedThisYear</td>
+<td>double</td>
+<td>Amount used this year.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.FeeAmount</td>
+<td>double</td>
+<td>Fee amount.</td>
+</tr>
+<tr>
+<td>Accounts.InSpecieCashStockTransfers.FeePercent</td>
+<td>double</td>
+<td>Fee percent.</td>
+</tr>
+<tr>
+<td>Accounts.IsTradeFreezeOn</td>
+<td>boolean</td>
+<td>If a trade freeze is on.</td>
+</tr>
+<tr>
+<td>Accounts.TradeFreezeReason</td>
+<td>enum</td>
+<td>TransferIn = 0, TransferOut = 1, Incident = 2, Deceased = 3, RemovalOfAdviser = 4, AdviserInstructed = 5, Bespoke = 6.</td>
+</tr>
+<tr>
+<td>Accounts.TradeFreezeNote</td>
+<td>string</td>
+<td>Trade freeze note.</td>
+</tr>
+<tr>
+<td>Accounts.IllustrationData</td>
+<td>object</td>
+<td>Illustration data.</td>
+</tr>
+<tr>
+<td>Accounts.IllustrationData.CostsAndCharges</td>
+<td>array</td>
+<td>Cost and charges.</td>
+</tr>
+<tr>
+<td>Accounts.IllustrationData.CostsAndCharges.Type<span class="required">required</span></td>
+<td>enum</td>
+<td>OneOffCharges = 0, OngoingCharges = 1, TransactionCharges = 2, IncidentalCharges = 3, ThirdPartyPayment = 4.</td>
+</tr>
+<tr>
+<td>Accounts.IllustrationData.CostsAndCharges.Amount</td>
+<td>double</td>
+<td>Amount of cost and charge.</td>
+</tr>
+<tr>
+<td>Accounts.Name</td>
+<td>string</td>
+<td>Account name.</td>
+</tr>
+<tr>
+<td>Accounts.RegisteredName</td>
+<td>string</td>
+<td>Account registered name.</td>
+</tr>
+<tr>
+<td>Accounts.ShortName</td>
+<td>string</td>
+<td>Account short name.</td>
+</tr>
+<tr>
+<td>Accounts.AccountType<span class="required">required</span></td>
+<td>enum</td>
+<td>Isa = 0, Gia = 1, OffshoreBond = 2, Qrops = 3, Rats = 4, Sipp = 5, PraemiumRetirementAccount = 6, Pera = 7, PersonalPension = 8, GroupSipp = 9, Ssas = 10, Jisa = 11, OnshoreBond = 12.</td>
+</tr>
+<tr>
+<td>Accounts.PdsId<span class="required">required</span></td>
+<td>string</td>
+<td>PDS ID of account.</td>
+</tr>
+<tr>
+<td>Accounts.Models</td>
+<td>array</td>
+<td>Account models.</td>
+</tr>
+<tr>
+<td>Accounts.Models.Code<span class="required">required</span></td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>Accounts.Models.Proportion</td>
+<td>double</td>
+<td>Proportion of model.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions</td>
+<td>array</td>
+<td>Account exclusions.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security</td>
+<td>object</td>
+<td>Security code of the exclusion.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security.Code<span class="required">required</span></td>
+<td>string</td>
+<td>Security code of the security.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security.Exchange<span class="required">required</span></td>
+<td>string</td>
+<td>Exchange code of the security.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment</td>
+<td>object</td>
+<td>Initial investment of account.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Cash</td>
+<td>double</td>
+<td>Select if the initial investment will include cash.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Shares</td>
+<td>double</td>
+<td>Select if the initial investment will include shares.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
+<td>enum</td>
+<td>ElectronicTransfer = 2, Cheque = 3.</td>
+</tr>
+<tr>
+<td>Accounts.OwnerAdviserId</td>
+<td>integer</td>
+<td>Owner adviser ID to create the application under.</td>
+</tr>
+<tr>
+<td>AdviserId<span class="required">required</span></td>
+<td>integer</td>
+<td>Adviser ID to create the application under.</td>
+</tr>
+<tr>
+<td>OwnerAdviserId</td>
+<td>integer</td>
+<td>Owner adviser ID to create the application under.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ApplicationId</td>
+<td>string</td>
+<td>Unique application ID to be used as an application reference.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='post-individual-applicant-amp-general-investment-account'><span class="post">POST</span> Individual Applicant &amp; General Investment Account</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application</p>
 </blockquote>
@@ -912,7 +2629,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1090,7 +2807,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-2'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-3'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1657,7 +3374,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1686,7 +3403,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1926,7 +3643,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-3'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-4'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2623,7 +4340,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2652,7 +4369,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2887,7 +4604,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-4'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-5'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3699,7 +5416,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3728,7 +5445,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -3906,7 +5623,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-5'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-6'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4473,7 +6190,7 @@
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"ApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1bdac67-39a0-4835-8168-e99f44f01iu7"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-8'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4489,6 +6206,82 @@
 </tbody></table>
 
 <p><br/></p>
+<h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
+</blockquote>
+
+<p>This endpoint returns a PDF version of the application form for the specified account. This is a confirmation to the client of the details of their account. The PDF is returned directly as the response.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
+<span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
+<span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td>enum</td>
+<td>Adviser = 0, Investor = 1</td>
+</tr>
+<tr>
+<td>FormType</td>
+<td>enum</td>
+<td>Digital = 0, Paper = 1</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="err">Complete</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">stream</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">file</span><span class="w"> </span><span class="err">content.</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
 <h3 id='get-application-status'><span class="get">GET</span> Application Status</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/application/{ApplicationId}/status</p>
@@ -4502,7 +6295,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-10'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4560,7 +6353,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-9'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4592,315 +6385,6 @@
 <td>AccountsStatus.Status</td>
 <td>enum</td>
 <td>Draft = 0, AwaitingSignature = 1, AwaitingApproval = 2, AwaitingFund = 3, Funded = 4, Trading = 5, ClosureRequested = 6, Closed = 7, Deleted = 8.</td>
-</tr>
-</tbody></table>
-
-<p><br/></p>
-<h1 id='app-form'>App Form</h1><h3 id='get-app-form'><span class="get">GET</span> App Form</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/appform</p>
-</blockquote>
-
-<p>This endpoint returns a PDF version of the application form for the specified account. This is a confirmation to the client of the details of their account. The PDF is returned directly as the response.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
-<span class="na">Recipient</span><span class="pi">:</span> <span class="m">0</span>
-<span class="na">FormType</span><span class="pi">:</span> <span class="m">0</span>
-</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountId<span class="required">required</span></td>
-<td>string</td>
-<td>Account ID.</td>
-</tr>
-<tr>
-<td>Recipient</td>
-<td>enum</td>
-<td>Adviser = 0, Investor = 1</td>
-</tr>
-<tr>
-<td>FormType</td>
-<td>enum</td>
-<td>Digital = 0, Paper = 1</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="err">Complete</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">stream</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">file</span><span class="w"> </span><span class="err">content.</span><span class="w">
-</span></code></pre></div>
-<p><br/></p>
-<h1 id='ceding-parties'>Ceding Parties</h1><h3 id='get-ceding-parties'><span class="get">GET</span> Ceding Parties</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/cedingparties</p>
-</blockquote>
-
-<p>This endpoint returns the ceding party details for the service.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-9'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountType</span><span class="pi">:</span> <span class="m">15</span>
-<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
-</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountType</td>
-<td>enum</td>
-<td>ISA = 15, GIA = 16.</td>
-</tr>
-<tr>
-<td>Search<span class="required">required</span></td>
-<td>string</td>
-<td>Search for Ceding party.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"CedingPartyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CedingPartyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Ceding Party"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"AcceptsElectronicTransfer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-8'>Response Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>CedingPartyId</td>
-<td>string</td>
-<td>Ceding party ID.</td>
-</tr>
-<tr>
-<td>CedingPartyName</td>
-<td>string</td>
-<td>Ceding party name.</td>
-</tr>
-<tr>
-<td>AcceptsElectronicTransfer</td>
-<td>boolean</td>
-<td>Ceding party accepts electronic transfers.</td>
-</tr>
-</tbody></table>
-
-<p><br/></p>
-<h1 id='securities'>Securities</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
-</blockquote>
-
-<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-10'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
-<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
-
-<span class="c1"># Search by security IDs</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK1</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK2</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK3</span>
-
-<span class="c1"># Search by security codes</span>
-<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.LSE</span>
-<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">ROC.LON</span>
-</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Search</td>
-<td>string</td>
-<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
-</tr>
-<tr>
-<td>SecurityIds</td>
-<td>array</td>
-<td>A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.</td>
-</tr>
-<tr>
-<td>SecurityCodes</td>
-<td>array</td>
-<td>A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK94"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Isin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU000000ROC4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LSE"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-9'>Response Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Id</td>
-<td>string</td>
-<td>Security ID.</td>
-</tr>
-<tr>
-<td>Code</td>
-<td>string</td>
-<td>Security code.</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>string</td>
-<td>Description.</td>
-</tr>
-<tr>
-<td>Isin</td>
-<td>string</td>
-<td>ISIN of security.</td>
-</tr>
-<tr>
-<td>Exchange</td>
-<td>string</td>
-<td>Exchange of security.</td>
-</tr>
-<tr>
-<td>Currency</td>
-<td>string</td>
-<td>Currency of security.</td>
 </tr>
 </tbody></table>
 
@@ -4981,6 +6465,313 @@
 <td>UserId</td>
 <td>integer</td>
 <td>User ID.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h1 id='trading-sma'>Trading SMA</h1><h3 id='get-account-model-weightings'><span class="get">GET</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+</blockquote>
+
+<p>This endpoint returns the account model weightings for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-12'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">UK1000000112</span>
+</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ROC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-11'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td>double</td>
+<td>Percentage of model.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+</blockquote>
+
+<p>This endpoint allows you to modify the account model weightings for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-13'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK1000000112"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">    
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-7'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings<span class="required">required</span></td>
+<td>array</td>
+<td>Account model weighting.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.Percentage</td>
+<td>double</td>
+<td>Percentage of model.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h1 id='investments'>Investments</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
+</blockquote>
+
+<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-14'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
+<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
+
+<span class="c1"># Search by security IDs</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK1</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK2</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">UK3</span>
+
+<span class="c1"># Search by security codes</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.LSE</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">ROC.LON</span>
+</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Search</td>
+<td>string</td>
+<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
+</tr>
+<tr>
+<td>SecurityIds</td>
+<td>array</td>
+<td>A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.</td>
+</tr>
+<tr>
+<td>SecurityCodes</td>
+<td>array</td>
+<td>A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UK94"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Isin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU000000ROC4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LSE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-12'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Security ID.</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description.</td>
+</tr>
+<tr>
+<td>Isin</td>
+<td>string</td>
+<td>ISIN of security.</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>string</td>
+<td>Exchange of security.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>string</td>
+<td>Currency of security.</td>
 </tr>
 </tbody></table>
 

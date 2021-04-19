@@ -213,7 +213,7 @@
       <script src="../javascripts/all.js"></script>
   </head>
 
-  <body class="products products_sl_uk" data-languages="[]">
+  <body class="products products_s_au" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -230,7 +230,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#sso-login-united-kingdom" class="toc-h1 toc-link" data-title="SSO Login - United Kingdom">SSO Login - United Kingdom</a>
+            <a href="#single-sign-on-australia" class="toc-h1 toc-link" data-title="Single Sign-On - Australia">Single Sign-On - Australia</a>
           </li>
           <li>
             <a href="#authorisation" class="toc-h1 toc-link" data-title="Authorisation">Authorisation</a>
@@ -241,7 +241,21 @@
               </ul>
           </li>
           <li>
-            <a href="#sso-login" class="toc-h1 toc-link" data-title="SSO Login">SSO Login</a>
+            <a href="#saml" class="toc-h1 toc-link" data-title="SAML">SAML</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#set-up-identity-provider" class="toc-h2 toc-link" data-title="Set up Identity Provider">Set up Identity Provider</a>
+                  </li>
+                  <li>
+                    <a href="#destination-applications" class="toc-h2 toc-link" data-title="Destination applications">Destination applications</a>
+                  </li>
+                  <li>
+                    <a href="#post-saml-login" class="toc-h2 toc-link" data-title="POST SAML Login"><span class="post">POST</span> SAML Login</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sso" class="toc-h1 toc-link" data-title="SSO">SSO</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#post-sso-login" class="toc-h2 toc-link" data-title="POST SSO Login"><span class="post">POST</span> SSO Login</a>
@@ -258,15 +272,15 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='../openapifiles/sl.uk.json'>OpenAPI File</a></li>
+            <li><a href='../openapifiles/s.au.json'>OpenAPI File</a></li>
             <li><a href="https://devtest.onpraemium.com/">Back to developer portal</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='sso-login-united-kingdom'>SSO Login - United Kingdom</h1>
-<p>This product allows access to users and SSO login.</p>
+        <h1 id='single-sign-on-australia'>Single Sign-On - Australia</h1>
+<p>This product allows access to users, SAML and SSO.</p>
 <h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
@@ -358,7 +372,74 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='sso-login'>SSO Login</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
+<h1 id='saml'>SAML</h1><h3 id='set-up-identity-provider'>Set up Identity Provider</h3>
+<p>Identity Provider (IdP) has to be set up before you can use the SAML SSO. To set up IdP, you will need to provide the following:</p>
+
+<ul>
+<li>X509 Certificate</li>
+<li>Issuer of SAML token</li>
+</ul>
+<h3 id='destination-applications'>Destination applications</h3>
+<p>To determine a destination application that users will be landing, you will need to add &quot;Application&quot; attribute/value into your SAML Assertion/Token. The followings are the supported values:</p>
+
+<ul>
+<li>Platform (Platform &amp; Reporting)</li>
+<li>Adviser (Adviser Portal)</li>
+<li>Investor (Investor Portal)</li>
+</ul>
+
+<p>If no &quot;Application&quot; attribute/value is provided, users will SSO into Platform &amp; Reporting by default.</p>
+<h3 id='post-saml-login'><span class="post">POST</span> SAML Login</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://saml.onpraemium.com/login</p>
+</blockquote>
+
+<p>This endpoint returns a SAML token for login to Praemium platform.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Content-Type</span><span class="pi">:</span> <span class="s">application/x-www-form-urlencoded</span>
+</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type<span class="required">required</span></td>
+<td>string</td>
+<td>Content type needs to be <strong>application/x-www-form-urlencoded</strong>.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Body Parameter Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="s">SAMLResponse={base64 encoded string of your SAML token}</span>
+</code></pre></div><h5 id='body-parameters'>Body Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SAMLResponse</td>
+<td>string</td>
+<td>The value of the SAMLResponse parameter is the base64 encoding of an SAML token.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># 302 - Redirect</span>
+<span class="s2">"</span><span class="s">https://login.onpraemium.com/useraccount/sso?token=******"</span>
+</code></pre></div><h1 id='sso'>SSO</h1><h3 id='post-sso-login'><span class="post">POST</span> SSO Login</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/ssologin</p>
 </blockquote>
@@ -371,7 +452,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -401,7 +482,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"Application"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="nl">"Application"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h5 id='request-parameter-body-2'>Request Parameter - Body</h5>
 <table><thead>
@@ -451,7 +532,7 @@
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/user/{username}</p>
 </blockquote>
 
-<p>This endpoint returns the user links for the account.</p>
+<p>This endpoint returns user ID by username.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -459,7 +540,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -499,7 +580,7 @@
 <tr>
 <td>UserName<span class="required">required</span></td>
 <td>string</td>
-<td>Username.</td>
+<td>User Name.</td>
 </tr>
 </tbody></table>
 
@@ -521,7 +602,7 @@
 <tr>
 <td>UserId</td>
 <td>integer</td>
-<td>User ID.</td>
+<td>User ID</td>
 </tr>
 </tbody></table>
 

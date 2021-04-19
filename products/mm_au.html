@@ -241,14 +241,6 @@
               </ul>
           </li>
           <li>
-            <a href="#securities" class="toc-h1 toc-link" data-title="Securities">Securities</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-securities" class="toc-h2 toc-link" data-title="GET Securities"><span class="get">GET</span> Securities</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#model-manager" class="toc-h1 toc-link" data-title="Model Manager">Model Manager</a>
               <ul class="toc-list-h2">
                   <li>
@@ -271,6 +263,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#investments" class="toc-h1 toc-link" data-title="Investments">Investments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-securities" class="toc-h2 toc-link" data-title="GET Securities"><span class="get">GET</span> Securities</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='../openapifiles/mm.au.json'>OpenAPI File</a></li>
@@ -281,7 +281,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='model-manager-australia'>Model Manager - Australia</h1>
-<p>This product allows access to models, model performance, model holdings, model approximate FUM, model weight adjustment and securities.</p>
+<p>This product allows access to models and securities.</p>
 <h1 id='authorisation'>Authorisation</h1><h3 id='post-access-token'><span class="post">POST</span> Access Token</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/token</p>
@@ -373,150 +373,6 @@
 </tbody></table>
 
 <p><br/></p>
-<h1 id='securities'>Securities</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
-</blockquote>
-
-<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
-<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
-<span class="na">PdsId</span><span class="pi">:</span> <span class="s">AU123</span>
-
-<span class="c1"># Search by security IDs</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU1</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU2</span>
-<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU3</span>
-
-<span class="c1"># Search by security codes</span>
-<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.ASX</span>
-<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">PPS.ASX</span>
-</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Search</td>
-<td>string</td>
-<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
-</tr>
-<tr>
-<td>PdsId</td>
-<td>string</td>
-<td>PDS ID.</td>
-</tr>
-<tr>
-<td>SecurityIds</td>
-<td>array</td>
-<td>A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.</td>
-</tr>
-<tr>
-<td>SecurityCodes</td>
-<td>array</td>
-<td>A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU94"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Isin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU000000BHP4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-2'>Response Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Id</td>
-<td>string</td>
-<td>Security ID.</td>
-</tr>
-<tr>
-<td>Code</td>
-<td>string</td>
-<td>Security code.</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>string</td>
-<td>Description.</td>
-</tr>
-<tr>
-<td>Isin</td>
-<td>string</td>
-<td>ISIN of security.</td>
-</tr>
-<tr>
-<td>Exchange</td>
-<td>string</td>
-<td>Exchange of security.</td>
-</tr>
-<tr>
-<td>Currency</td>
-<td>string</td>
-<td>Currency of security.</td>
-</tr>
-<tr>
-<td>IsAllowedByApl</td>
-<td>boolean</td>
-<td>Is the security allowed by the approved product list. (Only returned when PdsId is supplied)</td>
-</tr>
-</tbody></table>
-
-<p><br/></p>
 <h1 id='model-manager'>Model Manager</h1><h3 id='get-models'><span class="get">GET</span> Models</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/models</p>
@@ -530,7 +386,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-2'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -581,7 +437,7 @@
     </span><span class="nl">"LastTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-30T00:00:00+10:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-2'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -645,7 +501,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-3'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -675,7 +531,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
 <span class="na">ValuationDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -720,7 +576,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-3'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -789,7 +645,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-4'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -820,7 +676,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-2'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -894,7 +750,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-4'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -963,7 +819,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-5'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -993,7 +849,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
 <span class="na">ValuationDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1046,7 +902,7 @@
     </span><span class="nl">"EstimatedYield"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1100,7 +956,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-6'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1129,7 +985,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
-</code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1166,7 +1022,7 @@
     </span><span class="nl">"Target"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0240</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-6'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1215,7 +1071,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-7'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1287,6 +1143,150 @@
 </blockquote>
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">Accepted</span><span class="w">
 </span></code></pre></div>
+<p><br/></p>
+<h1 id='investments'>Investments</h1><h3 id='get-securities'><span class="get">GET</span> Securities</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securities</p>
+</blockquote>
+
+<p>This endpoint returns the security details for the service. If using search term, only top 10 results will be returned.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-8'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Search by string</span>
+<span class="na">Search</span><span class="pi">:</span> <span class="s">BHP</span>
+<span class="na">PdsId</span><span class="pi">:</span> <span class="s">AU123</span>
+
+<span class="c1"># Search by security IDs</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU1</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU2</span>
+<span class="na">SecurityIds</span><span class="pi">:</span> <span class="s">AU3</span>
+
+<span class="c1"># Search by security codes</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.ASX</span>
+<span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">PPS.ASX</span>
+</code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Search</td>
+<td>string</td>
+<td>Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.</td>
+</tr>
+<tr>
+<td>PdsId</td>
+<td>string</td>
+<td>PDS ID.</td>
+</tr>
+<tr>
+<td>SecurityIds</td>
+<td>array</td>
+<td>A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.</td>
+</tr>
+<tr>
+<td>SecurityCodes</td>
+<td>array</td>
+<td>A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU94"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Isin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU000000BHP4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-7'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>string</td>
+<td>Security ID.</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Description.</td>
+</tr>
+<tr>
+<td>Isin</td>
+<td>string</td>
+<td>ISIN of security.</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>string</td>
+<td>Exchange of security.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>string</td>
+<td>Currency of security.</td>
+</tr>
+<tr>
+<td>IsAllowedByApl</td>
+<td>boolean</td>
+<td>Is the security allowed by the approved product list. (Only returned when PdsId is supplied)</td>
+</tr>
+</tbody></table>
+
 <p><br/></p>
 
       </div>
