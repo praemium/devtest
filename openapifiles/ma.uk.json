@@ -1,5 +1,53 @@
 {
   "paths": {
+    "/api/user/{username}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "operationId": "GetUser",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "path",
+            "required": true,
+            "description": "Username.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/appform": {
       "get": {
         "responses": {
@@ -482,54 +530,6 @@
         ]
       }
     },
-    "/api/user/{username}": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        },
-        "operationId": "GetUser",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "userName",
-            "in": "path",
-            "required": true,
-            "description": "Username.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/token": {
       "post": {
         "responses": {
@@ -567,6 +567,85 @@
     }
   },
   "definitions": {
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "User": {
+      "properties": {
+        "UserId": {
+          "description": "User ID.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "AddressType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "Address": {
+      "properties": {
+        "Type": {
+          "description": "",
+          "$ref": "#/definitions/AddressType"
+        },
+        "Line1": {
+          "description": "",
+          "type": "string"
+        },
+        "Line2": {
+          "description": "",
+          "type": "string"
+        },
+        "Line3": {
+          "description": "",
+          "type": "string"
+        },
+        "SuburbOrCounty": {
+          "description": "",
+          "type": "string"
+        },
+        "TownOrCityOrState": {
+          "description": "",
+          "type": "string"
+        },
+        "Postcode": {
+          "description": "",
+          "type": "string"
+        },
+        "Country": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Country",
+        "Line1",
+        "Postcode",
+        "SuburbOrCounty",
+        "TownOrCityOrState",
+        "Type"
+      ],
+      "type": "object"
+    },
     "FeeType": {
       "format": "int32",
       "type": "integer",
@@ -2361,19 +2440,6 @@
       "required": [],
       "type": "object"
     },
-    "Security": {
-      "properties": {
-        "Code": {
-          "description": "",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "HoldingSecurity": {
       "properties": {
         "AssetClassDescription": {
@@ -2730,17 +2796,6 @@
       "required": [],
       "type": "object"
     },
-    "User": {
-      "properties": {
-        "UserId": {
-          "description": "User ID.",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "TokenResponse": {
       "properties": {
         "token_type": {
@@ -2767,7 +2822,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.19",
+    "version": "2021.04.22",
     "title": "Public API"
   }
 }
