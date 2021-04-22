@@ -341,6 +341,12 @@
                   <li>
                     <a href="#get-user" class="toc-h2 toc-link" data-title="GET User"><span class="get">GET</span> User</a>
                   </li>
+                  <li>
+                    <a href="#post-user" class="toc-h2 toc-link" data-title="POST User"><span class="post">POST</span> User</a>
+                  </li>
+                  <li>
+                    <a href="#patch-user-accounts" class="toc-h2 toc-link" data-title="PATCH User Accounts"><span class="patch">PATCH</span> User Accounts</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -10010,7 +10016,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><br/></p>
 <h1 id='users'>Users</h1><h3 id='get-user'><span class="get">GET</span> User</h3>
 <blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/user/{username}</p>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/users</p>
 </blockquote>
 
 <p>This endpoint returns user ID by username.</p>
@@ -10047,10 +10053,10 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </tbody></table>
 
 <blockquote>
-<p><strong>Request Parameters - Path Examples</strong></p>
+<p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">UserName</span><span class="pi">:</span> <span class="s">john_smith</span>
-</code></pre></div><h5 id='request-parameters-path-2'>Request Parameters - Path</h5>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Username</span><span class="pi">:</span> <span class="s">john_smith</span>
+</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10059,7 +10065,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </tr>
 </thead><tbody>
 <tr>
-<td>UserName<span class="required">required</span></td>
+<td>Username<span class="required">required</span></td>
 <td>string</td>
 <td>User name.</td>
 </tr>
@@ -10088,6 +10094,318 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </tbody></table>
 
 <p><br/></p>
+<h3 id='post-user'><span class="post">POST</span> User</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/user</p>
+</blockquote>
+
+<p>This endpoint allows creating investor.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-21'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stephen"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"Addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit 1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Line2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Test Street"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Line3"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"SuburbOrCounty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melbourne"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"TownOrCityOrState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"AdviserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">76681</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-11-01T00:00:00.0000000+10:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aefdsg@praemium.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Gender"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"GenerateGetStartedToken"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"JobTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Developer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melbourne"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0400000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PhoneOther"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0498765432"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Team"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team AB"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-14'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Name<span class="required">required</span></td>
+<td>object</td>
+<td>The user&#39;s name.</td>
+</tr>
+<tr>
+<td>Name.Title</td>
+<td>string</td>
+<td>The user&#39;s title.</td>
+</tr>
+<tr>
+<td>Name.FirstName<span class="required">required</span></td>
+<td>string</td>
+<td>The user&#39;s first name.</td>
+</tr>
+<tr>
+<td>Name.LastName<span class="required">required</span></td>
+<td>string</td>
+<td>The user&#39;s last name.</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>enum</td>
+<td>Male = 1, Female = 2, or null.</td>
+</tr>
+<tr>
+<td>Email<span class="required">required</span></td>
+<td>string</td>
+<td>The user&#39;s email address.</td>
+</tr>
+<tr>
+<td>DateOfBirth</td>
+<td>date-time</td>
+<td>For security purposes if we need to identify the user over the phone.</td>
+</tr>
+<tr>
+<td>MothersMaidenName</td>
+<td>string</td>
+<td>For security purposes if we need to identify the user over the phone.</td>
+</tr>
+<tr>
+<td>Addresses<span class="required">required</span></td>
+<td>array</td>
+<td>Contains details of the user&#39;s address.</td>
+</tr>
+<tr>
+<td>Addresses.Type<span class="required">required</span></td>
+<td>enum</td>
+<td>Home = 0, Office = 1, Mailing = 2.</td>
+</tr>
+<tr>
+<td>Addresses.Line1<span class="required">required</span></td>
+<td>string</td>
+<td>Address detail line 1.</td>
+</tr>
+<tr>
+<td>Addresses.Line2</td>
+<td>string</td>
+<td>Address detail line 2 (if applicable).</td>
+</tr>
+<tr>
+<td>Addresses.Line3</td>
+<td>string</td>
+<td>Address detail line 3 (if applicable).</td>
+</tr>
+<tr>
+<td>Addresses.SuburbOrCounty<span class="required">required</span></td>
+<td>string</td>
+<td>Suburb or county details.</td>
+</tr>
+<tr>
+<td>Addresses.TownOrCityOrState<span class="required">required</span></td>
+<td>string</td>
+<td>State or town or city details.</td>
+</tr>
+<tr>
+<td>Addresses.Postcode<span class="required">required</span></td>
+<td>string</td>
+<td>Postcode.</td>
+</tr>
+<tr>
+<td>Addresses.Country<span class="required">required</span></td>
+<td>string</td>
+<td>Country code. For example, AUS = Australia.</td>
+</tr>
+<tr>
+<td>Phone<span class="required">required</span></td>
+<td>string</td>
+<td>The user&#39;s phone number.</td>
+</tr>
+<tr>
+<td>PhoneOther</td>
+<td>string</td>
+<td>An alternative phone number for the investor.</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>string</td>
+<td>The user&#39;s location.</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>string</td>
+<td>Team that user is part of.</td>
+</tr>
+<tr>
+<td>JobTitle</td>
+<td>string</td>
+<td>The user&#39;s job title.</td>
+</tr>
+<tr>
+<td>AdviserId<span class="required">required</span></td>
+<td>integer</td>
+<td>he adviser ID for this user&#39;s adviser.</td>
+</tr>
+<tr>
+<td>GenerateGetStartedToken<span class="required">required</span></td>
+<td>boolean</td>
+<td>Whether to generate an SSO token for this user to get started.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9108602</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"GetStartedToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.onpraemium.com/useraccount/changepassword?token=9108602-ED6205A469E04029B724EA9A11BDE37F-637141711208895228"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-19'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Id</td>
+<td>integer</td>
+<td>User ID.</td>
+</tr>
+<tr>
+<td>GetStartedToken</td>
+<td>string</td>
+<td>An SSO token for this user to get started.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='patch-user-accounts'><span class="patch">PATCH</span> User Accounts</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/useraccounts</p>
+</blockquote>
+
+<p>This endpoint allows linking user to accounts.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-22'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">9091234</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w"> </span><span class="s2">"AU400001"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"UserRole"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-15'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>UserId<span class="required">required</span></td>
+<td>integer</td>
+<td>User ID.</td>
+</tr>
+<tr>
+<td>AccountIds<span class="required">required</span></td>
+<td>array</td>
+<td>An array of account IDs.</td>
+</tr>
+<tr>
+<td>UserRole</td>
+<td>enum</td>
+<td>Accountant = 0, Custodian = 1, FinancialPlanner = 2, InvestmentAdviser = 3, Other = 4, Owner = 5. Default to 4.</td>
+</tr>
+<tr>
+<td>Access</td>
+<td>enum</td>
+<td>Full = 0, Read = 1, Update = 2. Default to 1.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
 <h1 id='accounts'>Accounts</h1><h3 id='get-accounts'><span class="get">GET</span> Accounts</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/accounts</p>
@@ -10101,7 +10419,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-21'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-23'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10142,7 +10460,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU1</span>
 <span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU2</span>
 <span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU3</span>
-</code></pre></div><h5 id='request-parameter-query-3'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10217,7 +10535,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-19'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-20'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10316,7 +10634,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-22'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-24'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10345,7 +10663,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-4'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10375,7 +10693,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU275166"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-20'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-21'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10404,7 +10722,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-23'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-25'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10436,7 +10754,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"RecalcAsAtDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03T00:00:00+11:00"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-21'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-22'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10465,7 +10783,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-24'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-26'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10498,7 +10816,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU3</span>
 <span class="na">ValuationDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 <span class="na">ClassificationType</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-6'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10626,7 +10944,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-22'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-23'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10880,7 +11198,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-25'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-27'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10911,7 +11229,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">IncludeLoans</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">ValuationDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-6'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-7'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -10992,7 +11310,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-23'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-24'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11106,7 +11424,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-26'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-28'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11137,7 +11455,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-7'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-8'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11240,7 +11558,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-24'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-25'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11349,7 +11667,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-27'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-29'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11386,7 +11704,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">Order</span><span class="pi">:</span> <span class="m">0</span>
 <span class="na">Page</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">Size</span><span class="pi">:</span> <span class="m">100</span>
-</code></pre></div><h5 id='request-parameter-query-8'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-9'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11511,7 +11829,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-25'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-26'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11685,7 +12003,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-28'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-30'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11719,7 +12037,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">IncludePendingUnsettled</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">Page</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">Size</span><span class="pi">:</span> <span class="m">100</span>
-</code></pre></div><h5 id='request-parameter-query-9'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-10'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11832,7 +12150,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-26'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-27'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -11971,7 +12289,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-29'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-31'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12004,7 +12322,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 <span class="na">Page</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">Size</span><span class="pi">:</span> <span class="m">100</span>
-</code></pre></div><h5 id='request-parameter-query-10'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-11'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12089,7 +12407,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"OtherChargesGst"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-27'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-28'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12208,7 +12526,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-30'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-32'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12239,7 +12557,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-11'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-12'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12308,7 +12626,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"FrankingCredit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-28'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-29'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12407,7 +12725,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-31'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-33'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12438,7 +12756,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-12'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-13'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12511,7 +12829,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"AccruedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-29'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-30'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12640,7 +12958,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-32'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-34'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12669,7 +12987,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-13'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-14'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12714,7 +13032,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"ExcludeFromDrp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-30'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-31'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12803,7 +13121,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-33'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-35'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12834,7 +13152,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-14'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-15'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12893,7 +13211,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"ExpenseTypeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Portfolio management fees"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-31'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-32'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -12977,7 +13295,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-34'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-36'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13006,7 +13324,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-15'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-16'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13043,7 +13361,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"NetCapitalGainLossIndexed"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"NetCapitalGainLossOther"</span><span class="p">:</span><span class="w"> </span><span class="mf">433.62</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-32'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-33'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13147,7 +13465,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-35'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-37'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13176,7 +13494,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-16'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-17'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13279,7 +13597,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-33'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-34'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13523,7 +13841,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-36'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-38'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13552,7 +13870,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-17'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-18'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13582,7 +13900,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"CgtGain"</span><span class="p">:</span><span class="w"> </span><span class="mf">165376.11</span><span class="p">,</span><span class="w">
   </span><span class="nl">"CgtLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">-11461.47</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-34'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-35'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13661,7 +13979,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-37'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-39'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13692,7 +14010,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">Page</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">Size</span><span class="pi">:</span> <span class="m">100</span>
-</code></pre></div><h5 id='request-parameter-query-18'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-19'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13767,7 +14085,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-35'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-36'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13916,7 +14234,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-38'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-40'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -13954,7 +14272,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">DisplayReturns</span><span class="pi">:</span> <span class="m">0</span>
 <span class="na">MultiplePeriods</span><span class="pi">:</span> <span class="m">2</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-19'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-20'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14058,7 +14376,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-36'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-37'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14177,7 +14495,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-39'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-41'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14210,7 +14528,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 <span class="na">IncludeTaxCredits</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-20'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-21'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14335,7 +14653,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-37'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-38'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14544,7 +14862,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-40'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-42'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14580,7 +14898,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">IncludeTaxCredits</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">DisplayReturns</span><span class="pi">:</span> <span class="m">0</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-21'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-22'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14662,7 +14980,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"CumulativeNetPercentReturn"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-38'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-39'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14741,7 +15059,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-41'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-43'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14778,7 +15096,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-22'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-23'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14857,7 +15175,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"BenchmarkReturnPercent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-39'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-40'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14916,7 +15234,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-42'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-44'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -14967,7 +15285,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABS CPI HEALTH INDEX"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-40'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-41'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15006,7 +15324,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-43'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-45'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15038,7 +15356,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 <span class="na">MultiplePeriods</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-23'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-24'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15090,7 +15408,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"PercentageReturn"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6120</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-41'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-42'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15124,7 +15442,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-44'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-46'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15155,7 +15473,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-24'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-25'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15194,7 +15512,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"ToDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-31T00:00:00+11:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-42'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-43'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15243,7 +15561,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-45'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-47'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15286,7 +15604,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"UpdatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-01T05:57:50.547+11:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-43'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-44'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15330,7 +15648,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-46'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-48'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15359,7 +15677,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">EventId</span><span class="pi">:</span> <span class="s">AU1234</span>
-</code></pre></div><h5 id='request-parameter-query-25'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-26'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15394,7 +15712,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"PublishedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-17T10:16:17.153+11:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-44'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-45'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15443,7 +15761,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-47'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-49'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15472,7 +15790,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">FileId</span><span class="pi">:</span> <span class="s">AC2295B5F56D4342A8D057F3DD25C711</span>
-</code></pre></div><h5 id='request-parameter-query-26'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-27'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15500,185 +15818,6 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </blockquote>
 
 <p>This endpoint returns the account model weightings for the account.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-48'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Query Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-27'>Request Parameter - Query</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountId<span class="required">required</span></td>
-<td>string</td>
-<td>Account ID.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-45'>Response Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ModelCode</td>
-<td>string</td>
-<td>Model code.</td>
-</tr>
-<tr>
-<td>Percentage</td>
-<td>double</td>
-<td>Model percentage.</td>
-</tr>
-</tbody></table>
-
-<p><br/></p>
-<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
-</blockquote>
-
-<p>This endpoint allows you to modify the account model weightings for the account.</p>
-
-<blockquote>
-<p><strong>Header Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
-<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
-<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-49'>Header Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization<span class="required">required</span></td>
-<td>string</td>
-<td>Access token.</td>
-</tr>
-<tr>
-<td>x-pps-subscription-key<span class="required">required</span></td>
-<td>string</td>
-<td>Product subscription key.</td>
-</tr>
-<tr>
-<td>x-pps-api-version<span class="required">required</span></td>
-<td>string</td>
-<td>API version of the endpoint.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Request Parameter - Body Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
-    </span><span class="p">}</span><span class="w">    
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-14'>Request Parameter - Body</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>AccountId<span class="required">required</span></td>
-<td>string</td>
-<td>Account ID.</td>
-</tr>
-<tr>
-<td>RebalanceType<span class="required">required</span></td>
-<td>enum</td>
-<td>Floating = 0, Fixed = 1.</td>
-</tr>
-<tr>
-<td>AccountModelWeightings<span class="required">required</span></td>
-<td>array</td>
-<td>Account Model Weightings.</td>
-</tr>
-<tr>
-<td>AccountModelWeightings.ModelCode</td>
-<td>string</td>
-<td>Model code.</td>
-</tr>
-<tr>
-<td>AccountModelWeightings.Percentage</td>
-<td>double</td>
-<td>Model percentage.</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p><strong>Response Examples</strong></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
-</span></code></pre></div>
-<p><br/></p>
-<h3 id='get-security-exclusions'><span class="get">GET</span> Security Exclusions</h3>
-<blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
-</blockquote>
-
-<p>This endpoint returns security exclusions for the account.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -15736,6 +15875,185 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
 </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-46'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td>double</td>
+<td>Model percentage.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='put-account-model-weightings'><span class="put">PUT</span> Account Model Weightings</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/accountmodelweightings</p>
+</blockquote>
+
+<p>This endpoint allows you to modify the account model weightings for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-51'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Body Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"AccountModelWeightings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">    
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='request-parameter-body-16'>Request Parameter - Body</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>RebalanceType<span class="required">required</span></td>
+<td>enum</td>
+<td>Floating = 0, Fixed = 1.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings<span class="required">required</span></td>
+<td>array</td>
+<td>Account Model Weightings.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.ModelCode</td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>AccountModelWeightings.Percentage</td>
+<td>double</td>
+<td>Model percentage.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
+</span></code></pre></div>
+<p><br/></p>
+<h3 id='get-security-exclusions'><span class="get">GET</span> Security Exclusions</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securityexclusions</p>
+</blockquote>
+
+<p>This endpoint returns security exclusions for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-52'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-29'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
     </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-09T15:20:00.237+11:00"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WPL"</span><span class="p">,</span><span class="w">
@@ -15750,7 +16068,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-46'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-47'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15794,7 +16112,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-51'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-53'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15833,7 +16151,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-15'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-17'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15877,7 +16195,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-52'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-54'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15916,7 +16234,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-16'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-18'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15960,7 +16278,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-53'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-55'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -15990,7 +16308,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">SecurityId</span><span class="pi">:</span> <span class="s">AU1</span>
-</code></pre></div><h5 id='request-parameter-query-29'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-30'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16029,7 +16347,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-54'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-56'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16058,7 +16376,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-30'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-31'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16101,7 +16419,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-47'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-48'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16160,7 +16478,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-55'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-57'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16197,7 +16515,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-17'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-19'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16246,7 +16564,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-56'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-58'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16283,7 +16601,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-18'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-20'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16332,7 +16650,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-57'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-59'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16363,7 +16681,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromSecurityId</span><span class="pi">:</span> <span class="s">AU1</span>
 <span class="na">ToSecurityId</span><span class="pi">:</span> <span class="s">AU2</span>
-</code></pre></div><h5 id='request-parameter-query-31'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-32'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16407,7 +16725,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-58'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-60'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16436,7 +16754,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-32'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-33'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16460,7 +16778,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"Percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.5128</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Units"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-48'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-49'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16499,7 +16817,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-59'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-61'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16533,7 +16851,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"Percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.5128</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Units"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-19'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-21'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16582,7 +16900,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-60'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-62'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16622,7 +16940,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <span class="c1"># Search by security codes</span>
 <span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.ASX</span>
 <span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">PPS.ASX</span>
-</code></pre></div><h5 id='request-parameter-query-33'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-34'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16679,7 +16997,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"Currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-49'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-50'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16738,7 +17056,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-61'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-63'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16789,7 +17107,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"LastTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-30T00:00:00+10:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-50'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-51'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16853,7 +17171,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-62'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-64'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16883,7 +17201,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
 <span class="na">ValuationDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-34'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-35'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16928,7 +17246,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-51'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-52'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -16997,7 +17315,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-63'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-65'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17028,7 +17346,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-35'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-36'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17102,7 +17420,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-52'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-53'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17171,7 +17489,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-64'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-66'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17201,7 +17519,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
 <span class="na">ValuationDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-36'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-37'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17254,7 +17572,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"EstimatedYield"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.77</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-53'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-54'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17308,7 +17626,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-65'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-67'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17337,7 +17655,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">ModelId</span><span class="pi">:</span> <span class="s">AU1234</span>
-</code></pre></div><h5 id='request-parameter-query-37'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-38'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17374,7 +17692,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"Target"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.0240</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-54'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-55'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17423,7 +17741,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-66'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-68'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -17460,7 +17778,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='request-parameter-body-20'>Request Parameter - Body</h5>
+</span></code></pre></div><h5 id='request-parameter-body-22'>Request Parameter - Body</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
