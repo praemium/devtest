@@ -821,7 +821,7 @@
           "type": "string"
         },
         "Team": {
-          "description": "Team that user is part of.",
+          "description": "Team the user is part of.",
           "type": "string"
         },
         "JobTitle": {
@@ -829,7 +829,7 @@
           "type": "string"
         },
         "AdviserId": {
-          "description": "he adviser ID for this user's adviser.",
+          "description": "The adviser ID for this user's adviser.",
           "format": "int32",
           "type": "integer"
         },
