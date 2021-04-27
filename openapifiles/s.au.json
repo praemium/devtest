@@ -1,5 +1,203 @@
 {
   "paths": {
+    "/api/dividendreinvestmentdetails": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Dividend reinvestment details",
+            "schema": {
+              "$ref": "#/definitions/DividendReinvestmentDetailIEnumerablePagedResponse"
+            }
+          }
+        },
+        "operationId": "GetAUDividendReinvestmentDetails",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "operationId": "GetUser",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "description": "User Name.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/user": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/UserCreationResponse"
+            }
+          }
+        },
+        "operationId": "CreateUser",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PostUserRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/useraccounts": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "LinkUserAccounts",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PatchUserAccountRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/account/Sma": {
       "post": {
         "responses": {
@@ -2512,7 +2710,7 @@
             "in": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/SecurityExclusionRequest"
+              "$ref": "#/definitions/PutSecurityExclusionRequest"
             }
           },
           {
@@ -2557,7 +2755,7 @@
             "in": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/SecurityExclusionRequest"
+              "$ref": "#/definitions/PostSecurityExclusionRequest"
             }
           },
           {
@@ -2698,7 +2896,7 @@
             "in": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/SecuritySubstitutionRequest"
+              "$ref": "#/definitions/PutSecuritySubstitutionRequest"
             }
           },
           {
@@ -2743,7 +2941,7 @@
             "in": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/SecuritySubstitutionRequest"
+              "$ref": "#/definitions/PostSecuritySubstitutionRequest"
             }
           },
           {
@@ -2893,6 +3091,236 @@
             "schema": {
               "$ref": "#/definitions/PatchMinimumTradeSizeRequest"
             }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/allesgcategories": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ESG categories",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EsgCategory"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUAllEsgCategories",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/esgcategories": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ESG category IDs",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUAccountEsgCategories",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "AddAUAccountEsgCategories",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PostEsgCategoryRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "ReplaceAUAccountEsgCategories",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PutEsgCategoryRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        },
+        "operationId": "DeleteAUAccountEsgCategories",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "required": false,
+            "description": "The category ID as returned by the all ESG categories endpoint.",
+            "type": "string"
           },
           {
             "name": "Authorization",
@@ -3196,204 +3624,6 @@
         ]
       }
     },
-    "/api/dividendreinvestmentdetails": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Dividend reinvestment details",
-            "schema": {
-              "$ref": "#/definitions/DividendReinvestmentDetailIEnumerablePagedResponse"
-            }
-          }
-        },
-        "operationId": "GetAUDividendReinvestmentDetails",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/users": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        },
-        "operationId": "GetUser",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "username",
-            "in": "query",
-            "required": true,
-            "description": "User Name.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/user": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/UserCreationResponse"
-            }
-          }
-        },
-        "operationId": "CreateUser",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PostUserRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/useraccounts": {
-      "patch": {
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        },
-        "operationId": "LinkUserAccounts",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PatchUserAccountRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/token": {
       "post": {
         "responses": {
@@ -3431,6 +3661,331 @@
     }
   },
   "definitions": {
+    "Security": {
+      "properties": {
+        "Code": {
+          "description": "Security code.",
+          "type": "string"
+        },
+        "Exchange": {
+          "description": "Security exchange.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "DrpType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1
+      ]
+    },
+    "DividendReinvestmentDetail": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "DrpType": {
+          "description": "Either DRP (Dividend Reinvestment Plan) or BSP (Bonus Share Plan).",
+          "$ref": "#/definitions/DrpType"
+        },
+        "FromDate": {
+          "description": "The date that the DRP is active from.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "ToDate": {
+          "description": "The date that the DRP is active to.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "MaxSharesParticipating": {
+          "description": "The number of shares held that are requested to participate in the reinvestment plan.",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentSharesParticipating": {
+          "description": "The percentage of the DRP to take as shares. Note that this cannot be used in conjunction with MaxSharesParticipating.",
+          "format": "double",
+          "type": "number"
+        },
+        "ExcludeFromDrp": {
+          "description": "Whether the security is excluded from the account-wide reinvestment plan.",
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Metadata": {
+      "properties": {
+        "TotalCount": {
+          "description": "Total number of results found.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TotalPages": {
+          "description": "Total pages of results.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "DividendReinvestmentDetailIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/DividendReinvestmentDetail"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "Metadata including pagination.",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "User": {
+      "properties": {
+        "UserId": {
+          "description": "User ID.",
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "IndividualName": {
+      "properties": {
+        "Title": {
+          "description": "The user's title.",
+          "type": "string"
+        },
+        "FirstName": {
+          "description": "The user's first name.",
+          "type": "string"
+        },
+        "LastName": {
+          "description": "The user's last name.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "FirstName",
+        "LastName"
+      ],
+      "type": "object"
+    },
+    "UserGender": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "AddressType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "Address": {
+      "properties": {
+        "Type": {
+          "description": "Home = 0, Office = 1, Mailing = 2.",
+          "$ref": "#/definitions/AddressType"
+        },
+        "Line1": {
+          "description": "Address detail line 1.",
+          "type": "string"
+        },
+        "Line2": {
+          "description": "Address detail line 2 (if applicable).",
+          "type": "string"
+        },
+        "Line3": {
+          "description": "Address detail line 3 (if applicable).",
+          "type": "string"
+        },
+        "SuburbOrCounty": {
+          "description": "Suburb or county details.",
+          "type": "string"
+        },
+        "TownOrCityOrState": {
+          "description": "State or town or city details.",
+          "type": "string"
+        },
+        "Postcode": {
+          "description": "Postcode.",
+          "type": "string"
+        },
+        "Country": {
+          "description": "Country code. For example, AUS = Australia.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Country",
+        "Line1",
+        "Postcode",
+        "SuburbOrCounty",
+        "TownOrCityOrState",
+        "Type"
+      ],
+      "type": "object"
+    },
+    "PostUserRequest": {
+      "properties": {
+        "Name": {
+          "description": "The user's name.",
+          "$ref": "#/definitions/IndividualName"
+        },
+        "Gender": {
+          "description": "Male = 1, Female = 2, or null.",
+          "$ref": "#/definitions/UserGender"
+        },
+        "Email": {
+          "description": "The user's email address.",
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "description": "For security purposes if we need to identify the user over the phone.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "MothersMaidenName": {
+          "description": "For security purposes if we need to identify the user over the phone.",
+          "type": "string"
+        },
+        "Addresses": {
+          "description": "Contains details of the user's address.",
+          "minLength": 1,
+          "items": {
+            "$ref": "#/definitions/Address"
+          },
+          "type": "array"
+        },
+        "Phone": {
+          "description": "The user's phone number.",
+          "type": "string"
+        },
+        "PhoneOther": {
+          "description": "An alternative phone number for the investor.",
+          "type": "string"
+        },
+        "Location": {
+          "description": "The user's location.",
+          "type": "string"
+        },
+        "Team": {
+          "description": "Team that user is part of.",
+          "type": "string"
+        },
+        "JobTitle": {
+          "description": "The user's job title.",
+          "type": "string"
+        },
+        "AdviserId": {
+          "description": "he adviser ID for this user's adviser.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "GenerateGetStartedToken": {
+          "description": "Whether to generate an SSO token for this user to get started.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "Addresses",
+        "AdviserId",
+        "Email",
+        "GenerateGetStartedToken",
+        "Name",
+        "Phone"
+      ],
+      "type": "object"
+    },
+    "UserCreationResponse": {
+      "properties": {
+        "Id": {
+          "description": "User ID.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "GetStartedToken": {
+          "description": "An SSO token for this user to get started.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "LinkType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "LinkAccess": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
+    "PatchUserAccountRequest": {
+      "properties": {
+        "UserId": {
+          "description": "User ID.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "AccountIds": {
+          "description": "An array of account IDs.",
+          "minLength": 1,
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "UserRole": {
+          "description": "Accountant = 0, Custodian = 1, FinancialPlanner = 2, InvestmentAdviser = 3, Other = 4, Owner = 5. Default to 4.",
+          "$ref": "#/definitions/LinkType"
+        },
+        "Access": {
+          "description": "Full = 0, Read = 1, Update = 2. Default to 1.",
+          "$ref": "#/definitions/LinkAccess"
+        }
+      },
+      "required": [
+        "AccountIds",
+        "UserId"
+      ],
+      "type": "object"
+    },
     "HoldingType": {
       "format": "int32",
       "type": "integer",
@@ -4287,22 +4842,6 @@
         "RecalcStatus": {
           "description": "OK = 0, Error = 1.",
           "$ref": "#/definitions/RecalcStatus"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Metadata": {
-      "properties": {
-        "TotalCount": {
-          "description": "Total number of results found.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "TotalPages": {
-          "description": "Total pages of results.",
-          "format": "int32",
-          "type": "integer"
         }
       },
       "required": [],
@@ -6003,20 +6542,6 @@
             "$ref": "#/definitions/AssetClassReceivableAndPayable"
           },
           "type": "array"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "Security": {
-      "properties": {
-        "Code": {
-          "description": "Security code.",
-          "type": "string"
-        },
-        "Exchange": {
-          "description": "Security exchange.",
-          "type": "string"
         }
       },
       "required": [],
@@ -7806,7 +8331,7 @@
       ],
       "type": "object"
     },
-    "SecurityExclusionRequest": {
+    "PutSecurityExclusionRequest": {
       "properties": {
         "AccountId": {
           "description": "Account ID.",
@@ -7822,6 +8347,27 @@
       },
       "required": [
         "AccountId"
+      ],
+      "type": "object"
+    },
+    "PostSecurityExclusionRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "SecurityExclusions": {
+          "description": "Security exclusion.",
+          "minLength": 1,
+          "items": {
+            "$ref": "#/definitions/SecurityExclusion"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId",
+        "SecurityExclusions"
       ],
       "type": "object"
     },
@@ -7861,7 +8407,7 @@
       ],
       "type": "object"
     },
-    "SecuritySubstitutionRequest": {
+    "PutSecuritySubstitutionRequest": {
       "properties": {
         "AccountId": {
           "description": "Account ID.",
@@ -7877,6 +8423,27 @@
       },
       "required": [
         "AccountId"
+      ],
+      "type": "object"
+    },
+    "PostSecuritySubstitutionRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "SecuritySubstitutions": {
+          "description": "Security substitution.",
+          "minLength": 1,
+          "items": {
+            "$ref": "#/definitions/SecuritySubstitution"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId",
+        "SecuritySubstitutions"
       ],
       "type": "object"
     },
@@ -7928,6 +8495,60 @@
         "Amount",
         "Percentage",
         "Units"
+      ],
+      "type": "object"
+    },
+    "EsgCategory": {
+      "properties": {
+        "Id": {
+          "description": "ESG category ID.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "ESG category name.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "PostEsgCategoryRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "CategoryIds": {
+          "description": "An array of ESG category IDs.",
+          "minLength": 1,
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId",
+        "CategoryIds"
+      ],
+      "type": "object"
+    },
+    "PutEsgCategoryRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "CategoryIds": {
+          "description": "An array of ESG category IDs.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId"
       ],
       "type": "object"
     },
@@ -8272,301 +8893,6 @@
       "required": [],
       "type": "object"
     },
-    "DrpType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1
-      ]
-    },
-    "DividendReinvestmentDetail": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "DrpType": {
-          "description": "Either DRP (Dividend Reinvestment Plan) or BSP (Bonus Share Plan).",
-          "$ref": "#/definitions/DrpType"
-        },
-        "FromDate": {
-          "description": "The date that the DRP is active from.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "ToDate": {
-          "description": "The date that the DRP is active to.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "MaxSharesParticipating": {
-          "description": "The number of shares held that are requested to participate in the reinvestment plan.",
-          "format": "double",
-          "type": "number"
-        },
-        "PercentSharesParticipating": {
-          "description": "The percentage of the DRP to take as shares. Note that this cannot be used in conjunction with MaxSharesParticipating.",
-          "format": "double",
-          "type": "number"
-        },
-        "ExcludeFromDrp": {
-          "description": "Whether the security is excluded from the account-wide reinvestment plan.",
-          "type": "boolean"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "DividendReinvestmentDetailIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/DividendReinvestmentDetail"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "Metadata including pagination.",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "User": {
-      "properties": {
-        "UserId": {
-          "description": "User ID.",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "IndividualName": {
-      "properties": {
-        "Title": {
-          "description": "The user's title.",
-          "type": "string"
-        },
-        "FirstName": {
-          "description": "The user's first name.",
-          "type": "string"
-        },
-        "LastName": {
-          "description": "The user's last name.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "FirstName",
-        "LastName"
-      ],
-      "type": "object"
-    },
-    "UserGender": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        1,
-        2
-      ]
-    },
-    "AddressType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "Address": {
-      "properties": {
-        "Type": {
-          "description": "Home = 0, Office = 1, Mailing = 2.",
-          "$ref": "#/definitions/AddressType"
-        },
-        "Line1": {
-          "description": "Address detail line 1.",
-          "type": "string"
-        },
-        "Line2": {
-          "description": "Address detail line 2 (if applicable).",
-          "type": "string"
-        },
-        "Line3": {
-          "description": "Address detail line 3 (if applicable).",
-          "type": "string"
-        },
-        "SuburbOrCounty": {
-          "description": "Suburb or county details.",
-          "type": "string"
-        },
-        "TownOrCityOrState": {
-          "description": "State or town or city details.",
-          "type": "string"
-        },
-        "Postcode": {
-          "description": "Postcode.",
-          "type": "string"
-        },
-        "Country": {
-          "description": "Country code. For example, AUS = Australia.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "Country",
-        "Line1",
-        "Postcode",
-        "SuburbOrCounty",
-        "TownOrCityOrState",
-        "Type"
-      ],
-      "type": "object"
-    },
-    "PostUserRequest": {
-      "properties": {
-        "Name": {
-          "description": "The user's name.",
-          "$ref": "#/definitions/IndividualName"
-        },
-        "Gender": {
-          "description": "Male = 1, Female = 2, or null.",
-          "$ref": "#/definitions/UserGender"
-        },
-        "Email": {
-          "description": "The user's email address.",
-          "type": "string"
-        },
-        "DateOfBirth": {
-          "description": "For security purposes if we need to identify the user over the phone.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "MothersMaidenName": {
-          "description": "For security purposes if we need to identify the user over the phone.",
-          "type": "string"
-        },
-        "Addresses": {
-          "description": "Contains details of the user's address.",
-          "minLength": 1,
-          "items": {
-            "$ref": "#/definitions/Address"
-          },
-          "type": "array"
-        },
-        "Phone": {
-          "description": "The user's phone number.",
-          "type": "string"
-        },
-        "PhoneOther": {
-          "description": "An alternative phone number for the investor.",
-          "type": "string"
-        },
-        "Location": {
-          "description": "The user's location.",
-          "type": "string"
-        },
-        "Team": {
-          "description": "Team that user is part of.",
-          "type": "string"
-        },
-        "JobTitle": {
-          "description": "The user's job title.",
-          "type": "string"
-        },
-        "AdviserId": {
-          "description": "he adviser ID for this user's adviser.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "GenerateGetStartedToken": {
-          "description": "Whether to generate an SSO token for this user to get started.",
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "Addresses",
-        "AdviserId",
-        "Email",
-        "GenerateGetStartedToken",
-        "Name",
-        "Phone"
-      ],
-      "type": "object"
-    },
-    "UserCreationResponse": {
-      "properties": {
-        "Id": {
-          "description": "User ID.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "GetStartedToken": {
-          "description": "An SSO token for this user to get started.",
-          "type": "string"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "LinkType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5
-      ]
-    },
-    "LinkAccess": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2
-      ]
-    },
-    "PatchUserAccountRequest": {
-      "properties": {
-        "UserId": {
-          "description": "User ID.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "AccountIds": {
-          "description": "An array of account IDs.",
-          "minLength": 1,
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "UserRole": {
-          "description": "Accountant = 0, Custodian = 1, FinancialPlanner = 2, InvestmentAdviser = 3, Other = 4, Owner = 5. Default to 4.",
-          "$ref": "#/definitions/LinkType"
-        },
-        "Access": {
-          "description": "Full = 0, Read = 1, Update = 2. Default to 1.",
-          "$ref": "#/definitions/LinkAccess"
-        }
-      },
-      "required": [
-        "AccountIds",
-        "UserId"
-      ],
-      "type": "object"
-    },
     "TokenResponse": {
       "properties": {
         "token_type": {
@@ -8593,7 +8919,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.22",
+    "version": "2021.04.27",
     "title": "Public API"
   }
 }

@@ -7595,7 +7595,7 @@
 <td>Account ID.</td>
 </tr>
 <tr>
-<td>SecurityExclusions</td>
+<td>SecurityExclusions<span class="required">required</span></td>
 <td>array</td>
 <td>Security exclusion.</td>
 </tr>
@@ -7653,8 +7653,12 @@
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Delete single security exclusion</span>
+<span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">SecurityId</span><span class="pi">:</span> <span class="s">AU1</span>
+
+<span class="c1"># Delete security exclusions</span>
+<span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 </code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
@@ -7962,7 +7966,7 @@
 <td>Account ID.</td>
 </tr>
 <tr>
-<td>SecuritySubstitutions</td>
+<td>SecuritySubstitutions<span class="required">required</span></td>
 <td>array</td>
 <td>Security substitution.</td>
 </tr>
@@ -8025,9 +8029,13 @@
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="c1"># Delete single security substitution</span>
+<span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromSecurityId</span><span class="pi">:</span> <span class="s">AU1</span>
 <span class="na">ToSecurityId</span><span class="pi">:</span> <span class="s">AU2</span>
+
+<span class="c1"># Delete all security substitutions</span>
+<span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 </code></pre></div><h5 id='request-parameter-query-7'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
