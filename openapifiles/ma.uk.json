@@ -1270,6 +1270,14 @@
           "description": "Fee override.",
           "$ref": "#/definitions/FeeOverride"
         },
+        "SingleAssetModelIsin": {
+          "description": "ISIN of security. (Single asset model only)",
+          "type": "string"
+        },
+        "SingleAssetModelCurrencyCode": {
+          "description": "Currency code of security. (Single asset model only)",
+          "type": "string"
+        },
         "Id": {
           "description": "ModelId as returned by the Models endpoint.",
           "type": "string"
@@ -3090,7 +3098,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.27",
+    "version": "2021.04.29",
     "title": "Public API"
   }
 }
