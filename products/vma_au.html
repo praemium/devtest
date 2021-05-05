@@ -4306,69 +4306,49 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>Data</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>Data.Security</td>
+<td>Security</td>
 <td>object</td>
 <td></td>
 </tr>
 <tr>
-<td>Data.Security.Code</td>
+<td>Security.Code</td>
 <td>string</td>
 <td>Security code.</td>
 </tr>
 <tr>
-<td>Data.Security.Exchange</td>
+<td>Security.Exchange</td>
 <td>string</td>
 <td>Security exchange.</td>
 </tr>
 <tr>
-<td>Data.DrpType</td>
+<td>DrpType</td>
 <td>enum</td>
 <td>Either DRP (Dividend Reinvestment Plan) or BSP (Bonus Share Plan).</td>
 </tr>
 <tr>
-<td>Data.FromDate</td>
+<td>FromDate</td>
 <td>date-time</td>
 <td>The date that the DRP is active from.</td>
 </tr>
 <tr>
-<td>Data.ToDate</td>
+<td>ToDate</td>
 <td>date-time</td>
 <td>The date that the DRP is active to.</td>
 </tr>
 <tr>
-<td>Data.MaxSharesParticipating</td>
+<td>MaxSharesParticipating</td>
 <td>double</td>
 <td>The number of shares held that are requested to participate in the reinvestment plan.</td>
 </tr>
 <tr>
-<td>Data.PercentSharesParticipating</td>
+<td>PercentSharesParticipating</td>
 <td>double</td>
 <td>The percentage of the DRP to take as shares. Note that this cannot be used in conjunction with MaxSharesParticipating.</td>
 </tr>
 <tr>
-<td>Data.ExcludeFromDrp</td>
+<td>ExcludeFromDrp</td>
 <td>boolean</td>
 <td>Whether the security is excluded from the account-wide reinvestment plan.</td>
-</tr>
-<tr>
-<td>Metadata</td>
-<td>object</td>
-<td>Metadata including pagination.</td>
-</tr>
-<tr>
-<td>Metadata.TotalCount</td>
-<td>integer</td>
-<td>Total number of results found.</td>
-</tr>
-<tr>
-<td>Metadata.TotalPages</td>
-<td>integer</td>
-<td>Total pages of results.</td>
 </tr>
 </tbody></table>
 
@@ -6083,7 +6063,7 @@
 </tr>
 <tr>
 <td>CashAndEquivalents.IncludedInPerformance</td>
-<td>integer</td>
+<td>boolean</td>
 <td>Whether the security is included in performance calculations.</td>
 </tr>
 <tr>

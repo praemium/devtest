@@ -693,11 +693,23 @@
       "required": [],
       "type": "object"
     },
+    "Title": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
     "IndividualName": {
       "properties": {
         "Title": {
-          "description": "The user's title.",
-          "type": "string"
+          "description": "The user's title. Miss = 0, Mr = 1, Mrs = 2, Ms = 3, Dr = 4, Prof = 5, or null.",
+          "$ref": "#/definitions/Title"
         },
         "FirstName": {
           "description": "The user's first name.",
@@ -764,6 +776,7 @@
         },
         "Country": {
           "description": "Country code. For example, AUS = Australia.",
+          "minLength": 3,
           "type": "string"
         }
       },
@@ -814,14 +827,6 @@
         },
         "PhoneOther": {
           "description": "An alternative phone number for the investor.",
-          "type": "string"
-        },
-        "Location": {
-          "description": "The user's location.",
-          "type": "string"
-        },
-        "Team": {
-          "description": "Team the user is part of.",
           "type": "string"
         },
         "JobTitle": {
@@ -3098,7 +3103,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.29",
+    "version": "2021.05.05",
     "title": "Public API"
   }
 }

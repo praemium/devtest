@@ -1,12 +1,98 @@
 {
   "paths": {
+    "/api/unsettledtransactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Unsettled transactions",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UnsettledTransaction"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUUnsettledTransactions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to return. Default to 1. Default to 1.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Size",
+            "in": "query",
+            "required": false,
+            "description": "Page size to return. Default to 100.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/dividendreinvestmentdetails": {
       "get": {
         "responses": {
           "200": {
             "description": "Dividend reinvestment details",
             "schema": {
-              "$ref": "#/definitions/DividendReinvestmentDetailIEnumerablePagedResponse"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DividendReinvestmentDetail"
+              }
             }
           }
         },
@@ -1060,7 +1146,7 @@
             "description": "Success"
           }
         },
-        "operationId": "DowwnloadAUFile",
+        "operationId": "DownloadAUFile",
         "parameters": [
           {
             "name": "fileId",
@@ -1720,6 +1806,60 @@
             "schema": {
               "$ref": "#/definitions/PutModelWeightAdjustmentRequest"
             }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/bpay": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "BPAY",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BpayInfo"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUBpay",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountIds",
+            "in": "query",
+            "required": true,
+            "description": "An array of account IDs.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           },
           {
             "name": "Authorization",
@@ -3541,89 +3681,6 @@
         ]
       }
     },
-    "/api/unsettledtransactions": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Unsettled transactions",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UnsettledTransaction"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUUnsettledTransactions",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1. Default to 1.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return. Default to 100.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "The from date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "The to date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/token": {
       "post": {
         "responses": {
@@ -3675,6 +3732,91 @@
       "required": [],
       "type": "object"
     },
+    "UnsettledTransaction": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TransactionDate": {
+          "description": "The date on which the transaction occurred.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TransactionTypeDescription": {
+          "description": "Transaction type description.",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of units or shares disposed.",
+          "format": "double",
+          "type": "number"
+        },
+        "NetAmount": {
+          "description": "This value should be adjusted (increased for a buy, decreased for a sell) for any brokerage, GST or other charges paid to transact. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "AveragePrice": {
+          "description": "Net amount divided by quantity. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Brokerage": {
+          "description": "Total of any brokerage for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "Gst": {
+          "description": "GST amount of any brokerage for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "DisposalMethod": {
+          "description": "Tax method used on the security disposal.",
+          "type": "string"
+        },
+        "Narration": {
+          "description": "Displays any notes that have added to the transaction.",
+          "type": "string"
+        },
+        "TradedCurrency": {
+          "description": "For International Investments. Displays the currency in which the asset was traded.",
+          "type": "string"
+        },
+        "AmountInTradedCurrency": {
+          "description": "Displays the amount traded in an international currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "AveragePriceInTradedCurrency": {
+          "description": "TradedCurrencyAmount divided by quantity.",
+          "format": "double",
+          "type": "number"
+        },
+        "SettlementDate": {
+          "description": "The date on which the transaction settled.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "ContractNoteReference": {
+          "description": "Unique contract note reference number.",
+          "type": "string"
+        },
+        "OtherCharges": {
+          "description": "Total of any other charges (eg. international transaction processing fees) for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        },
+        "OtherChargesGst": {
+          "description": "GST amount of any other charges for the transaction. (Account currency)",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "DrpType": {
       "format": "int32",
       "type": "integer",
@@ -3721,39 +3863,6 @@
       "required": [],
       "type": "object"
     },
-    "Metadata": {
-      "properties": {
-        "TotalCount": {
-          "description": "Total number of results found.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "TotalPages": {
-          "description": "Total pages of results.",
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
-    "DividendReinvestmentDetailIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/DividendReinvestmentDetail"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "Metadata including pagination.",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "User": {
       "properties": {
         "UserId": {
@@ -3765,11 +3874,23 @@
       "required": [],
       "type": "object"
     },
+    "Title": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
     "IndividualName": {
       "properties": {
         "Title": {
-          "description": "The user's title.",
-          "type": "string"
+          "description": "The user's title. Miss = 0, Mr = 1, Mrs = 2, Ms = 3, Dr = 4, Prof = 5, or null.",
+          "$ref": "#/definitions/Title"
         },
         "FirstName": {
           "description": "The user's first name.",
@@ -3836,6 +3957,7 @@
         },
         "Country": {
           "description": "Country code. For example, AUS = Australia.",
+          "minLength": 3,
           "type": "string"
         }
       },
@@ -3886,14 +4008,6 @@
         },
         "PhoneOther": {
           "description": "An alternative phone number for the investor.",
-          "type": "string"
-        },
-        "Location": {
-          "description": "The user's location.",
-          "type": "string"
-        },
-        "Team": {
-          "description": "Team the user is part of.",
           "type": "string"
         },
         "JobTitle": {
@@ -4842,6 +4956,22 @@
         "RecalcStatus": {
           "description": "OK = 0, Error = 1.",
           "$ref": "#/definitions/RecalcStatus"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "Metadata": {
+      "properties": {
+        "TotalCount": {
+          "description": "Total number of results found.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "TotalPages": {
+          "description": "Total pages of results.",
+          "format": "int32",
+          "type": "integer"
         }
       },
       "required": [],
@@ -7318,6 +7448,20 @@
       ],
       "type": "object"
     },
+    "BpayInfo": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "ReferenceNumber": {
+          "description": "BPAY reference number.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
     "AssetClassInvestment": {
       "properties": {
         "AssetClassDescription": {
@@ -7612,8 +7756,7 @@
         },
         "IncludedInPerformance": {
           "description": "Whether the security is included in performance calculations.",
-          "format": "int32",
-          "type": "integer"
+          "type": "boolean"
         },
         "Security": {
           "description": "",
@@ -8808,91 +8951,6 @@
       "required": [],
       "type": "object"
     },
-    "UnsettledTransaction": {
-      "properties": {
-        "Security": {
-          "description": "",
-          "$ref": "#/definitions/Security"
-        },
-        "TransactionDate": {
-          "description": "The date on which the transaction occurred.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TransactionTypeDescription": {
-          "description": "Transaction type description.",
-          "type": "string"
-        },
-        "Quantity": {
-          "description": "The number of units or shares disposed.",
-          "format": "double",
-          "type": "number"
-        },
-        "NetAmount": {
-          "description": "This value should be adjusted (increased for a buy, decreased for a sell) for any brokerage, GST or other charges paid to transact. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "AveragePrice": {
-          "description": "Net amount divided by quantity. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "Brokerage": {
-          "description": "Total of any brokerage for the transaction. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "Gst": {
-          "description": "GST amount of any brokerage for the transaction. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "DisposalMethod": {
-          "description": "Tax method used on the security disposal.",
-          "type": "string"
-        },
-        "Narration": {
-          "description": "Displays any notes that have added to the transaction.",
-          "type": "string"
-        },
-        "TradedCurrency": {
-          "description": "For International Investments. Displays the currency in which the asset was traded.",
-          "type": "string"
-        },
-        "AmountInTradedCurrency": {
-          "description": "Displays the amount traded in an international currency.",
-          "format": "double",
-          "type": "number"
-        },
-        "AveragePriceInTradedCurrency": {
-          "description": "TradedCurrencyAmount divided by quantity.",
-          "format": "double",
-          "type": "number"
-        },
-        "SettlementDate": {
-          "description": "The date on which the transaction settled.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "ContractNoteReference": {
-          "description": "Unique contract note reference number.",
-          "type": "string"
-        },
-        "OtherCharges": {
-          "description": "Total of any other charges (eg. international transaction processing fees) for the transaction. (Account currency)",
-          "format": "double",
-          "type": "number"
-        },
-        "OtherChargesGst": {
-          "description": "GST amount of any other charges for the transaction. (Account currency)",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "required": [],
-      "type": "object"
-    },
     "TokenResponse": {
       "properties": {
         "token_type": {
@@ -8919,7 +8977,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.04.29",
+    "version": "2021.05.05",
     "title": "Public API"
   }
 }
