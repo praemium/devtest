@@ -7796,6 +7796,95 @@
       "required": [],
       "type": "object"
     },
+    "TokenResponse": {
+      "properties": {
+        "token_type": {
+          "description": "Token type is always Bearer.",
+          "type": "string"
+        },
+        "expires_in": {
+          "description": "After how many seconds an access token will expire.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "ext_expires_in": {
+          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "access_token": {
+          "description": "Access token that can be used to access public API endpoints.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Account": {
+      "properties": {
+        "Id": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Account code.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Account name.",
+          "type": "string"
+        },
+        "ValuationDate": {
+          "description": "Account valuation date or asat date.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "ConsolidationType": {
+          "description": "None = 78, Portfolio = 80, Transaction = 84, FeeGroup = 85, ShareTrader = 86, SuperFund = 87.",
+          "type": "enum"
+        },
+        "AccountType": {
+          "description": "Standard = 0, Sma = 1, Smsf = 3, SuperSmaAccumulation = 4, SuperSmaPension = 5.",
+          "type": "enum"
+        },
+        "EntityType": {
+          "description": "Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
+          "type": "enum"
+        },
+        "IsSma": {
+          "description": "Whether the account is SMA.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Active = 0, Draft = 1, Closed = 2, Deleted = 3.",
+          "type": "enum"
+        },
+        "RecalcType": {
+          "description": "None = 0, Manual = 1, Auto = 2.",
+          "type": "enum"
+        },
+        "RecalcStatus": {
+          "description": "OK = 0, Error = 1.",
+          "type": "enum"
+        }
+      },
+      "type": "object"
+    },
+    "AccountIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/Account"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "type": "object"
+    },
     "PdsModel": {
       "properties": {
         "Id": {
@@ -7917,29 +8006,6 @@
       },
       "type": "object"
     },
-    "TokenResponse": {
-      "properties": {
-        "token_type": {
-          "description": "Token type is always Bearer.",
-          "type": "string"
-        },
-        "expires_in": {
-          "description": "After how many seconds an access token will expire.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "ext_expires_in": {
-          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "access_token": {
-          "description": "Access token that can be used to access public API endpoints.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "PutAccountModelWeightingRequest": {
       "properties": {
         "AccountId": {
@@ -7964,72 +8030,6 @@
         "AccountModelWeightings",
         "RebalanceType"
       ],
-      "type": "object"
-    },
-    "Account": {
-      "properties": {
-        "Id": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "Code": {
-          "description": "Account code.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Account name.",
-          "type": "string"
-        },
-        "ValuationDate": {
-          "description": "Account valuation date or asat date.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "ConsolidationType": {
-          "description": "None = 78, Portfolio = 80, Transaction = 84, FeeGroup = 85, ShareTrader = 86, SuperFund = 87.",
-          "type": "enum"
-        },
-        "AccountType": {
-          "description": "Standard = 0, Sma = 1, Smsf = 3, SuperSmaAccumulation = 4, SuperSmaPension = 5.",
-          "type": "enum"
-        },
-        "EntityType": {
-          "description": "Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
-          "type": "enum"
-        },
-        "IsSma": {
-          "description": "Whether the account is SMA.",
-          "type": "boolean"
-        },
-        "Status": {
-          "description": "Active = 0, Draft = 1, Closed = 2, Deleted = 3.",
-          "type": "enum"
-        },
-        "RecalcType": {
-          "description": "None = 0, Manual = 1, Auto = 2.",
-          "type": "enum"
-        },
-        "RecalcStatus": {
-          "description": "OK = 0, Error = 1.",
-          "type": "enum"
-        }
-      },
-      "type": "object"
-    },
-    "AccountIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/Account"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
       "type": "object"
     },
     "DraftAddress": {
@@ -8832,7 +8832,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.05.05",
+    "version": "2021.05.06",
     "title": "Public API"
   }
 }
