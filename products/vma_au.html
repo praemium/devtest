@@ -2201,6 +2201,8 @@
       </span><span class="nl">"TotalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">20250.58</span><span class="p">,</span><span class="w">
       </span><span class="nl">"NetValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">20250.58</span><span class="p">,</span><span class="w">
       </span><span class="nl">"TotalGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">3603.16</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"MarketValueGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">3605.59</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ExchangeRateGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.43</span><span class="p">,</span><span class="w">
       </span><span class="nl">"EstimatedIncome"</span><span class="p">:</span><span class="w"> </span><span class="mf">427.05</span><span class="p">,</span><span class="w">
       </span><span class="nl">"Yield"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.1100</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -2221,6 +2223,8 @@
         </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">851.19</span><span class="p">,</span><span class="w">
         </span><span class="nl">"PercentTotalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.200</span><span class="p">,</span><span class="w">
         </span><span class="nl">"GainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.43</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MarketValueGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ForexValueGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">-2.43</span><span class="p">,</span><span class="w">
         </span><span class="nl">"PercentTotalGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.28</span><span class="p">,</span><span class="w">
         </span><span class="nl">"EstimatedIncome"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.76</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Yield"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6800</span><span class="p">,</span><span class="w">
@@ -2246,6 +2250,8 @@
         </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">395.25</span><span class="p">,</span><span class="w">
         </span><span class="nl">"PercentTotalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.9500</span><span class="p">,</span><span class="w">
         </span><span class="nl">"GainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">167.74</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MarketValueGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">167.74</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ExchangeRateGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
         </span><span class="nl">"PercentTotalGainOrLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">73.73</span><span class="p">,</span><span class="w">
         </span><span class="nl">"EstimatedIncome"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.44</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Yield"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8700</span><span class="p">,</span><span class="w">
@@ -2333,6 +2339,16 @@
 <td>Valuation.TotalGainOrLoss</td>
 <td>double</td>
 <td>(Account currency)</td>
+</tr>
+<tr>
+<td>Valuation.MarketValueGainOrLoss</td>
+<td>double</td>
+<td>MarketValueGainOrLoss as a result of the market price (MV) movement of the security. (Account currency)</td>
+</tr>
+<tr>
+<td>Valuation.ExchangeRateGainOrLoss</td>
+<td>double</td>
+<td>ExchangeRateGainOrLoss as a result of the movement of the exchange rate (FX). (Account currency)</td>
 </tr>
 <tr>
 <td>Valuation.EstimatedIncome</td>
@@ -2430,9 +2446,19 @@
 <td>(Account currency)</td>
 </tr>
 <tr>
+<td>Holdings.MarketValueGainOrLoss</td>
+<td>double</td>
+<td>MarketValueGainOrLoss as a result of the market price (MV) movement of the security. (Account currency)</td>
+</tr>
+<tr>
+<td>Holdings.ExchangeRateGainOrLoss</td>
+<td>double</td>
+<td>ExchangeRateGainOrLoss as a result of the movement of the exchange rate (FX). (Account currency)</td>
+</tr>
+<tr>
 <td>Holdings.PercentTotalGainOrLoss</td>
 <td>double</td>
-<td>The gain or loss expressed as a percentage over the adjusted cost base.</td>
+<td>The total gain or loss (TG) expressed as a percentage over the adjusted cost base.</td>
 </tr>
 <tr>
 <td>Holdings.EstimatedIncome</td>
