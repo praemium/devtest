@@ -329,6 +329,9 @@
                     <a href="#delete-security-substitutions" class="toc-h2 toc-link" data-title="DELETE Security Substitutions"><span class="delete">DELETE</span> Security Substitutions</a>
                   </li>
                   <li>
+                    <a href="#get-security-customisations" class="toc-h2 toc-link" data-title="GET Security Customisations"><span class="get">GET</span> Security Customisations</a>
+                  </li>
+                  <li>
                     <a href="#put-security-customisations" class="toc-h2 toc-link" data-title="PUT Security Customisations"><span class="put">PUT</span> Security Customisations</a>
                   </li>
                   <li>
@@ -8083,6 +8086,174 @@
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">NoContent</span><span class="w">
 </span></code></pre></div>
 <p><br/></p>
+<h3 id='get-security-customisations'><span class="get">GET</span> Security Customisations</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/securitycustomisations</p>
+</blockquote>
+
+<p>This endpoint returns security exclusions and substitutions for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-27'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-8'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId<span class="required">required</span></td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"SecurityExclusions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-09T15:20:00.237+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CBA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-10T10:13:54.67+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VAN0019AU"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FND"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"SecuritySubstitutions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T16:17:07.61+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FromSecurity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"ToSecurity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CBA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASX"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-18'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SecurityExclusions</td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td>SecurityExclusions.CreatedDate</td>
+<td>date-time</td>
+<td>Date security exclusion was created.</td>
+</tr>
+<tr>
+<td>SecurityExclusions.Security</td>
+<td>object</td>
+<td>Security name.</td>
+</tr>
+<tr>
+<td>SecurityExclusions.Security.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>SecurityExclusions.Security.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions</td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.CreatedDate</td>
+<td>date-time</td>
+<td>Date security substitution was created.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.FromSecurity</td>
+<td>object</td>
+<td>From security.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.FromSecurity.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.FromSecurity.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.ToSecurity</td>
+<td>object</td>
+<td>To security.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.ToSecurity.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>SecuritySubstitutions.ToSecurity.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
 <h3 id='put-security-customisations'><span class="put">PUT</span> Security Customisations</h3>
 <blockquote>
 <p><strong>Definition:</strong> https://api.onpraemium.com/api/securitycustomisations</p>
@@ -8096,7 +8267,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-27'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-28'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8216,7 +8387,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-18'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-19'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8305,7 +8476,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-28'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-29'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8334,7 +8505,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-8'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-9'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8358,7 +8529,7 @@
   </span><span class="nl">"Percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.5128</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Units"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-19'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-20'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8397,7 +8568,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-29'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-30'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8480,7 +8651,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-30'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-31'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8511,7 +8682,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU1</span>
 <span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU2</span>
 <span class="na">AccountIds</span><span class="pi">:</span> <span class="s">AU3</span>
-</code></pre></div><h5 id='request-parameter-query-9'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-10'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8540,7 +8711,7 @@
     </span><span class="nl">"ReferenceNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4000005"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-20'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-21'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8574,7 +8745,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-31'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-32'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8603,7 +8774,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-10'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-11'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8674,7 +8845,7 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-21'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-22'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8748,7 +8919,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-32'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-33'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8857,7 +9028,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-33'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-34'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8888,7 +9059,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">CashflowInstructionId</span><span class="pi">:</span> <span class="s">AU1</span>
 <span class="na">CashflowInstructionType</span><span class="pi">:</span> <span class="m">3</span>
-</code></pre></div><h5 id='request-parameter-query-11'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-12'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -8932,7 +9103,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-34'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-35'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9060,7 +9231,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-35'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-36'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9090,7 +9261,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">CashflowInstructionType</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-12'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-13'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9129,7 +9300,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-36'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-37'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9169,7 +9340,7 @@
 <span class="c1"># Search by security codes</span>
 <span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">BHP.ASX</span>
 <span class="na">SecurityCodes</span><span class="pi">:</span> <span class="s">PPS.ASX</span>
-</code></pre></div><h5 id='request-parameter-query-13'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-14'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -9214,7 +9385,7 @@
     </span><span class="nl">"IsAllowedByApl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-22'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-23'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
