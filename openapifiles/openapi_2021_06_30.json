@@ -8680,6 +8680,11 @@
           "description": "The name of the account’s benchmark 1.",
           "type": "string"
         },
+        "BenchmarkMargin1": {
+          "description": "The margin (% p.a.) of the account’s benchmark 1.",
+          "format": "double",
+          "type": "number"
+        },
         "BenchmarkId2": {
           "description": "The unique ID of the account's benchmark 2.",
           "type": "string"
@@ -8687,6 +8692,11 @@
         "Benchmark2": {
           "description": "The name of the account’s benchmark 2.",
           "type": "string"
+        },
+        "BenchmarkMargin2": {
+          "description": "The margin (% p.a.) of the account’s benchmark 2.",
+          "format": "double",
+          "type": "number"
         }
       },
       "type": "object"

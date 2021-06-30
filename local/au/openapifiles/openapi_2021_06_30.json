@@ -8017,7 +8017,7 @@
           "type": "string"
         },
         "Benchmark1Margin": {
-          "description": "",
+          "description": "The margin (p.a.) of the portfolio's benchmark 1.",
           "format": "double",
           "type": "number"
         },
@@ -8031,7 +8031,7 @@
           "type": "string"
         },
         "Benchmark2Margin": {
-          "description": "",
+          "description": "The margin (p.a.) of the portfolio's benchmark 2.",
           "format": "double",
           "type": "number"
         },

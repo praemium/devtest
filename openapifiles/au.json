@@ -5760,7 +5760,7 @@
           "type": "string"
         },
         "BenchmarkMargin1": {
-          "description": "",
+          "description": "The margin (% p.a.) of the account's benchmark 1.",
           "format": "double",
           "type": "number"
         },
@@ -5773,7 +5773,7 @@
           "type": "string"
         },
         "BenchmarkMargin2": {
-          "description": "",
+          "description": "The margin (% p.a.) of the account's benchmark 2.",
           "format": "double",
           "type": "number"
         }
