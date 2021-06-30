@@ -1265,6 +1265,34 @@
       "required": [],
       "type": "object"
     },
+    "TaxWrapper": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
     "PdsModelUK": {
       "properties": {
         "ManagerName": {
@@ -1274,6 +1302,13 @@
         "FeeOverride": {
           "description": "Fee override.",
           "$ref": "#/definitions/FeeOverride"
+        },
+        "TaxWrappers": {
+          "description": "Unspecified = 0, CgtChargeable = 1, TaxExempt = 2, Unknown = 3, Isa = 4, OffshoreBond = 5, OnshoreBond = 6, PersonalPension = 7, RtsRats = 8, Sipp = 9, GroupSipp = 10, Ssas = 11, S32 = 12, TrustNotUkTaxable = 13, CompanyNotUkTaxable = 14, Qnups = 15, Qrops = 16, Efurbs = 17, Ebt = 18, InternationalPensionsAndSavingsScheme = 19, Jisa = 20, OffshoreBondPersonalised = 21.",
+          "items": {
+            "$ref": "#/definitions/TaxWrapper"
+          },
+          "type": "array"
         },
         "SingleAssetModelIsin": {
           "description": "ISIN of security. (Single asset model only)",
@@ -3206,7 +3241,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.06.25",
+    "version": "2021.06.30",
     "title": "Public API"
   }
 }

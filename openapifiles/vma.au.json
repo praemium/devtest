@@ -5759,6 +5759,11 @@
           "description": "The name of the account’s benchmark 1.",
           "type": "string"
         },
+        "BenchmarkMargin1": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
         "BenchmarkId2": {
           "description": "The unique ID of the account's benchmark 2.",
           "type": "string"
@@ -5766,6 +5771,11 @@
         "Benchmark2": {
           "description": "The name of the account’s benchmark 2.",
           "type": "string"
+        },
+        "BenchmarkMargin2": {
+          "description": "",
+          "format": "double",
+          "type": "number"
         }
       },
       "required": [],
@@ -9745,7 +9755,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.06.25",
+    "version": "2021.06.30",
     "title": "Public API"
   }
 }
