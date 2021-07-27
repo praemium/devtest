@@ -301,6 +301,9 @@
                     <a href="#get-income-schedules" class="toc-h2 toc-link" data-title="GET Income Schedules"><span class="get">GET</span> Income Schedules</a>
                   </li>
                   <li>
+                    <a href="#get-bulk-income-schedules" class="toc-h2 toc-link" data-title="GET Bulk Income Schedules"><span class="get">GET</span> Bulk Income Schedules</a>
+                  </li>
+                  <li>
                     <a href="#get-dividend-reinvestment-details" class="toc-h2 toc-link" data-title="GET Dividend Reinvestment Details"><span class="get">GET</span> Dividend Reinvestment Details</a>
                   </li>
               </ul>
@@ -4340,12 +4343,12 @@
 </tbody></table>
 
 <p><br/></p>
-<h3 id='get-dividend-reinvestment-details'><span class="get">GET</span> Dividend Reinvestment Details</h3>
+<h3 id='get-bulk-income-schedules'><span class="get">GET</span> Bulk Income Schedules</h3>
 <blockquote>
-<p><strong>Definition:</strong> https://api.onpraemium.com/api/dividendreinvestmentdetails</p>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/incomeschedules/bulk</p>
 </blockquote>
 
-<p>This endpoint returns dividend reinvestment details for the account.</p>
+<p>This endpoint returns income schedules for all specified accounts.</p>
 
 <blockquote>
 <p><strong>Header Examples</strong></p>
@@ -4381,8 +4384,262 @@
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountIds</span><span class="pi">:</span> <span class="s2">"</span><span class="s">AU400000"</span>
+<span class="na">AccountIds</span><span class="pi">:</span> <span class="s2">"</span><span class="s">AU400001"</span>
+<span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
+<span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 </code></pre></div><h5 id='request-parameter-query-11'>Request Parameter - Query</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountIds<span class="required">required</span></td>
+<td>array</td>
+<td>An array of account IDs.</td>
+</tr>
+<tr>
+<td>FromDate<span class="required">required</span></td>
+<td>date-time</td>
+<td>The from date used when calculating data for the request.</td>
+</tr>
+<tr>
+<td>ToDate<span class="required">required</span></td>
+<td>date-time</td>
+<td>The to date used when calculating data for the request.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Response Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IncomeSchedules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"CashAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">58.40</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TrustOtherExpenses"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ForeignIncomeTaxOffsetsTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TaxWithheld"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IncomeTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">58.40</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"NonAssessableTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TrustCGTDistributionsTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ForeignIncomeTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Drp"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TrustOtherAust"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FrankedTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">58.40</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"UnfrankedTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Interest"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TaxDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-18T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"AssetDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARISTOCRAT LEISURE LIMITED FPO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IncomeTypeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dividends"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IncomeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU72394073"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FrankingCreditsTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.03</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"AccruedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU400001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IncomeSchedules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"CashAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">653.45</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TrustOtherExpenses"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ForeignIncomeTaxOffsetsTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TaxWithheld"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IncomeTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">653.45</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"NonAssessableTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TrustCGTDistributionsTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ForeignIncomeTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Drp"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TrustOtherAust"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FrankedTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">653.45</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"UnfrankedTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Interest"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TaxDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-22T00:00:00+10:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"AssetDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BHP GROUP LIMITED FPO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IncomeTypeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dividends"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"IncomeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU2962862"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FrankingCreditsTotal"</span><span class="p">:</span><span class="w"> </span><span class="mf">280.05</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"AccruedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h5 id='response-parameters-16'>Response Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AccountId</td>
+<td>string</td>
+<td>Account ID.</td>
+</tr>
+<tr>
+<td>IncomeSchedules</td>
+<td>array</td>
+<td></td>
+</tr>
+<tr>
+<td>IncomeSchedules.CashAmount</td>
+<td>double</td>
+<td>Amount received via cash. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.TrustOtherExpenses</td>
+<td>double</td>
+<td>Other expenses related to the income record. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.ForeignIncomeTaxOffsetsTotal</td>
+<td>double</td>
+<td>Foreign income tax offsets. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.TaxWithheld</td>
+<td>double</td>
+<td>Total tax withheld on the income record. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.IncomeTotal</td>
+<td>double</td>
+<td>Total value of the income record. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.NonAssessableTotal</td>
+<td>double</td>
+<td>Total amount that is non assessable for tax purposes. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.TrustCgtDistributionsTotal</td>
+<td>double</td>
+<td>Amount received due to distributed capital gains. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.ForeignIncomeTotal</td>
+<td>double</td>
+<td>Amount received from non-Australian sources. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.Drp</td>
+<td>double</td>
+<td>Amount received via dividend reinvestment. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.AustralianTrustOther</td>
+<td>double</td>
+<td>Australian sourced income component that is not classified as one of the other types. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.FrankedTotal</td>
+<td>double</td>
+<td>Amount received that was franked. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.UnfrankedTotal</td>
+<td>double</td>
+<td>Amount received that was unfranked. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.Interest</td>
+<td>double</td>
+<td>Interest amount. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.TaxDate</td>
+<td>date-time</td>
+<td>Tax date of the income record.</td>
+</tr>
+<tr>
+<td>IncomeSchedules.Security</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>IncomeSchedules.Security.Code</td>
+<td>string</td>
+<td>Security code.</td>
+</tr>
+<tr>
+<td>IncomeSchedules.Security.Exchange</td>
+<td>string</td>
+<td>Security exchange.</td>
+</tr>
+<tr>
+<td>IncomeSchedules.IncomeTypeDescription</td>
+<td>string</td>
+<td>Type of income received.</td>
+</tr>
+<tr>
+<td>IncomeSchedules.IncomeId</td>
+<td>string</td>
+<td>Praemium income ID.</td>
+</tr>
+<tr>
+<td>IncomeSchedules.FrankingCreditsTotal</td>
+<td>double</td>
+<td>Imputation credits. (Account currency)</td>
+</tr>
+<tr>
+<td>IncomeSchedules.AccruedAmount</td>
+<td>double</td>
+<td>Income amount that is accrued. (Account currency)</td>
+</tr>
+</tbody></table>
+
+<p><br/></p>
+<h3 id='get-dividend-reinvestment-details'><span class="get">GET</span> Dividend Reinvestment Details</h3>
+<blockquote>
+<p><strong>Definition:</strong> https://api.onpraemium.com/api/dividendreinvestmentdetails</p>
+</blockquote>
+
+<p>This endpoint returns dividend reinvestment details for the account.</p>
+
+<blockquote>
+<p><strong>Header Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
+<span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
+<span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
+</code></pre></div><h5 id='header-parameters-17'>Header Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization<span class="required">required</span></td>
+<td>string</td>
+<td>Access token.</td>
+</tr>
+<tr>
+<td>x-pps-subscription-key<span class="required">required</span></td>
+<td>string</td>
+<td>Product subscription key.</td>
+</tr>
+<tr>
+<td>x-pps-api-version<span class="required">required</span></td>
+<td>string</td>
+<td>API version of the endpoint.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p><strong>Request Parameter - Query Examples</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
+</code></pre></div><h5 id='request-parameter-query-12'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4427,7 +4684,7 @@
     </span><span class="nl">"ExcludeFromDrp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-16'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-17'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4496,7 +4753,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-17'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-18'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4527,7 +4784,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-12'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-13'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4586,7 +4843,7 @@
     </span><span class="nl">"ExpenseTypeDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Portfolio management fees"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-17'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-18'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4670,7 +4927,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-18'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-19'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4699,7 +4956,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-13'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-14'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4736,7 +4993,7 @@
   </span><span class="nl">"NetCapitalGainLossIndexed"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"NetCapitalGainLossOther"</span><span class="p">:</span><span class="w"> </span><span class="mf">433.62</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-18'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-19'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4840,7 +5097,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-19'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-20'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4869,7 +5126,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-14'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-15'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -4972,7 +5229,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-19'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-20'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5216,7 +5473,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-20'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-21'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5245,7 +5502,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
-</code></pre></div><h5 id='request-parameter-query-15'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-16'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5275,7 +5532,7 @@
   </span><span class="nl">"CgtGain"</span><span class="p">:</span><span class="w"> </span><span class="mf">165376.11</span><span class="p">,</span><span class="w">
   </span><span class="nl">"CgtLoss"</span><span class="p">:</span><span class="w"> </span><span class="mf">-11461.47</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-20'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-21'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5354,7 +5611,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-21'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-22'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5385,7 +5642,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">Page</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">Size</span><span class="pi">:</span> <span class="m">100</span>
-</code></pre></div><h5 id='request-parameter-query-16'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-17'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5460,7 +5717,7 @@
     </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-21'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-22'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5609,7 +5866,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-22'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-23'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5647,7 +5904,7 @@
 <span class="na">DisplayReturns</span><span class="pi">:</span> <span class="m">0</span>
 <span class="na">MultiplePeriods</span><span class="pi">:</span> <span class="m">2</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-17'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-18'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5751,7 +6008,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-22'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-23'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5870,7 +6127,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-23'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-24'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -5903,7 +6160,7 @@
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 <span class="na">IncludeTaxCredits</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-18'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-19'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6028,7 +6285,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-23'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-24'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6237,7 +6494,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-24'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-25'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6273,7 +6530,7 @@
 <span class="na">IncludeTaxCredits</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">DisplayReturns</span><span class="pi">:</span> <span class="m">0</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-19'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-20'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6355,7 +6612,7 @@
     </span><span class="nl">"CumulativeNetPercentReturn"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-24'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-25'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6434,7 +6691,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-25'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-26'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6471,7 +6728,7 @@
 <span class="na">IncludeForeignTaxPaid</span><span class="pi">:</span> <span class="no">false</span>
 <span class="na">IncludeExcludedSecurities</span><span class="pi">:</span> <span class="no">true</span>
 <span class="na">CalculationMethod</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-20'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-21'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6550,7 +6807,7 @@
     </span><span class="nl">"BenchmarkReturnPercent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-25'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-26'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6609,7 +6866,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-26'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-27'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6660,7 +6917,7 @@
     </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABS CPI HEALTH INDEX"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-26'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-27'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6699,7 +6956,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-27'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-28'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6731,7 +6988,7 @@
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
 <span class="na">MultiplePeriods</span><span class="pi">:</span> <span class="m">1</span>
-</code></pre></div><h5 id='request-parameter-query-21'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-22'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6783,7 +7040,7 @@
     </span><span class="nl">"PercentageReturn"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6120</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-27'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-28'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6817,7 +7074,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-28'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-29'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6848,7 +7105,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">AccountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 <span class="na">FromDate</span><span class="pi">:</span> <span class="s">2021-01-23T00:00:00Z</span>
 <span class="na">ToDate</span><span class="pi">:</span> <span class="s">2021-02-23T00:00:00Z</span>
-</code></pre></div><h5 id='request-parameter-query-22'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-23'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6887,7 +7144,7 @@
     </span><span class="nl">"ToDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-31T00:00:00+11:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-28'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-29'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6936,7 +7193,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-29'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-30'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6979,7 +7236,7 @@
     </span><span class="nl">"UpdatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-01T05:57:50.547+11:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-29'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-30'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7023,7 +7280,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-30'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-31'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7052,7 +7309,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">EventId</span><span class="pi">:</span> <span class="s">AU1234</span>
-</code></pre></div><h5 id='request-parameter-query-23'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-24'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7087,7 +7344,7 @@
     </span><span class="nl">"PublishedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-17T10:16:17.153+11:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h5 id='response-parameters-30'>Response Parameters</h5>
+</span></code></pre></div><h5 id='response-parameters-31'>Response Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7136,7 +7393,7 @@
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">Authorization</span><span class="pi">:</span> <span class="s">Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImt...</span>
 <span class="na">x-pps-subscription-key</span><span class="pi">:</span> <span class="s">d3e30ecd1ab345...</span>
 <span class="na">x-pps-api-version</span><span class="pi">:</span> <span class="s">v1</span>
-</code></pre></div><h5 id='header-parameters-31'>Header Parameters</h5>
+</code></pre></div><h5 id='header-parameters-32'>Header Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7165,7 +7422,7 @@
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">FileId</span><span class="pi">:</span> <span class="s">AC2295B5F56D4342A8D057F3DD25C711</span>
-</code></pre></div><h5 id='request-parameter-query-24'>Request Parameter - Query</h5>
+</code></pre></div><h5 id='request-parameter-query-25'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
