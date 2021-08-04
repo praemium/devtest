@@ -1762,77 +1762,83 @@
 <p><strong>Response Examples</strong></p>
 </blockquote>
 <div class="highlight"><pre class="highlight json-doc tab-json-doc testt"><code><span class="err">#</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">OK</span><span class="w">
-</span><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU251995"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240153Cons"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T00:00:00+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"FirstTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-08-07T00:00:00+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-01-01T00:00:00+11:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"LastRecalcDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-27T14:45:10.943+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MarketValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">1566857.15</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"OwnerUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Platinum"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"BenchmarkId1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU9"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Benchmark1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S&amp;P/ASX 200 Accumulation Index"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"BenchmarkMargin1"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.000000</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"BenchmarkId2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU8"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Benchmark2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S&amp;P/ASX 200"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"BenchmarkMargin2"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000000</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU252176"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WalshCons"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T00:00:00+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"FirstTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1983-12-31T00:00:00+11:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-01-01T00:00:00+11:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"LastRecalcDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T20:15:19.03+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MarketValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">16881784.98</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"OwnerUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMSF"</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU251995"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240153Cons"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T00:00:00+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FirstTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-08-07T00:00:00+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-01-01T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"LastRecalcDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-27T14:45:10.943+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"MarketValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">1566857.15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"OwnerUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Platinum"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"BenchmarkId1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Benchmark1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S&amp;P/ASX 200 Accumulation Index"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"BenchmarkMargin1"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"BenchmarkId2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Benchmark2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S&amp;P/ASX 200"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"BenchmarkMargin2"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU252176"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WalshCons"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T00:00:00+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FirstTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1983-12-31T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-01-01T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"LastRecalcDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T20:15:19.03+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"MarketValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">16881784.98</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"OwnerUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMSF"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU275166"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMA00275165_EXT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T00:00:00+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FirstTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2003-06-30T00:00:00+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-01-01T00:00:00+11:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"LastRecalcDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T20:06:38.53+10:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RecalcRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"MarketValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">989833.01</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"OwnerUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DISPUTES"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"BenchmarkId1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Benchmark1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S&amp;P/ASX 200"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"BenchmarkMargin1"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"Metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"TotalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1153</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">77</span><span class="w">
   </span><span class="p">}</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU275166"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMA00275165_EXT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test account 3"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ConsolidationType"</span><span class="p">:</span><span class="w"> </span><span class="mi">78</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"AccountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"IsSma"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ValuationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T00:00:00+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"FirstTransactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2003-06-30T00:00:00+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CreatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-01-01T00:00:00+11:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"LastRecalcDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-23T20:06:38.53+10:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"RecalcRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MarketValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">989833.01</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"OwnerUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Product"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DISPUTES"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"BenchmarkId1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU8"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Benchmark1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S&amp;P/ASX 200"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"BenchmarkMargin1"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000000</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div><h5 id='response-parameters-5'>Response Parameters</h5>
 <table><thead>
 <tr>
