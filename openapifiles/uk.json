@@ -577,6 +577,75 @@
         ]
       }
     },
+    "/api/holdings": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Holdings",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UkHoldingData"
+              }
+            }
+          }
+        },
+        "operationId": "GetUkHoldings",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "AccountIds",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "name": "ValuationDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ClassificationType",
+            "in": "query",
+            "required": true,
+            "description": "The classification type of the security valuation. AssetClassLookThrough = 1, AssetClassPrimaryClass = 2, MarketType = 3.",
+            "type": "enum"
+          }
+        ]
+      }
+    },
     "/api/ssologin": {
       "post": {
         "responses": {
@@ -2759,34 +2828,35 @@
     "HoldingSecurity": {
       "properties": {
         "AssetClassDescription": {
-          "description": "",
+          "description": "A description of the security’s asset class.",
           "type": "string"
         },
         "AssetClassCode": {
-          "description": "",
+          "description": "The asset class code of the security’s asset class.",
           "type": "string"
         },
         "AssetClassCategory": {
-          "description": "",
+          "description": "The asset class category of the security’s asset class.",
           "type": "string"
         },
         "TypeDescription": {
-          "description": "",
+          "description": "The asset type of the security’s asset class.",
           "type": "string"
         },
         "GicsDescription": {
-          "description": "",
+          "description": "The global industry classification of the security.",
           "type": "string"
         },
         "Code": {
-          "description": "",
+          "description": "Security code of the security.",
           "type": "string"
         },
         "Exchange": {
-          "description": "",
+          "description": "Exchange code of the security.",
           "type": "string"
         }
       },
+      "required": [],
       "type": "object"
     },
     "Holding": {
@@ -2890,15 +2960,16 @@
     "SubscriptionModel": {
       "properties": {
         "ModelCode": {
-          "description": "",
+          "description": "Model code.",
           "type": "string"
         },
         "Weighting": {
-          "description": "",
+          "description": "Account’s model weighting at the valuation date.",
           "format": "double",
           "type": "number"
         }
       },
+      "required": [],
       "type": "object"
     },
     "CashHub": {
@@ -2925,6 +2996,163 @@
           "$ref": "#/definitions/CashHub"
         }
       },
+      "type": "object"
+    },
+    "UkValuation": {
+      "properties": {
+        "ValuationDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalCost": {
+          "description": "The total account cost based on the cost base of unrealised holdings. ",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalValue": {
+          "description": "The total account value based on the quantity and price of unrealised holdings. ",
+          "format": "double",
+          "type": "number"
+        },
+        "NetValue": {
+          "description": "The total account value inclusive of receivables and payables. ",
+          "format": "double",
+          "type": "number"
+        },
+        "TotalGainOrLoss": {
+          "description": " ",
+          "format": "double",
+          "type": "number"
+        },
+        "MarketValueGainOrLoss": {
+          "description": " ",
+          "format": "double",
+          "type": "number"
+        },
+        "AccountCurrency": {
+          "description": "Accounts currency",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UkHolding": {
+      "properties": {
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/HoldingSecurity"
+        },
+        "Quantity": {
+          "description": "The number of securities held by the account at the recalculation date.",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitCost": {
+          "description": "Average unit cost of the holding. This is the actual cost divided by the quantity. ",
+          "format": "double",
+          "type": "number"
+        },
+        "Cost": {
+          "description": "Actual cost is based on the cost base of unrealised holdings. ",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitValue": {
+          "description": "The last price of the holding available at the recalculation date. ",
+          "format": "double",
+          "type": "number"
+        },
+        "UnitPriceDate": {
+          "description": "The date of the unit price. ",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Value": {
+          "description": "Value is calculated based on the unit price multiplied by the quantity. ",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalValue": {
+          "description": "The percentage ratio of the value relative to the total account value.",
+          "format": "double",
+          "type": "number"
+        },
+        "GainOrLoss": {
+          "description": " ",
+          "format": "double",
+          "type": "number"
+        },
+        "PercentTotalGainOrLoss": {
+          "description": "The total gain or loss (TG) expressed as a percentage over the adjusted cost base.",
+          "format": "double",
+          "type": "number"
+        },
+        "ValueInSecurityCurrency": {
+          "description": "The value based on the quantity and local price of unrealised holdings.",
+          "format": "double",
+          "type": "number"
+        },
+        "NativeCurrency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UkCashHub": {
+      "properties": {
+        "GBP": {
+          "description": "Cash model weighting at the valuation date.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UkSubscription": {
+      "properties": {
+        "Models": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/SubscriptionModel"
+          },
+          "type": "array"
+        },
+        "CashHub": {
+          "description": "",
+          "$ref": "#/definitions/UkCashHub"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "UkHoldingData": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Valuation": {
+          "description": "",
+          "$ref": "#/definitions/UkValuation"
+        },
+        "Holdings": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/UkHolding"
+          },
+          "type": "array"
+        },
+        "Subscriptions": {
+          "description": "",
+          "$ref": "#/definitions/UkSubscription"
+        }
+      },
+      "required": [],
       "type": "object"
     },
     "ModelStatus": {
@@ -3241,7 +3469,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.08.13",
+    "version": "2021.08.19",
     "title": "Public API"
   }
 }
