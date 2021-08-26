@@ -611,6 +611,10 @@ Once your application is fully developed, you can request credentials for the Pr
 <p>If there are any endpoints that you require and we have not listed, please contact for further information. Alternatively our Upload Centre and automatic file/data exchange (via SFTP or other supported protocols) is available for the bulk collection of data or management of users, accounts or settings.</p>
 
 <p>Investment or Model Managers can access and manage their models via a specialised set of APIs. This includes the setting or updating of investment selection, accessing model FUM, Performance and other information.</p>
+
+<aside class="notice">
+    We only support TLS 1.2 or higher.
+</aside>
 <h1 id='next-steps'>Next Steps</h1>
 <p>To get started with the Praemium API, you need to first gain access. </p>
 
@@ -835,6 +839,10 @@ DO NOT deploy software with this OAuth 2.0 client outside of a trusted environme
 <p>The Praemium API limits requests made to each Praemium service.</p>
 
 <p>The default is 500 requests per minute. If you hit the limit, the API will return HTTP code 429 (Too many requests) with a header &quot;retry-after&quot; (containing the number of seconds until a request can be made again). If you genuinely need to make more requests, please speak to our support team.</p>
+
+<aside class="notice">
+    Rate limiting for access token endpoint is 1 request every 5 seconds.
+</aside>
 
 <aside class="warning">
 We reserve the right to disable your access to the API if this rate limit is abused.
