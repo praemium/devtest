@@ -55,6 +55,107 @@
         ]
       }
     },
+    "/api/transactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Transactions",
+            "schema": {
+              "$ref": "#/definitions/TransactionUKIEnumerablePagedResponse"
+            }
+          }
+        },
+        "operationId": "GetUKTransactions",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "BuysAndSellsOnly",
+            "in": "query",
+            "required": false,
+            "description": "Whether to include only Buy and Sell. Default to false.",
+            "type": "boolean"
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "required": false,
+            "description": " Default to 1.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Size",
+            "in": "query",
+            "required": false,
+            "description": " Default to 100.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "enum"
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "required": false,
+            "description": "",
+            "type": "enum"
+          }
+        ]
+      }
+    },
     "/api/users": {
       "get": {
         "responses": {
@@ -870,6 +971,242 @@
         }
       },
       "required": [],
+      "type": "object"
+    },
+    "Transaction": {
+      "properties": {
+        "ContractNoteReference": {
+          "description": "",
+          "type": "string"
+        },
+        "DeemedAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "CostBaseUnknown": {
+          "description": "",
+          "type": "boolean"
+        },
+        "BuyBack": {
+          "description": "",
+          "type": "boolean"
+        },
+        "AveragePriceInTradedCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "AmountInTradedCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TradedCurrency": {
+          "description": "",
+          "type": "string"
+        },
+        "SettlementDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "AveragePriceInSettlementCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "AmountInSettlementCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "SettlementCurrency": {
+          "description": "",
+          "type": "string"
+        },
+        "Broker": {
+          "description": "",
+          "type": "string"
+        },
+        "GstClaimable": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "BrokerageGst": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "BrokerageIncludingGst": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TransactionId": {
+          "description": "",
+          "type": "string"
+        },
+        "Security": {
+          "description": "",
+          "$ref": "#/definitions/Security"
+        },
+        "TransactionDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "",
+          "format": "int32",
+          "type": "integer"
+        },
+        "NetAmount": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "Unconfirmed": {
+          "description": "",
+          "type": "boolean"
+        },
+        "AveragePrice": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "DisposalMethod": {
+          "description": "",
+          "type": "string"
+        },
+        "Narration": {
+          "description": "",
+          "type": "string"
+        },
+        "TransactionTypeDescription": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SecurityUK": {
+      "properties": {
+        "Code": {
+          "description": "",
+          "type": "string"
+        },
+        "Isin": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TransactionUK": {
+      "properties": {
+        "ContractNoteReference": {
+          "description": "Unique contract note reference number.",
+          "type": "string"
+        },
+        "AveragePriceInTradedCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "AmountInTradedCurrency": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        },
+        "TradedCurrency": {
+          "description": "",
+          "type": "string"
+        },
+        "SettlementDate": {
+          "description": "The date on which the transaction settled.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "AmountInSettlementCurrency": {
+          "description": "Displays the amount settled in an international currency.",
+          "format": "double",
+          "type": "number"
+        },
+        "SettlementCurrency": {
+          "description": "Displays the currency in which the trade was settled.",
+          "type": "string"
+        },
+        "StampDuty": {
+          "description": "Stamp Duty.",
+          "format": "double",
+          "type": "number"
+        },
+        "PTMLevy": {
+          "description": "PTM Levy.",
+          "format": "double",
+          "type": "number"
+        },
+        "DilutionLevy": {
+          "description": "Dilution Levy.",
+          "format": "double",
+          "type": "number"
+        },
+        "TransactionId": {
+          "description": "",
+          "type": "string"
+        },
+        "Security": {
+          "description": "Security's code and ISIN.",
+          "$ref": "#/definitions/SecurityUK"
+        },
+        "TransactionDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "Quantity of stock transfer.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "NetAmount": {
+          "description": " ",
+          "format": "double",
+          "type": "number"
+        },
+        "AveragePrice": {
+          "description": " ",
+          "format": "double",
+          "type": "number"
+        },
+        "Narration": {
+          "description": "",
+          "type": "string"
+        },
+        "TransactionTypeDescription": {
+          "description": "A categorised type of the transaction.",
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "TransactionUKIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TransactionUK"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
       "type": "object"
     },
     "User": {
@@ -3747,7 +4084,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.09.21",
+    "version": "2021.09.22",
     "title": "Public API"
   }
 }
