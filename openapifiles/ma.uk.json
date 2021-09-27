@@ -862,7 +862,7 @@
             "name": "ValuationDate",
             "in": "query",
             "required": true,
-            "description": "Date used to display the data.",
+            "description": "",
             "format": "date-time",
             "type": "string"
           }
@@ -1172,12 +1172,12 @@
           "type": "integer"
         },
         "NetAmount": {
-          "description": " ",
+          "description": " (Account currency)",
           "format": "double",
           "type": "number"
         },
         "AveragePrice": {
-          "description": " ",
+          "description": " (Account currency)",
           "format": "double",
           "type": "number"
         },
@@ -3624,32 +3624,32 @@
     "UkValuation": {
       "properties": {
         "ValuationDate": {
-          "description": "Date used to display the data.",
+          "description": "",
           "format": "date-time",
           "type": "string"
         },
         "TotalCost": {
-          "description": "The total account cost based on the cost base of unrealised holdings. ",
+          "description": "The total account cost based on the cost base of unrealised holdings. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalValue": {
-          "description": "The total account value based on the quantity and price of unrealised holdings. ",
+          "description": "The total account value based on the quantity and price of unrealised holdings. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "NetValue": {
-          "description": "The total account value inclusive of receivables and payables. ",
+          "description": "The total account value inclusive of receivables and payables. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "TotalGainOrLoss": {
-          "description": " ",
+          "description": "The nominal difference between the total value and the total cost. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "MarketValueGainOrLoss": {
-          "description": " ",
+          "description": "MarketValueGainOrLoss as a result of the market price (MV) movement of the security. (Account currency)",
           "format": "double",
           "type": "number"
         },
@@ -3703,27 +3703,27 @@
           "type": "number"
         },
         "UnitCost": {
-          "description": "Average unit cost of the holding. This is the actual cost divided by the quantity. ",
+          "description": "Average unit cost of the holding. This is the actual cost divided by the quantity. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "Cost": {
-          "description": "Actual cost is based on the cost base of unrealised holdings. ",
+          "description": "Actual cost is based on the cost base of unrealised holdings. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "UnitValue": {
-          "description": "The last price of the holding available at the recalculation date. ",
+          "description": "The last price of the holding available at the recalculation date. (Account currency)",
           "format": "double",
           "type": "number"
         },
         "UnitPriceDate": {
-          "description": "The date of the unit price. ",
+          "description": "The date of the unit price. (Account currency)",
           "format": "date-time",
           "type": "string"
         },
         "Value": {
-          "description": "Value is calculated based on the unit price multiplied by the quantity. ",
+          "description": "Value is calculated based on the unit price multiplied by the quantity. (Account currency)",
           "format": "double",
           "type": "number"
         },
@@ -3733,7 +3733,7 @@
           "type": "number"
         },
         "GainOrLoss": {
-          "description": " ",
+          "description": "Gain or loss. (Account currency)",
           "format": "double",
           "type": "number"
         },
@@ -3748,7 +3748,7 @@
           "type": "number"
         },
         "NativeCurrency": {
-          "description": "",
+          "description": "Displays the currency in which the asset was traded.",
           "type": "string"
         }
       },
@@ -4084,7 +4084,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.09.23",
+    "version": "2021.09.27",
     "title": "Public API"
   }
 }

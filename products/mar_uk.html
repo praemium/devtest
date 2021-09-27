@@ -727,7 +727,7 @@
 <tr>
 <td>ValuationDate<span class="required">required</span></td>
 <td>date-time</td>
-<td>Date used to display the data.</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -895,32 +895,32 @@
 <tr>
 <td>Valuation.ValuationDate</td>
 <td>date-time</td>
-<td>Date used to display the data.</td>
+<td></td>
 </tr>
 <tr>
 <td>Valuation.TotalCost</td>
 <td>double</td>
-<td>The total account cost based on the cost base of unrealised holdings.</td>
+<td>The total account cost based on the cost base of unrealised holdings. (Account currency)</td>
 </tr>
 <tr>
 <td>Valuation.TotalValue</td>
 <td>double</td>
-<td>The total account value based on the quantity and price of unrealised holdings.</td>
+<td>The total account value based on the quantity and price of unrealised holdings. (Account currency)</td>
 </tr>
 <tr>
 <td>Valuation.NetValue</td>
 <td>double</td>
-<td>The total account value inclusive of receivables and payables.</td>
+<td>The total account value inclusive of receivables and payables. (Account currency)</td>
 </tr>
 <tr>
 <td>Valuation.TotalGainOrLoss</td>
 <td>double</td>
-<td></td>
+<td>The nominal difference between the total value and the total cost. (Account currency)</td>
 </tr>
 <tr>
 <td>Valuation.MarketValueGainOrLoss</td>
 <td>double</td>
-<td></td>
+<td>MarketValueGainOrLoss as a result of the market price (MV) movement of the security. (Account currency)</td>
 </tr>
 <tr>
 <td>Valuation.AccountCurrency</td>
@@ -975,27 +975,27 @@
 <tr>
 <td>Holdings.UnitCost</td>
 <td>double</td>
-<td>Average unit cost of the holding. This is the actual cost divided by the quantity.</td>
+<td>Average unit cost of the holding. This is the actual cost divided by the quantity. (Account currency)</td>
 </tr>
 <tr>
 <td>Holdings.Cost</td>
 <td>double</td>
-<td>Actual cost is based on the cost base of unrealised holdings.</td>
+<td>Actual cost is based on the cost base of unrealised holdings. (Account currency)</td>
 </tr>
 <tr>
 <td>Holdings.UnitValue</td>
 <td>double</td>
-<td>The last price of the holding available at the recalculation date.</td>
+<td>The last price of the holding available at the recalculation date. (Account currency)</td>
 </tr>
 <tr>
 <td>Holdings.UnitPriceDate</td>
 <td>date-time</td>
-<td>The date of the unit price.</td>
+<td>The date of the unit price. (Account currency)</td>
 </tr>
 <tr>
 <td>Holdings.Value</td>
 <td>double</td>
-<td>Value is calculated based on the unit price multiplied by the quantity.</td>
+<td>Value is calculated based on the unit price multiplied by the quantity. (Account currency)</td>
 </tr>
 <tr>
 <td>Holdings.PercentTotalValue</td>
@@ -1005,7 +1005,7 @@
 <tr>
 <td>Holdings.GainOrLoss</td>
 <td>double</td>
-<td></td>
+<td>Gain or loss. (Account currency)</td>
 </tr>
 <tr>
 <td>Holdings.PercentTotalGainOrLoss</td>
@@ -1020,7 +1020,7 @@
 <tr>
 <td>Holdings.NativeCurrency</td>
 <td>string</td>
-<td></td>
+<td>Displays the currency in which the asset was traded.</td>
 </tr>
 <tr>
 <td>Subscriptions</td>
@@ -1308,12 +1308,12 @@
 <tr>
 <td>Data.NetAmount</td>
 <td>double</td>
-<td></td>
+<td>(Account currency)</td>
 </tr>
 <tr>
 <td>Data.AveragePrice</td>
 <td>double</td>
-<td></td>
+<td>(Account currency)</td>
 </tr>
 <tr>
 <td>Data.Narration</td>
