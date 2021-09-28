@@ -862,7 +862,7 @@
             "name": "ValuationDate",
             "in": "query",
             "required": true,
-            "description": "",
+            "description": "Date used to display the data.",
             "format": "date-time",
             "type": "string"
           }
@@ -3624,7 +3624,7 @@
     "UkValuation": {
       "properties": {
         "ValuationDate": {
-          "description": "",
+          "description": "Date used to display the data.",
           "format": "date-time",
           "type": "string"
         },
@@ -4084,7 +4084,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.09.27",
+    "version": "2021.09.28",
     "title": "Public API"
   }
 }
