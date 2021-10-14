@@ -174,86 +174,44 @@
         ],
         "parameters": [
           {
-            "name": "BuysAndSellsOnly",
-            "in": "query",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "name": "ShowUnconfirmed",
-            "in": "query",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "name": "Page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1. Default to 1.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return. Default to 100.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "required": false
-          },
-          {
-            "name": "Order",
-            "in": "query",
-            "required": false
-          },
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "The from date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "The to date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
             "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
+            "required": false,
+            "description": "Access token."
           },
           {
             "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
+            "required": false,
+            "description": "Product subscription key."
           },
           {
             "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
+            "required": false,
+            "description": "API version of the endpoint."
+          },
+          {
+            "name": "AccountId",
+            "required": false,
+            "description": "Account ID."
+          },
+          {
+            "name": "FromDate",
+            "required": false,
+            "description": "The from date used when calculating data for the request."
+          },
+          {
+            "name": "ToDate",
+            "required": false,
+            "description": "The to date used when calculating data for the request."
+          },
+          {
+            "name": "Page",
+            "required": false,
+            "description": "Page number to return. Default to 1. Default to 1."
+          },
+          {
+            "name": "Size",
+            "required": false,
+            "description": "Page size to return. Default to 100."
           }
         ]
       }
