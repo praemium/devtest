@@ -175,43 +175,63 @@
         "parameters": [
           {
             "name": "Authorization",
-            "required": false,
-            "description": "Access token."
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
           },
           {
             "name": "x-pps-subscription-key",
-            "required": false,
-            "description": "Product subscription key."
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
           },
           {
             "name": "x-pps-api-version",
-            "required": false,
-            "description": "API version of the endpoint."
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
           },
           {
             "name": "AccountId",
-            "required": false,
-            "description": "Account ID."
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
           },
           {
             "name": "FromDate",
-            "required": false,
-            "description": "The from date used when calculating data for the request."
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
           },
           {
             "name": "ToDate",
-            "required": false,
-            "description": "The to date used when calculating data for the request."
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
           },
           {
             "name": "Page",
+            "in": "query",
             "required": false,
-            "description": "Page number to return. Default to 1. Default to 1."
+            "description": "Page number to return. Default to 1. Default to 1.",
+            "format": "int32",
+            "type": "integer"
           },
           {
             "name": "Size",
+            "in": "query",
             "required": false,
-            "description": "Page size to return. Default to 100."
+            "description": "Page size to return. Default to 100.",
+            "format": "int32",
+            "type": "integer"
           }
         ]
       }
