@@ -5937,6 +5937,21 @@
         "Unit": {
           "description": "Fee unit of account. (**Dollar** or **Percent**)",
           "type": "string"
+        },
+        "OngoingFeeAnniversaryDate": {
+          "description": "Anniversary date of ongoing fee.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "FixedTermFeeStartDate": {
+          "description": "Start date of fixed term fee.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "FixedTermFeeEndDate": {
+          "description": "End date of fixed term fee.",
+          "format": "date-time",
+          "type": "string"
         }
       },
       "required": [],
