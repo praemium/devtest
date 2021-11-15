@@ -2759,6 +2759,38 @@
         2
       ]
     },
+    "FeeConsentType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "FeeConsent": {
+      "properties": {
+        "Type": {
+          "description": "",
+          "$ref": "#/definitions/FeeConsentType"
+        },
+        "AnniversaryDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TermStartDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TermEndDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "Frequency": {
       "format": "int32",
       "type": "integer",
@@ -4645,7 +4677,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.11.04",
+    "version": "2021.11.15",
     "title": "Public API"
   }
 }
