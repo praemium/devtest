@@ -7065,7 +7065,7 @@
           "type": "string"
         },
         "AccountType": {
-          "description": "Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18.",
+          "description": "Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18, Joint = 19.",
           "$ref": "#/definitions/DraftAccountType"
         },
         "PdsId": {
@@ -9871,7 +9871,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.11.15",
+    "version": "2021.11.17",
     "title": "Public API"
   }
 }
