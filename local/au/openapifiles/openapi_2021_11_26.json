@@ -5934,7 +5934,7 @@
           "type": "string"
         },
         "Type": {
-          "description": "Fee type of account returned by PDS endpoint. (Use this field if ID is not available)",
+          "description": "FeeTable = 0, Contribution = 1, Establishment = 2, Termination = 3, Withdrawal = 4, Ongoing = 5. (Use this field if ID is not available)",
           "type": "string"
         },
         "Rate": {
