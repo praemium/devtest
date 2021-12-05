@@ -7401,7 +7401,7 @@
     "FeeConsent": {
       "properties": {
         "Type": {
-          "description": "Ongoing = 1, Fixed = 2.",
+          "description": "Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.",
           "$ref": "#/definitions/FeeConsentType"
         },
         "AnniversaryDate": {
@@ -9886,7 +9886,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2021.11.25",
+    "version": "2021.12.05",
     "title": "Public API"
   }
 }
