@@ -5961,7 +5961,7 @@
     "PraemiumAPI.Public.Contract.Managed.DraftApplication.FeeConsent": {
       "properties": {
         "Type": {
-          "description": "Ongoing = 1, Fixed = 2.",
+          "description": "Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.",
           "format": "int32",
           "type": "integer",
           "enum": [
@@ -10542,6 +10542,11 @@
           },
           "type": "array"
         },
+        "FeeConsent": {
+          "description": "Contains fee consent data.",
+          "$ref": "#/definitions/FeeConsent",
+          "type": "object"
+        },
         "AccountSetup": {
           "description": "To be used for regular SMA accounts.",
           "$ref": "#/definitions/AccountSetup",
@@ -10737,6 +10742,33 @@
         "IncludesTax": {
           "description": "Controls if Fees.Value includes GST.",
           "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "FeeConsent": {
+      "properties": {
+        "Type": {
+          "description": "Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.",
+          "format": "int32",
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "AnniversaryDate": {
+          "description": "Anniversary date of ongoing fee. (Cannot be used along with TermStartDate and TermEndDate)",
+          "type": "date-time"
+        },
+        "TermStartDate": {
+          "description": "Start date of fixed term fee. (Cannot be used along with AnniversaryDate)",
+          "type": "date-time"
+        },
+        "TermEndDate": {
+          "description": "End date of fixed term fee. (Cannot be used along with AnniversaryDate)",
+          "type": "date-time"
         }
       },
       "type": "object"

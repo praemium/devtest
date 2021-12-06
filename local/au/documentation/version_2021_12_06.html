@@ -8878,6 +8878,31 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <td>Controls if Fees.Value includes GST.</td>
 </tr>
 <tr>
+<td>Account.FeeConsent</td>
+<td>object</td>
+<td>Contains fee consent data.</td>
+</tr>
+<tr>
+<td>Account.FeeConsent.Type</td>
+<td>enum</td>
+<td>Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.</td>
+</tr>
+<tr>
+<td>Account.FeeConsent.AnniversaryDate</td>
+<td>date-time</td>
+<td>Anniversary date of ongoing fee. (Cannot be used along with TermStartDate and TermEndDate)</td>
+</tr>
+<tr>
+<td>Account.FeeConsent.TermStartDate</td>
+<td>date-time</td>
+<td>Start date of fixed term fee. (Cannot be used along with AnniversaryDate)</td>
+</tr>
+<tr>
+<td>Account.FeeConsent.TermEndDate</td>
+<td>date-time</td>
+<td>End date of fixed term fee. (Cannot be used along with AnniversaryDate)</td>
+</tr>
+<tr>
 <td>Account.AccountSetup</td>
 <td>object</td>
 <td>To be used for regular SMA accounts.</td>
@@ -11118,7 +11143,7 @@ DO NOT deploy software with this token outside of a trusted environment or pass 
 <tr>
 <td>Accounts.FeeConsent.Type</td>
 <td>enum</td>
-<td>Ongoing = 1, Fixed = 2.</td>
+<td>Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.</td>
 </tr>
 <tr>
 <td>Accounts.FeeConsent.AnniversaryDate</td>
