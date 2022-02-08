@@ -1106,6 +1106,16 @@
         </span><span class="nl">"Cash"</span><span class="p">:</span><span class="w"> </span><span class="mf">132.12</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Shares"</span><span class="p">:</span><span class="w"> </span><span class="mf">321.32</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularContribution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -1482,6 +1492,46 @@
 <td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
 <td>enum</td>
 <td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
 </tr>
 </tbody></table>
 
@@ -2221,6 +2271,16 @@
         </span><span class="nl">"Cash"</span><span class="p">:</span><span class="w"> </span><span class="mf">132.12</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Shares"</span><span class="p">:</span><span class="w"> </span><span class="mf">321.32</span><span class="p">,</span><span class="w">
         </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularContribution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -2658,6 +2718,46 @@
 <td>integer</td>
 <td>Owner adviser ID to create the application under.</td>
 </tr>
+<tr>
+<td>Accounts.RegularWithdrawal</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -2834,6 +2934,16 @@
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"Income"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularContribution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -3266,6 +3376,46 @@
 <td>double</td>
 <td>Target allocation income percentage.</td>
 </tr>
+<tr>
+<td>Accounts.RegularWithdrawal</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -3441,6 +3591,16 @@
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"Income"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"RegularContribution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Method"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -3932,6 +4092,46 @@
 <td>Accounts.TargetAllocation.Income.Percentage</td>
 <td>double</td>
 <td>Target allocation income percentage.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularWithdrawal.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Frequency</td>
+<td>enum</td>
+<td>Monthly = 0, Quarterly = 1, SemiAnnually = 2, Annually = 3.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Method</td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.RegularContributions.Amount</td>
+<td>double</td>
+<td>Amount for regular withdrawal.</td>
 </tr>
 </tbody></table>
 
