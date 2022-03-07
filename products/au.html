@@ -2430,35 +2430,104 @@
 <tr>
 <td>Accounts.AdviserServicesProvided</td>
 <td>array</td>
-<td>The services provided by the adviser:</td>
+<td>The services provided by the adviser: Review of your account = 1, Strategic superannuation advice = 2, Investment advice on your account = 3, Contribution strategy = 4, Insurance in superannuation strategy = 5, Withdrawal advice (lump sum and/or pension) = 6</td>
+</tr>
+<tr>
+<td>Accounts.Name</td>
+<td>string</td>
+<td>Account name.</td>
+</tr>
+<tr>
+<td>Accounts.RegisteredName</td>
+<td>string</td>
+<td>Account registered name.</td>
+</tr>
+<tr>
+<td>Accounts.ShortName</td>
+<td>string</td>
+<td>Account short name.</td>
+</tr>
+<tr>
+<td>Accounts.AccountType<span class="required">required</span></td>
+<td>enum</td>
+<td>Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18, Joint = 19.</td>
+</tr>
+<tr>
+<td>Accounts.PdsId<span class="required">required</span></td>
+<td>string</td>
+<td>PDS ID of account.</td>
+</tr>
+<tr>
+<td>Accounts.Models</td>
+<td>array</td>
+<td>Account models.</td>
+</tr>
+<tr>
+<td>Accounts.Models.Code<span class="required">required</span></td>
+<td>string</td>
+<td>Model code.</td>
+</tr>
+<tr>
+<td>Accounts.Models.Proportion</td>
+<td>double</td>
+<td>Proportion of model.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions</td>
+<td>array</td>
+<td>Account exclusions.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security</td>
+<td>object</td>
+<td>Security code of the exclusion.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security.Code<span class="required">required</span></td>
+<td>string</td>
+<td>Security code of the security.</td>
+</tr>
+<tr>
+<td>Accounts.Exclusions.Security.Exchange<span class="required">required</span></td>
+<td>string</td>
+<td>Exchange code of the security.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment</td>
+<td>object</td>
+<td>Initial investment of account.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Cash</td>
+<td>double</td>
+<td>Select if the initial investment will include cash.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Shares</td>
+<td>double</td>
+<td>Select if the initial investment will include shares.</td>
+</tr>
+<tr>
+<td>Accounts.InitialInvestment.Method<span class="required">required</span></td>
+<td>enum</td>
+<td>BPay = 0, DirectDebit = 1.</td>
+</tr>
+<tr>
+<td>Accounts.OwnerAdviserId</td>
+<td>integer</td>
+<td>Owner adviser ID to create the application under.</td>
+</tr>
+<tr>
+<td>AdviserId<span class="required">required</span></td>
+<td>integer</td>
+<td>Adviser ID to create the application under.</td>
+</tr>
+<tr>
+<td>OwnerAdviserId</td>
+<td>integer</td>
+<td>Owner adviser ID to create the application under.</td>
 </tr>
 </tbody></table>
-
-<p>1 = Review of your account,
-2 = Strategic superannuation advice,
-3 = Investment advice on your account,
-4 = Contribution strategy,
-5 = Insurance in superannuation strategy,
-6 = Withdrawal advice (lump sum and/or pension)
-Accounts.Name | string | Account name.
-Accounts.RegisteredName | string | Account registered name.
-Accounts.ShortName | string | Account short name.
-Accounts.AccountType<span class="required">required</span> | enum | Company = 13, Individual = 14, Trust = 15, SuperSmaAccumulation = 16, SuperSmaPensionAbp = 17, SuperSmaPensionTtr = 18, Joint = 19.
-Accounts.PdsId<span class="required">required</span> | string | PDS ID of account.
-Accounts.Models | array | Account models.
-Accounts.Models.Code<span class="required">required</span> | string | Model code.
-Accounts.Models.Proportion | double | Proportion of model.
-Accounts.Exclusions | array | Account exclusions.
-Accounts.Exclusions.Security | object | Security code of the exclusion.
-Accounts.Exclusions.Security.Code<span class="required">required</span> | string | Security code of the security.
-Accounts.Exclusions.Security.Exchange<span class="required">required</span> | string | Exchange code of the security.
-Accounts.InitialInvestment | object | Initial investment of account.
-Accounts.InitialInvestment.Cash | double | Select if the initial investment will include cash.
-Accounts.InitialInvestment.Shares | double | Select if the initial investment will include shares.
-Accounts.InitialInvestment.Method<span class="required">required</span> | enum | BPay = 0, DirectDebit = 1.
-Accounts.OwnerAdviserId | integer | Owner adviser ID to create the application under.
-AdviserId<span class="required">required</span> | integer | Adviser ID to create the application under.
-OwnerAdviserId | integer | Owner adviser ID to create the application under.</p>
 
 <blockquote>
 <p><strong>Response Examples</strong></p>
