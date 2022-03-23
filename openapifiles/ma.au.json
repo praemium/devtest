@@ -7647,6 +7647,15 @@
         50
       ]
     },
+    "SuperSmaAccumulatedPaymentType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2
+      ]
+    },
     "DraftInflowsOtherContribution": {
       "properties": {
         "ContributionType": {
@@ -7657,6 +7666,10 @@
           "description": "Expected amount.",
           "format": "double",
           "type": "number"
+        },
+        "SuperSmaAccumulatedPaymentType": {
+          "description": "",
+          "$ref": "#/definitions/SuperSmaAccumulatedPaymentType"
         }
       },
       "required": [
@@ -7686,10 +7699,6 @@
             "$ref": "#/definitions/DraftInflowsOtherContribution"
           },
           "type": "array"
-        },
-        "AccumContribution": {
-          "description": "Accumulation contribution.",
-          "$ref": "#/definitions/DraftInflowsOtherContribution"
         }
       },
       "required": [],
@@ -9348,6 +9357,24 @@
         6
       ]
     },
+    "SuperannuationContributionType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
     "CashflowInstructionDetail": {
       "properties": {
         "ModelCode": {
@@ -9399,6 +9426,10 @@
           "format": "double",
           "type": "number"
         },
+        "TaxType": {
+          "description": "PersonalNon = 3, ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts)",
+          "$ref": "#/definitions/SuperannuationContributionType"
+        },
         "Allocations": {
           "description": "Cashflow instruction details.",
           "items": {
@@ -9428,6 +9459,10 @@
           "description": "Amount of the one-off cashflow instruction to apply.",
           "format": "double",
           "type": "number"
+        },
+        "TaxType": {
+          "description": "PersonalNon = 3, ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts)",
+          "$ref": "#/definitions/SuperannuationContributionType"
         },
         "AccountId": {
           "description": "Account ID.",
@@ -9940,7 +9975,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2022.03.07",
+    "version": "2022.03.23",
     "title": "Public API"
   }
 }

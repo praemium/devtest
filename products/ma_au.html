@@ -4321,8 +4321,9 @@
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"OtherContributions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"ContributionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="w">
+            </span><span class="nl">"ContributionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ExpectedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">35234.43543</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"SuperSmaAccumulatedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -4799,7 +4800,7 @@
 <tr>
 <td>Accounts.InitialInvestmentSuper.OtherContributions.ContributionType</td>
 <td>enum</td>
-<td>NonConcessional_Personal = 21, NonConcessional_Spouse = 22, NonConcessional_Child = 24, Downsizer = 43.</td>
+<td>NonConcessional_Personal = 21, NonConcessional_Spouse = 22, NonConcessional_Child = 24, Exempt_CGT_15Year = 31 (for direct debit only), Exempt_CGT_Retirement = 32 (for direct debit only), Exempt_PersonalInjuryElection = 33 (for direct debit only), Downsizer = 43.</td>
 </tr>
 <tr>
 <td>Accounts.InitialInvestmentSuper.OtherContributions.ExpectedAmount</td>
@@ -4807,19 +4808,9 @@
 <td>Other contributions expected amount.</td>
 </tr>
 <tr>
-<td>Accounts.InitialInvestmentSuper.AccumContribution</td>
-<td>object</td>
-<td>Accumulation contribution.</td>
-</tr>
-<tr>
-<td>Accounts.InitialInvestmentSuper.AccumContribution.ContributionType</td>
+<td>Accounts.InitialInvestmentSuper.OtherContributions.SuperSmaAccumulatedPaymentType</td>
 <td>enum</td>
-<td>NonConcessional_Personal = 21, NonConcessional_Spouse = 22.</td>
-</tr>
-<tr>
-<td>Accounts.InitialInvestmentSuper.AccumContribution.ExpectedAmount</td>
-<td>double</td>
-<td>Accumulation contribution expected amount.</td>
+<td>Bpay = 0, DirectDebit = 1, DirectCredit = 2. (Only applicable for SuperSMA accumulation accounts)</td>
 </tr>
 <tr>
 <td>Accounts.Beneficiaries</td>
@@ -8792,6 +8783,11 @@
 <td>Value of the cashflow instruction.</td>
 </tr>
 <tr>
+<td>TaxType</td>
+<td>enum</td>
+<td>PersonalNon = 3, ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts)</td>
+</tr>
+<tr>
 <td>Allocations</td>
 <td>array</td>
 <td>Cashflow instruction details.</td>
@@ -8889,6 +8885,11 @@
 <td>Amount</td>
 <td>double</td>
 <td>Amount of the one-off cashflow instruction to apply.</td>
+</tr>
+<tr>
+<td>TaxType</td>
+<td>enum</td>
+<td>PersonalNon = 3, ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts)</td>
 </tr>
 <tr>
 <td>AccountId<span class="required">required</span></td>
