@@ -8188,7 +8188,7 @@
           "type": "number"
         },
         "TaxType": {
-          "description": "PersonalNon = 3, ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts and one-off direct debit)",
+          "description": "PersonalNon = 3 (Non-concessional personal), ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts and one-off direct debit)",
           "$ref": "#/definitions/SuperannuationContributionType"
         },
         "Allocations": {
@@ -8222,7 +8222,7 @@
           "type": "number"
         },
         "TaxType": {
-          "description": "PersonalNon = 3, ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts and one-off direct debit)",
+          "description": "PersonalNon = 3 (Non-concessional personal), ExemptCgtRetire = 4, ExemptCgt15 = 5, ExemptPerInjury = 6, Spouse = 7, Downsizer = 11. (Only applicable for SuperSMA accumulation accounts and one-off direct debit)",
           "$ref": "#/definitions/SuperannuationContributionType"
         },
         "AccountId": {
