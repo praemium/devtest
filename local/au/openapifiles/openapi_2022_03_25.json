@@ -6126,12 +6126,8 @@
           "description": "The exchange code of the security.",
           "type": "string"
         },
-        "SecurityId": {
-          "description": "",
-          "type": "string"
-        },
         "Quantity": {
-          "description": "Quantity of the security",
+          "description": "Quantity of the security.",
           "format": "double",
           "type": "number"
         },
