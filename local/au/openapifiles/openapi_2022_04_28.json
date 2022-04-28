@@ -5033,16 +5033,16 @@
     "PraemiumAPI.Public.Contract.Managed.Bpay": {
       "properties": {
         "BillerCode": {
-          "description": "",
+          "description": "BPay biller code.",
           "format": "int32",
           "type": "integer"
         },
         "ReferenceNumber": {
-          "description": "",
+          "description": "Customer reference number.",
           "type": "string"
         },
         "BpayType": {
-          "description": "",
+          "description": "Personal = 1, Spouse = 2, Downsizer = 3, SpecialPersonal = 4.",
           "format": "int32",
           "type": "integer",
           "enum": [
