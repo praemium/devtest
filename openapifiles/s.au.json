@@ -5743,7 +5743,7 @@
     "UserAccountLink": {
       "properties": {
         "UserId": {
-          "description": "User ID.",
+          "description": "User ID of the user linked to the account.",
           "format": "int32",
           "type": "integer"
         },
