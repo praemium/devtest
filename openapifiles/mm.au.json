@@ -2123,6 +2123,7 @@
             "name": "BuysAndSellsOnly",
             "in": "query",
             "required": false,
+            "description": "Whether to includes only Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close. Default to false.",
             "type": "boolean"
           },
           {
@@ -7526,61 +7527,6 @@
       "required": [],
       "type": "object"
     },
-    "ApplicantAddressType": {
-      "format": "int32",
-      "type": "integer",
-      "enum": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "ApplicantAddress": {
-      "properties": {
-        "Type": {
-          "description": "",
-          "$ref": "#/definitions/ApplicantAddressType"
-        },
-        "AddressLine1": {
-          "description": "",
-          "type": "string"
-        },
-        "AddressLine2": {
-          "description": "",
-          "type": "string"
-        },
-        "AddressLine3": {
-          "description": "",
-          "type": "string"
-        },
-        "SuburbCounty": {
-          "description": "",
-          "type": "string"
-        },
-        "TownCityState": {
-          "description": "",
-          "type": "string"
-        },
-        "Postcode": {
-          "description": "",
-          "type": "string"
-        },
-        "Country": {
-          "description": "",
-          "type": "string"
-        },
-        "IsRegistered": {
-          "description": "",
-          "type": "boolean"
-        },
-        "Addressee": {
-          "description": "",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "PdsModelAU": {
       "properties": {
         "Id": {
@@ -10399,7 +10345,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2023.01.04",
+    "version": "2023.01.05",
     "title": "Public API"
   }
 }
