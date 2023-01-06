@@ -2104,39 +2104,25 @@
         ],
         "parameters": [
           {
-            "name": "Page",
-            "in": "query",
-            "required": false,
-            "description": "Page number to return. Default to 1. Default to 1.",
-            "format": "int32",
-            "type": "integer"
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
           },
           {
-            "name": "Size",
-            "in": "query",
-            "required": false,
-            "description": "Page size to return. Default to 100.",
-            "format": "int32",
-            "type": "integer"
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
           },
           {
-            "name": "BuysAndSellsOnly",
-            "in": "query",
-            "required": false,
-            "description": "Whether to includes only Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close. Default to false.",
-            "type": "boolean"
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "required": false,
-            "description": "TransactionDate = 0, Security = 1. Default to 0."
-          },
-          {
-            "name": "Order",
-            "in": "query",
-            "required": false,
-            "description": "Asc = 0, Desc = 1. Default to 1."
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
           },
           {
             "name": "AccountId",
@@ -2162,25 +2148,41 @@
             "type": "string"
           },
           {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
+            "name": "BuysAndSellsOnly",
+            "in": "query",
+            "required": false,
+            "description": "Whether to includes only Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close. Default to false.",
+            "type": "boolean"
           },
           {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
+            "name": "Page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to return. Default to 1. Default to 1.",
+            "format": "int32",
+            "type": "integer"
           },
           {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
+            "name": "Size",
+            "in": "query",
+            "required": false,
+            "description": "Page size to return. Default to 100.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "required": false,
+            "description": "TransactionDate = 0, Security = 1. Default to 0.",
+            "type": "enum"
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "required": false,
+            "description": "Asc = 0, Desc = 1. Default to 1.",
+            "type": "enum"
           }
         ]
       }
@@ -10345,7 +10347,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2023.01.05",
+    "version": "2023.01.06",
     "title": "Public API"
   }
 }

@@ -2453,31 +2453,6 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>Page</td>
-<td>integer</td>
-<td>Page number to return. Default to 1. Default to 1.</td>
-</tr>
-<tr>
-<td>Size</td>
-<td>integer</td>
-<td>Page size to return. Default to 100.</td>
-</tr>
-<tr>
-<td>BuysAndSellsOnly</td>
-<td>boolean</td>
-<td>Whether to includes only Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close. Default to false.</td>
-</tr>
-<tr>
-<td>OrderBy</td>
-<td></td>
-<td>TransactionDate = 0, Security = 1. Default to 0.</td>
-</tr>
-<tr>
-<td>Order</td>
-<td></td>
-<td>Asc = 0, Desc = 1. Default to 1.</td>
-</tr>
-<tr>
 <td>AccountId<span class="required">required</span></td>
 <td>string</td>
 <td>Account ID.</td>
@@ -2491,6 +2466,31 @@
 <td>ToDate<span class="required">required</span></td>
 <td>date-time</td>
 <td>The to date used when calculating data for the request.</td>
+</tr>
+<tr>
+<td>BuysAndSellsOnly</td>
+<td>boolean</td>
+<td>Whether to includes only Buy, Close position, Sell, Short Sell, Write Opt. to Open, Write Opt. to Close, Buy Opt. to open, Buy Opt. to close. Default to false.</td>
+</tr>
+<tr>
+<td>Page</td>
+<td>integer</td>
+<td>Page number to return. Default to 1. Default to 1.</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>integer</td>
+<td>Page size to return. Default to 100.</td>
+</tr>
+<tr>
+<td>OrderBy</td>
+<td>enum</td>
+<td>TransactionDate = 0, Security = 1. Default to 0.</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>enum</td>
+<td>Asc = 0, Desc = 1. Default to 1.</td>
 </tr>
 </tbody></table>
 
