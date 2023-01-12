@@ -10455,6 +10455,209 @@
       ],
       "type": "object"
     },
+    "ApplicantCreate": {
+      "properties": {
+        "Type": {
+          "description": "Applicant type. This endpoint supports Individual applicants (Type 1). For Corporate Applicants, use the /api/TrusteeApplicants endpoint.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "Applicant": {
+          "description": "Contains the applicant data. When we have more types, the contents will be customisable based on Applicant.Type.",
+          "$ref": "#/definitions/Applicant",
+          "type": "object"
+        }
+      },
+      "required": [
+        "Type",
+        "Applicant"
+      ],
+      "type": "object"
+    },
+    "Applicant": {
+      "properties": {
+        "AdviserId": {
+          "description": "The user ID that you have been provided with.",
+          "type": "string"
+        },
+        "AccountId": {
+          "description": "AccountID of the SMA account. (prefixed with ‘AU’ for Australian accounts)",
+          "type": "string"
+        },
+        "Name": {
+          "description": "",
+          "$ref": "#/definitions/ApplicantName",
+          "type": "object"
+        },
+        "DateOfBirth": {
+          "description": "Date of birth of the applicant.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "Email": {
+          "description": "E-mail address of the applicant.",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "Primary contact number.",
+          "type": "string"
+        },
+        "PhoneOther": {
+          "description": "Secondary contact number.",
+          "type": "string"
+        },
+        "Addresses": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/ApplicantAddress"
+          },
+          "type": "array"
+        },
+        "IsSignatory": {
+          "description": "Whether the applicant is a signatory on the account. We require one signatory for individual and SuperSMA accounts, and all joint account holders must be signatories.",
+          "type": "boolean"
+        },
+        "SignatureImage": {
+          "description": "A base64 string representing an image of the applicant's signature. To prevent distortion of the image when it is printed, please ensure the width of the image is five times the height.",
+          "type": "string"
+        },
+        "TaxRateElection": {
+          "description": "Praemium code for the applicant's tax status - RTFN = Resident with TFN, RABN = Resident with ABN, NRWT = Non resident of Australia, NTFN = Resident of Australia without a TFN.",
+          "type": "string"
+        },
+        "TaxDomicileCountryCode": {
+          "description": "ISO alpha-3 code for the country where the applicant is resident for tax purposes.",
+          "type": "string"
+        },
+        "CitizenshipCountryCode": {
+          "description": "ISO alpha-3 code for the applicant's country of citizenship.",
+          "type": "string"
+        },
+        "Identification": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/ApplicantIdentification"
+          },
+          "type": "array"
+        },
+        "Sex": {
+          "description": "M = Male, F = Female.",
+          "type": "string"
+        },
+        "IsPoliticallyExposedPerson": {
+          "description": "Whether contact is politically exposed.",
+          "type": "boolean"
+        },
+        "PepDetails": {
+          "description": "If contact is politically exposed, details must be supplied.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "AdviserId",
+        "AccountId",
+        "Name",
+        "DateOfBirth",
+        "Email",
+        "Phone",
+        "IsSignatory",
+        "TaxRateElection",
+        "TaxDomicileCountryCode",
+        "CitizenshipCountryCode"
+      ],
+      "type": "object"
+    },
+    "ApplicantName": {
+      "properties": {
+        "First": {
+          "description": "First name.",
+          "type": "string"
+        },
+        "Last": {
+          "description": "Last name.",
+          "type": "string"
+        },
+        "Title": {
+          "description": "Title: Mr, Mrs, Ms, Miss, Doctor, Lady, Prof and Sir.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "First",
+        "Last",
+        "Title"
+      ],
+      "type": "object"
+    },
+    "ApplicantAddress": {
+      "properties": {
+        "Type": {
+          "description": "Home = 0, Office = 1, Mailing = 2, PrincipalPlaceOfBusiness = 3.",
+          "format": "int32",
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "Line1": {
+          "description": "Address line 1.",
+          "type": "string"
+        },
+        "Line2": {
+          "description": "Address line 2.",
+          "type": "string"
+        },
+        "Line3": {
+          "description": "Address line 3.",
+          "type": "string"
+        },
+        "SuburbCounty": {
+          "description": "Suburb as associated with the PostCode.",
+          "type": "string"
+        },
+        "TownCityState": {
+          "description": "Town or city or state.",
+          "type": "string"
+        },
+        "PostCode": {
+          "description": "Corresponding postcode to Addresses.SuburbCountry value.",
+          "type": "string"
+        },
+        "CountryCode": {
+          "description": "ISO alpha-3 code for the country the address is in.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Type",
+        "Line1",
+        "SuburbCounty",
+        "PostCode"
+      ],
+      "type": "object"
+    },
+    "ApplicantIdentification": {
+      "properties": {
+        "IdNumber": {
+          "description": "TFN or ABN of the applicant. For SuperSMA accounts we require a TFN.",
+          "type": "string"
+        },
+        "Type": {
+          "description": "The type of identification. 0=TIN, 4=ABN, 5=TFN",
+          "format": "int32",
+          "type": "integer",
+          "enum": [
+            0,
+            4,
+            5
+          ]
+        }
+      },
+      "type": "object"
+    },
     "AccountCreate": {
       "properties": {
         "Type": {
@@ -10876,209 +11079,6 @@
         "CloseOnRollover": {
           "description": "Specifies whether the Account provided should be closed on successful rollover.",
           "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "ApplicantCreate": {
-      "properties": {
-        "Type": {
-          "description": "Applicant type. This endpoint supports Individual applicants (Type 1). For Corporate Applicants, use the /api/TrusteeApplicants endpoint.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "Applicant": {
-          "description": "Contains the applicant data. When we have more types, the contents will be customisable based on Applicant.Type.",
-          "$ref": "#/definitions/Applicant",
-          "type": "object"
-        }
-      },
-      "required": [
-        "Type",
-        "Applicant"
-      ],
-      "type": "object"
-    },
-    "Applicant": {
-      "properties": {
-        "AdviserId": {
-          "description": "The user ID that you have been provided with.",
-          "type": "string"
-        },
-        "AccountId": {
-          "description": "AccountID of the SMA account. (prefixed with ‘AU’ for Australian accounts)",
-          "type": "string"
-        },
-        "Name": {
-          "description": "",
-          "$ref": "#/definitions/ApplicantName",
-          "type": "object"
-        },
-        "DateOfBirth": {
-          "description": "Date of birth of the applicant.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "Email": {
-          "description": "E-mail address of the applicant.",
-          "type": "string"
-        },
-        "Phone": {
-          "description": "Primary contact number.",
-          "type": "string"
-        },
-        "PhoneOther": {
-          "description": "Secondary contact number.",
-          "type": "string"
-        },
-        "Addresses": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/ApplicantAddress"
-          },
-          "type": "array"
-        },
-        "IsSignatory": {
-          "description": "Whether the applicant is a signatory on the account. We require one signatory for individual and SuperSMA accounts, and all joint account holders must be signatories.",
-          "type": "boolean"
-        },
-        "SignatureImage": {
-          "description": "A base64 string representing an image of the applicant's signature. To prevent distortion of the image when it is printed, please ensure the width of the image is five times the height.",
-          "type": "string"
-        },
-        "TaxRateElection": {
-          "description": "Praemium code for the applicant's tax status - RTFN = Resident with TFN, RABN = Resident with ABN, NRWT = Non resident of Australia, NTFN = Resident of Australia without a TFN.",
-          "type": "string"
-        },
-        "TaxDomicileCountryCode": {
-          "description": "ISO alpha-3 code for the country where the applicant is resident for tax purposes.",
-          "type": "string"
-        },
-        "CitizenshipCountryCode": {
-          "description": "ISO alpha-3 code for the applicant's country of citizenship.",
-          "type": "string"
-        },
-        "Identification": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/ApplicantIdentification"
-          },
-          "type": "array"
-        },
-        "Sex": {
-          "description": "M = Male, F = Female.",
-          "type": "string"
-        },
-        "IsPoliticallyExposedPerson": {
-          "description": "Whether contact is politically exposed.",
-          "type": "boolean"
-        },
-        "PepDetails": {
-          "description": "If contact is politically exposed, details must be supplied.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "AdviserId",
-        "AccountId",
-        "Name",
-        "DateOfBirth",
-        "Email",
-        "Phone",
-        "IsSignatory",
-        "TaxRateElection",
-        "TaxDomicileCountryCode",
-        "CitizenshipCountryCode"
-      ],
-      "type": "object"
-    },
-    "ApplicantName": {
-      "properties": {
-        "First": {
-          "description": "First name.",
-          "type": "string"
-        },
-        "Last": {
-          "description": "Last name.",
-          "type": "string"
-        },
-        "Title": {
-          "description": "Title: Mr, Mrs, Ms, Miss, Doctor, Lady, Prof and Sir.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "First",
-        "Last",
-        "Title"
-      ],
-      "type": "object"
-    },
-    "ApplicantAddress": {
-      "properties": {
-        "Type": {
-          "description": "Home = 0, Office = 1, Mailing = 2, PrincipalPlaceOfBusiness = 3.",
-          "format": "int32",
-          "type": "integer",
-          "enum": [
-            0,
-            1,
-            2,
-            3
-          ]
-        },
-        "Line1": {
-          "description": "Address line 1.",
-          "type": "string"
-        },
-        "Line2": {
-          "description": "Address line 2.",
-          "type": "string"
-        },
-        "Line3": {
-          "description": "Address line 3.",
-          "type": "string"
-        },
-        "SuburbCounty": {
-          "description": "Suburb as associated with the PostCode.",
-          "type": "string"
-        },
-        "TownCityState": {
-          "description": "Town or city or state.",
-          "type": "string"
-        },
-        "PostCode": {
-          "description": "Corresponding postcode to Addresses.SuburbCountry value.",
-          "type": "string"
-        },
-        "CountryCode": {
-          "description": "ISO alpha-3 code for the country the address is in.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "Type",
-        "Line1",
-        "SuburbCounty",
-        "PostCode"
-      ],
-      "type": "object"
-    },
-    "ApplicantIdentification": {
-      "properties": {
-        "IdNumber": {
-          "description": "TFN or ABN of the applicant. For SuperSMA accounts we require a TFN.",
-          "type": "string"
-        },
-        "Type": {
-          "description": "The type of identification. 0=TIN, 4=ABN, 5=TFN",
-          "format": "int32",
-          "type": "integer",
-          "enum": [
-            0,
-            4,
-            5
-          ]
         }
       },
       "type": "object"
