@@ -2452,7 +2452,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stark"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"Sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-12T04:47:44.714Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1997-01-12"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456abc@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"BirthCountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"BirthTown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -2771,7 +2771,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stark"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"Sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-12T04:47:44.714Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1997-01-12"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456abc@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"BirthCountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"BirthTown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -2798,6 +2798,15 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"MissingReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"MissingReasonText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"NominatedBeneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"RelationshipToMember"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Proportion"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1997-01-12"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2989,6 +2998,36 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <td>string</td>
 <td>Country code. For example, AUS = Australia.</td>
 </tr>
+<tr>
+<td>NominatedBeneficiaries</td>
+<td>array</td>
+<td>An array of nominated beneficiaries of the applicant</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.Type</td>
+<td>enum</td>
+<td>Standard = 0, Reversionary Pensioner = 1.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.FullName<span class="required">required</span></td>
+<td>string</td>
+<td>Full legal name of the beneficiary.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.RelationshipToMember<span class="required">required</span></td>
+<td>string</td>
+<td>Spouse = 1, Child = 2, Other = 3</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.Proportion<span class="required">required</span></td>
+<td>string</td>
+<td>The portion of the benefit that should be paid to the beneficiary. These must add up to 100%.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.DateOfBirth</td>
+<td>string</td>
+<td>Beneficiary’s date of birth.</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -3090,7 +3129,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
     </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stark"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"Sex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-12T04:47:44.714Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1997-01-12"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456abc@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"BirthCountryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUS"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"BirthTown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -3118,7 +3157,14 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="nl">"MissingReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"MissingReasonText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ReversionaryBeneficiary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FullName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RelationshipToMember"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Proportion"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"DateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1997-01-12"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h5 id='request-parameter-body-9'>Request Parameter - Body</h5>
 <table><thead>
@@ -3307,6 +3353,36 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <td>Addresses.Country<span class="required">required</span></td>
 <td>string</td>
 <td>Country code. For example, AUS = Australia.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries</td>
+<td>object</td>
+<td>Reversionary beneficiary of the applicant</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.Type</td>
+<td>enum</td>
+<td>Standard = 0, Reversionary Pensioner = 1.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.FullName<span class="required">required</span></td>
+<td>string</td>
+<td>Full legal name of the beneficiary.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.RelationshipToMember<span class="required">required</span></td>
+<td>string</td>
+<td>Spouse = 1, Child = 2, Other = 3</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.Proportion<span class="required">required</span></td>
+<td>string</td>
+<td>The portion of the benefit that should be paid to the beneficiary. These must add up to 100%.</td>
+</tr>
+<tr>
+<td>NominatedBeneficiaries.DateOfBirth</td>
+<td>string</td>
+<td>Beneficiary’s date of birth.</td>
 </tr>
 </tbody></table>
 
