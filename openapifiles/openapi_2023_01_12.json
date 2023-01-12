@@ -10125,183 +10125,6 @@
       "required": [],
       "type": "object"
     },
-    "PdsModel": {
-      "properties": {
-        "Id": {
-          "description": "ModelId as returned by the Models endpoint.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Model name.",
-          "type": "string"
-        },
-        "Style": {
-          "description": "Model style.",
-          "type": "string"
-        },
-        "Code": {
-          "description": "Model code.",
-          "type": "string"
-        },
-        "ManagerName": {
-          "description": "Model Manager name.",
-          "type": "string"
-        },
-        "FeeOverride": {
-          "description": "Fee override.",
-          "$ref": "#/definitions/FeeOverride"
-        },
-        "TaxWrappers": {
-          "description": "Unspecified = 0, CgtChargeable = 1, TaxExempt = 2, Unknown = 3, Isa = 4, OffshoreBond = 5, OnshoreBond = 6, PersonalPension = 7, RtsRats = 8, Sipp = 9, GroupSipp = 10, Ssas = 11, S32 = 12, TrustNotUkTaxable = 13, CompanyNotUkTaxable = 14, Qnups = 15, Qrops = 16, Efurbs = 17, Ebt = 18, InternationalPensionsAndSavingsScheme = 19, Jisa = 20, OffshoreBondPersonalised = 21.",
-          "items": {
-            "$ref": "#/definitions/TaxWrapper"
-          },
-          "type": "array"
-        },
-        "SingleAssetModelIsin": {
-          "description": "ISIN of security. (Single asset model only) (INTL only)",
-          "type": "string"
-        },
-        "SingleAssetModelCurrencyCode": {
-          "description": "Currency code of security. (Single asset model only) (INTL only)",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "PdsDetail": {
-      "properties": {
-        "Id": {
-          "description": "ID of the PDS.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Name of the PDS.",
-          "type": "string"
-        },
-        "MaxNoOfBankAccounts": {
-          "description": "Maximum number of bank accounts allowed by the PDS.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "IsSuperSma": {
-          "description": "If the PDS is specific to SuperSMA.",
-          "type": "boolean"
-        },
-        "Status": {
-          "description": "Status of the PDS, active = 1, closed = 2.",
-          "type": "string"
-        },
-        "ServiceId": {
-          "description": "Service ID.",
-          "type": "string"
-        },
-        "ServiceName": {
-          "description": "Service Name.",
-          "type": "string"
-        },
-        "Region": {
-          "description": "Australia, UnitedKingdom or International.",
-          "$ref": "#/definitions/ApplicantRegion"
-        },
-        "CurrencyCode": {
-          "description": "Currency code for the PDS.",
-          "type": "string"
-        },
-        "Fees": {
-          "description": "Fees associated to the PDS.",
-          "items": {
-            "$ref": "#/definitions/PdsFee"
-          },
-          "type": "array"
-        },
-        "BankAccountUsages": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "items": {
-            "$ref": "#/definitions/BankAccountUsage"
-          },
-          "type": "array"
-        },
-        "TaxOptions": {
-          "description": "Tax options for the PDS.",
-          "items": {
-            "$ref": "#/definitions/PdsTaxOption"
-          },
-          "type": "array"
-        },
-        "Models": {
-          "description": "List of available models.",
-          "items": {
-            "$ref": "#/definitions/PdsModel"
-          },
-          "type": "array"
-        },
-        "AvailableAccountTypes": {
-          "description": "Standard = 0, OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19, Jisa = 26, OnshoreBond = 27, OffshoreBondPersonalised = 28.",
-          "items": {
-            "$ref": "#/definitions/AccountType"
-          },
-          "type": "array"
-        },
-        "Products": {
-          "description": "Products for the PDS.",
-          "items": {
-            "$ref": "#/definitions/Product"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "PutAccountModelWeightingRequest": {
-      "properties": {
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "RebalanceType": {
-          "description": "Floating = 0, Fixed = 1.",
-          "$ref": "#/definitions/RebalanceType"
-        },
-        "AccountModelWeightings": {
-          "description": "Account Model Weightings.",
-          "minLength": 1,
-          "items": {
-            "$ref": "#/definitions/AccountModelWeighting"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "AccountId",
-        "AccountModelWeightings",
-        "RebalanceType"
-      ],
-      "type": "object"
-    },
-    "TokenResponse": {
-      "properties": {
-        "token_type": {
-          "description": "Token type is always Bearer.",
-          "type": "string"
-        },
-        "expires_in": {
-          "description": "After how many seconds an access token will expire.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "ext_expires_in": {
-          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "access_token": {
-          "description": "Access token that can be used to access public API endpoints.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "DraftAddress": {
       "properties": {
         "Addressee": {
@@ -11223,6 +11046,183 @@
         "Metadata": {
           "description": "",
           "$ref": "#/definitions/Metadata"
+        }
+      },
+      "type": "object"
+    },
+    "PdsModel": {
+      "properties": {
+        "Id": {
+          "description": "ModelId as returned by the Models endpoint.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Model name.",
+          "type": "string"
+        },
+        "Style": {
+          "description": "Model style.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "ManagerName": {
+          "description": "Model Manager name.",
+          "type": "string"
+        },
+        "FeeOverride": {
+          "description": "Fee override.",
+          "$ref": "#/definitions/FeeOverride"
+        },
+        "TaxWrappers": {
+          "description": "Unspecified = 0, CgtChargeable = 1, TaxExempt = 2, Unknown = 3, Isa = 4, OffshoreBond = 5, OnshoreBond = 6, PersonalPension = 7, RtsRats = 8, Sipp = 9, GroupSipp = 10, Ssas = 11, S32 = 12, TrustNotUkTaxable = 13, CompanyNotUkTaxable = 14, Qnups = 15, Qrops = 16, Efurbs = 17, Ebt = 18, InternationalPensionsAndSavingsScheme = 19, Jisa = 20, OffshoreBondPersonalised = 21.",
+          "items": {
+            "$ref": "#/definitions/TaxWrapper"
+          },
+          "type": "array"
+        },
+        "SingleAssetModelIsin": {
+          "description": "ISIN of security. (Single asset model only) (INTL only)",
+          "type": "string"
+        },
+        "SingleAssetModelCurrencyCode": {
+          "description": "Currency code of security. (Single asset model only) (INTL only)",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PdsDetail": {
+      "properties": {
+        "Id": {
+          "description": "ID of the PDS.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Name of the PDS.",
+          "type": "string"
+        },
+        "MaxNoOfBankAccounts": {
+          "description": "Maximum number of bank accounts allowed by the PDS.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsSuperSma": {
+          "description": "If the PDS is specific to SuperSMA.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Status of the PDS, active = 1, closed = 2.",
+          "type": "string"
+        },
+        "ServiceId": {
+          "description": "Service ID.",
+          "type": "string"
+        },
+        "ServiceName": {
+          "description": "Service Name.",
+          "type": "string"
+        },
+        "Region": {
+          "description": "Australia, UnitedKingdom or International.",
+          "$ref": "#/definitions/ApplicantRegion"
+        },
+        "CurrencyCode": {
+          "description": "Currency code for the PDS.",
+          "type": "string"
+        },
+        "Fees": {
+          "description": "Fees associated to the PDS.",
+          "items": {
+            "$ref": "#/definitions/PdsFee"
+          },
+          "type": "array"
+        },
+        "BankAccountUsages": {
+          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "items": {
+            "$ref": "#/definitions/BankAccountUsage"
+          },
+          "type": "array"
+        },
+        "TaxOptions": {
+          "description": "Tax options for the PDS.",
+          "items": {
+            "$ref": "#/definitions/PdsTaxOption"
+          },
+          "type": "array"
+        },
+        "Models": {
+          "description": "List of available models.",
+          "items": {
+            "$ref": "#/definitions/PdsModel"
+          },
+          "type": "array"
+        },
+        "AvailableAccountTypes": {
+          "description": "Standard = 0, OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19, Jisa = 26, OnshoreBond = 27, OffshoreBondPersonalised = 28.",
+          "items": {
+            "$ref": "#/definitions/AccountType"
+          },
+          "type": "array"
+        },
+        "Products": {
+          "description": "Products for the PDS.",
+          "items": {
+            "$ref": "#/definitions/Product"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PutAccountModelWeightingRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "RebalanceType": {
+          "description": "Floating = 0, Fixed = 1.",
+          "$ref": "#/definitions/RebalanceType"
+        },
+        "AccountModelWeightings": {
+          "description": "Account Model Weightings.",
+          "minLength": 1,
+          "items": {
+            "$ref": "#/definitions/AccountModelWeighting"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId",
+        "AccountModelWeightings",
+        "RebalanceType"
+      ],
+      "type": "object"
+    },
+    "TokenResponse": {
+      "properties": {
+        "token_type": {
+          "description": "Token type is always Bearer.",
+          "type": "string"
+        },
+        "expires_in": {
+          "description": "After how many seconds an access token will expire.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "ext_expires_in": {
+          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "access_token": {
+          "description": "Access token that can be used to access public API endpoints.",
+          "type": "string"
         }
       },
       "type": "object"
