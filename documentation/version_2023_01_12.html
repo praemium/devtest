@@ -1559,6 +1559,8 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="nl">"RegularContributionPlan"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"InitialInvestmentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"InitialInvestmentType"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
   </span><span class="nl">"Fees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AU5794"</span><span class="p">,</span><span class="w">
@@ -1568,11 +1570,6 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="nl">"IncludesTax"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"AccountSetup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"InitialInvestment"</span><span class="p">:</span><span class="w"> </span><span class="mi">4234</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"InitialTransferValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CashInvestmentMethod"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"Models"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
@@ -1928,6 +1925,12 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"EntityType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"CurrencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"IsConsolidationAccount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PensionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AccountBasedPension"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specified"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PensionPayments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"BankAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"Bsb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012012"</span><span class="p">,</span><span class="w">
@@ -1949,11 +1952,6 @@ We reserve the right to disable your access to the API if this rate limit is abu
       </span><span class="nl">"IncludesTax"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"AccountSetup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"InitialInvestment"</span><span class="p">:</span><span class="w"> </span><span class="mi">4234</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"InitialTransferValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"CashInvestmentMethod"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
   </span><span class="nl">"Models"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"ModelCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MACAUD"</span><span class="p">,</span><span class="w">
@@ -2485,9 +2483,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"Identification"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"MissingReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"MissingReasonText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2809,9 +2805,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"Identification"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"MissingReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"MissingReasonText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"NominatedBeneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -3172,9 +3166,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
   </span><span class="nl">"Identification"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"MissingReason"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"MissingReasonText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1231234"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ReversionaryBeneficiary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
