@@ -1221,7 +1221,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>SecurityTransfers.OutsideOfRebalanceQuantity</td>
 <td>double</td>
-<td></td>
+<td>Quantity of the security outside of rebalance.</td>
 </tr>
 <tr>
 <td>SecurityTransfers.HoldingType</td>
@@ -1346,32 +1346,32 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>FeeConsentType</td>
 <td>enum</td>
-<td></td>
+<td>Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate</td>
 <td>object</td>
-<td></td>
+<td>The date range of the fixed term fee consent for the account</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate.TermStartDate</td>
 <td>date-time</td>
-<td></td>
+<td>The start date of this fee consent.</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate.TermEndDate</td>
 <td>date-time</td>
-<td></td>
+<td>The end date of this fee consent.</td>
 </tr>
 <tr>
 <td>OngoingFeesAnniversaryDate</td>
 <td>object</td>
-<td></td>
+<td>The Anniversary date of the ongoing fee consent for the account</td>
 </tr>
 <tr>
 <td>OngoingFeesAnniversaryDate.AnniversaryDate</td>
 <td>date-time</td>
-<td></td>
+<td>The anniversary date.</td>
 </tr>
 <tr>
 <td>Fees</td>
@@ -1727,32 +1727,32 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>FeeConsentType</td>
 <td>enum</td>
-<td></td>
+<td>Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate</td>
 <td>object</td>
-<td></td>
+<td>The date range of the fixed term fee consent for the account</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate.TermStartDate</td>
 <td>date-time</td>
-<td></td>
+<td>The start date of this fee consent.</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate.TermEndDate</td>
 <td>date-time</td>
-<td></td>
+<td>The end date of this fee consent.</td>
 </tr>
 <tr>
 <td>OngoingFeesAnniversaryDate</td>
 <td>object</td>
-<td></td>
+<td>The Anniversary date of the ongoing fee consent for the account</td>
 </tr>
 <tr>
 <td>OngoingFeesAnniversaryDate.AnniversaryDate</td>
 <td>date-time</td>
-<td></td>
+<td>The anniversary date.</td>
 </tr>
 <tr>
 <td>Fees</td>
@@ -2148,32 +2148,32 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>FeeConsentType</td>
 <td>enum</td>
-<td></td>
+<td>Ongoing = 1, FixedTerm = 2, NotCharged = 3. For NotCharged only Establishment fee can be provided.</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate</td>
 <td>object</td>
-<td></td>
+<td>The date range of the fixed term fee consent for the account</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate.TermStartDate</td>
 <td>date-time</td>
-<td></td>
+<td>The start date of this fee consent.</td>
 </tr>
 <tr>
 <td>FixedTermFeesStartEndDate.TermEndDate</td>
 <td>date-time</td>
-<td></td>
+<td>The end date of this fee consent.</td>
 </tr>
 <tr>
 <td>OngoingFeesAnniversaryDate</td>
 <td>object</td>
-<td></td>
+<td>The Anniversary date of the ongoing fee consent for the account</td>
 </tr>
 <tr>
 <td>OngoingFeesAnniversaryDate.AnniversaryDate</td>
 <td>date-time</td>
-<td></td>
+<td>The anniversary date.</td>
 </tr>
 <tr>
 <td>Fees</td>
@@ -3786,7 +3786,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>Beneficiaries<span class="required">required</span></td>
 <td>array</td>
-<td></td>
+<td>An array of beneficiaries.</td>
 </tr>
 <tr>
 <td>Beneficiaries.Type</td>
@@ -3826,7 +3826,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <tr>
 <td>ModifiedUserId</td>
 <td>integer</td>
-<td></td>
+<td>The user id for the update. This is normally the adviser Id of the target account for auditing purposes.</td>
 </tr>
 </tbody></table>
 
@@ -3879,7 +3879,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">accountId</span><span class="pi">:</span> <span class="s">AU12345</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">accountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 </code></pre></div><h5 id='request-parameter-query-5'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
@@ -4025,7 +4025,7 @@ We reserve the right to disable your access to the API if this rate limit is abu
 <blockquote>
 <p><strong>Request Parameter - Query Examples</strong></p>
 </blockquote>
-<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">accountId</span><span class="pi">:</span> <span class="s">AU12345</span>
+<div class="highlight"><pre class="highlight yaml tab-yaml testt"><code><span class="na">accountId</span><span class="pi">:</span> <span class="s">AU400000</span>
 </code></pre></div><h5 id='request-parameter-query-6'>Request Parameter - Query</h5>
 <table><thead>
 <tr>
