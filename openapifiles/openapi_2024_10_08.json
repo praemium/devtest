@@ -9629,6 +9629,285 @@
       "required": [],
       "type": "object"
     },
+    "PdsModel": {
+      "properties": {
+        "Id": {
+          "description": "ModelId as returned by the Models endpoint.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Model name.",
+          "type": "string"
+        },
+        "Style": {
+          "description": "Model style.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Model code.",
+          "type": "string"
+        },
+        "ManagerName": {
+          "description": "Model Manager name.",
+          "type": "string"
+        },
+        "SingleAssetModelIsin": {
+          "description": "ISIN of security. (Single asset model only) (INTL only)",
+          "type": "string"
+        },
+        "SingleAssetModelCurrencyCode": {
+          "description": "Currency code of security. (Single asset model only) (INTL only)",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PdsDetail": {
+      "properties": {
+        "Id": {
+          "description": "ID of the PDS.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Name of the PDS.",
+          "type": "string"
+        },
+        "MaxNoOfBankAccounts": {
+          "description": "Maximum number of bank accounts allowed by the PDS.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsSuperSma": {
+          "description": "If the PDS is specific to SuperSMA.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Status of the PDS, active = 1, closed = 2.",
+          "type": "string"
+        },
+        "ServiceId": {
+          "description": "Service ID.",
+          "type": "string"
+        },
+        "ServiceName": {
+          "description": "Service Name.",
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "description": "Currency code for the PDS.",
+          "type": "string"
+        },
+        "Fees": {
+          "description": "Fees associated to the PDS.",
+          "items": {
+            "$ref": "#/definitions/PdsFee"
+          },
+          "type": "array"
+        },
+        "BankAccountUsages": {
+          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
+          "items": {
+            "$ref": "#/definitions/BankAccountUsage"
+          },
+          "type": "array"
+        },
+        "TaxOptions": {
+          "description": "Tax options for the PDS.",
+          "items": {
+            "$ref": "#/definitions/PdsTaxOption"
+          },
+          "type": "array"
+        },
+        "Models": {
+          "description": "List of available models.",
+          "items": {
+            "$ref": "#/definitions/PdsModel"
+          },
+          "type": "array"
+        },
+        "AvailableAccountTypes": {
+          "description": "Standard = 0, OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19, Jisa = 26, OnshoreBond = 27, OffshoreBondPersonalised = 28.",
+          "items": {
+            "$ref": "#/definitions/AccountType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PutAccountModelWeightingRequest": {
+      "properties": {
+        "AccountId": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "RebalanceType": {
+          "description": "Floating = 0, Fixed = 1.",
+          "$ref": "#/definitions/RebalanceType"
+        },
+        "AccountModelWeightings": {
+          "description": "Account Model Weightings.",
+          "minLength": 1,
+          "items": {
+            "$ref": "#/definitions/AccountModelWeighting"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AccountId",
+        "AccountModelWeightings",
+        "RebalanceType"
+      ],
+      "type": "object"
+    },
+    "Account": {
+      "properties": {
+        "Id": {
+          "description": "Account ID.",
+          "type": "string"
+        },
+        "Code": {
+          "description": "Account code.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Account name.",
+          "type": "string"
+        },
+        "ConsolidationType": {
+          "description": "None = 78, Portfolio = 80, Transaction = 84, FeeGroup = 85, ShareTrader = 86, SuperFund = 87.",
+          "type": "enum"
+        },
+        "AccountType": {
+          "description": "Standard = 0, Sma = 1, Smsf = 3, SuperSmaAccumulation = 4, SuperSmaPension = 5.",
+          "type": "enum"
+        },
+        "EntityType": {
+          "description": "Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
+          "type": "enum"
+        },
+        "IsSma": {
+          "description": "Whether the account is SMA.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Active = 0, Draft = 1, Closed = 2, Deleted = 3.",
+          "type": "enum"
+        },
+        "RecalcType": {
+          "description": "None = 0, Manual = 1, Auto = 2.",
+          "type": "enum"
+        },
+        "RecalcStatus": {
+          "description": "OK = 0, Error = 1.",
+          "type": "enum"
+        },
+        "ValuationDate": {
+          "description": "Account valuation date or asat date.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "FirstTransactionDate": {
+          "description": "The first transaction date of the account.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "CreatedDate": {
+          "description": "The created date of the account.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastRecalcDate": {
+          "description": "The run-date of the latest account recalculation.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "RecalcRequired": {
+          "description": "Whether this account requires recalculation to accurately calculate all values.",
+          "type": "boolean"
+        },
+        "MarketValue": {
+          "description": "The Valuation of the account on the valuation date.",
+          "format": "double",
+          "type": "number"
+        },
+        "OwnerUserName": {
+          "description": "The account owner's username.",
+          "type": "string"
+        },
+        "Product": {
+          "description": "The description of the account product.",
+          "type": "string"
+        },
+        "BenchmarkId1": {
+          "description": "The unique ID of the account's benchmark 1.",
+          "type": "string"
+        },
+        "Benchmark1": {
+          "description": "The name of the account’s benchmark 1.",
+          "type": "string"
+        },
+        "BenchmarkMargin1": {
+          "description": "The margin (% p.a.) of the account’s benchmark 1.",
+          "format": "double",
+          "type": "number"
+        },
+        "BenchmarkId2": {
+          "description": "The unique ID of the account's benchmark 2.",
+          "type": "string"
+        },
+        "Benchmark2": {
+          "description": "The name of the account’s benchmark 2.",
+          "type": "string"
+        },
+        "BenchmarkMargin2": {
+          "description": "The margin (% p.a.) of the account’s benchmark 2.",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "AccountIEnumerablePagedResponse": {
+      "properties": {
+        "Data": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/Account"
+          },
+          "type": "array"
+        },
+        "Metadata": {
+          "description": "",
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "type": "object"
+    },
+    "TokenResponse": {
+      "properties": {
+        "token_type": {
+          "description": "Token type is always Bearer.",
+          "type": "string"
+        },
+        "expires_in": {
+          "description": "After how many seconds an access token will expire.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "ext_expires_in": {
+          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "access_token": {
+          "description": "Access token that can be used to access public API endpoints.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "DraftAddress": {
       "properties": {
         "Addressee": {
@@ -9869,290 +10148,11 @@
         "Applicants"
       ],
       "type": "object"
-    },
-    "TokenResponse": {
-      "properties": {
-        "token_type": {
-          "description": "Token type is always Bearer.",
-          "type": "string"
-        },
-        "expires_in": {
-          "description": "After how many seconds an access token will expire.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "ext_expires_in": {
-          "description": "Extended lifetime of access token if value of this field is greater than value of expires_in.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "access_token": {
-          "description": "Access token that can be used to access public API endpoints.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "PdsModel": {
-      "properties": {
-        "Id": {
-          "description": "ModelId as returned by the Models endpoint.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Model name.",
-          "type": "string"
-        },
-        "Style": {
-          "description": "Model style.",
-          "type": "string"
-        },
-        "Code": {
-          "description": "Model code.",
-          "type": "string"
-        },
-        "ManagerName": {
-          "description": "Model Manager name.",
-          "type": "string"
-        },
-        "SingleAssetModelIsin": {
-          "description": "ISIN of security. (Single asset model only) (INTL only)",
-          "type": "string"
-        },
-        "SingleAssetModelCurrencyCode": {
-          "description": "Currency code of security. (Single asset model only) (INTL only)",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "PdsDetail": {
-      "properties": {
-        "Id": {
-          "description": "ID of the PDS.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Name of the PDS.",
-          "type": "string"
-        },
-        "MaxNoOfBankAccounts": {
-          "description": "Maximum number of bank accounts allowed by the PDS.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "IsSuperSma": {
-          "description": "If the PDS is specific to SuperSMA.",
-          "type": "boolean"
-        },
-        "Status": {
-          "description": "Status of the PDS, active = 1, closed = 2.",
-          "type": "string"
-        },
-        "ServiceId": {
-          "description": "Service ID.",
-          "type": "string"
-        },
-        "ServiceName": {
-          "description": "Service Name.",
-          "type": "string"
-        },
-        "CurrencyCode": {
-          "description": "Currency code for the PDS.",
-          "type": "string"
-        },
-        "Fees": {
-          "description": "Fees associated to the PDS.",
-          "items": {
-            "$ref": "#/definitions/PdsFee"
-          },
-          "type": "array"
-        },
-        "BankAccountUsages": {
-          "description": "This allows you to define a regular cash addition or withdrawal from the SMA or SuperSMA.",
-          "items": {
-            "$ref": "#/definitions/BankAccountUsage"
-          },
-          "type": "array"
-        },
-        "TaxOptions": {
-          "description": "Tax options for the PDS.",
-          "items": {
-            "$ref": "#/definitions/PdsTaxOption"
-          },
-          "type": "array"
-        },
-        "Models": {
-          "description": "List of available models.",
-          "items": {
-            "$ref": "#/definitions/PdsModel"
-          },
-          "type": "array"
-        },
-        "AvailableAccountTypes": {
-          "description": "Standard = 0, OffshoreBond = 10, Sipp = 11, Qrops = 12, RtsRats = 13, Pra = 14, Isa = 15, Gia = 16, Pera = 17, PersonalPension = 18, GroupSipp = 19, Jisa = 26, OnshoreBond = 27, OffshoreBondPersonalised = 28.",
-          "items": {
-            "$ref": "#/definitions/AccountType"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "Account": {
-      "properties": {
-        "Id": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "Code": {
-          "description": "Account code.",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Account name.",
-          "type": "string"
-        },
-        "ConsolidationType": {
-          "description": "None = 78, Portfolio = 80, Transaction = 84, FeeGroup = 85, ShareTrader = 86, SuperFund = 87.",
-          "type": "enum"
-        },
-        "AccountType": {
-          "description": "Standard = 0, Sma = 1, Smsf = 3, SuperSmaAccumulation = 4, SuperSmaPension = 5.",
-          "type": "enum"
-        },
-        "EntityType": {
-          "description": "Individual = 0, Trust = 1, Corporate = 2, Partnership = 3, Superfund = 4, Joint = 5.",
-          "type": "enum"
-        },
-        "IsSma": {
-          "description": "Whether the account is SMA.",
-          "type": "boolean"
-        },
-        "Status": {
-          "description": "Active = 0, Draft = 1, Closed = 2, Deleted = 3.",
-          "type": "enum"
-        },
-        "RecalcType": {
-          "description": "None = 0, Manual = 1, Auto = 2.",
-          "type": "enum"
-        },
-        "RecalcStatus": {
-          "description": "OK = 0, Error = 1.",
-          "type": "enum"
-        },
-        "ValuationDate": {
-          "description": "Account valuation date or asat date.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "FirstTransactionDate": {
-          "description": "The first transaction date of the account.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "CreatedDate": {
-          "description": "The created date of the account.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "LastRecalcDate": {
-          "description": "The run-date of the latest account recalculation.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "RecalcRequired": {
-          "description": "Whether this account requires recalculation to accurately calculate all values.",
-          "type": "boolean"
-        },
-        "MarketValue": {
-          "description": "The Valuation of the account on the valuation date.",
-          "format": "double",
-          "type": "number"
-        },
-        "OwnerUserName": {
-          "description": "The account owner's username.",
-          "type": "string"
-        },
-        "Product": {
-          "description": "The description of the account product.",
-          "type": "string"
-        },
-        "BenchmarkId1": {
-          "description": "The unique ID of the account's benchmark 1.",
-          "type": "string"
-        },
-        "Benchmark1": {
-          "description": "The name of the account’s benchmark 1.",
-          "type": "string"
-        },
-        "BenchmarkMargin1": {
-          "description": "The margin (% p.a.) of the account’s benchmark 1.",
-          "format": "double",
-          "type": "number"
-        },
-        "BenchmarkId2": {
-          "description": "The unique ID of the account's benchmark 2.",
-          "type": "string"
-        },
-        "Benchmark2": {
-          "description": "The name of the account’s benchmark 2.",
-          "type": "string"
-        },
-        "BenchmarkMargin2": {
-          "description": "The margin (% p.a.) of the account’s benchmark 2.",
-          "format": "double",
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
-    "AccountIEnumerablePagedResponse": {
-      "properties": {
-        "Data": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/Account"
-          },
-          "type": "array"
-        },
-        "Metadata": {
-          "description": "",
-          "$ref": "#/definitions/Metadata"
-        }
-      },
-      "type": "object"
-    },
-    "PutAccountModelWeightingRequest": {
-      "properties": {
-        "AccountId": {
-          "description": "Account ID.",
-          "type": "string"
-        },
-        "RebalanceType": {
-          "description": "Floating = 0, Fixed = 1.",
-          "$ref": "#/definitions/RebalanceType"
-        },
-        "AccountModelWeightings": {
-          "description": "Account Model Weightings.",
-          "minLength": 1,
-          "items": {
-            "$ref": "#/definitions/AccountModelWeighting"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "AccountId",
-        "AccountModelWeightings",
-        "RebalanceType"
-      ],
-      "type": "object"
     }
   },
   "swagger": "2.0",
   "info": {
-    "version": "2024.10.07",
+    "version": "2024.10.08",
     "title": "Public API"
   }
 }

@@ -10495,169 +10495,6 @@
       },
       "type": "object"
     },
-    "TrusteeApplicant": {
-      "properties": {
-        "AdviserId": {
-          "description": "The user ID that you have been provided with.",
-          "type": "string"
-        },
-        "AccountId": {
-          "description": "AccountID of the SMA account. (prefixed with ‘AU’ for Australian accounts)",
-          "type": "string"
-        },
-        "Name": {
-          "description": "Corporation name.",
-          "type": "string"
-        },
-        "TrusteeName": {
-          "description": "Corporate trustee name. This is required if a trust or SMSF with a corporate trustee. **Only available for corporate applicants**",
-          "type": "string"
-        },
-        "RegisteredNumber": {
-          "description": "ABN of the Super Fund (rather than the corporate trustee) for corporate applicants, or TFN for an individual trustee.",
-          "type": "string"
-        },
-        "ContactName": {
-          "description": "Primary contact name. **Only available for corporate applicants**",
-          "type": "string"
-        },
-        "ContactPhone": {
-          "description": "Primary contact phone.",
-          "type": "string"
-        },
-        "ContactEmail": {
-          "description": "Primary contact email. **Only available for corporate applicants**",
-          "type": "string"
-        },
-        "Addresses": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/TrusteeApplicantAddress"
-          },
-          "type": "array"
-        },
-        "Signatories": {
-          "description": "",
-          "items": {
-            "$ref": "#/definitions/IndividualSignatory"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "AdviserId",
-        "AccountId",
-        "Name",
-        "TrusteeName"
-      ],
-      "type": "object"
-    },
-    "TrusteeApplicantAddress": {
-      "properties": {
-        "Type": {
-          "description": "Home = 0, Office = 1, Mailing = 2, PrincipalPlaceOfBusiness = 3. We only need 0, and 2 if it is different.",
-          "format": "int32",
-          "type": "integer",
-          "enum": [
-            0,
-            1,
-            2,
-            3
-          ]
-        },
-        "Line1": {
-          "description": "Address line 1.",
-          "type": "string"
-        },
-        "Line2": {
-          "description": "Address line 2.",
-          "type": "string"
-        },
-        "Line3": {
-          "description": "Address line 3.",
-          "type": "string"
-        },
-        "SuburbCounty": {
-          "description": "Suburb as associated with the PostCode.",
-          "type": "string"
-        },
-        "TownCityState": {
-          "description": "Town or city or state.",
-          "type": "string"
-        },
-        "PostCode": {
-          "description": "Corresponding postcode to Addresses.SuburbCountry value.",
-          "type": "string"
-        },
-        "CountryCode": {
-          "description": "ISO alpha-3 code for the country the address is in.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "Type",
-        "Line1",
-        "SuburbCounty",
-        "PostCode"
-      ],
-      "type": "object"
-    },
-    "IndividualSignatory": {
-      "properties": {
-        "Name": {
-          "description": "",
-          "$ref": "#/definitions/TrusteeApplicantName",
-          "type": "object"
-        },
-        "Email": {
-          "description": "Signatory’s email.",
-          "type": "string"
-        },
-        "Capacity": {
-          "description": "Director = 1, Company Secretary = 3, Sole Director = 4, Signed Under Seal = 7 for Corporate Applicants. Trustee = 6 for individual applicants.",
-          "format": "int32",
-          "type": "integer",
-          "enum": [
-            1,
-            3,
-            4,
-            7
-          ]
-        },
-        "DateOfBirth": {
-          "description": "Date of birth of the signatory.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "TaxRateElection": {
-          "description": "Praemium code for the applicant's tax status - RTFN = Resident with TFN, RABN = Resident with ABN, NRWT = Non resident of Australia, NTFN = Resident of Australia without a TFN.",
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "TrusteeApplicantName": {
-      "properties": {
-        "First": {
-          "description": "Signatory's first name.",
-          "type": "string"
-        },
-        "Last": {
-          "description": "Signatory's last name.",
-          "type": "string"
-        },
-        "Title": {
-          "description": "Signatory's title. Valid values are: Mr, Mrs, Ms, Miss, Doctor, Lady, Prof and Sir.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "First",
-        "Last",
-        "Title"
-      ],
-      "type": "object"
-    },
     "AccountCreate": {
       "properties": {
         "Type": {
@@ -11081,6 +10918,169 @@
           "type": "boolean"
         }
       },
+      "type": "object"
+    },
+    "TrusteeApplicant": {
+      "properties": {
+        "AdviserId": {
+          "description": "The user ID that you have been provided with.",
+          "type": "string"
+        },
+        "AccountId": {
+          "description": "AccountID of the SMA account. (prefixed with ‘AU’ for Australian accounts)",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Corporation name.",
+          "type": "string"
+        },
+        "TrusteeName": {
+          "description": "Corporate trustee name. This is required if a trust or SMSF with a corporate trustee. **Only available for corporate applicants**",
+          "type": "string"
+        },
+        "RegisteredNumber": {
+          "description": "ABN of the Super Fund (rather than the corporate trustee) for corporate applicants, or TFN for an individual trustee.",
+          "type": "string"
+        },
+        "ContactName": {
+          "description": "Primary contact name. **Only available for corporate applicants**",
+          "type": "string"
+        },
+        "ContactPhone": {
+          "description": "Primary contact phone.",
+          "type": "string"
+        },
+        "ContactEmail": {
+          "description": "Primary contact email. **Only available for corporate applicants**",
+          "type": "string"
+        },
+        "Addresses": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/TrusteeApplicantAddress"
+          },
+          "type": "array"
+        },
+        "Signatories": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/IndividualSignatory"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AdviserId",
+        "AccountId",
+        "Name",
+        "TrusteeName"
+      ],
+      "type": "object"
+    },
+    "TrusteeApplicantAddress": {
+      "properties": {
+        "Type": {
+          "description": "Home = 0, Office = 1, Mailing = 2, PrincipalPlaceOfBusiness = 3. We only need 0, and 2 if it is different.",
+          "format": "int32",
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "Line1": {
+          "description": "Address line 1.",
+          "type": "string"
+        },
+        "Line2": {
+          "description": "Address line 2.",
+          "type": "string"
+        },
+        "Line3": {
+          "description": "Address line 3.",
+          "type": "string"
+        },
+        "SuburbCounty": {
+          "description": "Suburb as associated with the PostCode.",
+          "type": "string"
+        },
+        "TownCityState": {
+          "description": "Town or city or state.",
+          "type": "string"
+        },
+        "PostCode": {
+          "description": "Corresponding postcode to Addresses.SuburbCountry value.",
+          "type": "string"
+        },
+        "CountryCode": {
+          "description": "ISO alpha-3 code for the country the address is in.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Type",
+        "Line1",
+        "SuburbCounty",
+        "PostCode"
+      ],
+      "type": "object"
+    },
+    "IndividualSignatory": {
+      "properties": {
+        "Name": {
+          "description": "",
+          "$ref": "#/definitions/TrusteeApplicantName",
+          "type": "object"
+        },
+        "Email": {
+          "description": "Signatory’s email.",
+          "type": "string"
+        },
+        "Capacity": {
+          "description": "Director = 1, Company Secretary = 3, Sole Director = 4, Signed Under Seal = 7 for Corporate Applicants. Trustee = 6 for individual applicants.",
+          "format": "int32",
+          "type": "integer",
+          "enum": [
+            1,
+            3,
+            4,
+            7
+          ]
+        },
+        "DateOfBirth": {
+          "description": "Date of birth of the signatory.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "TaxRateElection": {
+          "description": "Praemium code for the applicant's tax status - RTFN = Resident with TFN, RABN = Resident with ABN, NRWT = Non resident of Australia, NTFN = Resident of Australia without a TFN.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TrusteeApplicantName": {
+      "properties": {
+        "First": {
+          "description": "Signatory's first name.",
+          "type": "string"
+        },
+        "Last": {
+          "description": "Signatory's last name.",
+          "type": "string"
+        },
+        "Title": {
+          "description": "Signatory's title. Valid values are: Mr, Mrs, Ms, Miss, Doctor, Lady, Prof and Sir.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "First",
+        "Last",
+        "Title"
+      ],
       "type": "object"
     }
   },
