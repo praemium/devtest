@@ -217,12 +217,12 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="../images/navbar.png" alt="" />
+        <img src="../images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
       <a href="../index.html">
-        <img src="../images/logo2024.png" class="logo" alt="" />
+        <img src="../images/logo2024.png" class="logo" alt="Logo2024" />
       </a>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -2093,6 +2093,11 @@
 <td>A categorised type of the transaction.</td>
 </tr>
 <tr>
+<td>Data.ExternalTransactionId</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>Metadata</td>
 <td>object</td>
 <td>Metadata including pagination.</td>
@@ -2384,6 +2389,11 @@
 <td>The balance in the denominated currency of the cash book after the transaction has been credited or debited.</td>
 </tr>
 <tr>
+<td>Data.Transactions.ExternalTransactionId</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
 <td>Metadata</td>
 <td>object</td>
 <td>Metadata including pagination.</td>
@@ -2662,6 +2672,11 @@
 <td>Data.OtherChargesGst</td>
 <td>double</td>
 <td>GST amount of any other charges for the transaction. (Account currency)</td>
+</tr>
+<tr>
+<td>Data.ExternalTransactionId</td>
+<td>string</td>
+<td></td>
 </tr>
 <tr>
 <td>Metadata</td>
@@ -5882,6 +5897,16 @@
 <td>IsAllowedByApl</td>
 <td>boolean</td>
 <td>Is the security allowed by the approved product list. (Only returned when PdsId is supplied)</td>
+</tr>
+<tr>
+<td>StartDate</td>
+<td>date-time</td>
+<td></td>
+</tr>
+<tr>
+<td>EndDate</td>
+<td>date-time</td>
+<td></td>
 </tr>
 </tbody></table>
 

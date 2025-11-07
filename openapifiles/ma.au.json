@@ -1,202 +1,5 @@
 {
   "paths": {
-    "/api/benchmarkperformance": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Benchmark performance",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/BenchmarkReturn"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUBenchmarkPerformance",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "BenchmarkId",
-            "in": "query",
-            "required": true,
-            "description": "Praemium ID of the Benchmark as returned in the benchmark endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "MultiplePeriods",
-            "in": "query",
-            "required": false,
-            "description": "The periods to return. Default to -1. <ul><li>0 - For the period only</li><li>4 - 1 mth, 3 mths, the period</li><li>32 - 1 mth, 3 mths, the period, Since inception</li><li>9 - 1 mth, 3 mths, 6 mths, 1 yr, Since inception</li><li>1 - 1 mth, 3 mths, 1 yr, the period</li><li>25 - 1 mth, 3 mths, 1 yr, 2 yrs, Since inception</li><li>15 - 3 mths, 6 mths, 1 yr, 2 yrs, 3 yrs</li><li>17 - 3 mths, 6 mths, 1 yr, 3 yrs, 5 yrs</li><li>14 - 3 mths, 6 mths, 1 yr, 2 yrs, Since inception</li><li>13 - 3 mths, 1 yr, 2 yrs, 5 yrs, Since Inception</li><li>21 - 3 mths, 1 yr, 2 yrs, 3 yrs, Since inception</li><li>22 - 3 mths, 1 yr, 2 yr, 3 yrs, 5 yrs</li><li>18 - 3 mths, 1 yr, 3 yrs, 5 yrs, 7 yrs</li><li>28 - 3 mths, 1 yr, 3 yrs, 5 yrs, 10 yrs</li><li>2 - 3 mths, 1 yr, 3 yrs, the period</li><li>8 - 3 mths, 1 yr, 3 yrs, 5 yrs, Since inception</li><li>29 - 3 mths, 1 yr, 5 yrs, 10 yrs, Since Inception</li><li>10 - 1 yr, 2 yrs, 3 yrs, 4 yrs, 5 yrs</li><li>30 - 1 yr, 2 yrs, 3 yrs, 5 yrs, 10 yrs</li><li>19 - 1 yr, 3 yrs, 5 yrs, 7 yrs, 10 yrs</li><li>31 - 1 yr, 3 yrs, 5 yrs, 10 yrs, Since Inception</li><li>23 - 1 yr, 5 yrs, 10 yrs, Since inception</li><li>3 - 1 yr, 3 yrs, 5 yrs, the period</li><li>26 - Qtr to date, 1 yr, 3 yrs, 5 yrs, Since inception</li><li>33 - Qtr to date, Fin yr to date, Since inception</li><li>7 - Qtr to date, Fin yr to date, 1 yr,  Since inception</li><li>5 - Qtr to date, Fin yr to date, 3 yrs, 5 yrs</li><li>6 - Qtr to date, Fin yr to date, 3 yrs, Since inception</li><li>20 - The period, Qtr to date, Fin yr to date, Since inception</li><li>-1 - Portfolio default</li><li>27 - Financial years</li></ul>",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "The from date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "The to date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/holdingsexcluded": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Holdings excluded",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/HoldingExcluded"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUHoldingsExcluded",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "AccountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "FromDate",
-            "in": "query",
-            "required": true,
-            "description": "The from date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "ToDate",
-            "in": "query",
-            "required": true,
-            "description": "The to date used when calculating data for the request.",
-            "format": "date-time",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/ssologin": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "SSO login",
-            "schema": {
-              "$ref": "#/definitions/SsoLoginResponse"
-            }
-          }
-        },
-        "operationId": "SsoLogin",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SsoLoginRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/superfunds": {
       "get": {
         "responses": {
@@ -1607,259 +1410,6 @@
         ]
       }
     },
-    "/api/users": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        },
-        "operationId": "GetUser",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "username",
-            "in": "query",
-            "required": true,
-            "description": "User Name.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/user": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "User",
-            "schema": {
-              "$ref": "#/definitions/UserCreationResponse"
-            }
-          }
-        },
-        "operationId": "CreateUser",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PostUserRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/useraccounts": {
-      "patch": {
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        },
-        "operationId": "LinkUserAccounts",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PatchUserAccountRequest"
-            }
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/userlinks": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Account user links",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/AccountUserLink"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUAccountUserLinks",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "query",
-            "required": true,
-            "description": "Account ID.",
-            "type": "string"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/accountlinks": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "User account links",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UserAccountLink"
-              }
-            }
-          }
-        },
-        "operationId": "GetAUUserAccountLinks",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "required": true,
-            "description": "User ID.",
-            "format": "int32",
-            "type": "integer"
-          },
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          }
-        ]
-      }
-    },
     "/api/account/Sma": {
       "post": {
         "responses": {
@@ -2326,84 +1876,6 @@
             "required": true,
             "description": "API version of the endpoint.",
             "type": "string"
-          }
-        ]
-      }
-    },
-    "/api/securities": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "Securities",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/SecurityResponse"
-              }
-            }
-          }
-        },
-        "operationId": "FindAUSecurities",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "Authorization",
-            "in": "header",
-            "required": true,
-            "description": "Access token.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-subscription-key",
-            "in": "header",
-            "required": true,
-            "description": "Product subscription key.",
-            "type": "string"
-          },
-          {
-            "name": "x-pps-api-version",
-            "in": "header",
-            "required": true,
-            "description": "API version of the endpoint.",
-            "type": "string"
-          },
-          {
-            "name": "search",
-            "in": "query",
-            "required": false,
-            "description": "Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.",
-            "type": "string"
-          },
-          {
-            "name": "pdsId",
-            "in": "query",
-            "required": false,
-            "description": "PDS ID.",
-            "type": "string"
-          },
-          {
-            "name": "securityIds",
-            "in": "query",
-            "required": false,
-            "description": "A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.",
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          {
-            "name": "securityCodes",
-            "in": "query",
-            "required": false,
-            "description": "A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.",
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
           }
         ]
       }
@@ -4218,6 +3690,539 @@
         ]
       }
     },
+    "/api/benchmarkperformance": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Benchmark performance",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BenchmarkReturn"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUBenchmarkPerformance",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "BenchmarkId",
+            "in": "query",
+            "required": true,
+            "description": "Praemium ID of the Benchmark as returned in the benchmark endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "MultiplePeriods",
+            "in": "query",
+            "required": false,
+            "description": "The periods to return. Default to -1. <ul><li>0 - For the period only</li><li>4 - 1 mth, 3 mths, the period</li><li>32 - 1 mth, 3 mths, the period, Since inception</li><li>9 - 1 mth, 3 mths, 6 mths, 1 yr, Since inception</li><li>1 - 1 mth, 3 mths, 1 yr, the period</li><li>25 - 1 mth, 3 mths, 1 yr, 2 yrs, Since inception</li><li>15 - 3 mths, 6 mths, 1 yr, 2 yrs, 3 yrs</li><li>17 - 3 mths, 6 mths, 1 yr, 3 yrs, 5 yrs</li><li>14 - 3 mths, 6 mths, 1 yr, 2 yrs, Since inception</li><li>13 - 3 mths, 1 yr, 2 yrs, 5 yrs, Since Inception</li><li>21 - 3 mths, 1 yr, 2 yrs, 3 yrs, Since inception</li><li>22 - 3 mths, 1 yr, 2 yr, 3 yrs, 5 yrs</li><li>18 - 3 mths, 1 yr, 3 yrs, 5 yrs, 7 yrs</li><li>28 - 3 mths, 1 yr, 3 yrs, 5 yrs, 10 yrs</li><li>2 - 3 mths, 1 yr, 3 yrs, the period</li><li>8 - 3 mths, 1 yr, 3 yrs, 5 yrs, Since inception</li><li>29 - 3 mths, 1 yr, 5 yrs, 10 yrs, Since Inception</li><li>10 - 1 yr, 2 yrs, 3 yrs, 4 yrs, 5 yrs</li><li>30 - 1 yr, 2 yrs, 3 yrs, 5 yrs, 10 yrs</li><li>19 - 1 yr, 3 yrs, 5 yrs, 7 yrs, 10 yrs</li><li>31 - 1 yr, 3 yrs, 5 yrs, 10 yrs, Since Inception</li><li>23 - 1 yr, 5 yrs, 10 yrs, Since inception</li><li>3 - 1 yr, 3 yrs, 5 yrs, the period</li><li>26 - Qtr to date, 1 yr, 3 yrs, 5 yrs, Since inception</li><li>33 - Qtr to date, Fin yr to date, Since inception</li><li>7 - Qtr to date, Fin yr to date, 1 yr,  Since inception</li><li>5 - Qtr to date, Fin yr to date, 3 yrs, 5 yrs</li><li>6 - Qtr to date, Fin yr to date, 3 yrs, Since inception</li><li>20 - The period, Qtr to date, Fin yr to date, Since inception</li><li>-1 - Portfolio default</li><li>27 - Financial years</li></ul>",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/holdingsexcluded": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Holdings excluded",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/HoldingExcluded"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUHoldingsExcluded",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "AccountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "FromDate",
+            "in": "query",
+            "required": true,
+            "description": "The from date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "ToDate",
+            "in": "query",
+            "required": true,
+            "description": "The to date used when calculating data for the request.",
+            "format": "date-time",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/ssologin": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "SSO login",
+            "schema": {
+              "$ref": "#/definitions/SsoLoginResponse"
+            }
+          }
+        },
+        "operationId": "SsoLogin",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SsoLoginRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/securities": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Securities",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SecurityResponse"
+              }
+            }
+          }
+        },
+        "operationId": "FindSecurities",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "description": "Search term based on security code or security description. If Search is provided, SecurityIds and SecurityCodes will be ignored.",
+            "type": "string"
+          },
+          {
+            "name": "pdsId",
+            "in": "query",
+            "required": false,
+            "description": "PDS ID.",
+            "type": "string"
+          },
+          {
+            "name": "securityIds",
+            "in": "query",
+            "required": false,
+            "description": "A list of security IDs to search. If SecurityIds are provided, Search and SecurityCodes will be ignored.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "name": "securityCodes",
+            "in": "query",
+            "required": false,
+            "description": "A list of security codes to search. If SecurityCodes are provided, Search and SecurityIds will be ignored.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "operationId": "GetUser",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "description": "User Name.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/user": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/UserCreationResponse"
+            }
+          }
+        },
+        "operationId": "CreateUser",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "serviceUserId",
+            "in": "query",
+            "required": false,
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/CreateUserRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/useraccounts": {
+      "patch": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "LinkUserAccounts",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PatchUserAccountRequest"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "User account links",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UserAccountLink"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUUserAccountLinks",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "description": "User ID.",
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/api/userlinks": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Account user links",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AccountUserLink"
+              }
+            }
+          }
+        },
+        "operationId": "GetAUAccountUserLinks",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "required": true,
+            "description": "Account ID.",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Access token.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-subscription-key",
+            "in": "header",
+            "required": true,
+            "description": "Product subscription key.",
+            "type": "string"
+          },
+          {
+            "name": "x-pps-api-version",
+            "in": "header",
+            "required": true,
+            "description": "API version of the endpoint.",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/api/token": {
       "post": {
         "responses": {
@@ -4442,7 +4447,6 @@
       "properties": {
         "Id": {
           "description": "",
-          "minLength": 1,
           "type": "string"
         },
         "FeeType": {
@@ -4464,8 +4468,6 @@
         }
       },
       "required": [
-        "FeeType",
-        "Id",
         "Value"
       ],
       "type": "object"
@@ -4641,6 +4643,10 @@
           "description": "Country code. For example, AUS = Australia.",
           "minLength": 3,
           "type": "string"
+        },
+        "IsRegistered": {
+          "description": "",
+          "type": "boolean"
         }
       },
       "required": [
@@ -5232,6 +5238,10 @@
           "description": "The balance in the denominated currency of the cash book after the transaction has been credited or debited.",
           "format": "double",
           "type": "number"
+        },
+        "ExternalTransactionId": {
+          "description": "",
+          "type": "string"
         }
       },
       "required": [],
@@ -5401,6 +5411,74 @@
         8,
         9
       ]
+    },
+    "CreateUserRequest": {
+      "properties": {
+        "Name": {
+          "description": "The user's name.",
+          "$ref": "#/definitions/IndividualName"
+        },
+        "Gender": {
+          "description": "Male = 1, Female = 2, or null.",
+          "$ref": "#/definitions/UserGender"
+        },
+        "Email": {
+          "description": "The user's email address.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "description": "For security purposes if we need to identify the user over the phone.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "MothersMaidenName": {
+          "description": "For security purposes if we need to identify the user over the phone.",
+          "type": "string"
+        },
+        "Addresses": {
+          "description": "Contains details of the user's address.",
+          "items": {
+            "$ref": "#/definitions/Address"
+          },
+          "type": "array"
+        },
+        "Phone": {
+          "description": "The user's phone number.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "PhoneOther": {
+          "description": "An alternative phone number for the investor.",
+          "type": "string"
+        },
+        "JobTitle": {
+          "description": "The user's job title.",
+          "type": "string"
+        },
+        "AdviserId": {
+          "description": "The adviser ID for this user's adviser.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "GenerateGetStartedToken": {
+          "description": "Whether to generate an SSO token for this user to get started.",
+          "type": "boolean"
+        },
+        "UserType": {
+          "description": "Type of user. Investor = 0, Administrator = 2.",
+          "$ref": "#/definitions/UserType"
+        }
+      },
+      "required": [
+        "Addresses",
+        "AdviserId",
+        "Email",
+        "GenerateGetStartedToken",
+        "Name",
+        "Phone"
+      ],
+      "type": "object"
     },
     "DailyReturn": {
       "properties": {
@@ -6607,6 +6685,26 @@
         2
       ]
     },
+    "FeeTierInt": {
+      "properties": {
+        "To": {
+          "description": "",
+          "format": "int32",
+          "type": "integer"
+        },
+        "From": {
+          "description": "",
+          "format": "int32",
+          "type": "integer"
+        },
+        "Percentage": {
+          "description": "",
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
     "FeeType": {
       "format": "int32",
       "type": "integer",
@@ -7395,7 +7493,9 @@
         9,
         10,
         11,
-        12
+        12,
+        13,
+        -1
       ]
     },
     "LinkAccess": {
@@ -8188,70 +8288,6 @@
       ],
       "type": "object"
     },
-    "PostUserRequest": {
-      "properties": {
-        "Name": {
-          "description": "The user's name.",
-          "$ref": "#/definitions/IndividualName"
-        },
-        "Gender": {
-          "description": "Male = 1, Female = 2, or null.",
-          "$ref": "#/definitions/UserGender"
-        },
-        "Email": {
-          "description": "The user's email address.",
-          "minLength": 1,
-          "type": "string"
-        },
-        "DateOfBirth": {
-          "description": "For security purposes if we need to identify the user over the phone.",
-          "format": "date-time",
-          "type": "string"
-        },
-        "MothersMaidenName": {
-          "description": "For security purposes if we need to identify the user over the phone.",
-          "type": "string"
-        },
-        "Addresses": {
-          "description": "Contains details of the user's address.",
-          "items": {
-            "$ref": "#/definitions/Address"
-          },
-          "type": "array"
-        },
-        "Phone": {
-          "description": "The user's phone number.",
-          "minLength": 1,
-          "type": "string"
-        },
-        "PhoneOther": {
-          "description": "An alternative phone number for the investor.",
-          "type": "string"
-        },
-        "JobTitle": {
-          "description": "The user's job title.",
-          "type": "string"
-        },
-        "AdviserId": {
-          "description": "The adviser ID for this user's adviser.",
-          "format": "int32",
-          "type": "integer"
-        },
-        "GenerateGetStartedToken": {
-          "description": "Whether to generate an SSO token for this user to get started.",
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "Addresses",
-        "AdviserId",
-        "Email",
-        "GenerateGetStartedToken",
-        "Name",
-        "Phone"
-      ],
-      "type": "object"
-    },
     "PublisherEvent": {
       "properties": {
         "Id": {
@@ -8790,6 +8826,10 @@
           "description": "",
           "$ref": "#/definitions/OngoingFees"
         },
+        "TieredAdviserFee": {
+          "description": "",
+          "$ref": "#/definitions/TieredFee"
+        },
         "Fees": {
           "description": "Account fees.",
           "items": {
@@ -8822,6 +8862,14 @@
           "description": "Model allocation to reinvest income.",
           "items": {
             "$ref": "#/definitions/Instruction"
+          },
+          "type": "array"
+        },
+        "AdviserServicesProvided": {
+          "description": "",
+          "items": {
+            "format": "int32",
+            "type": "integer"
           },
           "type": "array"
         },
@@ -8948,6 +8996,16 @@
         "IsAllowedByApl": {
           "description": "Is the security allowed by the approved product list. (Only returned when PdsId is supplied)",
           "type": "boolean"
+        },
+        "StartDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndDate": {
+          "description": "",
+          "format": "date-time",
+          "type": "string"
         }
       },
       "required": [],
@@ -9213,6 +9271,10 @@
           "description": "",
           "$ref": "#/definitions/OngoingFees"
         },
+        "TieredAdviserFee": {
+          "description": "",
+          "$ref": "#/definitions/TieredFee"
+        },
         "Fees": {
           "description": "Account fees.",
           "items": {
@@ -9245,6 +9307,14 @@
           "description": "Model allocation to reinvest income.",
           "items": {
             "$ref": "#/definitions/Instruction"
+          },
+          "type": "array"
+        },
+        "AdviserServicesProvided": {
+          "description": "",
+          "items": {
+            "format": "int32",
+            "type": "integer"
           },
           "type": "array"
         },
@@ -9293,19 +9363,10 @@
         "RegularContribution": {
           "description": "Contains details of the regular contribution plan for this account.",
           "$ref": "#/definitions/RegularContribution"
-        },
-        "AdviserServicesProvided": {
-          "description": "",
-          "items": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "type": "array"
         }
       },
       "required": [
         "AdviserId",
-        "AdviserServicesProvided",
         "BankAccounts",
         "ContributionSources",
         "CurrencyCode",
@@ -9365,6 +9426,10 @@
           "description": "",
           "$ref": "#/definitions/OngoingFees"
         },
+        "TieredAdviserFee": {
+          "description": "",
+          "$ref": "#/definitions/TieredFee"
+        },
         "Fees": {
           "description": "Account fees.",
           "items": {
@@ -9397,6 +9462,14 @@
           "description": "Model allocation to reinvest income.",
           "items": {
             "$ref": "#/definitions/Instruction"
+          },
+          "type": "array"
+        },
+        "AdviserServicesProvided": {
+          "description": "",
+          "items": {
+            "format": "int32",
+            "type": "integer"
           },
           "type": "array"
         },
@@ -9447,19 +9520,10 @@
             "$ref": "#/definitions/Instruction"
           },
           "type": "array"
-        },
-        "AdviserServicesProvided": {
-          "description": "",
-          "items": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "type": "array"
         }
       },
       "required": [
         "AdviserId",
-        "AdviserServicesProvided",
         "BankAccounts",
         "CurrencyCode",
         "EntityType",
@@ -9636,6 +9700,22 @@
       "required": [],
       "type": "object"
     },
+    "TieredFee": {
+      "properties": {
+        "FeeId": {
+          "description": "",
+          "type": "string"
+        },
+        "Tiers": {
+          "description": "",
+          "items": {
+            "$ref": "#/definitions/FeeTierInt"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "Title": {
       "format": "int32",
       "type": "integer",
@@ -9761,6 +9841,10 @@
         },
         "TransactionTypeDescription": {
           "description": "A categorised type of the transaction.",
+          "type": "string"
+        },
+        "ExternalTransactionId": {
+          "description": "",
           "type": "string"
         }
       },
@@ -10119,6 +10203,10 @@
           "description": "GST amount of any other charges for the transaction. (Account currency)",
           "format": "double",
           "type": "number"
+        },
+        "ExternalTransactionId": {
+          "description": "",
+          "type": "string"
         }
       },
       "required": [],
@@ -10190,6 +10278,14 @@
       "type": "integer",
       "enum": [
         1,
+        2
+      ]
+    },
+    "UserType": {
+      "format": "int32",
+      "type": "integer",
+      "enum": [
+        0,
         2
       ]
     },
@@ -10270,7 +10366,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2025.04.07",
+    "version": "2025.11.07",
     "title": "Public API"
   }
 }
