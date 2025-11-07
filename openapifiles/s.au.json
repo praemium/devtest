@@ -3315,6 +3315,13 @@
             "type": "boolean"
           },
           {
+            "name": "IncludeCashReturns",
+            "in": "query",
+            "required": false,
+            "description": "Whether cash returns should be included. Default to false.",
+            "type": "boolean"
+          },
+          {
             "name": "IncludeLoans",
             "in": "query",
             "required": false,
