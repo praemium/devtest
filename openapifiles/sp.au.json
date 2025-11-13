@@ -8851,13 +8851,6 @@
           },
           "type": "array"
         },
-        "BankAccounts": {
-          "description": "Bank accounts.",
-          "items": {
-            "$ref": "#/definitions/BankAccount"
-          },
-          "type": "array"
-        },
         "FeeInstructions": {
           "description": "Model allocation to deduct fees.",
           "items": {
@@ -8877,6 +8870,13 @@
           "items": {
             "format": "int32",
             "type": "integer"
+          },
+          "type": "array"
+        },
+        "BankAccounts": {
+          "description": "Bank accounts.",
+          "items": {
+            "$ref": "#/definitions/BankAccount"
           },
           "type": "array"
         },
@@ -9296,13 +9296,6 @@
           },
           "type": "array"
         },
-        "BankAccounts": {
-          "description": "Bank accounts.",
-          "items": {
-            "$ref": "#/definitions/BankAccount"
-          },
-          "type": "array"
-        },
         "FeeInstructions": {
           "description": "Model allocation to deduct fees.",
           "items": {
@@ -9322,6 +9315,13 @@
           "items": {
             "format": "int32",
             "type": "integer"
+          },
+          "type": "array"
+        },
+        "BankAccounts": {
+          "description": "Bank accounts.",
+          "items": {
+            "$ref": "#/definitions/BankAccount"
           },
           "type": "array"
         },
@@ -9374,13 +9374,10 @@
       },
       "required": [
         "AdviserId",
-        "BankAccounts",
         "ContributionSources",
         "CurrencyCode",
         "EntityType",
         "FeeConsentType",
-        "InitialInvestmentAmount",
-        "InitialInvestmentType",
         "Models",
         "Name",
         "PdsId"
@@ -9451,13 +9448,6 @@
           },
           "type": "array"
         },
-        "BankAccounts": {
-          "description": "Bank accounts.",
-          "items": {
-            "$ref": "#/definitions/BankAccount"
-          },
-          "type": "array"
-        },
         "FeeInstructions": {
           "description": "Model allocation to deduct fees.",
           "items": {
@@ -9477,6 +9467,13 @@
           "items": {
             "format": "int32",
             "type": "integer"
+          },
+          "type": "array"
+        },
+        "BankAccounts": {
+          "description": "Bank accounts.",
+          "items": {
+            "$ref": "#/definitions/BankAccount"
           },
           "type": "array"
         },
@@ -10373,7 +10370,7 @@
   },
   "swagger": "2.0",
   "info": {
-    "version": "2025.11.07",
+    "version": "2025.11.13",
     "title": "Public API"
   }
 }
